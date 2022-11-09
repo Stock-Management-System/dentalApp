@@ -1,8 +1,8 @@
 import React from 'react'
 
-const NavBar = () => {
+const NavBar = ({open, setOpen}) => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100" style={{width:open ? "calc(100% - 220px)" : "calc(100% - 75px)"}}>
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
