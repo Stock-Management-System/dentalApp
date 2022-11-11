@@ -24,6 +24,11 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
     }
   },
+  colors: {
+
+    'blue1': '#5616f5',
+    'blue2': '#7d28eb',
+  },
   plugins: [
     require("daisyui"),
   ],
