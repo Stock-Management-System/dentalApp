@@ -5,9 +5,9 @@ import PolyclinicProfile from '../pages/polyclinic/profile/PolyclinicProfile'
 const AppRouter = () => {
   return (
     <BrowserRouter>
-        <Routes>
-            <Route path="/polyclinic" element={<PolyclinicProfile/>}/>
-        </Routes>
+      <Routes>
+        <Route path="/polyclinic" element={<PolyclinicProfile />} />
+      </Routes>
     </BrowserRouter>
   )
 }
