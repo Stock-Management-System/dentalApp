@@ -20,7 +20,7 @@ const Sidebar = ({ open, setOpen }) => {
                 </div>
                 <div>
                     {open ?
-                        <ul className="menu p-4 w-50 bg-indigo-600 text-white text-base-content">
+                        <ul className="menu p-4 w-50 bg-indigo-600 text-white">
                             <li><a><FaTooth />Kliniğim</a></li>
                             <li><a><ImCalendar /> Randevular</a></li>
                             <li><a><FaHospitalUser /> Doktorlar</a></li>
@@ -30,7 +30,7 @@ const Sidebar = ({ open, setOpen }) => {
                             <li><a><FiSettings /> Ayarlar</a></li>
                         </ul>
                         :
-                        <ul className="menu p-4 w-50 bg-indigo-600 text-white text-base-content gap-2 py-5">
+                        <ul className="menu p-4 w-50 bg-indigo-600 text-white gap-2 py-5">
                             <li><a><FaTooth /></a></li>
                             <li><a><ImCalendar /></a></li>
                             <li><a><FaHospitalUser /></a></li>
