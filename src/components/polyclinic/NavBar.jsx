@@ -22,7 +22,7 @@ const NavBar = ({ open, setOpen }) => {
         </div>
       </div>
 
-      <div className="navbar-end">
+      <div className="navbar-end">deneme
         <div tabIndex={0} className="collapse group md:hidden">
           <div className="collapse-title bg-primary text-primary-content group-focus:bg-secondary group-focus:text-secondary-content btn btn-ghost btn-circle">
             <button className="">
