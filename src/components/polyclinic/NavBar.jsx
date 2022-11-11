@@ -6,7 +6,7 @@ const NavBar = ({ open, setOpen }) => {
       <div className="navbar-start">
         <div className='ml-6 xs:hidden md:block'>
           <button className='btn btn-sm btn-primary rounded-3xl mr-3'>Randevu Oluştur</button>
-          <button className='btn btn-sm btn-primary rounded-3xl'>Randevu Sorgula</button>
+          <button className='btn btn-sm btn-outline rounded-3xl'>Randevu Sorgula</button>
         </div>
         <div className="dropdown ml-6 md:hidden">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
