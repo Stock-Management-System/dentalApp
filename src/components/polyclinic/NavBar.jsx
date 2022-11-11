@@ -8,7 +8,7 @@ const NavBar = ({ open, setOpen }) => {
     <div className="navbar bg-slate-100 absolute right-0 z-10" style={{ width: open ? "calc(100% - 220px)" : "calc(100% - 75px)" }}>
       <div className="navbar-start">
         <div className='ml-6 xs:hidden md:block'>
-          <button className='btn btn-sm btn-primary rounded-3xl mr-3'><BiMessageSquareAdd className='mr-1' />Randevu Oluştur</button>
+          <button className='btn btn-sm btn-primary rounded-3xl mr-3'><BiMessageSquareAdd className='mr-1' />Randevu Oluştur</button>deneme
           <button className='btn btn-sm btn-outline rounded-3xl'><BsCalendar3 className='mr-1' />Randevu Sorgula</button>
         </div>
         <div className="dropdown ml-6 md:hidden">
