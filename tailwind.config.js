@@ -5,27 +5,13 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
     './src/**/*.{html,js}',
   ],
-  theme: {
-    // colors: {
-    //   transparent: 'transparent',
-    //   current: 'currentColor',
-    //   'white': '#ffffff',
-    //   'purple': '#3f3cbb',
-    //   'midnight': '#121063',
-    //   'metal': '#565584',
-    //   'tahiti': '#3ab7bf',
-    //   'silver': '#ecebff',
-    //   'bubble-gum': '#ff77e9',
-    //   'bermuda': '#78dcca',
-    // },
-    colors: {
-      
+  theme: {  colors: {
+    'bg-container':'#f2f4f8',
       'blue1': '#5616f5',
       'blue2': '#7d28eb',
       'white': '#ffffff',
-      'fuchsia': {
-        50:'#fdf4ff',
-        600:'#c026d3',
+      'slate':{
+        500:'#64748b',
       },
     },
     fontSize: {
@@ -60,6 +46,6 @@ module.exports = {
     require("daisyui"),
   ],
   daisyui: {
-    themes: false,
+    themes: false
   },
 }

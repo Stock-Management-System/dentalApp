@@ -1,5 +1,5 @@
 import React from 'react'
-import { MdArrowBackIosNew } from 'react-icons/md';
+
 import { FiSettings } from 'react-icons/fi';
 import { BiBriefcaseAlt2 } from 'react-icons/bi';
 import { IoFileTrayOutline } from 'react-icons/io5';
@@ -10,9 +10,9 @@ import { ImCalendar } from 'react-icons/im';
 import {BiPlusMedical} from 'react-icons/bi'
 const Sidebar = ({ open, setOpen }) => {
     return (
-        <div className="relative h-screen bg-gradient-to-b from-blue1 to-blue2 text-white " style={{ width: open ? "220px" : "75px" }}>
+        <div className="fixed h-screen bg-gradient-to-b from-blue1 to-blue2 text-white " style={{ width: open ? "267px" : "117px" }}>
             <div>
-                <MdArrowBackIosNew style={{ marginLeft: '-4.5px' }} className={open ? "absolute top-6 left-56 z-10 btn-primary rounded-r-full" : "absolute top-6 left-20 z-10 rotate-180 btn-primary rounded-l-full"} onClick={() => setOpen(!open)} />
+          
                 <div className='h-16 flex justify-center items-center text-indigo-500'>
             <BiPlusMedical />
             {/* font-size: 2.8rem;

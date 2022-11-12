@@ -1,11 +1,17 @@
 import React from 'react';
 import { BiMessageSquareAdd } from 'react-icons/bi';
 import { BsCalendar3 } from 'react-icons/bs';
-
+import { MdArrowBackIosNew } from 'react-icons/md';
 
 const NavBar = ({ open, setOpen }) => {
   return (
-    <div className="navbar bg-slate-100 absolute right-0 z-10" style={{ width: open ? "calc(100% - 220px)" : "calc(100% - 75px)" }}>
+    <div className="navbar bg-white  right-0 z-10 fixed" style={{ width: open ? "calc(100% - 267px)" : "calc(100% - 117px)",height:'80px' }}>
+      <div  className={open ? "absolute top-5 left-0 btn-primary w-5 h-10 rounded-r-full" : "absolute top-5 left-0 w-5 h-10   rotate-180 btn-primary rounded-l-full"}  onClick={() => setOpen(!open)}>
+
+            <MdArrowBackIosNew className='text-xl'
+              
+              />
+              </div>
       <div className="navbar-start">
         <div className='ml-6 xs:hidden md:block'>
           <button className='btn btn-sm btn-primary rounded-3xl mr-3'><BiMessageSquareAdd className='mr-1' />Randevu Oluştur</button>
@@ -22,7 +28,7 @@ const NavBar = ({ open, setOpen }) => {
         </div>
       </div>
 
-      <div className="navbar-end">deneme
+      <div className="navbar-end">
         <div tabIndex={0} className="collapse group md:hidden">
           <div className="collapse-title bg-primary text-primary-content group-focus:bg-secondary group-focus:text-secondary-content btn btn-ghost btn-circle">
             <button className="">
