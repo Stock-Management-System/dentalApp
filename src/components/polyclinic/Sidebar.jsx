@@ -35,7 +35,7 @@ const Sidebar = () => {
               <li className="border p-2">
                 <Link to='patients'>
                   <FaTooth className="text-turquaz" />
-                  Kliniğim
+                  Kliniğimsss
                 </Link>
               </li>
               <li>
