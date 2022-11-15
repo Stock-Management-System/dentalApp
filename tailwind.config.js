@@ -6,16 +6,20 @@ module.exports = {
     './src/**/*.{html,js}',
   ],
   theme: {  colors: {
-    'bg-container':'#f2f4f8',
+    'container':'#f2f4f8',
       'blue1': '#5616f5',
       'blue2': '#7d28eb',
       'white': '#ffffff',
+      'turquaz':'#3beaf5',
       'slate':{
         500:'#64748b',
       },
+      'green':{
+        300:'#86efac'
+      }
     },
     fontSize: {
-      '2.5': '2.5rem',
+      '28': '28px',
       'base': '1rem',
       'xl': '1.25rem',
       '2xl': '1.563rem',
@@ -23,6 +27,7 @@ module.exports = {
       '4xl': '2.441rem',
       '5xl': '3.052rem',
     },
+    
     screens: {
       'xs': '320px',
       // => @media (min-width: 640px) { ... }

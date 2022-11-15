@@ -2,11 +2,16 @@ import React from 'react';
 import { BiMessageSquareAdd } from 'react-icons/bi';
 import { BsCalendar3 } from 'react-icons/bs';
 import { MdArrowBackIosNew } from 'react-icons/md';
+import { useDispatch, useSelector } from 'react-redux';
+import { sidebarToggle } from '../../features/sidebarSlice';
 
-const NavBar = ({ open, setOpen }) => {
+const NavBar = () => {
+  const open = useSelector(state => state.open.value)
+  const dispatch = useDispatch()
+
   return (
-    <div className="navbar bg-white  right-0 z-10 fixed" style={{ width: open ? "calc(100% - 267px)" : "calc(100% - 117px)",height:'80px' }}>
-      <div  className={open ? "absolute top-5 left-0 btn-primary w-5 h-10 rounded-r-full" : "absolute top-5 left-0 w-5 h-10   rotate-180 btn-primary rounded-l-full"}  onClick={() => setOpen(!open)}>
+    <div className="navbar bg-white  right-0 z-10 fixed" style={{ width: open ? "calc(100% - 250px)" : "calc(100% - 100px)",height:'80px' }}>
+      <div  className={open ? "absolute top-5 left-0 btn-primary w-5 h-10 rounded-r-full" : "absolute top-5 left-0 w-5 h-10   rotate-180 btn-primary rounded-l-full"}  onClick={() => dispatch(sidebarToggle())}>
 
             <MdArrowBackIosNew className='text-xl'
               
