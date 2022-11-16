@@ -9,6 +9,7 @@ module.exports = {
     'container':'#f2f4f8',
       'blue1': '#5616f5',
       'blue2': '#7d28eb',
+      'linkhover': '#0C098D',
       'white': '#ffffff',
       'turquaz':'#3beaf5',
       'slate':{
