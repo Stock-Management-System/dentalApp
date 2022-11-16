@@ -25,86 +25,86 @@ const Sidebar = () => {
           <h1 className=" text-28 font-bold">
             D
             <span style={{ display: !open && 'none' }}>
-              ent<strong className="text-turquaz">rey</strong>
+              ent<strong className="text-turquaz ">rey</strong>
             </span>
           </h1>
         </Link>
         <div>
           {open ? (
-            <ul className="menu  w-50   text-white">
-              <li className="border p-2">
-                <Link to='patients'>
-                  <FaTooth className="text-turquaz" />
-                  Kliniğimsss
+            <ul className="menu  w-50 mt-5  text-white">
+              <li >
+                <Link to='patients' className=" pl-9" style={{transitionDelay: '0s'}}>
+                  <FaTooth className="text-turquaz text-22" />
+                  Kliniğim
                 </Link>
               </li>
               <li>
-                <a>
-                  <ImCalendar className="text-turquaz" /> Randevular
-                </a>
+              <Link to='patients' className=" pl-9">
+                  <ImCalendar className="text-turquaz text-22" /> Randevular
+                  </Link>
               </li>
               <li>
-                <a>
-                  <FaHospitalUser className="text-turquaz" /> Doktorlar
-                </a>
+              <Link to='patients' className=" pl-9">
+                  <FaHospitalUser className="text-turquaz text-22" /> Doktorlar
+                  </Link>
               </li>
               <li>
-                <a>
-                  <FaChessBoard className="text-turquaz" /> Röntgen
-                </a>
+              <Link to='patients' className=" pl-9">
+                  <FaChessBoard className="text-turquaz text-22" /> Röntgen
+                  </Link>
               </li>
               <li>
-                <a>
-                  <IoFileTrayOutline className="text-turquaz" /> Geçmiş İşlem
-                </a>
+              <Link to='patients' className=" pl-9">
+                  <IoFileTrayOutline className="text-turquaz text-22" /> Geçmiş İşlem
+                  </Link>
               </li>
               <li>
-                <a>
-                  <BiBriefcaseAlt2 className="text-turquaz" /> Heasp Yönetimi
-                </a>
+              <Link to='patients' className=" pl-9">
+                  <BiBriefcaseAlt2 className="text-turquaz text-22" /> Heasp Yönetimi
+                  </Link>
               </li>
               <li>
-                <a>
-                  <FiSettings className="text-turquaz" /> Ayarlar
-                </a>
+              <Link to='patients' className=" pl-9">
+                  <FiSettings className="text-turquaz text-22" /> Ayarlar
+                  </Link>
               </li>
             </ul>
           ) : (
-            <ul className="menu p-4 w-50 text-white gap-2 py-5">
+            <ul className="menu w-50 text-white gap-2 mt-5">
               <li>
-                <a>
-                  <FaTooth className="text-turquaz" />
-                </a>
+              <Link to='patients' className=" pl-9">
+                  <FaTooth className="text-turquaz text-22" />
+                  </Link>
               </li>
               <li>
-                <a>
-                  <ImCalendar className="text-turquaz" />
-                </a>
+              <Link to='patients' className=" pl-9">
+                  <ImCalendar className="text-turquaz text-22" />
+                  </Link>
               </li>
               <li>
-                <a>
-                  <FaHospitalUser className="text-turquaz" />
-                </a>
+              <Link to='patients' className=" pl-9">
+                  <FaHospitalUser className="text-turquaz text-22" />
+                  </Link>
               </li>
               <li>
-                <a>
-                  <FaChessBoard className="text-turquaz" />
-                </a>
+              <Link to='patients' className=" pl-9">
+                  <FaChessBoard className="text-turquaz text-22" />
+                  </Link>
               </li>
               <li>
-                <a>
+              <Link to='patients' className=" pl-9">
                   <IoFileTrayOutline className="text-turquaz" />
-                </a>
+                  </Link>
               </li>
               <li>
-                <a>
-                  <BiBriefcaseAlt2 className="text-turquaz" />
-                </a>
+              <Link to='patients' className=" pl-9">
+                  <BiBriefcaseAlt2 className="text-turquaz text-22" />
+                  </Link>
               </li>
               <li>
-                <a>
-                  <FiSettings className="text-turquaz" />
-                </a>
+              <Link to='patients' className=" pl-9">
+                  <FiSettings className="text-turquaz text-22" />
+                  </Link>
               </li>
             </ul>
           )}
