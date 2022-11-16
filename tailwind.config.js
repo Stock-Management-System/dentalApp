@@ -16,7 +16,9 @@ module.exports = {
       },
       'green':{
         300:'#86efac'
-      }
+      },
+      "pink":"#ff5acd",
+      "lightPink":"#fd86a7",
     },
     fontSize: {
       '28': '28px',
