@@ -4,11 +4,11 @@ const ClinicHeader = () => {
     return (
         <div className='divide-y p-1'>
             {/* clinic header infos 👇🏻 */}
-            <div className='flex flex-row mt-8 gap-20'>
+            <div className='flex flex-row mt-16 gap-20 py-5'>
                 <div className='flex basis-4/6 justify-start items-center px-10 py-4'>
                     <img width={100} src="https://ozeldent42.com/tema/genel/uploads/hizmetler/icon/implant.png" alt="İnciDis" />
                     <div className='text-2xl text-Sky-700 ml-8'>
-                        <h1 className='font-bold'>İNCİ DİŞ</h1>
+                        <h1 className='font-bold' style={{ fontSize: '2rem' }}>İNCİ DİŞ</h1>
                         <h2>POLİKİNİĞİ</h2>
                     </div>
                 </div>
@@ -24,7 +24,7 @@ const ClinicHeader = () => {
                 </div>
             </div>
             {/* Clinic statistic divders 👇🏻 */}
-            <div className='grid grid-cols-3 gap-3 p-4'>
+            <div className='grid grid-cols-3 gap-3 p-4 py-6'>
                 <div className='bg-container p-2'>
                     <div className='p-2'>
                         <h6 className='font-bold'>BUGÜN</h6>
