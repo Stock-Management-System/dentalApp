@@ -16,12 +16,12 @@ const PolyclinicProfile = () => {
 				className="absolute bg-container  mt-20 right-0 p-6 min-h-[calc(100vh-80px)]"
 				style={{ width: open ? "calc(100% - 250px)" : "calc(100% - 100px)" }}
 			>
-				<div className="bg-container flex justify-between ">
+				<div className=" bg-container flex justify-between">
 					<Link
 						to="/rontgen"
-						className=" card rounded-none bg-gradient-to-r  from-blue1 to-blue2 text-primary-content"
+						className=" card w-64 rounded-none bg-gradient-to-r  from-blue1 to-blue2 text-primary-content"
 					>
-						<div className="card-body">
+						<div className="card-body items-center text-center">
 							<figure>
 								<img src="" alt="Röntgen" className="h-16" />
 							</figure>
@@ -30,10 +30,10 @@ const PolyclinicProfile = () => {
 					</Link>
 					<Link
 						to="/account"
-						className="card rounded-none bg-turquaz text-primary-content "
+						className="card w-64 rounded-none bg-turquaz text-primary-content "
 					>
-						<div className="card-body">
-							<figure >
+						<div className="card-body items-center text-center">
+							<figure>
 								<img
 									src="https://www.vegathemes.net/medikit/images/icons/icons-64-blue/payments.png"
 									alt="Account"
@@ -45,9 +45,9 @@ const PolyclinicProfile = () => {
 					</Link>
 					<Link
 						to="/appointments"
-						className="card rounded-none bg-gradient-to-r  from-pink to-lightPink bg-primary text-primary-content"
+						className="card w-64 rounded-none bg-gradient-to-r  from-pink to-lightPink bg-primary text-primary-content"
 					>
-						<div className="card-body">
+						<div className="card-body items-center text-center">
 							<figure>
 								<img
 									src="https://www.vegathemes.net/medikit/images/icons/icons-64-white/calendar.png"
@@ -55,11 +55,14 @@ const PolyclinicProfile = () => {
 									className="h-16"
 								/>
 							</figure>
-							<h5 className="card-title">Randevular</h5>
+							<h5 className="card-title ">Randevular</h5>
 						</div>
 					</Link>
-					<Link to="/polyclinicdoctors" className="card rounded-none bg-white">
-						<div className="card-body">
+					<Link
+						to="/polyclinicdoctors"
+						className="card w-64 rounded-none bg-white"
+					>
+						<div className="card-body items-center text-center">
 							<figure>
 								<img
 									src="https://www.vegathemes.net/medikit/images/icons/icons-64-blue/users.png"
@@ -71,8 +74,8 @@ const PolyclinicProfile = () => {
 							<h5 className="card-title">Doktorlar</h5>
 						</div>
 					</Link>
-					<Link to="/operations" className="card rounded-none bg-white">
-						<div className="card-body">
+					<Link to="/operations" className="card w-64 rounded-none bg-white">
+						<div className="card-body items-center text-center">
 							<figure>
 								<img
 									src="https://www.vegathemes.net/medikit/images/icons/icons-64-blue/reports.png"
@@ -84,8 +87,8 @@ const PolyclinicProfile = () => {
 							<h5 className="card-title">Geçmiş İşlemler</h5>
 						</div>
 					</Link>
-					<Link to="/settings" className="card rounded-none bg-white">
-						<div className="card-body">
+					<Link to="/settings" className="card w-64 rounded-none bg-white">
+						<div className="card-body items-center text-center">
 							<figure>
 								<img
 									src="https://cdn-icons-png.flaticon.com/512/6392/6392125.png"
