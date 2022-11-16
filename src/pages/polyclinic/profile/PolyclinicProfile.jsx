@@ -19,7 +19,7 @@ const PolyclinicProfile = () => {
 				<div className=" bg-container flex justify-between">
 					<Link
 						to="/rontgen"
-						className=" card w-64 rounded-none bg-gradient-to-r  from-blue1 to-blue2 text-primary-content"
+						className=" card w-64 rounded-none bg-gradient-to-r  from-blue1 to-blue2 text-primary-content hover:transition-all duration-300 hover:-translate-y-1"
 					>
 						<div className="card-body items-center text-center">
 							<figure>
@@ -30,7 +30,7 @@ const PolyclinicProfile = () => {
 					</Link>
 					<Link
 						to="/account"
-						className="card w-64 rounded-none bg-turquaz text-primary-content "
+						className="card w-64 rounded-none bg-turquaz text-primary-content hover:transition-all duration-300 hover:-translate-y-1 "
 					>
 						<div className="card-body items-center text-center">
 							<figure>
@@ -45,7 +45,7 @@ const PolyclinicProfile = () => {
 					</Link>
 					<Link
 						to="/appointments"
-						className="card w-64 rounded-none bg-gradient-to-r  from-pink to-lightPink bg-primary text-primary-content"
+						className="card w-64 rounded-none bg-gradient-to-r  from-pink to-lightPink bg-primary text-primary-content hover:transition-all duration-300 hover:-translate-y-1 "
 					>
 						<div className="card-body items-center text-center">
 							<figure>
@@ -60,7 +60,7 @@ const PolyclinicProfile = () => {
 					</Link>
 					<Link
 						to="/polyclinicdoctors"
-						className="card w-64 rounded-none bg-white"
+						className="card w-64 rounded-none bg-white hover:transition-all duration-300 hover:-translate-y-1 "
 					>
 						<div className="card-body items-center text-center">
 							<figure>
@@ -74,7 +74,10 @@ const PolyclinicProfile = () => {
 							<h5 className="card-title">Doktorlar</h5>
 						</div>
 					</Link>
-					<Link to="/operations" className="card w-64 rounded-none bg-white">
+					<Link
+						to="/operations"
+						className="card w-64 rounded-none bg-white hover:transition-all duration-300 hover:-translate-y-1 "
+					>
 						<div className="card-body items-center text-center">
 							<figure>
 								<img
@@ -87,7 +90,10 @@ const PolyclinicProfile = () => {
 							<h5 className="card-title">Geçmiş İşlemler</h5>
 						</div>
 					</Link>
-					<Link to="/settings" className="card w-64 rounded-none bg-white">
+					<Link
+						to="/settings"
+						className="card w-64 rounded-none bg-white hover:transition-all duration-300 hover:-translate-y-1 "
+					>
 						<div className="card-body items-center text-center">
 							<figure>
 								<img
