@@ -4,18 +4,19 @@ const ClinicHeader = () => {
     return (
         <div className='divide-y p-1'>
             {/* clinic header infos 👇🏻 */}
-            <div className='gird grid-cols-6 gap-4 p-4'>
-                <div className='col-span-4 flex'>
+            <div className='flex flex-row mt-8 gap-20'>
+                <div className='flex basis-4/6 justify-start items-center px-10 py-4'>
                     <img width={100} src="https://ozeldent42.com/tema/genel/uploads/hizmetler/icon/implant.png" alt="İnciDis" />
-                    <div>
-                        <h1>İNCİ DİŞ POLİKİNİĞİ</h1>
+                    <div className='text-2xl text-Sky-700 ml-8'>
+                        <h1 className='font-bold'>İNCİ DİŞ</h1>
+                        <h2>POLİKİNİĞİ</h2>
                     </div>
                 </div>
-                <div className=''>
+                <div className='basis-2/12'>
                     <h3>Adress</h3>
                     <p>Cumhuriyet Mahallesi Sağlık Caddesi Kat:2 No:5 FATİH/İSTANBUL</p>
                 </div>
-                <div className=''>
+                <div className='basis-2/12'>
                     <h3>Telefon</h3>
                     <p>+90 222 222 22 22</p>
                     <p>+90 222 222 22 22</p>
