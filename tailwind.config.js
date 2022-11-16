@@ -22,7 +22,8 @@ module.exports = {
         400: '#fb7185'
       },
       'Sky': {
-        500: '#0ea5e9'
+        500: '#0ea5e9',
+        700: '#0369a1'
       }
     },
     fontSize: {
