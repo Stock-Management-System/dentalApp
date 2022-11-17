@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import teeth from "../../assets/teeth.png"
 
 const MiddleLink = () => {
 	const open = useSelector((state) => state.open.value);
@@ -9,14 +10,14 @@ const MiddleLink = () => {
 			className="absolute bg-container  mt-20 right-0 p-6 min-h-[calc(100vh-80px)]"
 			style={{ width: open ? "calc(100% - 250px)" : "calc(100% - 100px)" }}
 		>
-			<div className=" bg-container flex justify-between">
+			<div className=" bg-container flex justify-between gap-3">
 				<Link
 					to="/rontgen"
 					className=" card w-64 rounded-none bg-gradient-to-r  from-blue1 to-blue2 text-primary-content hover:transition-all duration-300 hover:-translate-y-1"
 				>
 					<div className="card-body items-center text-center">
 						<figure>
-							<img src="" alt="Röntgen" className="h-16" />
+							<img src={teeth} alt="Röntgen" className="h-16" />
 						</figure>
 						<h5 className="card-title">Rötgenler</h5>
 					</div>
