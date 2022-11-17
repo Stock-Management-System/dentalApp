@@ -9,7 +9,7 @@ const ClinicHeader = () => {
                     <img width={100} src="https://ozeldent42.com/tema/genel/uploads/hizmetler/icon/implant.png" alt="İnciDis" />
                     <div className='text-2xl text-Sky-700 ml-8'>
                         <h1 className='font-bold' style={{ fontSize: '2rem' }}>İNCİ DİŞ</h1>
-                        <h2>POLİKİNİĞİ</h2>
+                        <h2>POLİKLİNİĞİ</h2>
                     </div>
                 </div>
                 <div className='basis-2/12'>
@@ -31,11 +31,13 @@ const ClinicHeader = () => {
                         <p className='opacity-70'>16 Kasım 2022</p>
                     </div>
                     <div className="grid grid-rows-2 grid-flow-col gap-4">
-                        <div className='row-span-3 text-blue2 text-6xl font-bold text-center' style={{ fontSize: '4rem' }}>43</div>
+                        <div className='row-span-3 text-blue2 text-6xl font-bold text-center' style={{ fontSize: '4rem' }}>
+                            43
+                        </div>
                         <div className='row-span-2 col-span-2 opacity-90'>
                             <p className='mt-4'>16 YENİ MUAYENE</p>
                             <p>13 KONTROL</p>
-                            <p>14 TEDAVİSİ DEAVM EDEN</p>
+                            <p>14 TEDAVİSİ DEVAM EDEN</p>
                         </div>
                     </div>
                 </div>
