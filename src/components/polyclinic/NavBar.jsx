@@ -10,7 +10,7 @@ const NavBar = () => {
   const dispatch = useDispatch()
 
   return (
-    <div className="navbar bg-white  right-0 z-10 fixed" style={{ width: open ? "calc(100% - 250px)" : "calc(100% - 100px)",height:'80px' }}>
+    <div className={`navbar bg-white h-20  right-0 z-10 fixed ${open  ? 'w-[calc(100%-250px)]':'w-[calc(100%-100px)]'} transition-w ease-in-out duration-500`} >
       <div  className={open ? "absolute top-5 left-0 btn-primary w-5 h-10 rounded-r-full" : "absolute top-5 left-0 w-5 h-10   rotate-180 btn-primary rounded-l-full"}  onClick={() => dispatch(sidebarToggle())}>
 
             <MdArrowBackIosNew className='text-xl'

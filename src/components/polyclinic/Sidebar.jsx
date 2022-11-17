@@ -32,98 +32,60 @@ const Sidebar = () => {
 
   return (
     <div
-      className="fixed h-screen bg-gradient-to-b  from-blue1 to-blue2 text-white "
-      style={{ width: open ? '250px' : '100px',transition:'all .5s easy-in-out' }}
+      className={` fixed h-screen bg-gradient-to-b from-blue1 to-blue2 text-white ${open  ? 'w-[250px]':'w-[100px]'} transition-w ease-in-out duration-500` }
+    
     >
       <div>
-        <Link to='/' className="h-20 flex pl-9 items-center text-indigo-500">
+        <Link to='/' className=" absolute top-0 h-20 flex pl-9 items-center text-indigo-500 transition-all ease-in-out duration-500">
           <BiPlusMedical />
           <h1 className=" text-28 font-bold">
             D
-            <span style={{ display: !open && 'none' }}>
+            <span className={`${open ? 'opacity-100':'opacity-0'} transition-all ease-in-out duration-500`}>
               ent<strong className="text-turquaz ">rey</strong>
             </span>
           </h1>
         </Link>
         <div>
-          {open ? (
-            <ul className="menu  w-50 mt-5  text-white" onMouseOut={handleMouseOut} >
+        
+            <ul className="menu  w-50 mt-24   text-white"  >
               <li className="hover:bg-linkhover transition duration-0 hover:duration-300 mt-0.5">
                 <Link to='patients' className=" pl-9" >
                   <FaTooth className="text-turquaz text-22" />
-                  Kliniğim
+                 <span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-500`}>Kliniğim</span> 
                 </Link>
               </li>
               <li  className="hover:bg-linkhover transition duration-0 hover:duration-300 mt-0.5">
               <Link to='patients' className=" pl-9">
-                  <ImCalendar className="text-turquaz text-22" /> Randevular
+                  <ImCalendar className="text-turquaz text-22" /> <span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-500`}> Randevular</span>
                   </Link>
               </li>
               <li  className="hover:bg-linkhover transition duration-0 hover:duration-300  mt-0.5">
               <Link to='patients' className=" pl-9">
-                  <FaHospitalUser className="text-turquaz text-22" /> Doktorlar
+                  <FaHospitalUser className="text-turquaz text-22" /> <span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-500`}>Doktorlar</span> 
                   </Link>
               </li>
               <li className="hover:bg-linkhover transition duration-0 hover:duration-300  mt-0.5">
               <Link to='patients' className=" pl-9">
-                  <FaChessBoard className="text-turquaz text-22" /> Röntgen
+                  <FaChessBoard className="text-turquaz text-22" /> <span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-500`}>Röntgen</span> 
                   </Link>
               </li>
               <li className="hover:bg-linkhover transition duration-0 hover:duration-300  mt-0.5">
               <Link to='patients' className=" pl-9">
-                  <IoFileTrayOutline className="text-turquaz text-22" /> Geçmiş İşlem
+                  <IoFileTrayOutline className="text-turquaz text-22" /><span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-500`}>Geçmiş İşlem</span>  
                   </Link>
               </li>
               <li className="hover:bg-linkhover transition duration-0 hover:duration-300 mt-0.5 ">
               <Link to='patients' className=" pl-9">
-                  <BiBriefcaseAlt2 className="text-turquaz text-22" /> Heasp Yönetimi
+                  <BiBriefcaseAlt2 className="text-turquaz text-22" /><span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-500`}> Heasp Yönetimi</span> 
                   </Link>
               </li>
               <li className="hover:bg-linkhover transition duration-0 hover:duration-300 mt-0.5 ">
               <Link to='patients' className=" pl-9">
-                  <FiSettings className="text-turquaz text-22" /> Ayarlar
+                  <FiSettings className="text-turquaz text-22" /> <span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-500`}>Ayarlar</span> 
                   </Link>
               </li>
             </ul>
-          ) : (
-            <ul className="menu w-50 text-white gap-2 mt-5"  onMouseOver={handleMouseOver} >
-              <li  className="hover:bg-linkhover transition duration-0 hover:duration-300 mt-0.5 ">
-              <Link to='patients' className=" pl-9">
-                  <FaTooth className="text-turquaz text-22" />
-                  </Link>
-              </li>
-              <li  className="hover:bg-linkhover transition duration-0 hover:duration-300 mt-0.5 ">
-              <Link to='patients' className=" pl-9">
-                  <ImCalendar className="text-turquaz text-22" />
-                  </Link>
-              </li>
-              <li  className="hover:bg-linkhover transition duration-0 hover:duration-300 mt-0.5 ">
-              <Link to='patients' className=" pl-9">
-                  <FaHospitalUser className="text-turquaz text-22" />
-                  </Link>
-              </li>
-              <li className="hover:bg-linkhover transition duration-0 hover:duration-300 mt-0.5 ">
-              <Link to='patients' className=" pl-9">
-                  <FaChessBoard className="text-turquaz text-22" />
-                  </Link>
-              </li>
-              <li  className="hover:bg-linkhover transition duration-0 hover:duration-300 mt-0.5 ">
-              <Link to='patients' className=" pl-9">
-                  <IoFileTrayOutline className="text-turquaz text-22" />
-                  </Link>
-              </li>
-              <li className="hover:bg-linkhover transition duration-0 hover:duration-300  mt-0.5">
-              <Link to='patients' className=" pl-9">
-                  <BiBriefcaseAlt2 className="text-turquaz text-22" />
-                  </Link>
-              </li>
-              <li className="hover:bg-linkhover transition duration-0 hover:duration-300  mt-0.5">
-              <Link to='patients' className=" pl-9">
-                  <FiSettings className="text-turquaz text-22" />
-                  </Link>
-              </li>
-            </ul>
-          )}
+       
         </div>
       </div>
     </div>
