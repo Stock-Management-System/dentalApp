@@ -12,6 +12,7 @@ module.exports = {
       'blue2': '#7d28eb',
       'white': '#ffffff',
       'turquaz': '#3beaf5',
+      'darkTurquaz': '#11c8e3',
       'slate': {
         500: '#64748b',
       },
