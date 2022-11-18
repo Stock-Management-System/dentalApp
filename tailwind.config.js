@@ -18,6 +18,7 @@ module.exports = {
       },
 
 
+      "black":"#000000",
       "pink":"#ff5acd",
       "lightPink":"#fd86a7",
 
