@@ -4,16 +4,22 @@ import { BsCalendar3 } from 'react-icons/bs';
 import { MdArrowBackIosNew } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 import { sidebarToggle } from '../../features/sidebarSlice';
+import { linkHoverToggle } from '../../features/sidebarSlice';
 
 const NavBar = () => {
   const open = useSelector(state => state.open.value)
   const dispatch = useDispatch()
 
+  const handleOpenClick =()=> {
+    dispatch(sidebarToggle())
+    dispatch(linkHoverToggle())
+
+  }
   return (
     <div className={`navbar bg-white h-20  right-0 z-10 fixed ${open  ? 'w-[calc(100%-250px)]':'w-[calc(100%-100px)]'} transition-w ease-in-out duration-500`} >
-      <div  className={open ? "absolute top-5 left-0 btn-primary w-5 h-10 rounded-r-full" : "absolute top-5 left-0 w-5 h-10   rotate-180 btn-primary rounded-l-full"}  onClick={() => dispatch(sidebarToggle())}>
+      <div  className={open ? "absolute top-5 left-[-4px] bg-blue1 text-white w-5 h-10 rounded-r-full" : "absolute top-5 left-0 w-5 h-10   rotate-180 btn-primary rounded-l-full"}  onClick={handleOpenClick}>
 
-            <MdArrowBackIosNew className='text-xl'
+            <MdArrowBackIosNew className='text-xl '
               
               />
               </div>

@@ -14,7 +14,8 @@ import { sidebarToggle } from '../../features/sidebarSlice';
 
 const Sidebar = () => {
   const open = useSelector(state => state.open.value)
-  const [linkHover, setLinkHover] = useState(false);
+  const linkHover = useSelector(state => state.open.linkHover)
+console.log(linkHover);
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -22,12 +23,20 @@ const Sidebar = () => {
   }, []);
 
   const handleMouseOver = () => {
-  dispatch(sidebarToggle())
-  setLinkHover(!linkHover)
+    if (linkHover) {
+      
+      dispatch(sidebarToggle())
+    }
+
   }
   const handleMouseOut = () => {
+    if (linkHover) {
+      
       dispatch(sidebarToggle())
-      setLinkHover(!linkHover)
+     
+    }
+
+
   }
 
   return (
@@ -47,41 +56,41 @@ const Sidebar = () => {
         </Link>
         <div>
         
-            <ul className="menu  w-50 mt-24   text-white"  >
-              <li className="hover:bg-linkhover transition duration-0 hover:duration-300 mt-0.5">
+            <ul className="menu  w-50 mt-24   text-white"  onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+              <li className="hover:bg-linkhover transition duration-0 hover:duration-200 mt-0.5">
                 <Link to='patients' className=" pl-9" >
                   <FaTooth className="text-turquaz text-22" />
-                 <span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-500`}>Kliniğim</span> 
+                 <span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-200`}>Kliniğim</span> 
                 </Link>
               </li>
-              <li  className="hover:bg-linkhover transition duration-0 hover:duration-300 mt-0.5">
+              <li  className="hover:bg-linkhover transition duration-0 hover:duration-200 mt-0.5">
               <Link to='patients' className=" pl-9">
-                  <ImCalendar className="text-turquaz text-22" /> <span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-500`}> Randevular</span>
+                  <ImCalendar className="text-turquaz text-22" /> <span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-200`}> Randevular</span>
                   </Link>
               </li>
-              <li  className="hover:bg-linkhover transition duration-0 hover:duration-300  mt-0.5">
+              <li  className="hover:bg-linkhover transition duration-0 hover:duration-200  mt-0.5">
               <Link to='patients' className=" pl-9">
-                  <FaHospitalUser className="text-turquaz text-22" /> <span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-500`}>Doktorlar</span> 
+                  <FaHospitalUser className="text-turquaz text-22" /> <span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-200`}>Doktorlar</span> 
                   </Link>
               </li>
-              <li className="hover:bg-linkhover transition duration-0 hover:duration-300  mt-0.5">
+              <li className="hover:bg-linkhover transition duration-0 hover:duration-200  mt-0.5">
               <Link to='patients' className=" pl-9">
-                  <FaChessBoard className="text-turquaz text-22" /> <span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-500`}>Röntgen</span> 
+                  <FaChessBoard className="text-turquaz text-22" /> <span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-200`}>Röntgen</span> 
                   </Link>
               </li>
-              <li className="hover:bg-linkhover transition duration-0 hover:duration-300  mt-0.5">
+              <li className="hover:bg-linkhover transition duration-0 hover:duration-200  mt-0.5">
               <Link to='patients' className=" pl-9">
-                  <IoFileTrayOutline className="text-turquaz text-22" /><span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-500`}>Geçmiş İşlem</span>  
+                  <IoFileTrayOutline className="text-turquaz text-22" /><span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-200`}>Geçmiş İşlem</span>  
                   </Link>
               </li>
-              <li className="hover:bg-linkhover transition duration-0 hover:duration-300 mt-0.5 ">
+              <li className="hover:bg-linkhover transition duration-0 hover:duration-200 mt-0.5 ">
               <Link to='patients' className=" pl-9">
-                  <BiBriefcaseAlt2 className="text-turquaz text-22" /><span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-500`}> Heasp Yönetimi</span> 
+                  <BiBriefcaseAlt2 className="text-turquaz text-22" /><span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-200`}> Heasp Yönetimi</span> 
                   </Link>
               </li>
-              <li className="hover:bg-linkhover transition duration-0 hover:duration-300 mt-0.5 ">
+              <li className="hover:bg-linkhover transition duration-0 hover:duration-200 mt-0.5 ">
               <Link to='patients' className=" pl-9">
-                  <FiSettings className="text-turquaz text-22" /> <span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-500`}>Ayarlar</span> 
+                  <FiSettings className="text-turquaz text-22" /> <span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0' } transition-all ease-in-out duration-200`}>Ayarlar</span> 
                   </Link>
               </li>
             </ul>
