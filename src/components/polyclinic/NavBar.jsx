@@ -3,17 +3,24 @@ import { BiMessageSquareAdd } from 'react-icons/bi';
 import { BsCalendar3 } from 'react-icons/bs';
 import { MdArrowBackIosNew } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { sidebarToggle } from '../../features/sidebarSlice';
+import { linkHoverToggle } from '../../features/sidebarSlice';
 
 const NavBar = () => {
   const open = useSelector(state => state.open.value)
   const dispatch = useDispatch()
 
-  return (
-    <div className="navbar bg-white  right-0 z-10 fixed" style={{ width: open ? "calc(100% - 250px)" : "calc(100% - 100px)",height:'80px' }}>
-      <div  className={open ? "absolute top-5 left-0 btn-primary w-5 h-10 rounded-r-full" : "absolute top-5 left-0 w-5 h-10   rotate-180 btn-primary rounded-l-full"}  onClick={() => dispatch(sidebarToggle())}>
+  const handleOpenClick =()=> {
+    dispatch(sidebarToggle())
+    dispatch(linkHoverToggle())
 
-            <MdArrowBackIosNew className='text-xl'
+  }
+  return (
+    <div className={`navbar bg-white h-20  right-0 z-10 fixed ${open  ? 'w-[calc(100%-250px)]':'w-[calc(100%-100px)]'} transition-w ease-in-out duration-500`} >
+      <div  className={open ? "absolute top-5 left-[-4px] bg-blue1 text-white w-5 h-10 rounded-r-full" : "absolute top-5 left-0 w-5 h-10   rotate-180 btn-primary rounded-l-full"}  onClick={handleOpenClick}>
+
+            <MdArrowBackIosNew className='text-xl '
               
               />
               </div>
@@ -27,8 +34,8 @@ const NavBar = () => {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
           </label>
           <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-            <li><a><BiMessageSquareAdd className='mr-1' /> Randevu Oluştur</a></li>
-            <li><a><BsCalendar3 className='mr-1' />Randevu Sorgula</a></li>
+            <li><Link><BiMessageSquareAdd className='mr-1' /> Randevu Oluştur</Link></li>
+            <li><Link><BsCalendar3 className='mr-1' />Randevu Sorgula</Link></li>
           </ul>
         </div>
       </div>
@@ -53,7 +60,7 @@ const NavBar = () => {
         <div className="dropdown dropdown-end ml-3 flex items-center">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full avatar">
-              <img src="https://placeimg.com/80/80/people" />
+              <img src="https://placeimg.com/80/80/people" alt="profile" />
             </div>
           </label>
           <select className="select select-sm max-w-xs menu menu-compact">

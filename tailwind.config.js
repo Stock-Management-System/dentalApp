@@ -10,6 +10,7 @@ module.exports = {
       'container': '#f2f4f8',
       'blue1': '#5616f5',
       'blue2': '#7d28eb',
+      'linkhover': '#0C098D',
       'white': '#ffffff',
       'turquaz': '#3beaf5',
       'darkTurquaz': '#11c8e3',
@@ -34,6 +35,7 @@ module.exports = {
     },
     fontSize: {
       '28': '28px',
+      '22': '22px',
       'base': '1rem',
       'xl': '1.25rem',
       '2xl': '1.563rem',
