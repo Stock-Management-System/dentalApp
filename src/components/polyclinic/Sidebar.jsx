@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect} from 'react'
 
 import { FiSettings } from 'react-icons/fi'
 import { BiBriefcaseAlt2 } from 'react-icons/bi'

@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import Layout from './Layout'
 
 const Container = () => {
-  const [open, setOpen] = useState(true)
+  const open = useSelector(state => state.open.value)
   return (
     <>
     <Layout />
@@ -12,7 +13,7 @@ const Container = () => {
  
 >
   <div className="bg-white">
-    
+
   </div>
 </div>
 

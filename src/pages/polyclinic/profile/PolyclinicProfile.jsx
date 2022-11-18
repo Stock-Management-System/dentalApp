@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import Container from '../../../components/polyclinic/Container'
 import Layout from '../../../components/polyclinic/Layout'
 import "./polyclinicProfile.scss"
 
