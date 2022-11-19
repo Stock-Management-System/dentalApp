@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlineFileAdd } from "react-icons/ai";
+import DateRange from "./appointments/DateRange";
+import DoctorsAppointments from "./appointments/DoctorsAppointments";
+import PatientsAppointments from "./appointments/PatientsAppointments";
 import TodayAppointments from "./appointments/TodayAppointments";
 
 const Appointments = () => {
+	const [openTab, setOpenTab] = useState("");
 	return (
 		<div>
 			{/* clinic appointments title 👇🏻 */}
@@ -16,13 +20,65 @@ const Appointments = () => {
 			</div>
 			<div className="px-5">
 				{/* appointments headers 👇🏻 */}
-				<div className="tabs ">
-					<a className="tab tab-bordered">Bugünkü Randevular</a>
-					<a className="tab ">Hasta Randevu Sorgulama</a>
-					<a className="tab ">Doktor Randevu Sorgulama</a>
-					<a className="tab ">Tarih Aralığı Sorgulama</a>
+				<div className="tabs">
+					<a
+						className={` ${
+							openTab === 1 ? "tab tab-bordered tab-active" : "tab"
+						}`}
+						onClick={(e) => {
+							e.preventDefault();
+							setOpenTab(1);
+						}}
+					>
+						Bugünkü Randevular
+					</a>
+					<a
+						className={` ${
+							openTab === 2 ? "tab tab-bordered tab-active" : "tab"
+						}`}
+						onClick={(e) => {
+							e.preventDefault();
+							setOpenTab(2);
+						}}
+					>
+						Hasta Randevu Sorgulama
+					</a>
+					<a
+						className={` ${
+							openTab === 3 ? "tab tab-bordered tab-active" : "tab"
+						}`}
+						onClick={(e) => {
+							e.preventDefault();
+							setOpenTab(3);
+						}}
+					>
+						Doktor Randevu Sorgulama
+					</a>
+					<a
+						className={`${
+							openTab === 4 ? "tab tab-bordered tab-active" : "tab"
+						}`}
+						onClick={(e) => {
+							e.preventDefault();
+							setOpenTab(4);
+						}}
+					>
+						Tarih Aralığı Sorgulama
+					</a>
 				</div>
-				<TodayAppointments />
+				{/* appointments body 👇🏻 */}
+				<div className={openTab === 1 ? "block" : "hidden"}>
+					<TodayAppointments />
+				</div>
+				<div className={openTab === 2 ? "block" : "hidden"}>
+					<PatientsAppointments />
+				</div>
+				<div className={openTab === 3 ? "block" : "hidden"}>
+					<DoctorsAppointments />
+				</div>
+				<div className={openTab === 4 ? "block" : "hidden"}>
+					<DateRange />
+				</div>
 			</div>
 		</div>
 	);
