@@ -21,9 +21,11 @@ const Appointments = () => {
 			<div className="px-5">
 				{/* appointments headers 👇🏻 */}
 				<div className="tabs">
-					<a
+					<p
 						className={` ${
-							openTab === 1 ? "tab tab-bordered tab-active" : "tab"
+							openTab === 1
+								? "tab tab-bordered tab-active text-blue1"
+								: "tab"
 						}`}
 						onClick={(e) => {
 							e.preventDefault();
@@ -31,8 +33,8 @@ const Appointments = () => {
 						}}
 					>
 						Bugünkü Randevular
-					</a>
-					<a
+					</p>
+					<p
 						className={` ${
 							openTab === 2 ? "tab tab-bordered tab-active" : "tab"
 						}`}
@@ -42,8 +44,8 @@ const Appointments = () => {
 						}}
 					>
 						Hasta Randevu Sorgulama
-					</a>
-					<a
+					</p>
+					<p
 						className={` ${
 							openTab === 3 ? "tab tab-bordered tab-active" : "tab"
 						}`}
@@ -53,8 +55,9 @@ const Appointments = () => {
 						}}
 					>
 						Doktor Randevu Sorgulama
-					</a>
-					<a
+					</p>
+					<p
+					
 						className={`${
 							openTab === 4 ? "tab tab-bordered tab-active" : "tab"
 						}`}
@@ -64,7 +67,7 @@ const Appointments = () => {
 						}}
 					>
 						Tarih Aralığı Sorgulama
-					</a>
+					</p>
 				</div>
 				{/* appointments body 👇🏻 */}
 				<div className={openTab === 1 ? "block" : "hidden"}>
