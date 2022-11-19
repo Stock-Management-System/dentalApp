@@ -6,7 +6,7 @@ import PatientsAppointments from "./appointments/PatientsAppointments";
 import TodayAppointments from "./appointments/TodayAppointments";
 
 const Appointments = () => {
-	const [openTab, setOpenTab] = useState("");
+	const [openTab, setOpenTab] = useState(1);
 	return (
 		<div>
 			{/* clinic appointments title 👇🏻 */}
