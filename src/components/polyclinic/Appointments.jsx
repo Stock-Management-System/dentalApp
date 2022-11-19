@@ -20,12 +20,12 @@ const Appointments = () => {
 			</div>
 			<div className="px-5">
 				{/* appointments headers 👇🏻 */}
-				<div className="tabs">
+				<div className="tabs mb-6 ">
 					<p
 						className={` ${
 							openTab === 1
-								? "tab tab-bordered tab-active text-blue1"
-								: "tab"
+								? "tab border-b-2 border-blue1 text-blue1 "
+								: "tab text-black"
 						}`}
 						onClick={(e) => {
 							e.preventDefault();
@@ -36,7 +36,9 @@ const Appointments = () => {
 					</p>
 					<p
 						className={` ${
-							openTab === 2 ? "tab tab-bordered tab-active" : "tab"
+							openTab === 2
+								? "tab border-b-2 border-blue1 text-blue1 "
+								: "tab text-black"
 						}`}
 						onClick={(e) => {
 							e.preventDefault();
@@ -47,7 +49,9 @@ const Appointments = () => {
 					</p>
 					<p
 						className={` ${
-							openTab === 3 ? "tab tab-bordered tab-active" : "tab"
+							openTab === 3
+								? "tab border-b-2 border-blue1 text-blue1 "
+								: "tab text-black"
 						}`}
 						onClick={(e) => {
 							e.preventDefault();
@@ -57,9 +61,10 @@ const Appointments = () => {
 						Doktor Randevu Sorgulama
 					</p>
 					<p
-					
 						className={`${
-							openTab === 4 ? "tab tab-bordered tab-active" : "tab"
+							openTab === 4
+								? "tab border-b-2 border-blue1 text-blue1 "
+								: "tab text-black"
 						}`}
 						onClick={(e) => {
 							e.preventDefault();

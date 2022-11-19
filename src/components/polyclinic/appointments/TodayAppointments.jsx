@@ -6,7 +6,7 @@ const TodayAppointments = () => {
 		<div className="overflow-x-auto ">
 			<table className="table w-full ">
 				{/* <!-- head --> */}
-				<thead>
+				<thead className="text-gray">
 					<tr>
 						<th className="pl-20">DOKTOR</th>
 						<th>HASTA</th>
