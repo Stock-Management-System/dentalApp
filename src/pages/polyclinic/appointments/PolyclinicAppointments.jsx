@@ -20,8 +20,8 @@ const PolyclinicAppointments = () => {
 					{/* silinecek ClinicHeader Components gelecek */}
 					<div className="divide-y p-1">
 						<ClinicHeader />
+						<div className="grid grid-cols-3 gap-3"></div>
 					</div>
-
 					{/* Randevu componenti burdan başlıyor */}
 					<Appointments />
 				</div>
