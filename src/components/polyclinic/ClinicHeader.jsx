@@ -1,4 +1,31 @@
 import React from 'react'
+import ClinicStatisticComponent from './ClinicStatisticComponent'
+
+
+const sampleData1 = {
+    day: 'BUGÜN',
+    date: '16 Kasım 2022',
+    quantity: 43,
+    peak: 16,
+    control: 13,
+    toBeContinous: 14
+}
+const sampleData2 = {
+    day: 'BU AY',
+    date: '16 Kasım 2022',
+    quantity: 217,
+    peak: 160,
+    control: 137,
+    toBeContinous: 140
+}
+const sampleData3 = {
+    day: 'BU YIL',
+    date: '16 Kasım 2022',
+    quantity: 4127,
+    peak: 460,
+    control: 337,
+    toBeContinous: 540
+}
 
 const ClinicHeader = () => {
     return (
@@ -24,55 +51,7 @@ const ClinicHeader = () => {
                 </div>
             </div>
             {/* Clinic statistic divders 👇🏻 */}
-            <div className='grid grid-cols-3 gap-3 p-4 py-6'>
-                <div className='bg-container p-2'>
-                    <div className='p-2'>
-                        <h6 className='font-bold'>BUGÜN</h6>
-                        <p className='opacity-70'>16 Kasım 2022</p>
-                    </div>
-                    <div className="grid grid-rows-2 grid-flow-col gap-4">
-                        <div className='row-span-3 text-blue2 text-6xl font-bold text-center' style={{ fontSize: '4rem' }}>
-                            43
-                        </div>
-                        <div className='row-span-2 col-span-2 opacity-90'>
-                            <p className='mt-4'>16 YENİ MUAYENE</p>
-                            <p>13 KONTROL</p>
-                            <p>14 TEDAVİSİ DEVAM EDEN</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='bg-container p-2'>
-                    <div className='p-2'>
-                        <h6 className='font-bold'>BU AY</h6>
-                        <p className='opacity-70'>16 Kasım 2022</p>
-                    </div>
-                    <div className="grid grid-rows-2 grid-flow-col gap-4">
-                        <div className='row-span-3 text-Sky-500 text-6xl font-bold text-center' style={{ fontSize: '4rem' }}>217</div>
-                        <div className='row-span-2 col-span-2 opacity-90'>
-                            <p className='mt-4'>160 YENİ MUAYENE</p>
-                            <p>137 KONTROL</p>
-                            <p>140 TEDAVİSİ DEAVM EDEN</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='bg-container p-2'>
-                    <div className='p-2'>
-                        <h6 className='font-bold'>BU YIL</h6>
-                        <p className='opacity-70'>16 Kasım 2022</p>
-                    </div>
-                    <div className="grid grid-rows-2 grid-flow-col gap-4">
-                        <div className='row-span-3 text-Rose-400 text-6xl font-bold text-center' style={{ fontSize: '4rem' }}>4127</div>
-                        <div className='row-span-2 col-span-2 opacity-90'>
-                            <p className='mt-4'>460 YENİ MUAYENE</p>
-                            <p>337 KONTROL</p>
-                            <p>540 TEDAVİSİ DEAVM EDEN</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <ClinicStatisticComponent data1={sampleData1} data2={sampleData2} data3={sampleData3} />
         </div>
     )
 }
