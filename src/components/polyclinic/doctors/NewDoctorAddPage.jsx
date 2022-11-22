@@ -2,7 +2,7 @@ import React from "react";
 import quadrant1 from "../../../assets/quadrant1.png";
 import quadrant2 from "../../../assets/quadrant2.png";
 import quadrant3 from "../../../assets/quadrant3.png";
-import users from "../../../assets/users.png";
+import doctorUser from "../../../assets/doctorUser.png";
 
 const NewDoctorAddPage = () => {
 	return (
@@ -14,7 +14,7 @@ const NewDoctorAddPage = () => {
 			<div className="mt-5">
 				<div className="flex flex-row gap-3">
 					<div className="flex justify-center w-1/3 transition bg-container rounded-sm  cursor-pointer hover:border border-gray">
-						<img src={users} alt="users" />
+						<img src={doctorUser} alt="users" />
 						{/* <p className="text-center">
 							Resmi buraya bırakın veya yüklemek için tıklayın.
 						</p> */}
