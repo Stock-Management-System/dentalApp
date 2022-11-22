@@ -17,10 +17,10 @@ module.exports = {
       'slate': {
         500: '#64748b',
       },
-      "gray":"#9699A1",
-      "black":"#000000",
-      "pink":"#ff5acd",
-      "lightPink":"#fd86a7",
+      "gray": "#9699A1",
+      "black": "#000000",
+      "pink": "#ff5acd",
+      "lightPink": "#fd86a7",
       'green': {
         300: '#86efac'
       },
@@ -65,6 +65,7 @@ module.exports = {
   },
   plugins: [
     require("daisyui"),
+    // require('@tailwindcss/forms'),
   ],
   daisyui: {
     themes: false
