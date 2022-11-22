@@ -1,5 +1,5 @@
 import React from 'react'
-import "./patients.scss"
+
 
 const Patients = () => {
   return (

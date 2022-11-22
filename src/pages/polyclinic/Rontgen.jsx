@@ -1,5 +1,5 @@
 import React from 'react'
-import "./rontgen.scss"
+
 
 const Rontgen = () => {
   return (

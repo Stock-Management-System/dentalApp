@@ -1,5 +1,5 @@
 import React from 'react'
-import "./operations.scss"
+
 
 const Operations = () => {
   return (

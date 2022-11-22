@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import ClinicHeader from "../../../components/polyclinic/ClinicHeader";
 import Layout from "../../../components/polyclinic/Layout";
-import "./PolyclinicAppointments.scss";
+
 import Appointments from "../../../components/polyclinic/Appointments";
 
 const PolyclinicAppointments = () => {

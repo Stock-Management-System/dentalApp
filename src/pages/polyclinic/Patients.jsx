@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Container from '../../../components/polyclinic/Container'
 import Layout from '../../../components/polyclinic/Layout'
-import './patients.scss'
+
 
 const Patients = () => {
   const [open, setOpen] = useState(true)
