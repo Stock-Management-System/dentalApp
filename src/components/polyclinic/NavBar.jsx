@@ -18,11 +18,14 @@ const NavBar = () => {
               />
               </div>
       <div className="navbar-start">
-        <div className='ml-6 xs:hidden md:block'>
+        <div className='ml-6 xs:hidden xl:block'>
           <button className='btn btn-sm btn-primary rounded-3xl mr-3'><BiMessageSquareAdd className='mr-1' />Randevu Oluştur</button>
           <button className='btn btn-sm btn-outline rounded-3xl'><BsCalendar3 className='mr-1' />Randevu Sorgula</button>
         </div>
-        <div className="dropdown ml-6 md:hidden">
+      </div>
+
+      <div className="navbar-end">
+        <div className="dropdown ml-6 xl:hidden">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
           </label>
@@ -31,9 +34,6 @@ const NavBar = () => {
             <li><a><BsCalendar3 className='mr-1' />Randevu Sorgula</a></li>
           </ul>
         </div>
-      </div>
-
-      <div className="navbar-end">
         <div tabIndex={0} className="collapse group md:hidden">
           <div className="collapse-title bg-primary text-primary-content group-focus:bg-secondary group-focus:text-secondary-content btn btn-ghost btn-circle">
             <button className="">
@@ -58,9 +58,12 @@ const NavBar = () => {
           </label>
           <select className="select select-sm max-w-xs menu menu-compact">
             <option disabled selected>Asuman Durmaz</option>
-            <option>English</option>
-            <option>Japanese</option>
-            <option>Italian</option>
+            <option>My Profile</option>
+            <option>Activity</option>
+            <option>Switch Account</option>
+            <option>Support</option>
+            <option className='btn' >Logout</option>
+            
           </select>
           {/* <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
             <li>
