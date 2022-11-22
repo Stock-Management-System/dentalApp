@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaPlus } from 'react-icons/fa'
+import { FaPlus } from 'react-icons/fa';
+import Modal from './Modal';
 
 const RontgenQuery = () => {
     return (
@@ -8,9 +9,7 @@ const RontgenQuery = () => {
                 <p className="text-2xl font-semibold antialiased leading-loose">
                     Röntgen Sorgula
                 </p>
-                <button className="btn btn-active btn-sm bg-blue1 gap-2 rounded-full hover:bg-blue1">
-                    <FaPlus /> Röntgen Ekle
-                </button>
+                <Modal />
             </div>
             <div className="grid grid-cols-1 place-items-center my-9">
                 {/* TC numarası ile sorgulama 👇🏻 */}
@@ -22,12 +21,10 @@ const RontgenQuery = () => {
                         className="input input-bordered w-full max-w-xs"
                     />
                     <button className="btn btn-sm btn-outline btn-primary rounded-full capitalize">
-                        Randevu Sorgula
+                        Sorgula
                     </button>
                 </div>
             </div>
-
-            {/* patients appointments table 👇🏻 */}
             <div className="overflow-x-auto ">
                 <table className="table w-full ">
                     {/* <!-- head --> */}
@@ -61,7 +58,6 @@ const RontgenQuery = () => {
                             <td>23.09.2022</td>
                             <td>Röntgen İncele</td>
                         </tr>
-                        {/* <!--örnek silinecek --> */}
                         <tr>
                             <td>
                                 <div className="flex items-center space-x-3 gap-3">
@@ -83,7 +79,6 @@ const RontgenQuery = () => {
                             <td>10.09.2022</td>
                             <td>Röntgen İncele</td>
                         </tr>
-                        {/* <!-- örnek silinecek --> */}
                         <tr>
                             <td>
                                 <div className="flex items-center space-x-3 gap-3">
@@ -105,7 +100,6 @@ const RontgenQuery = () => {
                             <td>30.08.2022</td>
                             <td>Röntgen İncele</td>
                         </tr>
-                        {/* <!-- örnek silinecek --> */}
                         <tr>
                             <td>
                                 <div className="flex items-center space-x-3 gap-3">
