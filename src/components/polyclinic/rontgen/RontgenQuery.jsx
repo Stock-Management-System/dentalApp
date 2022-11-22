@@ -1,6 +1,6 @@
 import React from 'react';
-import { FaPlus } from 'react-icons/fa';
 import Modal from './Modal';
+import ModalAddRontgen from './ModalAddRontgen';
 
 const RontgenQuery = () => {
     return (
@@ -56,7 +56,7 @@ const RontgenQuery = () => {
                             <td>Barış Korkmaz</td>
                             <td>Bay</td>
                             <td>23.09.2022</td>
-                            <td>Röntgen İncele</td>
+                            <td><ModalAddRontgen /></td>
                         </tr>
                         <tr>
                             <td>
@@ -77,7 +77,7 @@ const RontgenQuery = () => {
                             <td>Melike Çetinkaya</td>
                             <td>Bayan</td>
                             <td>10.09.2022</td>
-                            <td>Röntgen İncele</td>
+                            <td><ModalAddRontgen /></td>
                         </tr>
                         <tr>
                             <td>
@@ -98,7 +98,7 @@ const RontgenQuery = () => {
                             <td>Yunus Alpaslan</td>
                             <td>Bay</td>
                             <td>30.08.2022</td>
-                            <td>Röntgen İncele</td>
+                            <td><ModalAddRontgen /></td>
                         </tr>
                         <tr>
                             <td>
@@ -119,7 +119,7 @@ const RontgenQuery = () => {
                             <td>Fatma Kaya</td>
                             <td>Bayan</td>
                             <td>23.08.2022</td>
-                            <td>Röntgen İncele</td>
+                            <td><ModalAddRontgen /></td>
                         </tr>
                     </tbody>
                 </table>
