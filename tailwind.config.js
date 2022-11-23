@@ -24,6 +24,7 @@ module.exports = {
       'green': {
         300: '#86efac'
       },
+      "fuchsia":"#c026d3",
       'Rose': {
         400: '#fb7185'
       },
