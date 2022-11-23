@@ -1,10 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import quadrant1 from "../../../assets/quadrant1.png";
 import quadrant2 from "../../../assets/quadrant2.png";
 import quadrant3 from "../../../assets/quadrant3.png";
 import doctorUser from "../../../assets/doctorUser.png";
+import { useDropzone } from "react-dropzone";
 
 const NewDoctorAddPage = () => {
+	const [files, setFiles] = useState([]);
+
+	const { getRootProps, getInputProps } = useDropzone({
+		accept: "image/*",
+		onDrop: (acceptedFiles) => {
+			setFiles(
+				acceptedFiles.map((file) =>
+					Object.assign(file, {
+						preview: URL.createObjectURL(file),
+					})
+				)
+			);
+		},
+	});
+
+	const images = files.map((file) => (
+		<div key={file.name}>
+			<div>
+				<img src={file.preview} alt="preview" />
+			</div>
+		</div>
+	));
+
 	return (
 		<div className="py-3 px-5">
 			{/* <----- KİŞİSEL BİLGİLER -----> */}
@@ -13,11 +37,19 @@ const NewDoctorAddPage = () => {
 			</p>
 			<div className="mt-5">
 				<div className="flex flex-row gap-3">
-					<div className="flex justify-center w-1/3 transition bg-container rounded-sm  cursor-pointer hover:border border-gray">
-						<img src={doctorUser} alt="users" />
-						{/* <p className="text-center">
-							Resmi buraya bırakın veya yüklemek için tıklayın.
-						</p> */}
+					<div
+						{...getRootProps()}
+						className="flex justify-center w-1/3 transition bg-container rounded-sm  cursor-pointer hover:border border-gray "
+					>
+						<input {...getInputProps()} />
+						<figure className="relative max-w-sm">
+							<img src={doctorUser} alt="users" className="object-cover" />
+							<p className="absolute bottom-36 text-center">
+								Resmi buraya bırakın veya yüklemek için tıklayın.
+							</p>
+						</figure>
+
+						<div className="h-full object-cover">{images}</div>
 					</div>
 					<div className="form-control w-1/3">
 						<div className="form-control w-full">
