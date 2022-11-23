@@ -1,13 +1,13 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import PolyclinicProfile from '../pages/polyclinic'
-import Patients from '../pages/polyclinic'
-import Rontgen from '../pages/polyclinic'
-import Account from '../pages/polyclinic'
-import PolyclinicAppointments from '../pages/polyclinic'
-import PolyclinicDoctors from '../pages/polyclinic'
-import Operations from '../pages/polyclinic'
-import Settings from '../pages/polyclinic'
+import PolyclinicProfile from '../pages/polyclinic/PolyclinicProfile'
+import Patients from '../pages/polyclinic/Patients'
+import Rontgen from '../pages/polyclinic/Rontgen'
+import Account from '../pages/polyclinic/Account'
+import PolyclinicAppointments from '../pages/polyclinic/PolyclinicAppointments'
+import PolyclinicDoctors from '../pages/polyclinic/PolyclinicDoctors'
+import Operations from '../pages/polyclinic/Operations'
+import Settings from '../pages/polyclinic/Settings'
 
 const AppRouter = () => {
   return (

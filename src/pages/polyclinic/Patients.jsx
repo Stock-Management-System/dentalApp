@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Container from '../../../components/polyclinic/Container'
-import Layout from '../../../components/polyclinic/Layout'
+import Container from '../../components/polyclinic/Container'
+import Layout from '../../components/polyclinic/Layout'
 
 
 const Patients = () => {
