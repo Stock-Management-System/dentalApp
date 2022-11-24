@@ -116,7 +116,7 @@ export default function Modal() {
                                                                     id="notlar"
                                                                     name="notlar"
                                                                     rows={6}
-                                                                    className="mt-1 block w-full rounded-md border-gray shadow-sm focus:border-gray focus:ring-gray sm:text-sm"
+                                                                    className="textarea mt-1 block w-full rounded-md border-gray shadow-sm focus:border-gray focus:ring-gray sm:text-sm"
                                                                     placeholder="Hasta ile ilgili notları giriniz..."
                                                                     defaultValue={''}
                                                                 />

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch'
+import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 const ModalExamineRontgen = () => {
     const [showModal, setShowModal] = useState(false);
@@ -90,8 +90,8 @@ const ModalExamineRontgen = () => {
                                                         <textarea
                                                             id="notlar"
                                                             name="notlar"
-                                                            rows={10}
-                                                            className="mt-1 block w-full rounded-md border-gray shadow-sm focus:border-gray focus:ring-gray sm:text-sm"
+                                                            rows={8}
+                                                            className="textarea mt-1 block w-full rounded-md border-gray shadow-sm focus:border-gray focus:ring-gray sm:text-sm"
                                                             placeholder="Hasta ile ilgili notları giriniz..."
                                                             defaultValue={''}
                                                         />
