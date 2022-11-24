@@ -41,7 +41,7 @@ export default function Modal() {
                                             <div className="md:col-span-2">
                                                 <div className="px-4 sm:px-0">
                                                     <label className="block text-sm font-medium text-gray-700">Röntgen</label>
-                                                    <div className="mt-1 flex justify-center items-center rounded-md border-2 border-dashed border-gray-300 h-[28rem] px-6 pt-5 pb-6">
+                                                    <div className="mt-1 flex justify-center items-center rounded-md border-2 border-dashed border-blue2 h-[30rem] px-6 pt-5 pb-6">
                                                         <div className="space-y-1 text-center">
                                                             <svg
                                                                 className="mx-auto h-12 w-12 text-gray-400"

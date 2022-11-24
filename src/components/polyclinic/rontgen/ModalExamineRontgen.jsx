@@ -3,6 +3,8 @@ import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 const ModalExamineRontgen = () => {
     const [showModal, setShowModal] = useState(false);
+    const [rontgen, setRontgen] = useState("")
+    const rontgenArray = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOx1hmyt1BElr60XudF5Bes9O4ymDQ9Rr2_g&usqp=CAU", "https://www.dent-art.com.tr/wp-content/uploads/2021/07/xray-x-ray-2764828_1280-900x588.jpg", "https://trakyadent.com.tr/wp-content/uploads/2022/02/dis-rontgeni-nasil-cekilir.jpg"]
 
     return (
         <>
@@ -22,7 +24,7 @@ const ModalExamineRontgen = () => {
                             {/*content*/}
                             <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-[80rem] bg-white outline-none focus:outline-none">
                                 {/*header*/}
-                                <div className="flex items-start justify-between bg-blue1 rounded-t py-2">
+                                <div className="flex items-start justify-between bg-blue1 rounded-t py-1">
                                     <h3 className="text-xl p-1 ml-2 text-white font-semibold">
                                         Röntgen
                                     </h3>
@@ -40,7 +42,7 @@ const ModalExamineRontgen = () => {
                                     <div className="md:grid md:grid-cols-4 md:gap-1">
                                         <div className="md:col-span-3">
                                             <div className="px-4 sm:px-0">
-                                                <div className="relative mt-1 h-[31.5rem] flex justify-center items-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
+                                                <div className="relative mt-1 h-[31.5rem] flex justify-center items-center rounded-md border-2 border-dashed border-blue2 px-6 pt-5 pb-6">
                                                     <TransformWrapper
                                                         initialScale={1}
                                                         initialPositionX={0}
@@ -54,12 +56,19 @@ const ModalExamineRontgen = () => {
                                                                     <button onClick={() => zoomOut()} className='btn btn-circle btn-outline btn-sm'>-</button>
                                                                 </div>
                                                                 <TransformComponent>
-                                                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOx1hmyt1BElr60XudF5Bes9O4ymDQ9Rr2_g&usqp=CAU" width={689} alt="röntgen" className='object-fill hover:object-scale-down' />
+                                                                    <img src={rontgen} width={689} alt="röntgen" className='object-fill hover:object-scale-down' />
                                                                 </TransformComponent>
                                                             </>
                                                         )}
                                                     </TransformWrapper>
                                                 </div>
+                                            </div>
+                                            <div className='rounded-md border border-blue2 mt-1 flex gap-4 p-1'>
+                                                {rontgenArray?.map((item, index) => (
+                                                    <div key={index} className='rounded-md border border-dashed border-blue2 p-1 cursor-pointer' onClick={() => setRontgen(item)}>
+                                                        <img src={item} alt="item" width={50} />
+                                                    </div>
+                                                ))}
                                             </div>
                                         </div>
                                         <div className="mt-5 md:col-span-1 md:mt-0">
