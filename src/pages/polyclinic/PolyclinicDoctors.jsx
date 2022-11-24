@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import ClinicHeader from "../../../components/polyclinic/ClinicHeader";
-import Layout from "../../../components/polyclinic/Layout";
-import NewDoctorAddPage from "../../../components/polyclinic/doctors/NewDoctorAddPage";
+import ClinicHeader from "../../components/polyclinic/ClinicHeader";
+import Layout from "../../components/polyclinic/Layout";
+import NewDoctorAddPage from "../../components/polyclinic/doctors/NewDoctorAddPage";
 import { AiOutlineFileAdd } from "react-icons/ai";
 
 const PolyclinicAppointments = () => {
