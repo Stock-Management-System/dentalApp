@@ -16,3 +16,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.footer-link-underline{
+width:0;
+height:1px;
+background-color: #3beaf5;
+transition: width .3s ease-in-out;
+}
+.footer-link:hover .footer-link-underline {
+ width: 100%;
+}
