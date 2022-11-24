@@ -14,6 +14,7 @@ module.exports = {
       'white': '#ffffff',
       'turquaz': '#3beaf5',
       'darkTurquaz': '#11c8e3',
+      'footerLinkHover':'#3beaf5',
       'slate': {
         500: '#64748b',
       },

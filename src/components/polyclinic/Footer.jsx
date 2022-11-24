@@ -30,49 +30,49 @@ const Footer = () => {
       </div>
       <div className="mx-12">
         <span className="mb-2 font-bold text-20">Şirket</span>
-        <Link to="#" className="link-hover">
+        <Link to="#" className="link-hover hover:text-footerLinkHover ">
           Hakkımızda
         </Link>
-        <Link to="#" className="link-hover">
+        <Link to="#" className="link-hover hover:text-footerLinkHover">
           Ekibimiz
         </Link>
-        <Link to="#" className="link-hover">
+        <Link to="#" className="link-hover hover:text-footerLinkHover">
           Gizlilik
         </Link>
-        <Link to="#" className="link-hover">
+        <Link to="#" className="link-hover hover:text-footerLinkHover">
           Sözleşmeler
         </Link>
-        <Link to="#" className="link-hover">
+        <Link to="#" className="link-hover hover:text-footerLinkHover">
           Dökümanlar
         </Link>
       </div>
       <div className="mx-12">
         <span className="mb-2 font-bold text-20">Hızlı Erişim</span>
-        <Link to="/appointments" className="link-hover">
+        <Link to="/appointments" className="link-hover hover:text-footerLinkHover">
           Randevu Al
         </Link>
-        <Link to="/appointments" className="link-hover">
+        <Link to="/appointments" className="link-hover hover:text-footerLinkHover">
           Randevu Sorgula
         </Link>
-        <Link to="/" className="link-hover">
+        <Link to="/" className="link-hover hover:text-footerLinkHover">
           Poliklinikler
         </Link>
-        <Link to="#" className="link-hover">
+        <Link to="#" className="link-hover hover:text-footerLinkHover">
           Giriş
         </Link>
-        <Link to="#" className="link-hover">
+        <Link to="#" className="link-hover hover:text-footerLinkHover">
           Kayıt
         </Link>
       </div>
       <div className="mx-12">
         <span className="mb-2 font-bold text-20">Destek</span>
-        <Link to="#" className="link-hover">
+        <Link to="#" className="link-hover hover:text-footerLinkHover">
           İletişim
         </Link>
-        <Link to="#" className="link-hover">
+        <Link to="#" className="link-hover hover:text-footerLinkHover">
           SSS
         </Link>
-        <Link to="#" className="link-hover">
+        <Link to="#" className="link-hover hover:text-footerLinkHover">
           Basında Biz
         </Link>
       </div>
