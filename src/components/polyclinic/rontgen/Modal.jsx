@@ -35,7 +35,7 @@ export default function Modal() {
                                     </button>
                                 </div>
                                 {/*body*/}
-                                <form action="#" method="POST">
+                                <form>
                                     <div className="relative p-3 flex-auto">
                                         <div className="md:grid md:grid-cols-3 md:gap-3">
                                             <div className="md:col-span-2">
@@ -67,7 +67,7 @@ export default function Modal() {
                                                                 </label>
                                                                 <p className="pl-1">veya filmi sürükle bırak</p>
                                                             </div>
-                                                            <p className="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+                                                            {/* <p className="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p> */}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -128,9 +128,15 @@ export default function Modal() {
                                         </div>
                                     </div>
                                     {/*footer*/}
-                                    <div className="flex items-center justify-end p-6 rounded-b">
+                                    <div className="flex items-center justify-between mx-4 p-2 rounded-b">
                                         <button
-                                            className="bg-blue1 text-white btn btn-sm font-bold btn-wide rounded-3xl hover:bg-blue1"
+                                            className="bg-blue1 text-white btn btn-sm font-bold rounded-3xl w-24 hover:bg-blue1"
+                                            onClick={() => setShowModal(false)}
+                                        >
+                                            Kapat
+                                        </button>
+                                        <button
+                                            className="bg-blue1 text-white btn btn-sm font-bold w-24 rounded-3xl hover:bg-blue1"
                                             type="submit"
                                             onClick={() => setShowModal(false)}
                                         >
