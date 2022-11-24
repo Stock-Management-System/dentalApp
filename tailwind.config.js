@@ -17,7 +17,8 @@ module.exports = {
       'slate': {
         500: '#64748b',
       },
-      "gray":"#9699A1",
+      "gray":"#9699A1",      
+      "gray2":"#3a3e48",      
       "black":"#000000",
       "pink":"#ff5acd",
       "lightPink":"#fd86a7",

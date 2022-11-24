@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MainPage from "../pages/MainPage";
 import Account from "../pages/polyclinic/account/Account";
 import PolyclinicAppointments from "../pages/polyclinic/appointments/PolyclinicAppointments";
 import PolyclinicDoctors from "../pages/polyclinic/doctors/PolyclinicDoctors";
@@ -13,7 +14,8 @@ const AppRouter = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<PolyclinicProfile />} />
+				<Route path="/" element={<MainPage />} />
+				<Route path="/polyclinic" element={<PolyclinicProfile />} />
 				<Route path="/patients" element={<Patients />} />
 				<Route path="/rontgen" element={<Rontgen />} />
 				<Route path="/account" element={<Account />} />
