@@ -24,7 +24,7 @@ module.exports = {
       'green': {
         300: '#86efac'
       },
-      "fuchsia":"#c026d3",
+      "fuchsia":"#b446f4",
       'Rose': {
         400: '#fb7185'
       },
@@ -36,6 +36,9 @@ module.exports = {
     fontSize: {
       '28': '28px',
       '22': '22px',
+      '18': '18px',
+      '20': '20px',
+      '14': '14px',
       'base': '1rem',
       'xl': '1.25rem',
       '2xl': '1.563rem',
