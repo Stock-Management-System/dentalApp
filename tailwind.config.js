@@ -14,6 +14,7 @@ module.exports = {
       'white': '#ffffff',
       'turquaz': '#3beaf5',
       'darkTurquaz': '#11c8e3',
+      'footerLinkHover':'#3beaf5',
       'slate': {
         500: '#64748b',
       },
@@ -24,6 +25,7 @@ module.exports = {
       'green': {
         300: '#86efac'
       },
+      "fuchsia":"#b446f4",
       'Rose': {
         400: '#fb7185'
       },
@@ -35,6 +37,9 @@ module.exports = {
     fontSize: {
       '28': '28px',
       '22': '22px',
+      '18': '18px',
+      '20': '20px',
+      '14': '14px',
       'base': '1rem',
       'xl': '1.25rem',
       '2xl': '1.563rem',
