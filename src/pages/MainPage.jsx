@@ -1,5 +1,5 @@
 import React from 'react'
-import MainPageNavBar from '../components/polyclinic/MainPageNavBar'
+import MainPageNavBar from '../components/dashboard/MainPageNavBar'
 
 const MainPage = () => {
   return (
