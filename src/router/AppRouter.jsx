@@ -1,5 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Appointments from "../pages/doctor/appointments/Appointments";
+import DoctorProfile from "../pages/doctor/profile/DoctorProfile";
+import DoctorSettings from "../pages/doctor/settings/DoctorSettings";
+import DoctorPatient from "../pages/doctor/patients/Patients";
+
 import Account from "../pages/polyclinic/account/Account";
 import PolyclinicAppointments from "../pages/polyclinic/appointments/PolyclinicAppointments";
 import PolyclinicDoctors from "../pages/polyclinic/doctors/PolyclinicDoctors";
@@ -13,14 +18,24 @@ const AppRouter = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<PolyclinicProfile />} />
-				<Route path="/patients" element={<Patients />} />
-				<Route path="/rontgen" element={<Rontgen />} />
-				<Route path="/account" element={<Account />} />
-				<Route path="/appointments" element={<PolyclinicAppointments />} />
-				<Route path="/polyclinicdoctors" element={<PolyclinicDoctors />} />
-				<Route path="/operations" element={<Operations />} />
-				<Route path="/settings" element={<Settings />} />
+
+				<Route path="/" element={<DoctorProfile />} />
+				<Route path="/doktorlar" element={<DoctorProfile />} />
+				<Route path="/doktorlar/randevular" element={<Appointments />} />
+				<Route path="/doktorlar/hastalarım" element={<DoctorPatient />} />
+				<Route path="/doktorlar/ayarlar" element={<DoctorSettings />} />
+
+
+				<Route path="/poliklinik" element={<PolyclinicProfile />} />
+				<Route path="/poliklinik/randevular" element={<PolyclinicAppointments />} />
+				<Route path="/poliklinik/doktorlarımız" element={<PolyclinicDoctors />} />
+				<Route path="/poliklinik/hastalarımız" element={<Patients />} />
+				<Route path="/poliklinik/rontgen" element={<Rontgen />} />
+				<Route path="/poliklinik/islemlerimiz" element={<Operations />} />
+				<Route path="/poliklinik/hesabım" element={<Account />} />
+				<Route path="/poliklinik/ayarlar" element={<Settings />} />
+
+
 			</Routes>
 		</BrowserRouter>
 	);

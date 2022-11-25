@@ -45,7 +45,7 @@ const Sidebar = () => {
 
     >
       <div>
-        <Link to='/' className=" absolute top-0 h-20 flex pl-9 items-center text-indigo-500 transition-all ease-in-out duration-500">
+        <Link to='/poliklinik' className=" absolute top-0 h-20 flex pl-9 items-center text-indigo-500 transition-all ease-in-out duration-500">
           <BiPlusMedical />
           <h1 className=" text-28 font-bold">
             D
@@ -58,38 +58,38 @@ const Sidebar = () => {
 
           <ul className="menu  w-50 mt-24   text-white" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
             <li className="hover:bg-linkhover transition duration-0 hover:duration-200 mt-0.5">
-              <Link to='/patients' className=" pl-9" >
+              <Link to='/poliklinik' className=" pl-9" >
                 <FaTooth className="text-turquaz text-22" />
                 <span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0'} transition-all ease-in-out duration-200`}>Kliniğim</span>
               </Link>
             </li>
             <li className="hover:bg-linkhover transition duration-0 hover:duration-200 mt-0.5">
-              <Link to='/appointments' className=" pl-9">
+              <Link to='/poliklinik/randevular' className=" pl-9">
                 <ImCalendar className="text-turquaz text-22" /> <span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0'} transition-all ease-in-out duration-200`}> Randevular</span>
               </Link>
             </li>
             <li className="hover:bg-linkhover transition duration-0 hover:duration-200  mt-0.5">
-              <Link to='/polyclinicdoctors' className=" pl-9">
+              <Link to='/poliklinik/doktorlarımız' className=" pl-9">
                 <FaHospitalUser className="text-turquaz text-22" /> <span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0'} transition-all ease-in-out duration-200`}>Doktorlar</span>
               </Link>
             </li>
             <li className="hover:bg-linkhover transition duration-0 hover:duration-200  mt-0.5">
-              <Link to='/rontgen' className=" pl-9">
+              <Link to='/poliklinik/rontgen' className=" pl-9">
                 <FaChessBoard className="text-turquaz text-22" /> <span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0'} transition-all ease-in-out duration-200`}>Röntgen</span>
               </Link>
             </li>
             <li className="hover:bg-linkhover transition duration-0 hover:duration-200  mt-0.5">
-              <Link to='/operations' className=" pl-9">
+              <Link to='/poliklinik/islemlerimiz' className=" pl-9">
                 <IoFileTrayOutline className="text-turquaz text-22" /><span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0'} transition-all ease-in-out duration-200`}>Geçmiş İşlem</span>
               </Link>
             </li>
             <li className="hover:bg-linkhover transition duration-0 hover:duration-200 mt-0.5 ">
-              <Link to='/account' className=" pl-9">
+              <Link to='/poliklinik/hesabım' className=" pl-9">
                 <BiBriefcaseAlt2 className="text-turquaz text-22" /><span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0'} transition-all ease-in-out duration-200`}> Heasp Yönetimi</span>
               </Link>
             </li>
             <li className="hover:bg-linkhover transition duration-0 hover:duration-200 mt-0.5 ">
-              <Link to='/settings' className=" pl-9">
+              <Link to='/poliklinik/ayarlar' className=" pl-9">
                 <FiSettings className="text-turquaz text-22" /> <span className={`whitespace-nowrap ${open ? 'opacity-100' : 'opacity-0'} transition-all ease-in-out duration-200`}>Ayarlar</span>
               </Link>
             </li>
