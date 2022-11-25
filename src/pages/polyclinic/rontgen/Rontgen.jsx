@@ -1,5 +1,4 @@
 import React from 'react'
-import "./rontgen.scss"
 import { useSelector } from "react-redux";
 import ClinicHeader from "../../../components/polyclinic/ClinicHeader";
 import Layout from "../../../components/polyclinic/Layout";
