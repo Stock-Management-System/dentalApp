@@ -3,7 +3,6 @@ import Layout from "../../../components/polyclinic/Layout";
 import MiddleLink from "../../../components/polyclinic/MiddleLink";
 import { useSelector } from 'react-redux'
 import ClinicHeader from '../../../components/polyclinic/ClinicHeader'
-import "./polyclinicProfile.scss"
 import ClinicStatisticComponent from "../../../components/polyclinic/ClinicStatisticComponent";
 
 
