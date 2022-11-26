@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const DoctorTreatments = () => {
 	const [openTreatment, setOpenTreatment] = useState(1);
+
 	return (
 		<div>
 			<div className="flex flex-row justify-between py-5">

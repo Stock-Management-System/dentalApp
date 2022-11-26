@@ -4,7 +4,7 @@ import { HiMinus } from "react-icons/hi";
 import DoctorTreatments from "./DoctorTreatments";
 import sinusgraphic from "../../../assets/sinusgraphic.png";
 
-const DoctorInformation = ({doktorInfo}) => {
+const DoctorInformation = ({ doktorInfo }) => {
 	console.log(doktorInfo);
 	return (
 		<div>
@@ -24,41 +24,44 @@ const DoctorInformation = ({doktorInfo}) => {
 						<h1 className="text-xl font-bold mb-3">{doktorInfo.name}</h1>
 						<div className="flex flex-row gap-2">
 							<div className="w-1/4">
-								<p className="bg-base-200 rounded-lg p-2 ">Ortodonti Uzmanı</p>
+								<p className="bg-base-200 rounded-lg p-2 ">
+									{doktorInfo.ünvan}
+								</p>
 								<p className="pt-1 font-bold">
 									Email:{" "}
 									<span className="text-blue1 font-normal">
-									{doktorInfo.email}
+										{doktorInfo.email}
 									</span>
 								</p>
 								<p className="pt-1 font-bold">
-									Doğum: <span className="font-normal">14 Mart 1980</span>
+									Doğum: <span className="font-normal">{doktorInfo.doğum}</span>
 								</p>
 							</div>
 							<div className="w-1/4">
 								<p className="bg-base-200 rounded-lg p-2 ">
-									Hacettepe Universitesi
+									{doktorInfo.üniversite}
 								</p>
 								<p className="pt-1 font-bold">
 									Telefon:{" "}
-									<span className="text-blue1 font-normal">0542 123 45 67</span>
+									<span className="text-blue1 font-normal">
+										{doktorInfo.phone}
+									</span>
 								</p>
 								<p className="pt-1 font-bold">
-									Cinsiyet: <span className="font-normal">Erkek</span>
+									Cinsiyet:{" "}
+									<span className="font-normal">{doktorInfo.gender}</span>
 								</p>
 							</div>
 							<div className="w-1/4">
 								<p className="bg-base-200 rounded-lg p-2 ">
-									01 Ocak 2022'de çalışmaya başladı
+									{doktorInfo.işbaşı}'de çalışmaya başladı
 								</p>
 								<p className="pt-1 font-bold">
-									Adres:{" "}
-									<span className="font-normal">
-										Cumhuriyet Mh. 18.Cd. No:6 Merkez/Sivas
-									</span>
+									Adres: <span className="font-normal">{doktorInfo.adres}</span>
 								</p>
 								<p className="pt-1 font-bold">
-									İşbaşı: <span className="font-normal">01 Ocak 2022</span>
+									İşbaşı:{" "}
+									<span className="font-normal">{doktorInfo.işbaşı}</span>
 								</p>
 							</div>
 						</div>
@@ -70,7 +73,9 @@ const DoctorInformation = ({doktorInfo}) => {
 						<div className="flex flex-row p-2 justify-between py-2">
 							<div>
 								<h6 className="font-bold">Bakılan Hasta</h6>
-								<h1 className="text-3xl font-bold text-blue2">129</h1>
+								<h1 className="text-3xl font-bold text-blue2">
+									{doktorInfo.istatistic.bakılanhasta.tüm}
+								</h1>
 								<p className="text-[10px] opacity-70">TÜM ZAMANLAR</p>
 							</div>
 							<div tabIndex={0} className="dropdown dropdown-end">
@@ -106,8 +111,7 @@ const DoctorInformation = ({doktorInfo}) => {
 							</div>
 						</div>
 						<div className="py-2">
-					
-							{/* <img src={sinusgraphic} alt="" /> */}
+							<img src={sinusgraphic} alt="" />
 						</div>
 					</div>
 					<div className="w-1/4 bg-container p-2">
@@ -241,9 +245,8 @@ const DoctorInformation = ({doktorInfo}) => {
 					</div>
 				</div>
 				{/* <-----Uyguladığı Tedaviler ----->👇🏻 */}
-				<DoctorTreatments />
+				<DoctorTreatments doktorTreatments={doktorTreatments} />
 			</div>
-			
 		</div>
 	);
 };
