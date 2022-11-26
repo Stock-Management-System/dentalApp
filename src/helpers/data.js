@@ -129,3 +129,60 @@ export const patients = [
 		descriptions: "Diş teli yapımı",
 	},
 ];
+
+
+export const doktorlar = [
+	{
+		id: 1,
+		name: 'Egemen Yılmaz',
+		img: 'https://placeimg.com/850/850/people',
+		email: 'celebidogan@email.com',
+		phone: '0542 123 45 67',
+		gender: 'Erkek',
+		istatistic: {
+			bakılanhasta: {
+				bugün: 12,
+				birhaftadır: 24,
+			},
+		},
+		uyguladıtedavi: {
+			cerrahi: {
+				telgerme: 139,
+			},
+			tedavi: {},
+		},
+	},
+
+	{
+		id: 2,
+		name: 'Çelebi Doğan',
+		img: 'https://placeimg.com/800/800/people',
+		email: 'celebidogan@email.com',
+		phone: '0542 123 45 67',
+		gender: 'Erkek',
+	},
+	{
+		id: 3,
+		name: 'Zeynep Kara',
+		img: 'https://placeimg.com/700/700/people',
+		email: 'celebidogan@email.com',
+		phone: '0542 123 45 67',
+		gender: 'Erkek',
+	},
+	{
+		id: 4,
+		name: 'Mikail Çelikbaş',
+		img: 'https://placeimg.com/950/950/people',
+		email: 'celebidogan@email.com',
+		phone: '0542 123 45 67',
+		gender: 'Erkek',
+	},
+	{
+		id: 5,
+		name: 'Seray Kiraz',
+		img: 'https://placeimg.com/1100/1100/people',
+		email: 'celebidogan@email.com',
+		phone: '0542 123 45 67',
+		gender: 'Erkek',
+	},
+]

@@ -4,7 +4,8 @@ import { HiMinus } from "react-icons/hi";
 import DoctorTreatments from "./DoctorTreatments";
 import sinusgraphic from "../../../assets/sinusgraphic.png";
 
-const DoctorInformation = () => {
+const DoctorInformation = ({doktorInfo}) => {
+	console.log(doktorInfo);
 	return (
 		<div>
 			<div>
@@ -13,21 +14,21 @@ const DoctorInformation = () => {
 					{/* <-----Hekim Resmi ----->👇🏻 */}
 					<figure>
 						<img
-							src="https://placeimg.com/850/850/people"
+							src={doktorInfo.img}
 							alt="Shoes"
 							className="w-36 rounded-full object-cover"
 						/>
 					</figure>
 					{/* <-----Hekim Bilgileri ----->👇🏻 */}
 					<div className="w-full">
-						<h1 className="text-xl font-bold mb-3">Egemen Yılmaz</h1>
+						<h1 className="text-xl font-bold mb-3">{doktorInfo.name}</h1>
 						<div className="flex flex-row gap-2">
 							<div className="w-1/4">
 								<p className="bg-base-200 rounded-lg p-2 ">Ortodonti Uzmanı</p>
 								<p className="pt-1 font-bold">
 									Email:{" "}
 									<span className="text-blue1 font-normal">
-										celebidogan@email.com
+									{doktorInfo.email}
 									</span>
 								</p>
 								<p className="pt-1 font-bold">
@@ -105,7 +106,8 @@ const DoctorInformation = () => {
 							</div>
 						</div>
 						<div className="py-2">
-							<img src={sinusgraphic} alt="" />
+					
+							{/* <img src={sinusgraphic} alt="" /> */}
 						</div>
 					</div>
 					<div className="w-1/4 bg-container p-2">
