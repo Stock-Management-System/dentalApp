@@ -13,13 +13,14 @@ import Patients from "../pages/polyclinic/patients/Patients";
 import PolyclinicProfile from "../pages/polyclinic/profile/PolyclinicProfile";
 import Rontgen from "../pages/polyclinic/rontgen/Rontgen";
 import Settings from "../pages/polyclinic/settings/Settings";
+import MainPage from "../pages/dashboard/MainPage";
 
 const AppRouter = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
 
-				<Route path="/" element={<DoctorProfile />} />
+				<Route path="/" element={<MainPage />} />
 				<Route path="/doktorlar" element={<DoctorProfile />} />
 				<Route path="/doktorlar/randevular" element={<Appointments />} />
 				<Route path="/doktorlar/hastalarım" element={<DoctorPatient />} />
