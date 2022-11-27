@@ -5,7 +5,7 @@ import DoctorTreatments from "./DoctorTreatments";
 import sinusgraphic from "../../../assets/sinusgraphic.png";
 
 const DoctorInformation = ({ doktorInfo }) => {
-	console.log(doktorInfo.istatistic);
+	// console.log(doktorInfo.istatistik);
 	return (
 		<div>
 			<div>
@@ -21,8 +21,10 @@ const DoctorInformation = ({ doktorInfo }) => {
 					</figure>
 					{/* <-----Hekim Bilgileri ----->👇🏻 */}
 					<div className="w-full">
-						<h1 className="text-xl font-bold mb-3">{doktorInfo.name}</h1>
-						<div className="flex flex-row gap-2">
+						<h1 className="text-xl font-bold mb-3 capitalize">
+							{doktorInfo.name}
+						</h1>
+						<div className="flex flex-row gap-2 ">
 							<div className="w-1/4">
 								<p className="bg-base-200 rounded-lg p-2 ">
 									{doktorInfo.ünvan}
@@ -69,195 +71,64 @@ const DoctorInformation = ({ doktorInfo }) => {
 				</div>
 				{/* <-----Hekim Performans Grafikleri ----->👇🏻 */}
 				<div className="flex flex-row gap-4 w-full py-10">
-					{doktorInfo.istatistic.map((istatistik)=>{
-						console.log(istatistik);
-						const bgColor = istatistik.id===1 ? 'text-blue1':istatistik.id===2 ? 'text-turquaz':istatistik.id === 3 ? 'text-pink': 'text-black'
+					{doktorInfo.istatistik.map((istatistik, index) => {
+						console.log(istatistik.istatistikVeri[4].zamanAdı);
+						const bgColor =
+							istatistik.id === 1
+								? "text-blue1"
+								: istatistik.id === 2
+								? "text-turquaz"
+								: istatistik.id === 3
+								? "text-pink"
+								: "text-black";
 						return (
-						<div className="w-1/4 bg-container p-2">
-						<div className="flex flex-row p-2 justify-between py-2">
-							<div>
-								<h6 className="font-bold">{istatistik.istatistikAdi}</h6>
-								<h1 className={`text-3xl font-bold ${bgColor} `}>
-									{istatistik.istatistikVeri.tüm}
-								</h1>
-								<p className="text-[10px] opacity-70">TÜM ZAMANLAR</p>
-							</div>
-							<div tabIndex={0} className="dropdown dropdown-end">
-								<label className="p-1 bg-white swap rounded-full">
-									<input  type="checkbox" />
-									<div className="swap-on">
-										<HiMinus />
+							<div className="w-1/4 bg-container p-2">
+								<div className="flex flex-row p-2 justify-between py-2">
+									<div>
+										<h6 className="font-bold">{istatistik.istatistikAdi}</h6>
+										<h1 className={`text-3xl font-bold ${bgColor} `}>
+											{istatistik.istatistikVeri[index].sayı}
+										</h1>
+										<p className="text-[10px] opacity-70">TÜM ZAMANLAR</p>
 									</div>
-									<div className="swap-off">
-										<HiPlus />
+									<div tabIndex={0} className="dropdown dropdown-end">
+										<label className="p-1 bg-white swap rounded-full">
+											<input type="checkbox" />
+											<div className="swap-on">
+												<HiMinus />
+											</div>
+											<div className="swap-off">
+												<HiPlus />
+											</div>
+										</label>
+										<ul
+											tabIndex={0}
+											className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+										>
+											<li>
+												<p>Bugün</p>
+											</li>
+											<li>
+												<p>Bu hafta</p>
+											</li>
+											<li>
+												<p>Bu Ay</p>
+											</li>
+											<li>
+												<p>Bu Yıl</p>
+											</li>
+											<li>
+												<p>Tüm zamanlar</p>
+											</li>
+										</ul>
 									</div>
-								</label>
-								<ul
-									tabIndex={0}
-									className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
-								>
-									<li>
-										<p>Bugün</p>
-									</li>
-									<li>
-										<p>Bu hafta</p>
-									</li>
-									<li>
-										<p>Bu Ay</p>
-									</li>
-									<li>
-										<p>Bu Yıl</p>
-									</li>
-									<li>
-										<p>Tüm zamanlar</p>
-									</li>
-								</ul>
+								</div>
+								<div className="py-2">
+									<img src={sinusgraphic} alt="" />
+								</div>
 							</div>
-						</div>
-						<div className="py-2">
-							<img src={sinusgraphic} alt="" />
-						</div>
-					</div>
-					)
-					}
-					
-					)}
-					
-					{/* <div className="w-1/4 bg-container p-2">
-						<div className="flex flex-row p-2 justify-between py-2">
-							<div>
-								<h6 className="font-bold">Yapılan İşlem</h6>
-								<h1 className="text-3xl font-bold text-turquaz">
-									234
-								</h1>
-								<p className="text-[10px] opacity-70">TÜM ZAMANLAR</p>
-							</div>
-							<div tabIndex={0} className="dropdown dropdown-end">
-								<label className="p-1 bg-white swap rounded-full">
-									<input type="checkbox" />
-									<div className="swap-on">
-										<HiMinus />
-									</div>
-									<div className="swap-off">
-										<HiPlus />
-									</div>
-								</label>
-								<ul
-									tabIndex={0}
-									className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
-								>
-									<li>
-										<p>Bugün</p>
-									</li>
-									<li>
-										<p>Bu hafta</p>
-									</li>
-									<li>
-										<p>Bu Ay</p>
-									</li>
-									<li>
-										<p>Bu Yıl</p>
-									</li>
-									<li>
-										<p>Tüm zamanlar</p>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div className="py-2">
-							<img src={sinusgraphic} alt="" />
-						</div>
-					</div>
-					<div className="w-1/4 bg-container p-2">
-						<div className="flex flex-row p-2 justify-between py-2">
-							<div>
-								<h6 className="font-bold">Kullanılan İzin</h6>
-								<h1 className="text-3xl font-bold text-pink">
-									434
-								</h1>
-								<p className="text-[10px] opacity-70">TÜM ZAMANLAR</p>
-							</div>
-							<div tabIndex={0} className="dropdown dropdown-end">
-								<label className="p-1 bg-white swap rounded-full">
-									<input type="checkbox" />
-									<div className="swap-on">
-										<HiMinus />
-									</div>
-									<div className="swap-off">
-										<HiPlus />
-									</div>
-								</label>
-								<ul
-									tabIndex={0}
-									className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
-								>
-									<li>
-										<p>Bugün</p>
-									</li>
-									<li>
-										<p>Bu hafta</p>
-									</li>
-									<li>
-										<p>Bu Ay</p>
-									</li>
-									<li>
-										<p>Bu Yıl</p>
-									</li>
-									<li>
-										<p>Tüm zamanlar</p>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div className="py-2">
-							<img src={sinusgraphic} alt="" />
-						</div>
-					</div>
-					<div className="w-1/4 bg-container p-2">
-						<div className="flex flex-row p-2 justify-between py-2">
-							<div>
-								<h6 className="font-bold">Toplam Mesai</h6>
-								<h1 className="text-3xl font-bold text-black">
-									4545
-								</h1>
-								<p className="text-[10px] opacity-70">TÜM ZAMANLAR</p>
-							</div>
-							<div tabIndex={0} className="dropdown dropdown-end">
-								<label className="p-1 bg-white swap rounded-full">
-									<input type="checkbox" />
-									<div className="swap-on">
-										<HiMinus />
-									</div>
-									<div className="swap-off">
-										<HiPlus />
-									</div>
-								</label>
-								<ul
-									tabIndex={0}
-									className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
-								>
-									<li>
-										<p>Bugün</p>
-									</li>
-									<li>
-										<p>Bu hafta</p>
-									</li>
-									<li>
-										<p>Bu Ay</p>
-									</li>
-									<li>
-										<p>Bu Yıl</p>
-									</li>
-									<li>
-										<p>Tüm zamanlar</p>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div className="py-2">
-							<img src={sinusgraphic} alt="" />
-						</div>
-					</div> */}
+						);
+					})}
 				</div>
 				{/* <-----Uyguladığı Tedaviler ----->👇🏻 */}
 				<DoctorTreatments doctorTreatment={doktorInfo.uyguladıtedavi} />

@@ -4,7 +4,6 @@ import { doktorlar } from "../../../helpers/data";
 
 const DoctorPerformance = () => {
 	const [openTab, setOpenTab] = useState(0);
-	// console.log(doktorlar);
 
 	return (
 		<div>
@@ -21,7 +20,6 @@ const DoctorPerformance = () => {
 						onClick={(e) => {
 							e.preventDefault();
 							setOpenTab(doktor.id);
-						
 						}}
 					>
 						<figure className="pt-5">
