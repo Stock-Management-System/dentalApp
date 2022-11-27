@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
-const DoctorTreatments = () => {
+const DoctorTreatments = ({ doctorTreatment }) => {
 	const [openTreatment, setOpenTreatment] = useState(1);
-
+	console.log(doctorTreatment);
+	
 	return (
 		<div>
 			<div className="flex flex-row justify-between py-5">
@@ -114,6 +115,7 @@ const DoctorTreatments = () => {
 					</button>
 				</div>
 			</div>
+
 			<div
 				className={
 					openTreatment === 1
@@ -221,6 +223,7 @@ const DoctorTreatments = () => {
 					</h1>
 				</div>
 			</div>
+
 			<div
 				className={
 					openTreatment === 2
