@@ -1,6 +1,56 @@
 import React from 'react';
+import ImageModal from './ImageModal';
 import Modal from './Modal';
 import ModalExamineRontgen from './ModalExamineRontgen';
+
+const patientInfos = {
+    TCKimlikNo: "44558899330",
+    firstName: "Canan",
+    lastName: "Güzelce",
+    gender: "Kadın",
+    rontgenInfo: [
+        {
+            type: "Perioponal Röntgen",
+            date: "29.11.2022",
+            desc: "Alt-7 kök eğilmesi başlamış",
+            rontgen: [
+                "https://www.omerbayar.com.tr/wp-content/uploads/2020/01/oral-diagnoz-ve-radyoloji.png",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOx1hmyt1BElr60XudF5Bes9O4ymDQ9Rr2_g&usqp=CAU",
+                "https://www.dent-art.com.tr/wp-content/uploads/2021/07/xray-x-ray-2764828_1280-900x588.jpg",
+                "https://trakyadent.com.tr/wp-content/uploads/2022/02/dis-rontgeni-nasil-cekilir.jpg"
+            ]
+        },
+        {
+            type: "Panoramik Röntgen",
+            date: "24.11.2022",
+            desc: "Alt-7 kök eğilmesi başlamış",
+            rontgen: [
+                "https://www.yenibosnadis.com/wp-content/uploads/2016/04/oral-diagnoz-ve-radyoloji-icerik-gorsel-1-yenibosna-dis.jpg",
+                "https://www.sengelclinics.com/tr/wp-content/uploads/2022/04/picture63.png",
+            ]
+        },
+        {
+            type: "Perioponal Röntgen",
+            date: "11.11.2022",
+            desc: "Alt-7 kök eğilmesi başlamış",
+            rontgen: [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOx1hmyt1BElr60XudF5Bes9O4ymDQ9Rr2_g&usqp=CAU",
+                "https://www.dent-art.com.tr/wp-content/uploads/2021/07/xray-x-ray-2764828_1280-900x588.jpg",
+                "https://trakyadent.com.tr/wp-content/uploads/2022/02/dis-rontgeni-nasil-cekilir.jpg"
+            ]
+        },
+        {
+            type: "Okluzal Röntgen",
+            date: "21.11.2022",
+            desc: "Alt-7 kök eğilmesi başlamış",
+            rontgen: [
+                "https://www.omok.com.tr/userfiles/images/stories/04ilkrandevu/okluzal_rontgen.jpg",
+                "https://www.detaygoruntulememerkezi.com/wp-content/uploads/2018/09/adana_okluzal_film.jpg"
+            ]
+        },
+    ]
+
+}
 
 const RontgenQuery = () => {
     return (
@@ -25,8 +75,11 @@ const RontgenQuery = () => {
                     </button>
                 </div>
             </div>
-            <div className="overflow-x-auto ">
-                <table className="table w-full ">
+
+            <h4 className='ml-20 p-2'><span className='text-blue1 font-semibold'>{patientInfos.firstName} {patientInfos.lastName}</span> isimli hastanın töntgenleri listelendi.</h4>
+
+            <div className="overflow-x-auto mx-4 px-4">
+                <table className="table w-full">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>
@@ -38,75 +91,19 @@ const RontgenQuery = () => {
                     </thead>
                     <tbody>
                         {/* <!-- row 1 --> */}
-                        <tr>
-                            <td>Perioponal Röntgen</td>
-                            <td>23.09.2022</td>
-                            <td>Alt-7 kök eğilmesi başlamış.</td>
-                            <td><ModalExamineRontgen /></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div className="flex items-center space-x-3 gap-3">
-                                    <div className="avatar">
-                                        <div className="bg-neutral-focus text-neutral-content rounded-full w-12">
-                                            <img
-                                                src="https://placeimg.com/70/70/people"
-                                                alt="Doktor Avatar"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="font-bold">Egemen Yılmaz</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Melike Çetinkaya</td>
-                            <td>Bayan</td>
-                            <td>10.09.2022</td>
-                            <td><ModalExamineRontgen /></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div className="flex items-center space-x-3 gap-3">
-                                    <div className="avatar">
-                                        <div className="bg-neutral-focus text-neutral-content rounded-full w-12">
-                                            <img
-                                                src="https://placeimg.com/90/90/people"
-                                                alt="Doktor Avatar"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="font-bold">Zeynep Kaya</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Yunus Alpaslan</td>
-                            <td>Bay</td>
-                            <td>30.08.2022</td>
-                            <td><ModalExamineRontgen /></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div className="flex items-center space-x-3 gap-3">
-                                    <div className="avatar">
-                                        <div className="bg-neutral-focus text-neutral-content rounded-full w-12">
-                                            <img
-                                                src="https://placeimg.com/60/60/people"
-                                                alt="Doktor Avatar"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="font-bold">Seray Kiraz</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>Fatma Kaya</td>
-                            <td>Bayan</td>
-                            <td>23.08.2022</td>
-                            <td><ModalExamineRontgen /></td>
-                        </tr>
+                        {
+                            patientInfos.rontgenInfo?.map((item, index) => (
+                                <tr key={index}>
+                                    <td>{item.type}</td>
+                                    <td>{item.date} </td>
+                                    <td>{item.desc} </td>
+                                    <td>{item.rontgen.map((i, key, arr) => (
+                                        <ImageModal key={key} Images={arr} Image={i} />
+                                    ))}
+                                    </td>
+                                </tr>
+                            ))
+                        }
                     </tbody>
                 </table>
             </div>

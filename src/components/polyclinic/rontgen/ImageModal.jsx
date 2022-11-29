@@ -1,19 +1,25 @@
 import React, { useState } from 'react';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
-const ImageModal = () => {
+const ImageModal = ({ Images, Image }) => {
     const [showModal, setShowModal] = useState(false);
-    const [rontgen, setRontgen] = useState("")
-    const rontgenArray = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOx1hmyt1BElr60XudF5Bes9O4ymDQ9Rr2_g&usqp=CAU", "https://www.dent-art.com.tr/wp-content/uploads/2021/07/xray-x-ray-2764828_1280-900x588.jpg", "https://trakyadent.com.tr/wp-content/uploads/2022/02/dis-rontgeni-nasil-cekilir.jpg"]
+    const [rontgen, setRontgen] = useState(Image)
+    // console.log(Images);
+    // const rontgenArray = [
+    //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOx1hmyt1BElr60XudF5Bes9O4ymDQ9Rr2_g&usqp=CAU",
+    //     "https://www.dent-art.com.tr/wp-content/uploads/2021/07/xray-x-ray-2764828_1280-900x588.jpg",
+    //     "https://trakyadent.com.tr/wp-content/uploads/2022/02/dis-rontgeni-nasil-cekilir.jpg"
+    // ]
+
 
     return (
         <>
             <button
-                className="text-blue1 underline decoration-blue1"
+                className="text-blue1 underline decoration-blue1 mx-1"
                 type="button"
                 onClick={() => setShowModal(true)}
             >
-                <img src={rontgen} alt="" />
+                <img src={rontgen} alt="rontgen" className='w-20' />
             </button>
             {showModal ? (
                 <>
@@ -64,7 +70,7 @@ const ImageModal = () => {
                                                 </div>
                                             </div>
                                             <div className='rounded-md border border-blue2 mt-1 flex gap-4 p-1'>
-                                                {rontgenArray?.map((item, index) => (
+                                                {Images?.map((item, index) => (
                                                     <div key={index} className='rounded-md border border-dashed border-blue2 p-1 cursor-pointer' onClick={() => setRontgen(item)}>
                                                         <img src={item} alt="item" width={50} />
                                                     </div>
