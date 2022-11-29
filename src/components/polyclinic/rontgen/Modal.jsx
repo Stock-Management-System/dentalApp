@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { FaPlus } from 'react-icons/fa';
 
 export default function Modal() {
-    const [showModal, setShowModal] = React.useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const [addRontgen, setAddRontgen] = useState(null)
+    const [addNote, setAddNote] = useState("")
+    console.log(addRontgen)
+    // const RontgenUploader = () => {
+    //     const rontgenInput = useRef(null)
+    //     const handleUploader = (e) => {
+    //         onFileSelect(e.target.files[0])
+    //     }
+    //     return (
+    //         <div className="file-uploader">
+    //             <input type="file" onChange={handleUploader} />
+    //             <button onClick={e => rontgenInput.current && rontgenInput.current.click()} className="btn"></button>
+    //         </div>
+    //     )
+    // }
+
     return (
         <>
             <button
@@ -41,33 +57,31 @@ export default function Modal() {
                                             <div className="md:col-span-2">
                                                 <div className="px-4 sm:px-0">
                                                     <label className="block text-sm font-medium text-gray-700">Röntgen</label>
-                                                    <div className="mt-1 flex justify-center items-center rounded-md border-2 border-dashed border-blue2 h-[30rem] px-6 pt-5 pb-6">
-                                                        <div className="space-y-1 text-center">
-                                                            <svg
-                                                                className="mx-auto h-12 w-12 text-gray-400"
-                                                                stroke="currentColor"
-                                                                fill="none"
-                                                                viewBox="0 0 48 48"
-                                                                aria-hidden="true"
-                                                            >
-                                                                <path
-                                                                    d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                                                                    strokeWidth={3}
-                                                                    strokeLinecap="round"
-                                                                    strokeLinejoin="round"
-                                                                />
-                                                            </svg>
-                                                            <div className="flex text-sm text-gray-600">
-                                                                <label
-                                                                    htmlFor="file-upload"
-                                                                    className="relative cursor-pointer rounded-md bg-white font-medium text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500"
-                                                                >
-                                                                    <span className="underline">Bir Röntgen filmi yükle</span>
-                                                                    <input id="file-upload" name="file-upload" type="file" className="sr-only" />
-                                                                </label>
-                                                                <p className="pl-1">veya filmi sürükle bırak</p>
+                                                    <div className="mt-1 flex rounded-md border-2 border-dashed border-blue2 h-[30rem] px-6 pt-5 pb-6">
+                                                        {addRontgen?.map((item, index) => (
+                                                            <div key={index} className="flex justify-center items-center border border-gray rounded-md w-48 h-24 mx-1">
+                                                                <img src={item} alt="Röntgen" />
                                                             </div>
-                                                            {/* <p className="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p> */}
+                                                        ))}
+                                                        <div className="flex justify-center items-center border border-gray rounded-md w-48 h-24">
+                                                            <label
+                                                                htmlFor="file-upload"
+                                                                className="relative cursor-pointer rounded-md bg-white font-medium text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500"
+                                                            >
+                                                                <span>
+                                                                    <svg style={{ color: "rgb(147, 146, 138)" }} xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16"> <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" fill="#93928a"></path> </svg>                                                                    </span>
+                                                                <input
+                                                                    id="file-upload"
+
+                                                                    name="rontgen"
+
+                                                                    value={addRontgen}
+                                                                    type="file"
+                                                                    className="sr-only"
+                                                                    onChange={(e) => setAddRontgen([...addRontgen, e.target.files[0]])}
+                                                                    onClick={(e) => e.target.value = ""}
+                                                                />
+                                                            </label>
                                                         </div>
                                                     </div>
                                                 </div>
