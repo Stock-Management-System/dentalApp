@@ -2,7 +2,7 @@ export const doktorlar = [
 	{
 		id: 0,
 		name: "Egemen Yılmaz",
-		img: "https://placeimg.com/850/850/people",
+		img: "https://w7.pngwing.com/pngs/380/570/png-transparent-physician-doctor-of-medicine-apollo-hospital-indraprastha-surgeon-others-miscellaneous-service-medical.png",
 		email: "egemenyilmaz@email.com",
 		phone: "0542 123 45 67",
 		gender: "Erkek",
@@ -155,7 +155,7 @@ export const doktorlar = [
 	{
 		id: 1,
 		name: "Çelebi Doğan",
-		img: "https://placeimg.com/900/900/people",
+		img: "https://berowradental.com.au/wp-content/uploads/2019/06/doctor-page-photo.jpg",
 		email: "celebidogan@email.com",
 		phone: "0542 142 42 67",
 		gender: "Erkek",
@@ -308,7 +308,7 @@ export const doktorlar = [
 	{
 		id: 2,
 		name: "Zeynep Kara",
-		img: "https://placeimg.com/700/700/people",
+		img: "https://gcdentalworld.com/wp-content/uploads/2015/11/doktorka.png",
 		email: "zeynepkara@email.com",
 		phone: "0541 454 23 89",
 		gender: "Kadın",
@@ -461,7 +461,7 @@ export const doktorlar = [
 	{
 		id: 3,
 		name: "Mikail Çelikbaş",
-		img: "https://placeimg.com/950/950/people",
+		img: "https://esendent.com.tr/wp-content/uploads/2022/07/engin-boruk.png",
 		email: "mikailcelikbas@email.com",
 		phone: "0532 422 45 58",
 		gender: "Erkek",
@@ -614,7 +614,7 @@ export const doktorlar = [
 	{
 		id: 4,
 		name: "Seray Kiraz",
-		img: "https://placeimg.com/1100/1100/people",
+		img: "https://wellwomanclinics.com/upload/6238de3da7b98.png",
 		email: "seraykiraz@email.com",
 		phone: "0542 123 45 67",
 		gender: "Kadın",

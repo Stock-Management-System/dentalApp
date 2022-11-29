@@ -26,7 +26,7 @@ const DoctorPerformance = () => {
 							<img
 								src={doktor.img}
 								alt="Shoes"
-								className="w-36 rounded-full object-cover"
+								className="w-36 h-36 rounded-full object-contain"
 							/>
 						</figure>
 						<div className="text-center py-3">
