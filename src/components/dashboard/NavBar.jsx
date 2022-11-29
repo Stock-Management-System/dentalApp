@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const NavBar = () => {
     return (
-        <div className="navbar bg-transparent w-screen px-32 fixed">
+        <div className="navbar bg-transparent w-screen xs:px-16 lg:px-32 fixed z-10 hover:bg-container">
         <div className="flex-1">
         <div className="flex  items-center ">
                 <BiPlusMedical className='text-primary'/>
