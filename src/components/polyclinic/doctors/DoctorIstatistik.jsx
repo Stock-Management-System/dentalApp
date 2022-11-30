@@ -39,7 +39,7 @@ const DoctorIstatistik = ({ istatistik }) => {
         </div>
         <div tabIndex={0} className="dropdown dropdown-end  ">
           <label
-            className="p-1 bg-white swap rounded-full border "
+            className="p-1 bg-white swap rounded-full  "
             onClick={handleClick}
           >
             {dropdownIsOpen ? (
