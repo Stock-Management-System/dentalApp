@@ -3,7 +3,7 @@ import { FaPlus } from 'react-icons/fa';
 
 export default function Modal() {
     const [showModal, setShowModal] = useState(false);
-    const [addRontgen, setAddRontgen] = useState(null)
+    const [addRontgen, setAddRontgen] = useState()
     const [addNote, setAddNote] = useState("")
     console.log(addRontgen)
     // const RontgenUploader = () => {
@@ -58,11 +58,11 @@ export default function Modal() {
                                                 <div className="px-4 sm:px-0">
                                                     <label className="block text-sm font-medium text-gray-700">Röntgen</label>
                                                     <div className="mt-1 flex rounded-md border-2 border-dashed border-blue2 h-[30rem] px-6 pt-5 pb-6">
-                                                        {addRontgen?.map((item, index) => (
-                                                            <div key={index} className="flex justify-center items-center border border-gray rounded-md w-48 h-24 mx-1">
-                                                                <img src={item} alt="Röntgen" />
-                                                            </div>
-                                                        ))}
+                                                        {/* {addRontgen?.map((item, index) => ( */}
+                                                        <div className="flex justify-center items-center border border-gray rounded-md w-48 h-24 mx-1">
+                                                            <img src={addRontgen} alt="Röntgen" />
+                                                        </div>
+                                                        {/* ))} */}
                                                         <div className="flex justify-center items-center border border-gray rounded-md w-48 h-24">
                                                             <label
                                                                 htmlFor="file-upload"
@@ -79,7 +79,7 @@ export default function Modal() {
                                                                     type="file"
                                                                     className="sr-only"
                                                                     onChange={(e) => setAddRontgen([...addRontgen, e.target.files[0]])}
-                                                                    onClick={(e) => e.target.value = ""}
+                                                                // onClick={(e) => e.target.value = ""}
                                                                 />
                                                             </label>
                                                         </div>
