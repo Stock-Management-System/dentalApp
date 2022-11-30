@@ -4,6 +4,7 @@ import ClinicHeader from "../../../components/polyclinic/ClinicHeader";
 import Layout from "../../../components/polyclinic/Layout";
 import NewDoctorAddPage from "../../../components/polyclinic/doctors/NewDoctorAddPage";
 import { AiOutlineFileAdd } from "react-icons/ai";
+import DoctorPerformance from "../../../components/polyclinic/doctors/DoctorPerformance";
 
 const PolyclinicAppointments = () => {
 	const open = useSelector((state) => state.open.value);
@@ -93,7 +94,7 @@ const PolyclinicAppointments = () => {
 							Hekimlerimiz Component gelecek
 						</div>
 						<div className={openTab === 2 ? "block" : "hidden"}>
-							Performans Component gelecek
+							<DoctorPerformance />
 						</div>
 						<div className={openTab === 3 ? "block" : "hidden"}>
 							İzinler Component gelecek
