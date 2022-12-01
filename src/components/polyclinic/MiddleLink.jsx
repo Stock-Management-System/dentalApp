@@ -5,6 +5,7 @@ import calendar from "../../assets/calendar.png";
 import payments from "../../assets/payments.png";
 import users from "../../assets/users.png";
 import reports from "../../assets/reports.png";
+import ayarlar from "../../assets/ayarlar.png";
 
 const MiddleLink = () => {
 	// const open = useSelector((state) => state.open.value);
@@ -86,11 +87,7 @@ const MiddleLink = () => {
 			>
 				<div className="card-body items-center text-center">
 					<figure>
-						<img
-							src="https://cdn-icons-png.flaticon.com/512/6392/6392125.png"
-							alt="Settings"
-							className="h-16"
-						/>
+						<img src={ayarlar} alt="Settings" className="h-16" />
 					</figure>
 
 					<h5 className="card-title">Ayarlar</h5>
