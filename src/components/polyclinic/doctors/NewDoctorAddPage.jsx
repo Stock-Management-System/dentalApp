@@ -1,10 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import quadrant1 from "../../../assets/quadrant1.png";
 import quadrant2 from "../../../assets/quadrant2.png";
 import quadrant3 from "../../../assets/quadrant3.png";
 import doctorUser from "../../../assets/doctorUser.png";
+import { useDropzone } from "react-dropzone";
 
 const NewDoctorAddPage = () => {
+	const [files, setFiles] = useState([]);
+	const [imageTrue, setImageTrue] = useState(false);
+
+	const { getRootProps, getInputProps } = useDropzone({
+		accept: "image/*",
+		onDrop: (acceptedFiles) => {
+			setFiles(
+				acceptedFiles.map((file) =>
+					Object.assign(file, {
+						preview: URL.createObjectURL(file),
+					})
+				)
+			);
+		},
+	});
+
+	const images = files.map((file) => (
+		<img
+			src={file.preview}
+			key={file.name}
+			alt="preview"
+			className="object-cover"
+		/>
+	));
+
+	useEffect(() => {
+		if (images.length > 0) {
+			setImageTrue(true);
+		}
+	}, [images]);
+
 	return (
 		<div className="py-3 px-5">
 			{/* <----- KİŞİSEL BİLGİLER -----> */}
@@ -13,11 +45,27 @@ const NewDoctorAddPage = () => {
 			</p>
 			<div className="mt-5">
 				<div className="flex flex-row gap-3">
-					<div className="flex justify-center w-1/3 transition bg-container rounded-sm  cursor-pointer hover:border border-gray">
-						<img src={doctorUser} alt="users" />
-						{/* <p className="text-center">
-							Resmi buraya bırakın veya yüklemek için tıklayın.
-						</p> */}
+					<div
+						{...getRootProps()}
+						className="flex justify-center w-1/3 h-[340px] transition bg-container rounded-sm  cursor-pointer hover:border border-gray object-cover"
+					>
+						{imageTrue ? (
+							<div className="object-contain overflow-hidden">{images}</div>
+						) : (
+							<>
+								<input {...getInputProps()} />
+								<figure className="relative max-w-sm">
+									<img
+										src={doctorUser}
+										alt="users"
+										className="object-cover opacity-25 mt-5"
+									/>
+									<p className="absolute bottom-36 text-center text-xl">
+										Resmi buraya sürükleyin veya yüklemek için tıklayın.
+									</p>
+								</figure>
+							</>
+						)}
 					</div>
 					<div className="form-control w-1/3">
 						<div className="form-control w-full">
@@ -197,20 +245,20 @@ const NewDoctorAddPage = () => {
 				<div className="overflow-x-auto pr-5">
 					<table className="table w-full">
 						{/* <!-- head --> */}
-						<thead className="bg-blue1 text-center">
+						<thead className="text-center">
 							<tr>
-								<th></th>
-								<th>PAZARTESİ</th>
-								<th>SALI</th>
-								<th>ÇARŞAMBA</th>
-								<th>PERŞEMBE</th>
-								<th>CUMA</th>
-								<th>CUMAERTESİ</th>
-								<th>PAZAR</th>
+								<th className="bg-blue1 text-white"></th>
+								<th className="bg-blue1 text-white">PAZARTESİ</th>
+								<th className="bg-blue1 text-white">SALI</th>
+								<th className="bg-blue1 text-white">ÇARŞAMBA</th>
+								<th className="bg-blue1 text-white">PERŞEMBE</th>
+								<th className="bg-blue1 text-white">CUMA</th>
+								<th className="bg-blue1 text-white">CUMAERTESİ</th>
+								<th className="bg-blue1 text-white">PAZAR</th>
 							</tr>
 						</thead>
 						<tbody>
-							{/* <!-- row 1 --> */}
+							{/* <!-- Sabah --> */}
 							<tr>
 								<th>
 									<img src={quadrant1} alt="quadrant" />
@@ -293,7 +341,7 @@ const NewDoctorAddPage = () => {
 									</label>
 								</td>
 							</tr>
-							{/* <!-- row 2 --> */}
+							{/* <!-- Öğle --> */}
 							<tr>
 								<th>
 									<img src={quadrant2} alt="quadrant" />
@@ -302,10 +350,10 @@ const NewDoctorAddPage = () => {
 									<label className="swap text-sm">
 										<input type="checkbox" />
 										<div className="swap-on border rounded-full border-blue1 text-blue1 p-1 px-3">
-											09:00 - 12:00
+											13:00 - 16:30
 										</div>
 										<div className="swap-off border rounded-full border-gray text-gray p-1 px-3">
-											09:00 - 12:00
+											13:00 - 16:30
 										</div>
 									</label>
 								</td>
@@ -313,10 +361,10 @@ const NewDoctorAddPage = () => {
 									<label className="swap text-sm">
 										<input type="checkbox" />
 										<div className="swap-on border rounded-full border-blue1 text-blue1 p-1 px-3">
-											09:00 - 12:00
+											13:00 - 16:30
 										</div>
 										<div className="swap-off border rounded-full border-gray text-gray p-1 px-3">
-											09:00 - 12:00
+											13:00 - 16:30
 										</div>
 									</label>
 								</td>
@@ -324,10 +372,10 @@ const NewDoctorAddPage = () => {
 									<label className="swap text-sm">
 										<input type="checkbox" />
 										<div className="swap-on border rounded-full border-blue1 text-blue1 p-1 px-3">
-											09:00 - 12:00
+											13:00 - 16:30
 										</div>
 										<div className="swap-off border rounded-full border-gray text-gray p-1 px-3">
-											09:00 - 12:00
+											13:00 - 16:30
 										</div>
 									</label>
 								</td>
@@ -335,10 +383,10 @@ const NewDoctorAddPage = () => {
 									<label className="swap text-sm">
 										<input type="checkbox" />
 										<div className="swap-on border rounded-full border-blue1 text-blue1 p-1 px-3">
-											09:00 - 12:00
+											13:00 - 16:30
 										</div>
 										<div className="swap-off border rounded-full border-gray text-gray p-1 px-3">
-											09:00 - 12:00
+											13:00 - 16:30
 										</div>
 									</label>
 								</td>
@@ -346,10 +394,10 @@ const NewDoctorAddPage = () => {
 									<label className="swap text-sm">
 										<input type="checkbox" />
 										<div className="swap-on border rounded-full border-blue1 text-blue1 p-1 px-3">
-											09:00 - 12:00
+											13:00 - 16:30
 										</div>
 										<div className="swap-off border rounded-full border-gray text-gray p-1 px-3">
-											09:00 - 12:00
+											13:00 - 16:30
 										</div>
 									</label>
 								</td>
@@ -357,10 +405,10 @@ const NewDoctorAddPage = () => {
 									<label className="swap text-sm">
 										<input type="checkbox" />
 										<div className="swap-on border rounded-full border-blue1 text-blue1 p-1 px-3">
-											09:00 - 12:00
+											13:00 - 16:30
 										</div>
 										<div className="swap-off border rounded-full border-gray text-gray p-1 px-3">
-											09:00 - 12:00
+											13:00 - 16:30
 										</div>
 									</label>
 								</td>
@@ -368,15 +416,15 @@ const NewDoctorAddPage = () => {
 									<label className="swap text-sm">
 										<input type="checkbox" />
 										<div className="swap-on border rounded-full border-blue1 text-blue1 p-1 px-3">
-											09:00 - 12:00
+											13:00 - 16:30
 										</div>
 										<div className="swap-off border rounded-full border-gray text-gray p-1 px-3">
-											09:00 - 12:00
+											13:00 - 16:30
 										</div>
 									</label>
 								</td>
 							</tr>
-							{/* <!-- row 3 --> */}
+							{/* <!-- Akşam --> */}
 							<tr>
 								<th>
 									<img src={quadrant3} alt="quadrant" />
@@ -385,10 +433,10 @@ const NewDoctorAddPage = () => {
 									<label className="swap text-sm">
 										<input type="checkbox" />
 										<div className="swap-on border rounded-full border-blue1 text-blue1 p-1 px-3">
-											09:00 - 12:00
+											18:00 - 22:00
 										</div>
 										<div className="swap-off border rounded-full border-gray text-gray p-1 px-3">
-											09:00 - 12:00
+											18:00 - 22:00
 										</div>
 									</label>
 								</td>
@@ -396,10 +444,10 @@ const NewDoctorAddPage = () => {
 									<label className="swap text-sm">
 										<input type="checkbox" />
 										<div className="swap-on border rounded-full border-blue1 text-blue1 p-1 px-3">
-											09:00 - 12:00
+											18:00 - 22:00
 										</div>
 										<div className="swap-off border rounded-full border-gray text-gray p-1 px-3">
-											09:00 - 12:00
+											18:00 - 22:00
 										</div>
 									</label>
 								</td>
@@ -407,10 +455,10 @@ const NewDoctorAddPage = () => {
 									<label className="swap text-sm">
 										<input type="checkbox" />
 										<div className="swap-on border rounded-full border-blue1 text-blue1 p-1 px-3">
-											09:00 - 12:00
+											18:00 - 22:00
 										</div>
 										<div className="swap-off border rounded-full border-gray text-gray p-1 px-3">
-											09:00 - 12:00
+											18:00 - 22:00
 										</div>
 									</label>
 								</td>
@@ -418,10 +466,10 @@ const NewDoctorAddPage = () => {
 									<label className="swap text-sm">
 										<input type="checkbox" />
 										<div className="swap-on border rounded-full border-blue1 text-blue1 p-1 px-3">
-											09:00 - 12:00
+											18:00 - 22:00
 										</div>
 										<div className="swap-off border rounded-full border-gray text-gray p-1 px-3">
-											09:00 - 12:00
+											18:00 - 22:00
 										</div>
 									</label>
 								</td>
@@ -429,10 +477,10 @@ const NewDoctorAddPage = () => {
 									<label className="swap text-sm">
 										<input type="checkbox" />
 										<div className="swap-on border rounded-full border-blue1 text-blue1 p-1 px-3">
-											09:00 - 12:00
+											18:00 - 22:00
 										</div>
 										<div className="swap-off border rounded-full border-gray text-gray p-1 px-3">
-											09:00 - 12:00
+											18:00 - 22:00
 										</div>
 									</label>
 								</td>
@@ -440,10 +488,10 @@ const NewDoctorAddPage = () => {
 									<label className="swap text-sm">
 										<input type="checkbox" />
 										<div className="swap-on border rounded-full border-blue1 text-blue1 p-1 px-3">
-											09:00 - 12:00
+											18:00 - 22:00
 										</div>
 										<div className="swap-off border rounded-full border-gray text-gray p-1 px-3">
-											09:00 - 12:00
+											18:00 - 22:00
 										</div>
 									</label>
 								</td>
@@ -451,16 +499,19 @@ const NewDoctorAddPage = () => {
 									<label className="swap text-sm">
 										<input type="checkbox" />
 										<div className="swap-on border rounded-full border-blue1 text-blue1 p-1 px-3">
-											09:00 - 12:00
+											18:00 - 22:00
 										</div>
 										<div className="swap-off border rounded-full border-gray text-gray p-1 px-3">
-											09:00 - 12:00
+											18:00 - 22:00
 										</div>
 									</label>
 								</td>
 							</tr>
 						</tbody>
 					</table>
+					<button className="btn btn-active btn-sm rounded-full my-6 p-2 px-8 bg-blue1 hover:bg-blue1">
+						KAYDET
+					</button>
 				</div>
 			</div>
 		</div>
