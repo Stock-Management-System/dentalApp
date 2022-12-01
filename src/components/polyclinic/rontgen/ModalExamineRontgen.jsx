@@ -3,7 +3,14 @@ import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 const ModalExamineRontgen = ({ rontgenInfo, oneRontgen }) => {
     const [showModal, setShowModal] = useState(false);
-    const [rontgen, setRontgen] = useState(oneRontgen.rontgen)
+    const [rontgen, setRontgen] = useState(oneRontgen.rontgen);
+    const [createdDate, setCreatedDate] = useState(oneRontgen.createdDate);
+    const [rontgenType, setRontgenType] = useState(oneRontgen.rontgenType);
+    const handleClink = (e) => {
+        setRontgen(e.rontgen);
+        setCreatedDate(e.createdDate);
+        setRontgenType(e.rontgenType);
+    }
     console.log(rontgenInfo);
     console.log(oneRontgen);
     return (
@@ -63,7 +70,7 @@ const ModalExamineRontgen = ({ rontgenInfo, oneRontgen }) => {
                                             </div>
                                             <div className='rounded-md border border-gray mt-2 flex gap-4 p-1'>
                                                 {rontgenInfo?.map((item, index) => (
-                                                    <div key={index} className='rounded-md p-1 cursor-pointer' onClick={() => setRontgen(item.rontgen)}>
+                                                    <div key={index} className='rounded-md p-1 cursor-pointer' onClick={() => handleClink(item)}>
                                                         <img src={item.rontgen} alt="item" width={50} />
                                                     </div>
                                                 ))}
@@ -94,13 +101,13 @@ const ModalExamineRontgen = ({ rontgenInfo, oneRontgen }) => {
                                                                 <td className="font-bold" colSpan={3}>Röntgen Türü</td>
                                                             </tr>
                                                             <tr>
-                                                                <td colSpan={3}>{oneRontgen.rontgenType}</td>
+                                                                <td colSpan={3}>{rontgenType}</td>
                                                             </tr>
                                                             <tr>
                                                                 <td className="font-bold" colSpan={3}>Röntgen Tarihi</td>
                                                             </tr>
                                                             <tr>
-                                                                <td colSpan={3}>{oneRontgen.createdDate}</td>
+                                                                <td colSpan={3}>{createdDate}</td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
