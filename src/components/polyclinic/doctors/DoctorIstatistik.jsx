@@ -45,9 +45,9 @@ const DoctorIstatistik = ({ istatistik }) => {
 		<div className="w-1/4 bg-container p-2">
 			<div className="flex flex-row p-2 justify-between py-2">
 				<div>
-					<h6 className="font-bold">{istatistik.istatistikAdi}</h6>
-					<h1 className={`text-3xl font-bold ${bgColor} `}>{veriSayı}</h1>
-					<p className="text-[10px] opacity-70">{veriTime.toUpperCase()}</p>
+					<h6 className="font-bold text-xl">{istatistik.istatistikAdi}</h6>
+					<h1 className={`text-5xl font-bold ${bgColor} `}>{veriSayı}</h1>
+					<p className="text-base opacity-70">{veriTime.toUpperCase()}</p>
 				</div>
 				<div tabIndex={0} className="dropdown dropdown-end">
 					<label

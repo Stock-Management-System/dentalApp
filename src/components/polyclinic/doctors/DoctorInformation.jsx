@@ -7,7 +7,7 @@ const DoctorInformation = ({ doktorInfo }) => {
 		<div>
 			<div>
 				{/* <-----Hekim Performans ----->👇🏻 */}
-				<div className="flex flex-row gap-5 pt-10">
+				<div className="flex flex-row gap-10 pt-10">
 					{/* <-----Hekim Resmi ----->👇🏻 */}
 					<figure>
 						<img
@@ -17,11 +17,11 @@ const DoctorInformation = ({ doktorInfo }) => {
 						/>
 					</figure>
 					{/* <-----Hekim Bilgileri ----->👇🏻 */}
-					<div className="w-full">
-						<h1 className="text-xl font-bold mb-3 capitalize">
+					<div className="w-full ">
+						<h1 className="text-2xl font-bold mb-3 capitalize">
 							{doktorInfo.name}
 						</h1>
-						<div className="flex flex-row gap-2 ">
+						<div className="flex flex-row gap-10 text-xl">
 							<div className="w-1/3">
 								<p className="bg-base-200 rounded-lg p-2 ">
 									{doktorInfo.ünvan}
