@@ -509,6 +509,9 @@ const NewDoctorAddPage = () => {
 							</tr>
 						</tbody>
 					</table>
+					<button className="btn btn-active btn-sm rounded-full my-6 p-2 px-8 bg-blue1 hover:bg-blue1">
+						KAYDET
+					</button>
 				</div>
 			</div>
 		</div>
