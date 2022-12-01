@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
-const ModalExamineRontgen = () => {
+const ModalExamineRontgen = ({ rontgenInfo, oneRontgen }) => {
     const [showModal, setShowModal] = useState(false);
-    const [rontgen, setRontgen] = useState("")
-    const rontgenArray = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOx1hmyt1BElr60XudF5Bes9O4ymDQ9Rr2_g&usqp=CAU", "https://www.dent-art.com.tr/wp-content/uploads/2021/07/xray-x-ray-2764828_1280-900x588.jpg", "https://trakyadent.com.tr/wp-content/uploads/2022/02/dis-rontgeni-nasil-cekilir.jpg"]
-
+    const [rontgen, setRontgen] = useState(oneRontgen.rontgen)
+    console.log(rontgenInfo);
+    console.log(oneRontgen);
     return (
         <>
             <button
@@ -42,7 +42,7 @@ const ModalExamineRontgen = () => {
                                     <div className="md:grid md:grid-cols-4 md:gap-1">
                                         <div className="md:col-span-3">
                                             <div className="px-4 sm:px-0">
-                                                <div className="relative mt-1 h-[31.5rem] flex justify-center items-center rounded-md border-2 border-dashed border-blue2 px-6 pt-5 pb-6">
+                                                <div className="relative mt-1 h-[31.5rem] flex justify-center items-center rounded-md border-2 border-none px-6 pt-5 pb-6">
                                                     <TransformWrapper
                                                         initialScale={1}
                                                         initialPositionX={0}
@@ -56,17 +56,17 @@ const ModalExamineRontgen = () => {
                                                                     <button onClick={() => zoomOut()} className='btn btn-circle btn-outline btn-sm'>-</button>
                                                                 </div>
                                                                 <TransformComponent>
-                                                                    <img src={rontgen} width={689} alt="röntgen" className='object-fill hover:object-scale-down' />
+                                                                    <img src={rontgen} width={680} alt="röntgen" className='object-cover' />
                                                                 </TransformComponent>
                                                             </>
                                                         )}
                                                     </TransformWrapper>
                                                 </div>
                                             </div>
-                                            <div className='rounded-md border border-blue2 mt-1 flex gap-4 p-1'>
-                                                {rontgenArray?.map((item, index) => (
-                                                    <div key={index} className='rounded-md border border-dashed border-blue2 p-1 cursor-pointer' onClick={() => setRontgen(item)}>
-                                                        <img src={item} alt="item" width={50} />
+                                            <div className='rounded-md border border-gray mt-1 flex gap-4 p-1'>
+                                                {rontgenInfo?.map((item, index) => (
+                                                    <div key={index} className='rounded-md p-1 cursor-pointer' onClick={() => setRontgen(item.rontgen)}>
+                                                        <img src={item.rontgen} alt="item" width={50} />
                                                     </div>
                                                 ))}
                                             </div>
@@ -92,6 +92,14 @@ const ModalExamineRontgen = () => {
                                                             <td>41</td>
                                                         </tr>
                                                     </tbody>
+                                                    <div>
+                                                        <div className='flex flex-col gap-1'>
+                                                            <h1 className="font-bold">Röntgen Türü</h1>
+                                                            <h4>{oneRontgen.rontgenType}</h4>
+                                                            <h1 className="font-bold">Röntgen Tarihi</h1>
+                                                            <h4>{oneRontgen.createdDate}</h4>
+                                                        </div>
+                                                    </div>
                                                     <label htmlFor="notlar" className="block text-sm font-medium text-gray-700">
                                                         Notlar
                                                     </label>
@@ -99,7 +107,7 @@ const ModalExamineRontgen = () => {
                                                         <textarea
                                                             id="notlar"
                                                             name="notlar"
-                                                            rows={8}
+                                                            rows={6}
                                                             className="textarea mt-1 block w-full rounded-md border-gray shadow-sm focus:border-gray focus:ring-gray sm:text-sm"
                                                             placeholder="Hasta ile ilgili notları giriniz..."
                                                             defaultValue={''}
