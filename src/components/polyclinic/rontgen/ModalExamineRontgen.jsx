@@ -90,16 +90,20 @@ const ModalExamineRontgen = ({ rontgenInfo, oneRontgen }) => {
                                                                 <td className="px-1">:</td>
                                                                 <td>41</td>
                                                             </tr>
+                                                            <tr>
+                                                                <td className="font-bold" colSpan={3}>Röntgen Türü</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colSpan={3}>{oneRontgen.rontgenType}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td className="font-bold" colSpan={3}>Röntgen Tarihi</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colSpan={3}>{oneRontgen.createdDate}</td>
+                                                            </tr>
                                                         </tbody>
                                                     </table>
-                                                    <div>
-                                                        <div className='flex flex-col gap-1'>
-                                                            <h1 className="font-bold">Röntgen Türü</h1>
-                                                            <h4>{oneRontgen.rontgenType}</h4>
-                                                            <h1 className="font-bold">Röntgen Tarihi</h1>
-                                                            <h4>{oneRontgen.createdDate}</h4>
-                                                        </div>
-                                                    </div>
                                                     <label htmlFor="notlar" className="block text-sm font-medium text-gray-700">
                                                         Notlar
                                                     </label>
