@@ -2,7 +2,16 @@ import React from 'react';
 import ImageModal from './ImageModal';
 import Modal from './Modal';
 import ModalExamineRontgen from './ModalExamineRontgen';
-
+// rontgen: [
+//     "https://www.omerbayar.com.tr/wp-content/uploads/2020/01/oral-diagnoz-ve-radyoloji.png",
+//     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOx1hmyt1BElr60XudF5Bes9O4ymDQ9Rr2_g&usqp=CAU",
+//     "https://www.dent-art.com.tr/wp-content/uploads/2021/07/xray-x-ray-2764828_1280-900x588.jpg",
+//     "https://trakyadent.com.tr/wp-content/uploads/2022/02/dis-rontgeni-nasil-cekilir.jpg"
+// "https://www.omok.com.tr/userfiles/images/stories/04ilkrandevu/okluzal_rontgen.jpg",
+// "https://www.detaygoruntulememerkezi.com/wp-content/uploads/2018/09/adana_okluzal_film.jpg",
+// "https://www.dent-art.com.tr/wp-content/uploads/2021/07/xray-x-ray-2764828_1280-900x588.jpg",
+// "https://trakyadent.com.tr/wp-content/uploads/2022/02/dis-rontgeni-nasil-cekilir.jpg"
+// ]
 const patientInfos = {
     TCKimlikNo: "44558899330",
     firstName: "Canan",
@@ -10,43 +19,69 @@ const patientInfos = {
     gender: "Kadın",
     rontgenInfo: [
         {
-            type: "Perioponal Röntgen",
-            date: "29.11.2022",
+            firstName: "Canan",
+            lastName: "Güzelce",
+            gender: "Kadın",
+            referring_doctor: [
+                {
+                    doctorFirstName: "Egemen",
+                    doctorLastName: "Yılmaz",
+                    doctorAvatar: "https://placeimg.com/50/50/people"
+                }
+            ],
+            rontgenType: "Perioponal Röntgen",
+            createdDate: "29.11.2022",
             desc: "Alt-7 kök eğilmesi başlamış",
-            rontgen: [
-                "https://www.omerbayar.com.tr/wp-content/uploads/2020/01/oral-diagnoz-ve-radyoloji.png",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOx1hmyt1BElr60XudF5Bes9O4ymDQ9Rr2_g&usqp=CAU",
-                "https://www.dent-art.com.tr/wp-content/uploads/2021/07/xray-x-ray-2764828_1280-900x588.jpg",
-                "https://trakyadent.com.tr/wp-content/uploads/2022/02/dis-rontgeni-nasil-cekilir.jpg"
-            ]
+            rontgen: "https://www.omerbayar.com.tr/wp-content/uploads/2020/01/oral-diagnoz-ve-radyoloji.png",
         },
         {
-            type: "Panoramik Röntgen",
-            date: "24.11.2022",
+            firstName: "Canan",
+            lastName: "Güzelce",
+            gender: "Kadın",
+            referring_doctor: [
+                {
+                    doctorFirstName: "Egemen",
+                    doctorLastName: "Yılmaz",
+                    doctorAvatar: "https://placeimg.com/50/50/people"
+                }
+            ],
+            rontgenType: "Panoramik Röntgen",
+            createdDate: "24.11.2022",
             desc: "Alt-7 kök eğilmesi başlamış",
-            rontgen: [
-                "https://www.yenibosnadis.com/wp-content/uploads/2016/04/oral-diagnoz-ve-radyoloji-icerik-gorsel-1-yenibosna-dis.jpg",
-                "https://www.sengelclinics.com/tr/wp-content/uploads/2022/04/picture63.png",
-            ]
+            rontgen: "https://www.yenibosnadis.com/wp-content/uploads/2016/04/oral-diagnoz-ve-radyoloji-icerik-gorsel-1-yenibosna-dis.jpg",
+
         },
         {
-            type: "Perioponal Röntgen",
-            date: "11.11.2022",
+            firstName: "Canan",
+            lastName: "Güzelce",
+            gender: "Kadın",
+            referring_doctor: [
+                {
+                    doctorFirstName: "Egemen",
+                    doctorLastName: "Yılmaz",
+                    doctorAvatar: "https://placeimg.com/50/50/people"
+                }
+            ],
+            rontgenType: "Perioponal Röntgen",
+            createdDate: "11.11.2022",
             desc: "Alt-7 kök eğilmesi başlamış",
-            rontgen: [
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOx1hmyt1BElr60XudF5Bes9O4ymDQ9Rr2_g&usqp=CAU",
-                "https://www.dent-art.com.tr/wp-content/uploads/2021/07/xray-x-ray-2764828_1280-900x588.jpg",
-                "https://trakyadent.com.tr/wp-content/uploads/2022/02/dis-rontgeni-nasil-cekilir.jpg"
-            ]
+            rontgen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOx1hmyt1BElr60XudF5Bes9O4ymDQ9Rr2_g&usqp=CAU",
         },
         {
-            type: "Okluzal Röntgen",
-            date: "21.11.2022",
+            firstName: "Canan",
+            lastName: "Güzelce",
+            gender: "Kadın",
+            referring_doctor: [
+                {
+                    doctorFirstName: "Egemen",
+                    doctorLastName: "Yılmaz",
+                    doctorAvatar: "https://placeimg.com/50/50/people"
+                }
+            ],
+            rontgenType: "Okluzal Röntgen",
+            createdDate: "21.11.2022",
             desc: "Alt-7 kök eğilmesi başlamış",
-            rontgen: [
-                "https://www.omok.com.tr/userfiles/images/stories/04ilkrandevu/okluzal_rontgen.jpg",
-                "https://www.detaygoruntulememerkezi.com/wp-content/uploads/2018/09/adana_okluzal_film.jpg"
-            ]
+            rontgen: "https://www.omok.com.tr/userfiles/images/stories/04ilkrandevu/okluzal_rontgen.jpg",
         },
     ]
 
@@ -83,24 +118,39 @@ const RontgenQuery = () => {
                     {/* <!-- head --> */}
                     <thead>
                         <tr>
-                            <th className="text-xl">RÖNTGEN TANIMI</th>
+                            <th>SEVKEDEN HEKİM</th>
+                            <th>HASTA</th>
+                            <th>CİNSİYET</th>
                             <th>RÖNTGEN TARİHİ</th>
-                            <th>NOTLAR</th>
                             <th>RÖNTGENLER</th>
                         </tr>
                     </thead>
                     <tbody>
                         {/* <!-- row 1 --> */}
                         {
-                            patientInfos.rontgenInfo?.map((item, index) => (
+                            patientInfos.rontgenInfo?.map((item, index, arr) => (
                                 <tr key={index}>
-                                    <td>{item.type}</td>
-                                    <td>{item.date} </td>
-                                    <td>{item.desc} </td>
-                                    <td>{item.rontgen.map((i, key, arr) => (
-                                        <ImageModal key={key} Images={arr} Image={i} />
-                                    ))}
+                                    <td>
+                                        <div className="flex items-center space-x-3 gap-3">
+                                            <div className="avatar">
+                                                <div className="bg-neutral-focus text-neutral-content rounded-full w-12">
+                                                    <img
+                                                        src={item.referring_doctor[0].doctorAvatar}
+                                                        alt="Doktor Avatar"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="font-bold">{item.referring_doctor[0].doctorFirstName} {item.referring_doctor[0].doctorLastName}</div>
+                                        </div>
                                     </td>
+                                    <td>{item.firstName} {item.lastName}</td>
+                                    <td>{item.gender} </td>
+                                    <td>{item.createdDate}</td>
+                                    <td><ModalExamineRontgen rontgenInfo={arr} oneRontgen={item} /></td>
+                                    {/* <td>{item.rontgen.map((i, key, arr) => (
+                                        <ImageModal key={key} />
+                                    ))}
+                                    </td> */}
                                 </tr>
                             ))
                         }
