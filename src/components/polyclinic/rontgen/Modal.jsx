@@ -59,7 +59,7 @@ export default function Modal() {
                                                     <label className="block text-sm font-medium text-gray-700">Röntgen</label>
                                                     <div class="flex items-center justify-center w-full">
                                                         <label
-                                                            class="flex flex-col w-full h-96 border-4 border-blue-200 border-dashed hover:bg-gray-100 hover:border-gray-300">
+                                                            class="flex flex-col justify-center w-full h-[29rem] border border-gray border-dashed hover:bg-gray-100 hover:border-gray-300">
                                                             <div class="flex flex-col items-center justify-center pt-7">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-400 group-hover:text-gray-600"
                                                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -80,34 +80,11 @@ export default function Modal() {
                                                             />
                                                         </label>
                                                     </div>
-                                                    {/* <div className="mt-1 flex rounded-md border-2 border-dashed border-blue2 h-[30rem] px-6 pt-5 pb-6">
-                                                        <div className="flex justify-center items-center border border-gray rounded-md w-48 h-24 mx-1">
-                                                            <img src={addRontgen} alt="Röntgen" />
-                                                        </div>
-                                                        <div className="flex justify-center items-center border border-gray rounded-md w-48 h-24">
-                                                            <label
-                                                                htmlFor="file-upload"
-                                                                className="relative cursor-pointer rounded-md bg-white font-medium text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500"
-                                                            >
-                                                                <span>
-                                                                    <svg style={{ color: "rgb(147, 146, 138)" }} xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16"> <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" fill="#93928a"></path> </svg>                                                                    </span>
-                                                                <input
-                                                                    id="file-upload"
-                                                                    name="rontgen"
-                                                                    value={addRontgen}
-                                                                    type="file"
-                                                                    className="sr-only"
-                                                                    onChange={(e) => setAddRontgen([...addRontgen, e.target.files[0]])}
-                                                                // onClick={(e) => e.target.value = ""}
-                                                                />
-                                                            </label>
-                                                        </div>
-                                                    </div> */}
                                                 </div>
                                             </div>
                                             <div className="mt-5 md:col-span-1 md:mt-0">
                                                 <div className="shadow sm:overflow-hidden sm:rounded-md">
-                                                    <div className="space-y-6 bg-white px-2 py-2 sm:p-6">
+                                                    <div className="space-y-2 bg-white px-2 sm:p-6">
                                                         <h1 className="font-bold">Hasta Sorgula</h1>
                                                         <div className="flex justify-between items-center gap-4 w-[20rem]">
                                                             {/* <label className="label-text text-center">Hasta TC Kimlik No</label> */}
@@ -139,15 +116,21 @@ export default function Modal() {
                                                                         <td className="px-2">:</td>
                                                                         <td>41</td>
                                                                     </tr>
+                                                                    <tr>
+                                                                        <td className="font-bold" colSpan={3} >Röntgen Tipini Seçiniz</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td className="" colSpan={3} >
+                                                                            <select id="rontgentype" className="select select-ghost select-sm  w-full max-w-sm">
+                                                                                <option selected>Panoramik Röntgen</option>
+                                                                                <option>Perioponal Röntgen</option>
+                                                                                <option>Okluzal Röntgen</option>
+                                                                            </select>
+                                                                        </td>
+                                                                    </tr>
                                                                 </tbody>
                                                             </table>
                                                         </div>
-                                                        <label htmlFor="rontgentype" className="label p-0 label-text font-semibold">Röntgen Tipini Seçiniz</label>
-                                                        <select id="rontgentype" className="select select-ghost select-sm  w-full max-w-sm">
-                                                            <option selected>Panoramik Röntgen</option>
-                                                            <option>Perioponal Röntgen</option>
-                                                            <option>Okluzal Röntgen</option>
-                                                        </select>
                                                         <div>
                                                             <label htmlFor="notlar" className="block text-sm font-medium text-gray-700">
                                                                 Notlar
@@ -156,7 +139,7 @@ export default function Modal() {
                                                                 <textarea
                                                                     id="notlar"
                                                                     name="notlar"
-                                                                    rows={6}
+                                                                    rows={3}
                                                                     className="textarea mt-1 block w-full rounded-md border-gray shadow-sm focus:border-gray focus:ring-gray sm:text-sm"
                                                                     placeholder="Hasta ile ilgili notları giriniz..."
                                                                     defaultValue={''}
