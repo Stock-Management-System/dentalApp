@@ -2,7 +2,7 @@ export const doktorlar = [
 	{
 		id: 0,
 		name: "Egemen Yılmaz",
-		img: "https://w7.pngwing.com/pngs/380/570/png-transparent-physician-doctor-of-medicine-apollo-hospital-indraprastha-surgeon-others-miscellaneous-service-medical.png",
+		img: "https://www.pngall.com/wp-content/uploads/2018/05/Doctor-PNG-File-Download-Free.png",
 		email: "egemenyilmaz@email.com",
 		phone: "0542 123 45 67",
 		gender: "Erkek",
@@ -241,7 +241,7 @@ export const doktorlar = [
 	{
 		id: 1,
 		name: "Çelebi Doğan",
-		img: "https://berowradental.com.au/wp-content/uploads/2019/06/doctor-page-photo.jpg",
+		img: "https://down.imgspng.com/download/0720/doctor_PNG15959.png",
 		email: "celebidogan@email.com",
 		phone: "0542 142 42 67",
 		gender: "Erkek",
