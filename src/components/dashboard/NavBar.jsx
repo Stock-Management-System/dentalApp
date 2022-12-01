@@ -5,19 +5,20 @@ import { Link } from "react-router-dom";
 const NavBar = ({setShowModal}) => {
     return (
         <div className="navbar bg-white w-screen top-0 left-0 xs:px-16 lg:px-32 fixed z-10 hover:bg-container">
-        <div className="flex-1">
+        <div className="flex-1 ">       <Link to='/doktorlar'>
             <div className="flex  items-center ">
+         
             <BiPlusMedical className="text-primary" />
             <h1 className=" text-28 text-black font-light">
                 Dent
                 <span className="text-gray2 font-bold">rey</span>
             </h1>
-            </div>
+            </div></Link>
         </div>
         <div className="xs:hidden lg:block">
             <Link className="hover:text-blue1">Randevu Sorgula</Link>
             <Link className="mx-10 hover:text-blue1">Randevu Al</Link>
-            <Link className="mr-10 hover:text-blue1">Poliklinikler</Link>
+            <Link to='/poliklinik' className="mr-10 hover:text-blue1">Poliklinikler</Link>
             <button
             style={{ textTransform: "none", boxShadow: "0 0 30px -12px #5616f5" }}
             className="h-8 w-28 text-blue1 items-center btn-white rounded-full mr-3 hover:bg-blue1 hover:text-white"
