@@ -15,6 +15,8 @@ module.exports = {
       'turquaz': '#3beaf5',
       'darkTurquaz': '#11c8e3',
       'footerLinkHover':'#3beaf5',
+      'mainPageGray':'#233d63',
+      'mainPageP':'#7a7d86',
       'slate': {
         500: '#64748b',
       },
@@ -35,6 +37,7 @@ module.exports = {
       }
     },
     fontSize: {
+      '44': '44px',
       '28': '28px',
       '22': '22px',
       '18': '18px',

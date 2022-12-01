@@ -45,7 +45,7 @@ const Sidebar = () => {
 
         >
             <div>
-                <Link to='/poliklinik' className=" absolute top-0 h-20 flex pl-9 items-center text-indigo-500 transition-all ease-in-out duration-500">
+                <Link to='/' className=" absolute top-0 h-20 flex pl-9 items-center text-indigo-500 transition-all ease-in-out duration-500">
                     <BiPlusMedical />
                     <h1 className=" text-28 font-bold">
                         D
