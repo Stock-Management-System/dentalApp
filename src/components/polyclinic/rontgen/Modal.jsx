@@ -57,12 +57,33 @@ export default function Modal() {
                                             <div className="md:col-span-2">
                                                 <div className="px-4 sm:px-0">
                                                     <label className="block text-sm font-medium text-gray-700">Röntgen</label>
-                                                    <div className="mt-1 flex rounded-md border-2 border-dashed border-blue2 h-[30rem] px-6 pt-5 pb-6">
-                                                        {/* {addRontgen?.map((item, index) => ( */}
+                                                    <div class="flex items-center justify-center w-full">
+                                                        <label
+                                                            class="flex flex-col w-full h-96 border-4 border-blue-200 border-dashed hover:bg-gray-100 hover:border-gray-300">
+                                                            <div class="flex flex-col items-center justify-center pt-7">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-400 group-hover:text-gray-600"
+                                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                                                                </svg>
+                                                                <p class="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
+                                                                    Attach a file</p>
+                                                            </div>
+                                                            <input
+                                                                id="file-upload"
+                                                                name="rontgen"
+                                                                value={addRontgen}
+                                                                type="file"
+                                                                className="sr-only"
+                                                                onChange={(e) => setAddRontgen([...addRontgen, e.target.files[0]])}
+                                                            // onClick={(e) => e.target.value = ""}
+                                                            />
+                                                        </label>
+                                                    </div>
+                                                    {/* <div className="mt-1 flex rounded-md border-2 border-dashed border-blue2 h-[30rem] px-6 pt-5 pb-6">
                                                         <div className="flex justify-center items-center border border-gray rounded-md w-48 h-24 mx-1">
                                                             <img src={addRontgen} alt="Röntgen" />
                                                         </div>
-                                                        {/* ))} */}
                                                         <div className="flex justify-center items-center border border-gray rounded-md w-48 h-24">
                                                             <label
                                                                 htmlFor="file-upload"
@@ -72,9 +93,7 @@ export default function Modal() {
                                                                     <svg style={{ color: "rgb(147, 146, 138)" }} xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16"> <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" fill="#93928a"></path> </svg>                                                                    </span>
                                                                 <input
                                                                     id="file-upload"
-
                                                                     name="rontgen"
-
                                                                     value={addRontgen}
                                                                     type="file"
                                                                     className="sr-only"
@@ -83,7 +102,7 @@ export default function Modal() {
                                                                 />
                                                             </label>
                                                         </div>
-                                                    </div>
+                                                    </div> */}
                                                 </div>
                                             </div>
                                             <div className="mt-5 md:col-span-1 md:mt-0">
@@ -101,26 +120,34 @@ export default function Modal() {
                                                                 Sorgula
                                                             </button>
                                                         </div>
-                                                        <div className="flex flex-col justify-evenly gap-3">
+                                                        <div className="shadow">
                                                             <h1 className="font-semibold">Hasta Bilgileri</h1>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td className="font-bold">Ad-Soyad</td>
-                                                                    <td className="px-2">:</td>
-                                                                    <td>Malcolm Lockyer</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td className="font-bold">Cinsiyet</td>
-                                                                    <td className="px-2">:</td>
-                                                                    <td>Bay</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td className="font-bold">Yaş</td>
-                                                                    <td className="px-2">:</td>
-                                                                    <td>41</td>
-                                                                </tr>
-                                                            </tbody>
+                                                            <table className="table table-compact w-full">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td className="font-bold">Ad-Soyad</td>
+                                                                        <td className="px-2">:</td>
+                                                                        <td>Malcolm Lockyer</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td className="font-bold">Cinsiyet</td>
+                                                                        <td className="px-2">:</td>
+                                                                        <td>Bay</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td className="font-bold">Yaş</td>
+                                                                        <td className="px-2">:</td>
+                                                                        <td>41</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
                                                         </div>
+                                                        <label htmlFor="rontgentype" className="label p-0 label-text font-semibold">Röntgen Tipini Seçiniz</label>
+                                                        <select id="rontgentype" className="select select-ghost select-sm  w-full max-w-sm">
+                                                            <option selected>Panoramik Röntgen</option>
+                                                            <option>Perioponal Röntgen</option>
+                                                            <option>Okluzal Röntgen</option>
+                                                        </select>
                                                         <div>
                                                             <label htmlFor="notlar" className="block text-sm font-medium text-gray-700">
                                                                 Notlar

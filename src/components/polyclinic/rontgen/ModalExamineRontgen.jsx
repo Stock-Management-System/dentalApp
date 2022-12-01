@@ -41,29 +41,27 @@ const ModalExamineRontgen = ({ rontgenInfo, oneRontgen }) => {
                                 <div className="relative p-3 flex-auto">
                                     <div className="md:grid md:grid-cols-4 md:gap-1">
                                         <div className="md:col-span-3">
-                                            <div className="px-4 sm:px-0">
-                                                <div className="relative mt-1 h-[31.5rem] flex justify-center items-center rounded-md border-2 border-none px-6 pt-5 pb-6">
-                                                    <TransformWrapper
-                                                        initialScale={1}
-                                                        initialPositionX={0}
-                                                        initialPositionY={2}
-                                                    >
-                                                        {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
-                                                            <>
-                                                                <div className="z-50 absolute right-1 bottom-2 flex flex-col gap-1">
-                                                                    <button onClick={() => zoomIn()} className='btn btn-circle btn-outline btn-sm' >+</button>
-                                                                    <button onClick={() => resetTransform()} className='btn btn-circle btn-outline btn-sm'>x</button>
-                                                                    <button onClick={() => zoomOut()} className='btn btn-circle btn-outline btn-sm'>-</button>
-                                                                </div>
-                                                                <TransformComponent>
-                                                                    <img src={rontgen} width={680} alt="röntgen" className='object-cover' />
-                                                                </TransformComponent>
-                                                            </>
-                                                        )}
-                                                    </TransformWrapper>
-                                                </div>
+                                            <div className="relative mt-1 h-[31.5rem] flex justify-center items-center rounded-md border-2 border-none">
+                                                <TransformWrapper
+                                                    initialScale={1}
+                                                    initialPositionX={0}
+                                                    initialPositionY={2}
+                                                >
+                                                    {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+                                                        <>
+                                                            <div className="z-50 absolute right-1 bottom-2 flex flex-col gap-1">
+                                                                <button onClick={() => zoomIn()} className='btn btn-circle btn-outline btn-sm' >+</button>
+                                                                <button onClick={() => resetTransform()} className='btn btn-circle btn-outline btn-sm'>x</button>
+                                                                <button onClick={() => zoomOut()} className='btn btn-circle btn-outline btn-sm'>-</button>
+                                                            </div>
+                                                            <TransformComponent>
+                                                                <img src={rontgen} width={680} alt="röntgen" className='object-cover' />
+                                                            </TransformComponent>
+                                                        </>
+                                                    )}
+                                                </TransformWrapper>
                                             </div>
-                                            <div className='rounded-md border border-gray mt-1 flex gap-4 p-1'>
+                                            <div className='rounded-md border border-gray mt-2 flex gap-4 p-1'>
                                                 {rontgenInfo?.map((item, index) => (
                                                     <div key={index} className='rounded-md p-1 cursor-pointer' onClick={() => setRontgen(item.rontgen)}>
                                                         <img src={item.rontgen} alt="item" width={50} />
@@ -73,25 +71,27 @@ const ModalExamineRontgen = ({ rontgenInfo, oneRontgen }) => {
                                         </div>
                                         <div className="mt-5 md:col-span-1 md:mt-0">
                                             <div className="shadow sm:overflow-hidden sm:rounded-md">
-                                                <div className="space-y-3 bg-white py-1 sm:p-2">
-                                                    <h1 className="font-semibold mb-2">Hasta Bilgileri</h1>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td className="font-bold">Ad-Soyad</td>
-                                                            <td className="px-1">:</td>
-                                                            <td>Malcolm Lockyer</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td className="font-bold">Cinsiyet</td>
-                                                            <td className="px-1">:</td>
-                                                            <td>Bay</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td className="font-bold">Yaş</td>
-                                                            <td className="px-1">:</td>
-                                                            <td>41</td>
-                                                        </tr>
-                                                    </tbody>
+                                                <div className="space-y-3 bg-white sm:p-2">
+                                                    <h1 className="font-semibold mb-1">Hasta Bilgileri</h1>
+                                                    <table className="table table-compact w-full">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td className="font-bold">Ad-Soyad</td>
+                                                                <td className="px-1">:</td>
+                                                                <td>Malcolm Lockyer</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td className="font-bold">Cinsiyet</td>
+                                                                <td className="px-1">:</td>
+                                                                <td>Bay</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td className="font-bold">Yaş</td>
+                                                                <td className="px-1">:</td>
+                                                                <td>41</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
                                                     <div>
                                                         <div className='flex flex-col gap-1'>
                                                             <h1 className="font-bold">Röntgen Türü</h1>
