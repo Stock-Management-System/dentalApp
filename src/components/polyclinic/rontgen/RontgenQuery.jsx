@@ -86,6 +86,9 @@ const patientInfos = {
     ]
 
 }
+const handlePatienQuery = () => {
+
+}
 
 const RontgenQuery = () => {
     return (
@@ -98,17 +101,20 @@ const RontgenQuery = () => {
             </div>
             <div className="grid grid-cols-1 place-items-center my-9">
                 {/* TC numarası ile sorgulama 👇🏻 */}
-                <div className="flex justify-between items-center w-[40rem]">
+                <form
+                    onSubmit={handlePatienQuery}
+                    className="flex justify-between items-center w-[40rem]"
+                >
                     <label className="label-text text-center">HASTA TC KİMLİK NO</label>
                     <input
                         type="text"
                         placeholder="Hasta TC Kimlik No"
                         className="input input-bordered w-full max-w-xs"
                     />
-                    <button className="btn btn-sm btn-outline btn-primary rounded-full capitalize">
+                    <button type='submit' className="btn btn-sm btn-outline btn-primary rounded-full capitalize">
                         Sorgula
                     </button>
-                </div>
+                </form>
             </div>
 
             <h4 className='ml-20 p-2'><span className='text-blue1 font-semibold'>{patientInfos.firstName} {patientInfos.lastName}</span> isimli hastanın töntgenleri listelendi.</h4>
