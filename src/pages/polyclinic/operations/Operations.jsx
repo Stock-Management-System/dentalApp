@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import ClinicHeader from '../../../components/polyclinic/ClinicHeader'
 import Layout from '../../../components/polyclinic/Layout'
+import PastTransaction from '../../../components/polyclinic/pastTransaction/PastTransaction'
 
 const Operations = () => {
   const open = useSelector(state => state.open.value)
@@ -16,8 +17,7 @@ const Operations = () => {
         <div className="bg-white">
           <div className='divide-y p-1'>
             <ClinicHeader />
-
-
+            <PastTransaction />
           </div>
         </div>
 
