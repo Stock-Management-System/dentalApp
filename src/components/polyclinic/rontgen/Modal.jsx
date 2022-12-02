@@ -7,6 +7,7 @@ export default function Modal() {
     const [addRontgen, setAddRontgen] = useState([])
     const [imageTrue, setImageTrue] = useState(false);
     const [addNote, setAddNote] = useState("");
+    const [typeRontgen, setTypeRontgen] = useState("")
 
     const { getRootProps, getInputProps } = useDropzone({
         accept: "image/*",
@@ -29,6 +30,12 @@ export default function Modal() {
         />
     ));
     console.log(addRontgen)
+    console.log(images)
+    console.log(addNote)
+
+    const handleSubmit = () => {
+
+    }
 
     useEffect(() => {
         if (images.length > 0) {
@@ -68,7 +75,9 @@ export default function Modal() {
                                     </button>
                                 </div>
                                 {/*body*/}
-                                <form>
+                                <form
+                                    onSubmit={handleSubmit}
+                                >
                                     <div className="relative p-3 flex-auto">
                                         <div className="md:grid md:grid-cols-3 md:gap-3">
                                             <div className="md:col-span-2">
@@ -139,10 +148,14 @@ export default function Modal() {
                                                                     </tr>
                                                                     <tr>
                                                                         <td className="" colSpan={3} >
-                                                                            <select id="rontgentype" className="select select-ghost select-sm  w-full max-w-sm">
-                                                                                <option selected>Panoramik Röntgen</option>
-                                                                                <option>Perioponal Röntgen</option>
-                                                                                <option>Okluzal Röntgen</option>
+                                                                            <select
+                                                                                id="rontgentype"
+                                                                                className="select select-ghost select-sm  w-full max-w-sm"
+                                                                                onChange={(e) => setTypeRontgen(e.target.value)}
+                                                                            >
+                                                                                <option selected value={"Panoramik Röntgen"}>Panoramik Röntgen</option>
+                                                                                <option value={"Perioponal Röntgen"}>Perioponal Röntgen</option>
+                                                                                <option value={"Okluzal Röntgen"}>Okluzal Röntgen</option>
                                                                             </select>
                                                                         </td>
                                                                     </tr>
@@ -161,6 +174,7 @@ export default function Modal() {
                                                                     className="textarea mt-1 block w-full rounded-md border-gray shadow-sm focus:border-gray focus:ring-gray sm:text-sm"
                                                                     placeholder="Hasta ile ilgili notları giriniz..."
                                                                     defaultValue={''}
+                                                                    onChange={(e) => setAddNote(e.target.value)}
                                                                 />
                                                             </div>
                                                         </div>
