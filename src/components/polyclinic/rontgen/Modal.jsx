@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { FaPlus } from 'react-icons/fa';
 
@@ -8,6 +8,7 @@ export default function Modal() {
     const [imageTrue, setImageTrue] = useState(false);
     const [addNote, setAddNote] = useState("");
     const [typeRontgen, setTypeRontgen] = useState("")
+    const [tcNo, setTcNo] = useState("")
 
     const { getRootProps, getInputProps } = useDropzone({
         accept: "image/*",
@@ -32,8 +33,19 @@ export default function Modal() {
     console.log(addRontgen)
     console.log(images)
     console.log(addNote)
+    console.log(typeRontgen)
+    console.log(tcNo)
+    const handleQueryPatient = (e) => {
+        e.preventDefault();
+        // getPatient(tcNo);
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // sendInfo(addNote, typeRontgen, addRontgen[0].path)
 
-    const handleSubmit = () => {
+
+
+        setShowModal(false);
 
     }
 
@@ -74,132 +86,131 @@ export default function Modal() {
                                         </span>
                                     </button>
                                 </div>
-                                {/*body*/}
-                                <form
-                                    onSubmit={handleSubmit}
-                                >
-                                    <div className="relative p-3 flex-auto">
-                                        <div className="md:grid md:grid-cols-3 md:gap-3">
-                                            <div className="md:col-span-2">
-                                                <div className="px-4 sm:px-0">
-                                                    <label className="block text-sm font-medium text-gray-700">Röntgen</label>
-                                                    <div
-                                                        {...getRootProps()}
-                                                        class="flex items-center justify-center w-full">
-                                                        {
-                                                            imageTrue
-                                                                ?
-                                                                <div className="object-contain overflow-hidden">{images}</div>
-                                                                :
-                                                                <label
-                                                                    class="flex flex-col justify-center w-full h-[29rem] border border-gray border-dashed hover:bg-gray-100 hover:border-gray-300">
-                                                                    <input {...getInputProps()} />
-                                                                    <div class="flex flex-col items-center justify-center pt-7">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-400 group-hover:text-gray-600"
-                                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                                                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                                                                        </svg>
-                                                                        <p class="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
-                                                                            Attach a file</p>
-                                                                    </div>
-                                                                </label>
-                                                        }
-
-                                                    </div>
+                                <div className="relative p-3 flex-auto">
+                                    <div className="md:grid md:grid-cols-3 md:gap-3">
+                                        <div className="md:col-span-2">
+                                            <div className="px-4 sm:px-0">
+                                                <label className="block text-sm font-medium text-gray-700">Röntgen</label>
+                                                <div
+                                                    {...getRootProps()}
+                                                    class="flex items-center justify-center w-full">
+                                                    {
+                                                        imageTrue
+                                                            ?
+                                                            <div className="object-contain overflow-hidden">{images}</div>
+                                                            :
+                                                            <label
+                                                                class="flex flex-col justify-center w-full h-[29rem] border border-gray border-dashed hover:bg-gray-100 hover:border-gray-300">
+                                                                <input {...getInputProps()} />
+                                                                <div class="flex flex-col items-center justify-center pt-7">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-400 group-hover:text-gray-600"
+                                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                                                                    </svg>
+                                                                    <p class="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
+                                                                        Attach a file</p>
+                                                                </div>
+                                                            </label>
+                                                    }
                                                 </div>
                                             </div>
-                                            <div className="mt-5 md:col-span-1 md:mt-0">
-                                                <div className="shadow sm:overflow-hidden sm:rounded-md">
-                                                    <div className="space-y-2 bg-white px-2 sm:p-6">
-                                                        <h1 className="font-bold">Hasta Sorgula</h1>
-                                                        <div className="flex justify-between items-center gap-4 w-[20rem]">
-                                                            {/* <label className="label-text text-center">Hasta TC Kimlik No</label> */}
-                                                            <input
-                                                                type="text"
-                                                                placeholder="Hasta TC Kimlik No"
-                                                                className="input input-bordered w-full max-w-xs"
+                                        </div>
+                                        <div className="mt-5 md:col-span-1 md:mt-0">
+                                            <div className="shadow sm:overflow-hidden sm:rounded-md">
+                                                <div className="space-y-2 bg-white px-2 sm:p-6">
+                                                    <h1 className="font-bold">Hasta Sorgula</h1>
+                                                    <div className="flex justify-between items-center gap-4 w-[20rem]">
+                                                        {/* <label className="label-text text-center">Hasta TC Kimlik No</label> */}
+                                                        <input
+                                                            type="text"
+                                                            placeholder="Hasta TC Kimlik No"
+                                                            className="input input-bordered w-full max-w-xs"
+                                                            value={tcNo}
+                                                            onChange={(e) => setTcNo(e.target.value)}
+                                                        />
+                                                        <button
+                                                            onClick={handleQueryPatient}
+                                                            className="btn btn-sm btn-outline btn-primary rounded-full capitalize"
+                                                        >
+                                                            Sorgula
+                                                        </button>
+                                                    </div>
+                                                    <div className="shadow">
+                                                        <h1 className="font-semibold">Hasta Bilgileri</h1>
+                                                        <table className="table table-compact w-full">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td className="font-bold">Ad-Soyad</td>
+                                                                    <td className="px-2">:</td>
+                                                                    <td>Malcolm Lockyer</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td className="font-bold">Cinsiyet</td>
+                                                                    <td className="px-2">:</td>
+                                                                    <td>Bay</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td className="font-bold">Yaş</td>
+                                                                    <td className="px-2">:</td>
+                                                                    <td>41</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td className="font-bold" colSpan={3} >Röntgen Tipini Seçiniz</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td className="" colSpan={3} >
+                                                                        <select
+                                                                            id="rontgentype"
+                                                                            className="select select-ghost select-sm  w-full max-w-sm"
+                                                                            onChange={(e) => setTypeRontgen(e.target.value)}
+                                                                        >
+                                                                            <option selected value={"Panoramik Röntgen"}>Panoramik Röntgen</option>
+                                                                            <option value={"Perioponal Röntgen"}>Perioponal Röntgen</option>
+                                                                            <option value={"Okluzal Röntgen"}>Okluzal Röntgen</option>
+                                                                        </select>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div>
+                                                        <label htmlFor="notlar" className="block text-sm font-medium text-gray-700">
+                                                            Notlar
+                                                        </label>
+                                                        <div className="mt-1">
+                                                            <textarea
+                                                                id="notlar"
+                                                                name="notlar"
+                                                                rows={3}
+                                                                className="textarea mt-1 block w-full rounded-md border-gray shadow-sm focus:border-gray focus:ring-gray sm:text-sm"
+                                                                placeholder="Hasta ile ilgili notları giriniz..."
+                                                                defaultValue={''}
+                                                                onChange={(e) => setAddNote(e.target.value)}
                                                             />
-                                                            <button className="btn btn-sm btn-outline btn-primary rounded-full capitalize">
-                                                                Sorgula
-                                                            </button>
-                                                        </div>
-                                                        <div className="shadow">
-                                                            <h1 className="font-semibold">Hasta Bilgileri</h1>
-                                                            <table className="table table-compact w-full">
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td className="font-bold">Ad-Soyad</td>
-                                                                        <td className="px-2">:</td>
-                                                                        <td>Malcolm Lockyer</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td className="font-bold">Cinsiyet</td>
-                                                                        <td className="px-2">:</td>
-                                                                        <td>Bay</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td className="font-bold">Yaş</td>
-                                                                        <td className="px-2">:</td>
-                                                                        <td>41</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td className="font-bold" colSpan={3} >Röntgen Tipini Seçiniz</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td className="" colSpan={3} >
-                                                                            <select
-                                                                                id="rontgentype"
-                                                                                className="select select-ghost select-sm  w-full max-w-sm"
-                                                                                onChange={(e) => setTypeRontgen(e.target.value)}
-                                                                            >
-                                                                                <option selected value={"Panoramik Röntgen"}>Panoramik Röntgen</option>
-                                                                                <option value={"Perioponal Röntgen"}>Perioponal Röntgen</option>
-                                                                                <option value={"Okluzal Röntgen"}>Okluzal Röntgen</option>
-                                                                            </select>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                        <div>
-                                                            <label htmlFor="notlar" className="block text-sm font-medium text-gray-700">
-                                                                Notlar
-                                                            </label>
-                                                            <div className="mt-1">
-                                                                <textarea
-                                                                    id="notlar"
-                                                                    name="notlar"
-                                                                    rows={3}
-                                                                    className="textarea mt-1 block w-full rounded-md border-gray shadow-sm focus:border-gray focus:ring-gray sm:text-sm"
-                                                                    placeholder="Hasta ile ilgili notları giriniz..."
-                                                                    defaultValue={''}
-                                                                    onChange={(e) => setAddNote(e.target.value)}
-                                                                />
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    {/*footer*/}
-                                    <div className="flex items-center justify-between mx-4 p-2 rounded-b">
-                                        <button
-                                            className="bg-blue1 text-white btn btn-sm font-bold rounded-3xl w-24 hover:bg-blue1"
-                                            onClick={() => setShowModal(false)}
-                                        >
-                                            Kapat
-                                        </button>
-                                        <button
-                                            className="bg-blue1 text-white btn btn-sm font-bold w-24 rounded-3xl hover:bg-blue1"
-                                            type="submit"
-                                            onClick={() => setShowModal(false)}
-                                        >
-                                            Kaydet
-                                        </button>
-                                    </div>
-                                </form>
+                                </div>
+                                {/*footer*/}
+                                <div className="flex items-center justify-between mx-4 p-2 rounded-b">
+                                    <button
+                                        className="bg-blue1 text-white btn btn-sm font-bold rounded-3xl w-24 hover:bg-blue1"
+                                        onClick={() => setShowModal(false)}
+                                    >
+                                        Kapat
+                                    </button>
+                                    <button
+                                        className="bg-blue1 text-white btn btn-sm font-bold w-24 rounded-3xl hover:bg-blue1"
+                                        type="submit"
+                                        onClick={handleSubmit}
+                                    >
+                                        Kaydet
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
