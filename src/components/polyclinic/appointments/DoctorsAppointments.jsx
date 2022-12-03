@@ -1,46 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
 
-const DoctorsAppointments = () => {
+const DoctorsAppointments = ({ doktorAppointment }) => {
+	const [openTab, setOpenTab] = useState(0);
+
 	return (
 		<div>
-			<div className="grid grid-cols-2 place-content-evenly my-9">
-				<div className="grid grid-cols-1 place-items-center my-9">
-					<div className="form-control w-full max-w-xs">
-						<label className="label-text my-2">Hekim Seçerek Sorgula</label>
-						<select className="select select-bordered">
-							<option disabled selected>
-								Hekim Seç
-							</option>
-							<option>Egemen Yılmaz</option>
-							<option>Zeynep Kara</option>
-							<option>Serap Kiraz</option>
-						</select>
-						<button className="btn btn-sm btn-outline btn-primary rounded-full place-self-end my-3 capitalize">
-							Randevu Sorgula
-						</button>
+			{/* Diploma numarası ile sorgulama 👇🏻 */}
+			<form>
+				<input
+					type="text"
+					placeholder="Diploma no giriniz"
+					className="input input-bordered input-sm w-full max-w-xs mr-7"
+				/>
+				<button
+					type="submit"
+					className="btn btn-sm btn-outline btn-primary rounded-full capitalize"
+				>
+					Doktor Ara
+				</button>
+			</form>
+			<div className="flex flex-row gap-5 my-7">
+				{doktorAppointment.map((doktor) => (
+					<div
+						className={` ${
+							openTab === doktor.id
+								? "card w-1/5 bg-gradient-to-r  from-blue1 to-blue2 text-white"
+								: "card w-1/5 bg-container"
+						}`}
+						onClick={(e) => {
+							e.preventDefault();
+							setOpenTab(doktor.id);
+						}}
+					>
+						<figure className="pt-5">
+							<img
+								src={doktor.doktorİmg}
+								alt="Shoes"
+								className="w-36 h-36 rounded-full object-contain"
+							/>
+						</figure>
+						<div className="text-center py-3">
+							<h2 className="text-center text-xl font-semibold">
+								{doktor.doktorAdı}
+							</h2>
+							<p
+								className={` ${
+									openTab === doktor.id
+										? "text-white text-center"
+										: "text-blue1 text-center"
+								}`}
+							>
+								{doktor.doktorUnvan}
+							</p>
+						</div>
 					</div>
-				</div>
-
-				<div className="grid place-items-center my-9">
-					{/* Diploma numarası ile sorgulama 👇🏻 */}
-					<div className="form-control w-full max-w-xs ">
-						<label className="label-text my-2">Diploma No ile Sorgula</label>
-						<input
-							type="text"
-							placeholder="Diploma No ile Sorgula"
-							className="input input-bordered w-full max-w-xs"
-						/>
-						<button className="btn btn-sm btn-outline btn-primary rounded-full place-self-end my-3 capitalize">
-							Randevu Sorgula
-						</button>
-					</div>
-				</div>
+				))}
 			</div>
-
-			{/* patients appointments table 👇🏻 */}
+			{/* Hasta tablosu 👇🏻 */}
 			<div className="overflow-x-auto ">
 				<table className="table w-full ">
-					{/* <!-- head --> */}
 					<thead className="text-gray">
 						<tr>
 							<th className="pl-20">DOKTOR</th>
@@ -48,95 +66,35 @@ const DoctorsAppointments = () => {
 							<th>CİNSİYET</th>
 							<th>TARİH</th>
 							<th>SAAT</th>
+							<th></th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
-						{/* <!-- row 1 --> */}
-						<tr>
-							<td>
-								<div className="flex items-center space-x-3 gap-3">
-									<div className="avatar">
-										<div className="bg-neutral-focus text-neutral-content rounded-full w-12">
-											<img
-												src="https://placeimg.com/50/50/people"
-												alt="Doktor Avatar"
-											/>
+						{doktorAppointment[openTab].randevular.map((randevu) => (
+							<tr>
+								<td>
+									<div className="flex items-center space-x-3 gap-3">
+										<div className="avatar">
+											<div className="rounded-full w-14">
+												<img
+													src={randevu.doktorİmg}
+													alt="Doktor Avatar"
+													className="object-top"
+												/>
+											</div>
 										</div>
+										<div className="font-bold">{randevu.doktorAdı}</div>
 									</div>
-									<div className="font-bold">Egemen Yılmaz</div>
-								</div>
-							</td>
-							<td>Barış Korkmaz</td>
-							<td>Bay</td>
-							<td>23.09.2022</td>
-							<td>15:00</td>
-						</tr>
-						{/* <!--örnek silinecek --> */}
-						<tr>
-							<td>
-								<div className="flex items-center space-x-3 gap-3">
-									<div className="avatar">
-										<div className="bg-neutral-focus text-neutral-content rounded-full w-12">
-											<img
-												src="https://placeimg.com/70/70/people"
-												alt="Doktor Avatar"
-											/>
-										</div>
-									</div>
-									<div>
-										<div className="font-bold">Egemen Yılmaz</div>
-									</div>
-								</div>
-							</td>
-							<td>Melike Çetinkaya</td>
-							<td>Bayan</td>
-							<td>10.09.2022</td>
-							<td>11:00</td>
-						</tr>
-						{/* <!-- örnek silinecek --> */}
-						<tr>
-							<td>
-								<div className="flex items-center space-x-3 gap-3">
-									<div className="avatar">
-										<div className="bg-neutral-focus text-neutral-content rounded-full w-12">
-											<img
-												src="https://placeimg.com/90/90/people"
-												alt="Doktor Avatar"
-											/>
-										</div>
-									</div>
-									<div>
-										<div className="font-bold">Zeynep Kaya</div>
-									</div>
-								</div>
-							</td>
-							<td>Yunus Alpaslan</td>
-							<td>Bay</td>
-							<td>30.08.2022</td>
-							<td>09:00</td>
-						</tr>
-						{/* <!-- örnek silinecek --> */}
-						<tr>
-							<td>
-								<div className="flex items-center space-x-3 gap-3">
-									<div className="avatar">
-										<div className="bg-neutral-focus text-neutral-content rounded-full w-12">
-											<img
-												src="https://placeimg.com/60/60/people"
-												alt="Doktor Avatar"
-											/>
-										</div>
-									</div>
-									<div>
-										<div className="font-bold">Seray Kiraz</div>
-									</div>
-								</div>
-							</td>
-							<td>Fatma Kaya</td>
-							<td>Bayan</td>
-							<td>23.08.2022</td>
-							<td>10:30</td>
-						</tr>
+								</td>
+								<td>{randevu.hastaAdı}</td>
+								<td>{randevu.gender}</td>
+								<td>{randevu.randevuTarihi}</td>
+								<td>{randevu.randevuSaati}</td>
+								<td></td>
+								<td></td>
+							</tr>
+						))}
 					</tbody>
 				</table>
 			</div>
