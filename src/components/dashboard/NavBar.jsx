@@ -2,12 +2,11 @@ import React from "react";
 import { BiPlusMedical } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
-const NavBar = ({setShowModal}) => {
+const NavBar = ({setShowRegister}) => {
     return (
         <div className="navbar bg-white w-screen top-0 left-0 xs:px-16 lg:px-32 fixed z-10 hover:bg-container">
         <div className="flex-1 ">       <Link to='/doktorlar'>
-            <div className="flex  items-center ">
-         
+            <div className="flex  items-center ">         
             <BiPlusMedical className="text-primary" />
             <h1 className=" text-28 text-black font-light">
                 Dent
@@ -20,10 +19,11 @@ const NavBar = ({setShowModal}) => {
             <Link className="mx-10 hover:text-blue1">Randevu Al</Link>
             <Link to='/poliklinik' className="mr-10 hover:text-blue1">Poliklinikler</Link>
             <button
+            htmlFor="my-modal-4"
             style={{ textTransform: "none", boxShadow: "0 0 30px -12px #5616f5" }}
             className="h-8 w-28 text-blue1 items-center btn-white rounded-full mr-3 hover:bg-blue1 hover:text-white"
             type="button"
-            onClick={() => setShowModal(true)}
+            onClick={() => setShowRegister(true)}
             >
             Giriş Yap
             </button>
@@ -61,7 +61,7 @@ const NavBar = ({setShowModal}) => {
                 }}
                 className="h-8 w-4/5 mt-3 text-blue1 items-center btn-white rounded-full mx-auto hover:bg-blue1 hover:text-white"
                 type="button"
-                onClick={() => setShowModal(true)}
+                onClick={() => setShowRegister(true)}
             >
                 Giriş Yap
             </button>

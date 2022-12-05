@@ -6,15 +6,20 @@ import dashboardIntro from '../../assets/dashboardIntro.png';
 import dashboardDoctor from '../../assets/dashboard_doctor.png';
 import dashboardCalendar from '../../assets/dashboard_calendar.png';
 import dashboardClinic from '../../assets/dashboard_clinic.png';
-import {BsCheck2} from "react-icons/bs"
+import LoginModal from '../../components/dashboard/LoginModal';
+import RegisterModal from '../../components/dashboard/RegisterModal';
+import ForgotPassword from '../../components/dashboard/ForgotPassword';
 
 
 const MainPage = () => {
-    const [showModal, setShowModal] = useState(false);
+    const [showRegister, setShowRegister] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
+    const [showForgotPassword, setShowForgotPassword] = useState(false);
+
+  
     return (   
         <div className='h-full relative'>
-            <NavBar setShowModal={setShowModal}/>      
+            <NavBar setShowRegister={setShowRegister}/>      
             <div  style={{borderBottomRightRadius:'100% 100%'}} className='bg-white h-[100vh] w-[94vw] '>
             <div className='h-[110rem] w-full bg-container absolute -z-10'> </div>
                 <section  className='flex pt-24 w-[105%] items-center min-h-screen lg:px-20 bg-transparent xs:flex-col lg:flex-row mb-10'>
@@ -56,128 +61,19 @@ const MainPage = () => {
                 </section>
             <Footer/>
             </div>    
-            {showModal ? (
-            <>
-            <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                        <div className="relative w-auto my-6 mx-auto max-w-full">
-                            {/*content*/}
-                            <div className="border-0 rounded-lg shadow-lg relative flex flex-row w-[60rem]  bg-white outline-none focus:outline-none">
-                                <form action="" className='p-10 w-1/2'>
-                                    <h2 className='text-[24px] font-bold'>Kaydol</h2>
-                                    <div className='flex-row'>
-                                        <label htmlFor="username" className='form-label'>Username</label>                                       
-                                        <input 
-                                        id='username'
-                                        type="text" placeholder=""
-                                        className="px-4 py-2 w-full  border-b-[1px] border-b-[#a8a8a8] shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
-                                        />
-                                    </div>
-                                    
-                                </form>
-                                
-                                <section className='w-1/2 bg-blue1 text-white p-10'>
-                                    <h2 className='text-[24px] font-bold pb-5'>Zaten üye misiniz?</h2>
-                                    <p className='text-[38px] font-light py-5'>
-                                        Hemen giriş yapın ve size<span className='font-bold'> Özel Paneli </span>kullanın.
-                                    </p>
-                                    <ul  className='font-light text-14 list-inside ]'>
-                                        <li><BsCheck2 className='inline-block mr-2' />Hasta Randevu Sistemi</li>
-                                        <li><BsCheck2 className='inline-block mr-2' />Hasta Kayıt Altyapısı</li>
-                                        <li><BsCheck2 className='inline-block mr-2' />Poliklinik Yönetimi</li>
-                                    </ul>
-                                    <button
-                                        style={{ textTransform: "none", boxShadow: "0 0 30px -12px #5616f5" }}
-                                        className="h-10 w-28 mt-10 p-[10px 30px] text-14 tracking-[.5px] font-bold text-white items-center border-2 border-white rounded-full mr-3 hover:bg-white hover:text-pink"
-                                        type="button"
-                                        onClick={() => {setShowLogin(true); setShowModal(false)}}
-                                        >
-                                        Giriş Yap
-                                    </button>
-                                </section>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-                </>
-            
-        ) : null}   
+
+            {showRegister ? (
+            <RegisterModal setShowLogin={setShowLogin} setShowRegister={setShowRegister}/>            
+            ) : null}   
+
             {showLogin ? (
-            <>
-            <div className=" justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                        <div className="relative w-auto my-6 mx-auto max-w-full">
-                            {/*content*/}
-                            <div className="border-0 rounded-lg shadow-lg relative flex flex-row w-[60rem]  bg-white outline-none focus:outline-none">
-                            <section className='w-1/2 bg-pink text-white p-10'>
-                                    <h2 className='text-[24px] font-bold pb-5'>Dentrey'e Üye Ol!</h2>
-                                    <p className='text-[38px] font-light py-5'>
-                                        Hemen bize katılın<span className='font-bold'> Ücretsiz </span>kullanın.
-                                    </p>
-                                    <ul style={{listStyleType:{BsCheck2}}} className='font-light text-14 list-inside ]'>
-                                        <li><BsCheck2 className='inline-block mr-2' />Hasta Randevu Sistemi</li>
-                                        <li><BsCheck2 className='inline-block mr-2' />Hasta Kayıt Altyapısı</li>
-                                        <li><BsCheck2 className='inline-block mr-2' />Poliklinik Yönetimi</li>
-                                    </ul>
-                                    <button
-                                        style={{ textTransform: "none", boxShadow: "0 0 30px -12px #5616f5" }}
-                                        className="h-10 w-28 mt-10 p-[10px 30px] text-14 tracking-[.5px] font-bold text-white items-center border-2 border-white rounded-full mr-3 hover:bg-white hover:text-blue1"
-                                        type="button"
-                                        onClick={() => {setShowModal(true); setShowLogin(false)}}
-                                        >
-                                        Kaydol
-                                    </button>
-                                </section>
-                                <div className='p-10 w-1/2'>
-                                    <h2 className='text-[24px] font-bold'>Üye Girişi</h2>                                   
+            <LoginModal setShowLogin={setShowLogin} setShowRegister={setShowRegister} setShowForgotPassword={setShowForgotPassword}/>            
+            ) : null}   
 
-                                    <form action="#" className=' py-[20px]'>
-                                        <div className='flex-row pb-5'>
-                                            <label htmlFor="email" className='form-label'>Email</label>                                       
-                                            <input 
-                                            id='email'
-                                            type="email" placeholder=""
-                                            className=" py-2 w-full  border-b-[1px] border-b-[#a8a8a8] shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
-                                            />
-                                        </div>
-                                        <div className='flex-row'>
-                                            <label htmlFor="password" className='form-label'>Password</label>                                       
-                                            <input 
-                                            id='password'
-                                            type="password" placeholder=""
-                                            className=" py-2 w-full  border-b-[1px] border-b-[#a8a8a8] shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
-                                            />
-                                        </div>
-                                        <div className='flex items-center justify-between'>
-                                            <div className="form-control">
-                                                <label className="label cursor-pointer">
-                                                    <input type="checkbox"  className="checkbox checkbox-primary" />
-                                                    <span className="label-text pl-2">Remember me</span> 
-                                                </label>
-                                            </div>
-                                            <p className=''>Şifremi unuttum</p>
-                                        </div>
+            {showForgotPassword ? (
+            <ForgotPassword setShowLogin={setShowLogin} setShowForgotPassword={setShowForgotPassword}/>            
+            ) : null}
 
-                                        <button
-                                            style={{ textTransform: "none"}}
-                                            className="h-10 w-28 mt-10 p-[10px 30px] text-14 tracking-[.5px] font-bold bg-blue1 text-white items-center border-2 border-white rounded-full mr-3 hover:bg-white hover:text-blue1 hover:border-blue1"
-                                            type="submit"
-                                            onClick={() => {setShowLogin(true); setShowModal(false)}}
-                                            >
-                                            Giriş Yap
-                                        </button>
-                                        
-                                    </form>
-                                </div>
-                                
-                                
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-                </>
-            
-        ) : null}   
         </div>       
     )
 }
