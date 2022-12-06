@@ -33,7 +33,7 @@ const AddAppointmentsModal = () => {
                         >
                             <div className="relative w-auto my-6 mx-auto max-w-full">
                                 {/*content*/}
-                                <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-[70rem] bg-white outline-none focus:outline-none">
+                                <div className="border-0 rounded-lg shadow-lg relative flex flex-col bg-white outline-none focus:outline-none">
                                     {/*header*/}
                                     <div className="flex items-center justify-between bg-blue1 rounded-t py-2">
                                         <h3 className="ml-4 text-white font-semibold">
