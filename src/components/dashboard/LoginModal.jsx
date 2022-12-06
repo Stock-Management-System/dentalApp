@@ -73,7 +73,7 @@ const LoginModal = ({ setShowRegister, setShowLogin, setShowForgotPassword }) =>
 
                 <form action="#" className=" py-[20px]" onSubmit={handleSubmit}>
                     <div className="flex-row pb-5">
-                    <label htmlFor="email" className="form-label">
+                    <label htmlFor="email" className="form-label text-formGray text-14">
                         Email
                     </label>
                     <input
@@ -83,11 +83,11 @@ const LoginModal = ({ setShowRegister, setShowLogin, setShowForgotPassword }) =>
                         value={email}
                         onChange={(e)=> setEmail(e.target.value)}
                         required
-                        className=" py-2 w-full  border-b-[1px] border-b-[#a8a8a8] shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                        className=" py-2 w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
                     />
                     </div>
                     <div className="flex-row">
-                    <label htmlFor="password" className="form-label">
+                    <label htmlFor="password" className="form-label text-formGray text-14">
                         Password
                     </label>
                     <input
@@ -97,7 +97,7 @@ const LoginModal = ({ setShowRegister, setShowLogin, setShowForgotPassword }) =>
                         value={password}
                         onChange={(e)=> setPassword(e.target.value)}
                         required
-                        className=" py-2 w-full  border-b-[1px] border-b-[#a8a8a8] shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                        className=" py-2 w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
                     />
                     </div>
                     <div className="flex items-center justify-between">
@@ -110,6 +110,7 @@ const LoginModal = ({ setShowRegister, setShowLogin, setShowForgotPassword }) =>
                             type="checkbox"    
                             className="checkbox checkbox-primary"
                             checked={isRemember}
+                            readOnly
                         />
                         <span className="label-text pl-2" >Beni hatırla</span>
                         </label>

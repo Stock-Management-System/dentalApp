@@ -21,6 +21,7 @@ module.exports = {
         500: '#64748b',
       },
       "gray": "#9699A1",
+      "formGray": "#A8A8A8",
       "black": "#000000",
       "pink": "#ff5acd",
       "lightPink": "#fd86a7",

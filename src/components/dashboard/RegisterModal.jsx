@@ -1,7 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsCheck2 } from "react-icons/bs";
+import { ilData } from "../../helpers/ilData";
 
 const RegisterModal = ({ setShowRegister, setShowLogin }) => {
+
+    const [registerInfo, setRegisterInfo] = useState({
+        klinikAdi:"",
+        vergiNo:"",
+        email:"",
+        phone:"",
+        address:"",
+        il:ilData[0]["text"],
+        ilce:ilData[0]["districts"][0]["text"],
+        password:"",
+        password2:""});
+    
+
+    const handleChange = (e) => {
+        setRegisterInfo({...registerInfo, [e.target.id]: e.target.value})
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(registerInfo);
+        setRegisterInfo({
+            klinikAdi:"",
+            vergiNo:"",
+            email:"",
+            phone:"",
+            address:"",
+            il:ilData[0]["text"],
+            ilce:ilData[0]["districts"][0]["text"],
+            password:"",
+            password2:""})
+        setShowRegister(false);
+        setShowLogin(true)
+        
+    };
+
     const close = () => {
         setShowRegister(false);
         
@@ -13,20 +49,139 @@ const RegisterModal = ({ setShowRegister, setShowLogin }) => {
             {/*content*/}
             <div className="border-0 rounded-lg shadow-lg relative flex flex-row w-[60rem]  bg-white outline-none focus:outline-none">
 
-                <form action="" className="p-10 w-1/2">
-                <h2 className="text-[24px] font-bold">Kaydol</h2>
-                <div className="flex-row">
-                    <label htmlFor="username" className="form-label">
-                    Username
+                <form action="#" className="p-10 w-1/2 grid grid-cols-6 gap-4" onSubmit={handleSubmit}>
+                <h2 className="text-[24px] font-bold col-span-6">Kaydol</h2>
+                <div className="flex-row col-span-4">
+                    <label htmlFor="klinik" className="form-label text-formGray text-14">
+                    Klinik Adı
                     </label>
                     <input
-                    id="username"
+                    id="klinikAdi"
                     type="text"
+                    value={registerInfo.klinikAdi}
+                    onChange={handleChange}
+                    required
                     placeholder=""
-                    className="px-4 py-2 w-full  border-b-[1px] border-b-[#a8a8a8] shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                    className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
                     />
                 </div>
-                </form>
+                <div className="flex-row col-span-2">
+                    <label htmlFor="vergiNo" className="form-label text-formGray text-14">
+                    Vergi Numarası
+                    </label>
+                    <input
+                    id="vergiNo"
+                    type="text"
+                    required
+                    maxLength="11"
+                    minLength="11"
+                    value={registerInfo.vergiNo}
+                    onChange={handleChange}
+                    className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                    />
+                </div>
+                <div className="flex-row col-span-3">
+                    <label htmlFor="email" className="form-label text-formGray text-14">
+                    Email
+                    </label>
+                    <input
+                    id="email"
+                    type="email"
+                    required
+                    value={registerInfo.email}
+                    onChange={handleChange}
+                    className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                    />
+                </div>
+                <div className="flex-row col-span-3">
+                    <label htmlFor="phone" className="form-label text-formGray text-14">
+                    Telefon
+                    </label>
+                    <input
+                    id="phone"
+                    type="tel"
+                    required
+                    value={registerInfo.phone}
+                    onChange={handleChange}
+                    className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                    />
+                </div>
+                <div className="flex-row col-span-6">
+                    <label htmlFor="address" className="form-label text-formGray text-14">
+                    Adres
+                    </label>
+                    <input
+                    id="address"
+                    type="text" 
+                    required    
+                    value={registerInfo.address}
+                    onChange={handleChange}       
+                    className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                    />
+                </div>
+                <div className="flex-row col-span-3">
+                    <label htmlFor="il" className="form-label text-formGray text-14">
+                    İl
+                    </label>
+                    <select 
+                        name="il" 
+                        id="il" 
+                        className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                        value={registerInfo.il}
+                        onChange={handleChange}
+                        >                        
+                        {ilData.map((il) => <option value={il["text"]}>{il["text"]}</option> )}  
+                    </select>                    
+                </div>
+                <div className="flex-row col-span-3">
+                    <label htmlFor="ilce" className="form-label text-formGray text-14">
+                    İlçe
+                    </label>
+                    <select 
+                        name="ilce" 
+                        id="ilce" 
+                        className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                        value={registerInfo.ilce}
+                        onChange={handleChange}
+                        >
+                        {ilData.filter((data) => (data["text"] === registerInfo.il)).map((ilce)=> (ilce["districts"].map((e)=><option value={e["text"]}>{e["text"]}</option>)) ) 
+                        }                         
+                    </select>
+                </div>
+                <div className="flex-row col-span-3">
+                    <label htmlFor="password" className="form-label text-formGray text-14">
+                    Şifre
+                    </label>
+                    <input
+                    id="password"
+                    type="password" 
+                    value={registerInfo.password}
+                    onChange={handleChange}
+                    required           
+                    className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                    />
+                </div>
+                <div className="flex-row col-span-3">
+                    <label htmlFor="password2" className="form-label text-formGray text-14">
+                    Şifre (Tekrar)
+                    </label>
+                    <input
+                    id="password2"
+                    type="password"
+                    value={registerInfo.password2}
+                    onChange={handleChange} 
+                    required           
+                    className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                    />
+                </div>
+                <button
+                    style={{ textTransform: "none" }}
+                    className="col-span-3 h-11 w-28   text-14 tracking-[.5px] font-bold bg-blue1 text-white items-center border-2 border-white rounded-full mr-3 hover:bg-white hover:text-blue1 hover:border-blue1"
+                    type="submit"                   
+                    >
+                    Kaydol
+                </button>
+            </form>
 
                 <section className="w-1/2 bg-blue1 text-white p-10">
                 <h2 className="text-[24px] font-bold pb-5">Zaten üye misiniz?</h2>

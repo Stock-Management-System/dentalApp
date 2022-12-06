@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import { BsCheck2 } from "react-icons/bs";
 
-const ForgotPassword = (setShowLogin, setShowForgotPassword) => {
+const ForgotPassword = ({setShowLogin, setShowForgotPassword}) => {
 
     const [email, setEmail] = useState("");
 
-    const close = () => {
-        setShowForgotPassword(false);
-        console.log("close");
-    };
+    // const close = () => {
+    //     setShowForgotPassword(false);
+    //     console.log("close");
+    // };
 
 const handleSubmit = (e) => {
     e.preventDefault();
     // send login info
+    console.log("close");
     setEmail("");
     setShowForgotPassword(false);
 };
@@ -28,7 +29,7 @@ return (
 
             <form className=" py-[20px]" onSubmit={handleSubmit}>
                 <div className="flex-row pb-5">
-                <label htmlFor="email" className="form-label">
+                <label htmlFor="email" className="form-label text-formGray text-14">
                     Email
                 </label>
                 <input
@@ -93,8 +94,7 @@ return (
         </div>
         </div>
     </div>
-    <div
-        onClick={() => close()}
+    <div onClick={() => setShowForgotPassword(false)}
         className="opacity-25 fixed inset-0 z-40 bg-black h-full w-full"
     ></div>
     </>
