@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from "react-redux";
-import ClinicHeader from "../../../components/polyclinic/ClinicHeader";
-import Layout from "../../../components/polyclinic/Layout";
+import ClinicHeader from "../../../components/polyclinic/polyclinicDashboard/ClinicHeader";
+import Layout from "../../../components/polyclinic/layout/Layout";
 import RontgenQuery from '../../../components/polyclinic/rontgen/RontgenQuery';
 
 const Rontgen = () => {

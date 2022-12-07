@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import teeth from "../../assets/teeth.png";
-import calendar from "../../assets/calendar.png";
-import payments from "../../assets/payments.png";
-import users from "../../assets/users.png";
-import reports from "../../assets/reports.png";
-import ayarlar from "../../assets/ayarlar.png";
+import teeth from "../../../assets/teeth.png";
+import calendar from "../../../assets/calendar.png";
+import payments from "../../../assets/payments.png";
+import users from "../../../assets/users.png";
+import reports from "../../../assets/reports.png";
+import ayarlar from "../../../assets/ayarlar.png";
 
 const MiddleLink = () => {
 	// const open = useSelector((state) => state.open.value);

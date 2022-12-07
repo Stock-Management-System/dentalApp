@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Container from '../../../components/polyclinic/Container'
-import Layout from '../../../components/polyclinic/Layout'
+import Layout from '../../../components/polyclinic/layout/Layout'
+// import Container from '../../../components/polyclinic/Container'
 
 const Patients = () => {
   const [open, setOpen] = useState(true)

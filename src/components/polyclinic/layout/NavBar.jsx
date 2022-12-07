@@ -5,8 +5,8 @@ import { MdArrowBackIosNew } from 'react-icons/md';
 import { RiArrowDropDownLine, RiArrowDropUpLine } from 'react-icons/ri';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { sidebarToggle } from '../../features/sidebarSlice';
-import { linkHoverToggle } from '../../features/sidebarSlice';
+import { linkHoverToggle, sidebarToggle } from '../../../features/sidebarSlice';
+
 
 
 const NavBar = () => {

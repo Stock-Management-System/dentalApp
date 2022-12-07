@@ -1,8 +1,8 @@
 import React from "react";
-import Layout from "../../../components/polyclinic/Layout";
-import MiddleLink from "../../../components/polyclinic/MiddleLink";
+import Layout from "../../../components/polyclinic/layout/Layout";
+import MiddleLink from "../../../components/polyclinic/polyclinicDashboard/MiddleLink";
 import { useSelector } from 'react-redux'
-import ClinicHeader from '../../../components/polyclinic/ClinicHeader'
+import ClinicHeader from '../../../components/polyclinic//polyclinicDashboard/ClinicHeader'
 import ClinicStatisticComponent from "../../../components/polyclinic/ClinicStatisticComponent";
 
 
