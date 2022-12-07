@@ -3,11 +3,11 @@ import { AiOutlineFileAdd, AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 
 const FirstStepAddAppointment = ({ handleSubmit }) => {
     return (
-        <div>
-            <div className="flex justify-between px-4 py-2 mt-12 items-center shadow sm:overflow-hidden sm:rounded-md">
+        <div className='p-1'>
+            <div className="flex justify-between px-4 py-2 mt-12 mx-5 items-center sm:overflow-hidden sm:rounded-md">
                 <h1>Hasta Bilgiler</h1>
-                <div className="flex justify-center items-center gap-4">
-                    <label className="label-text text-center">HASTA TC KİMLİK NO</label>
+                <div className="flex justify-center items-center gap-4 w-2/3">
+                    <label className="label-text">HASTA TC KİMLİK NO</label>
                     <input
                         type="text"
                         placeholder="Hasta TC Kimlik No"
@@ -71,15 +71,15 @@ const FirstStepAddAppointment = ({ handleSubmit }) => {
                     </div>
                     <div className="col-span-1">
                         <label className="label">
-                            <span className="label-text">iLÇE</span>
+                            <span className="label-text">İLÇE</span>
                         </label>
                         <input type="text" placeholder="Hastanın Yaşadığı İlçe" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                     </div>
                 </div>
                 {/*footer*/}
-                <div className="flex items-center justify-end mx-4 p-2 rounded-b">
+                <div className="flex items-center justify-end mx-4 mt-4 p-2 rounded-b">
                     <button
-                        className="bg-blue1 text-white btn btn-sm rounded-3xl hover:bg-blue1"
+                        className="bg-blue1 text-white capitalize btn btn-sm rounded-3xl hover:bg-blue1"
                         type="submit"
                         onClick={handleSubmit}
                     >

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { AiOutlineFileAdd, AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
+import { BiMessageSquareAdd } from 'react-icons/bi'
 import FirstStepAddAppointment from './FirstStepAddAppointment'
 import SecondStepAddAppointment from './SecondStepAddAppointment'
 import ThirdStepAddAppointment from './ThirdStepAddAppointment'
@@ -22,8 +23,8 @@ const AddAppointmentsModal = () => {
             <label
                 onClick={() => setModalToggle(true)}
                 htmlFor="add-appointment"
-                className="btn btn-active btn-sm bg-blue1 gap-2 rounded-full hover:bg-blue1">
-                <AiOutlineFileAdd /> Randevu Oluştur
+                className="btn-primary mr-3 btn btn-active btn-sm bg-blue1 gap-2 rounded-full hover:bg-blue1">
+                <BiMessageSquareAdd className='mr-1' /> Randevu Oluştur
             </label>
 
             {/* Put this part before </body> tag */}
@@ -56,7 +57,7 @@ const AddAppointmentsModal = () => {
                                             {/* <!-- component --> */}
                                             <div className="flex flex-col justify-center items-center">
 
-                                                <div className="flex items-center w-3/4">
+                                                <div className="flex items-center w-3/4 mt-6">
                                                     <div className="flex items-center relative">
                                                         <div
                                                             onClick={() => setStepper(1)}
