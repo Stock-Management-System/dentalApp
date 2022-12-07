@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineFileAdd } from "react-icons/ai";
-import AddAppointmentsModal from "./appointments/AddAppointmentsModal";
+import AddAppointmentsModal from "./addAppointmentsModal/AddAppointmentsModal";
 import DateRange from "./appointments/DateRange";
 import DoctorsAppointments from "./appointments/DoctorsAppointments";
 import PatientsAppointments from "./appointments/PatientsAppointments";
