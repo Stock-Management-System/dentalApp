@@ -6,6 +6,7 @@ import { RiArrowDropDownLine, RiArrowDropUpLine } from 'react-icons/ri';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { linkHoverToggle, sidebarToggle } from '../../../features/sidebarSlice';
+import AddAppointmentsModal from '../addAppointmentsModal/AddAppointmentsModal';
 
 
 
@@ -29,7 +30,7 @@ const NavBar = () => {
       </div>
       <div className="navbar-start">
         <div className='ml-6 xs:hidden xl:block'>
-          <button className='btn btn-sm btn-primary rounded-3xl mr-3'><BiMessageSquareAdd className='mr-1' />Randevu Oluştur</button>
+          <AddAppointmentsModal />
           <button className='btn btn-sm btn-outline rounded-3xl'><BsCalendar3 className='mr-1' />Randevu Sorgula</button>
         </div>
       </div>
