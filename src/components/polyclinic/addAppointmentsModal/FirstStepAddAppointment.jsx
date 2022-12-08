@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AiOutlineFileAdd, AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
+import { ilData } from '../../../helpers/ilData';
 
 const FirstStepAddAppointment = ({ handleSubmit }) => {
     const [personalInfo, setPersonalInfo] = useState({
@@ -105,31 +106,56 @@ const FirstStepAddAppointment = ({ handleSubmit }) => {
                         <label className="label">
                             <span className="label-text">EMAIL</span>
                         </label>
-                        <input type="email" placeholder="abcd@abcd.com" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                        <input
+                            type="email"
+                            name='email'
+                            value={personalInfo.email}
+                            onChange={handleChange}
+                            required
+                            placeholder="abcd@abcd.com" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                     </div>
                     <div className="col-span-1">
                         <label className="label">
                             <span className="label-text">İL</span>
                         </label>
-                        <input
+                        <select
+                            name='city'
+                            value={personalInfo.city}
+                            onChange={handleChange}
+                            required
+                            className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                        >
+                            {ilData.map((il) => <option value={il["text"]}>{il["text"]}</option>)}
+                        </select>
+                        {/* <input
                             type="text"
                             name='city'
                             value={personalInfo.city}
                             onChange={handleChange}
                             required
-                            placeholder="Hastanın Yaşadığı İl" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                            placeholder="Hastanın Yaşadığı İl" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" /> */}
                     </div>
                     <div className="col-span-1">
                         <label className="label">
                             <span className="label-text">İLÇE</span>
                         </label>
-                        <input
+                        <select
+                            name='town'
+                            value={personalInfo.town}
+                            onChange={handleChange}
+                            required
+                            className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                        >
+                            {ilData.filter((data) => (data["text"] === personalInfo.city)).map((ilce) => (ilce["districts"].map((e) => <option value={e["text"]}>{e["text"]}</option>)))
+                            }
+                        </select>
+                        {/* <input
                             type="text"
                             name='town'
                             value={personalInfo.town}
                             onChange={handleChange}
                             required
-                            placeholder="Hastanın Yaşadığı İlçe" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                            placeholder="Hastanın Yaşadığı İlçe" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" /> */}
                     </div>
                 </div>
                 {/*footer*/}
