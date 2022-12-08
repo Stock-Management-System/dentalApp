@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiOutlineFileAdd, AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 
 const FirstStepAddAppointment = ({ handleSubmit }) => {
+    const [personalInfo, setPersonalInfo] = useState({
+        firstName: "",
+        lastName: "",
+        dadyName: "",
+        birthDay: "",
+        phone: "",
+        email: "",
+        city: "",
+        town: ""
+    })
+    console.log(personalInfo);
     return (
         <div className='p-1'>
             <div className="flex justify-between px-4 py-2 mt-12 mx-5 items-center sm:overflow-hidden sm:rounded-md">
@@ -31,7 +42,13 @@ const FirstStepAddAppointment = ({ handleSubmit }) => {
                         <label className="label">
                             <span className="label-text">ADI</span>
                         </label>
-                        <input type="text" placeholder="Hastanın Adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                        <input
+                            type="text"
+                            name='name'
+                            value={personalInfo.firstName}
+                            onChange={(e) => setPersonalInfo({ ...personalInfo, name: e.tareget.value })}
+                            placeholder="Hastanın Adı"
+                            className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                     </div>
                     <div className="col-span-1">
                         <label className="label">
