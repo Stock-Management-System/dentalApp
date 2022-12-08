@@ -12,6 +12,9 @@ const FirstStepAddAppointment = ({ handleSubmit }) => {
         city: "",
         town: ""
     })
+    const handleChange = (e) => {
+        setPersonalInfo({ ...personalInfo, [e.target.name]: e.target.value })
+    }
     console.log(personalInfo);
     return (
         <div className='p-1'>
@@ -44,35 +47,59 @@ const FirstStepAddAppointment = ({ handleSubmit }) => {
                         </label>
                         <input
                             type="text"
-                            name='name'
+                            name='firstName'
                             value={personalInfo.firstName}
-                            onChange={(e) => setPersonalInfo({ ...personalInfo, name: e.tareget.value })}
-                            placeholder="Hastanın Adı"
-                            className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                            onChange={handleChange}
+                            required
+                            placeholder="Hastanın Adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                     </div>
                     <div className="col-span-1">
                         <label className="label">
                             <span className="label-text">SOYADI</span>
                         </label>
-                        <input type="text" placeholder="Hastanın Soyadı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                        <input
+                            type="text"
+                            name='lastName'
+                            value={personalInfo.lastName}
+                            onChange={handleChange}
+                            required
+                            placeholder="Hastanın Soyadı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                     </div>
                     <div className="col-span-1">
                         <label className="label">
                             <span className="label-text">BABA ADI</span>
                         </label>
-                        <input type="text" placeholder="Hastanın baba adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                        <input
+                            type="text"
+                            name='dadyName'
+                            value={personalInfo.dadyName}
+                            onChange={handleChange}
+                            required
+                            placeholder="Hastanın baba adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                     </div>
                     <div className="col-span-1">
                         <label className="label">
                             <span className="label-text">DOĞUM TARİHİ</span>
                         </label>
-                        <input type="date" placeholder="Hastanın Doğum Tarihi" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                        <input
+                            type="date"
+                            name='birthDay'
+                            value={personalInfo.birthDay}
+                            onChange={handleChange}
+                            required
+                            placeholder="Hastanın Doğum Tarihi" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                     </div>
                     <div className="col-span-1">
                         <label className="label">
                             <span className="label-text">TELEFON</span>
                         </label>
-                        <input type="text" placeholder="Hastanın Telefon No" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                        <input
+                            type="text"
+                            name='phone'
+                            value={personalInfo.phone}
+                            onChange={handleChange}
+                            required
+                            placeholder="Hastanın Telefon No" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                     </div>
                     <div className="col-span-1">
                         <label className="label">
@@ -84,13 +111,25 @@ const FirstStepAddAppointment = ({ handleSubmit }) => {
                         <label className="label">
                             <span className="label-text">İL</span>
                         </label>
-                        <input type="text" placeholder="Hastanın Yaşadığı İl" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                        <input
+                            type="text"
+                            name='city'
+                            value={personalInfo.city}
+                            onChange={handleChange}
+                            required
+                            placeholder="Hastanın Yaşadığı İl" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                     </div>
                     <div className="col-span-1">
                         <label className="label">
                             <span className="label-text">İLÇE</span>
                         </label>
-                        <input type="text" placeholder="Hastanın Yaşadığı İlçe" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                        <input
+                            type="text"
+                            name='town'
+                            value={personalInfo.town}
+                            onChange={handleChange}
+                            required
+                            placeholder="Hastanın Yaşadığı İlçe" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                     </div>
                 </div>
                 {/*footer*/}
