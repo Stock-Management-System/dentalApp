@@ -123,7 +123,7 @@ const FirstStepAddAppointment = ({ handleSubmit }) => {
                             value={personalInfo.city}
                             onChange={handleChange}
                             required
-                            className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                            className="select select-bordered select-sm text-14 font-normal focus:border-blue1 w-full"
                         >
                             {ilData.map((il) => <option value={il["text"]}>{il["text"]}</option>)}
                         </select>
@@ -144,7 +144,7 @@ const FirstStepAddAppointment = ({ handleSubmit }) => {
                             value={personalInfo.town}
                             onChange={handleChange}
                             required
-                            className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                            className=" select select-bordered select-sm text-14 font-normal focus:border-blue1 w-full"
                         >
                             {ilData.filter((data) => (data["text"] === personalInfo.city)).map((ilce) => (ilce["districts"].map((e) => <option value={e["text"]}>{e["text"]}</option>)))
                             }
