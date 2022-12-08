@@ -44,7 +44,7 @@ const RegisterModal = ({ setShowRegister, setShowLogin }) => {
     };
     return (
         <>
-        <div className="justify-center items-center flex overflow-x-hidden overflow-y-hidden fixed xs:inset-x-[calc(50vw-14rem)] lg:inset-x-[calc(50vw-30rem)] xs:inset-y-2 lg:inset-y-16 min-h-max min-w-max z-50 outline-none focus:outline-none">
+        <div className="justify-center items-center flex overflow-x-hidden overflow-y-hidden fixed xs:inset-x-[calc(50vw-14rem)] lg:inset-x-[calc(50vw-30rem)] xs:inset-y-10 lg:inset-y-16 min-h-max min-w-max z-50 outline-none focus:outline-none">
             <div className="relative w-auto  mx-auto max-w-full">
             {/*content*/}
             <div className="border-0 rounded-lg shadow-lg relative flex flex-row xs:w-[28rem] lg:w-[60rem]  bg-white outline-none focus:outline-none">
