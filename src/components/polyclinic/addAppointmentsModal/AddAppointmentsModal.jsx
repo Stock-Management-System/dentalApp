@@ -91,7 +91,7 @@ const AddAppointmentsModal = () => {
                                     {
                                         stepper === 1
                                             ?
-                                            <FirstStepAddAppointment handleSubmit={handleSubmitForward} />
+                                            <FirstStepAddAppointment setStepper={setStepper} stepper={stepper} />
                                             :
                                             stepper === 2
                                                 ?

@@ -2,6 +2,9 @@ import React from 'react';
 import { AiOutlineFileAdd, AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 
 const ThirdStepAddAppointment = ({ handleSubmit, handleSubmitBackward }) => {
+    const handleSubmitForm = (e) => {
+        e.preventDefault()
+    }
     return (
         <form className='w-full flex flex-col p-4'>
             <h3 className='mt-6'>Hasta Bilgileri</h3>
@@ -10,19 +13,19 @@ const ThirdStepAddAppointment = ({ handleSubmit, handleSubmitBackward }) => {
                     <label className="label">
                         <span className="label-text">ADI</span>
                     </label>
-                    <input type="text" placeholder="Hastanın Adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                    <input type="text" readOnly placeholder="Hastanın Adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                 </div>
                 <div className="col-span-1">
                     <label className="label">
                         <span className="label-text">SOYADI</span>
                     </label>
-                    <input type="text" placeholder="Hastanın Soyadı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                    <input type="text" readOnly placeholder="Hastanın Soyadı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                 </div>
                 <div className="col-span-1">
                     <label className="label">
                         <span className="label-text">BABA ADI</span>
                     </label>
-                    <input type="text" placeholder="Hastanın baba adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                    <input type="text" readOnly placeholder="Hastanın baba adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                 </div>
                 <div className="col-span-1">
                     <label className="label">
@@ -35,9 +38,9 @@ const ThirdStepAddAppointment = ({ handleSubmit, handleSubmitBackward }) => {
             <div className='grid grid-cols-3 gap-12'>
                 <div className="col-span-1">
                     <label className="label">
-                        <span className="label-text">ADI</span>
+                        <span className="label-text">POLİKLİNİK</span>
                     </label>
-                    <input type="text" placeholder="Hastanın Adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                    <input type="text" readOnly placeholder="Poliklinik Adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                 </div>
                 <div className="col-span-1">
                     <label className="label">
@@ -54,7 +57,7 @@ const ThirdStepAddAppointment = ({ handleSubmit, handleSubmitBackward }) => {
                 </div>
                 <div className="col-span-1">
                     <label className="label">
-                        <span className="label-text">DOĞUM TARİHİ</span>
+                        <span className="label-text">TARİH & SAAT</span>
                     </label>
                     <input type="datetime-local" placeholder="Hastanın Doğum Tarihi" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                 </div>
@@ -71,7 +74,7 @@ const ThirdStepAddAppointment = ({ handleSubmit, handleSubmitBackward }) => {
                 <button
                     className="bg-blue1 text-white capitalize btn btn-sm rounded-3xl hover:bg-blue1"
                     type="submit"
-                    onClick={null}
+                    onClick={handleSubmitForm}
                 >
                     Randevuyu Onayla
                 </button>
