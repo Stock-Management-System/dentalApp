@@ -20,11 +20,11 @@ const handleSubmit = (e) => {
 
 return (
     <>
-    <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-x-[calc(50vw-30rem)] inset-y-16 min-h-max min-w-max z-50 outline-none focus:outline-none">
+    <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed xs:inset-x-[calc(50vw-14rem)] lg:inset-x-[calc(50vw-30rem)] xs:inset-y-2 lg:inset-y-16 min-h-max min-w-max z-50 outline-none focus:outline-none">
         <div className="relative w-auto  mx-auto max-w-full">
         {/*content*/}
-        <div className="border-0 rounded-lg shadow-lg relative flex flex-row w-[60rem]  bg-white outline-none focus:outline-none">
-            <div className="p-10 w-1/2">
+        <div className="border-0 rounded-lg shadow-lg relative flex flex-row xs:w-[28rem] lg:w-[60rem]  bg-white outline-none focus:outline-none">
+            <div className="p-10 xs:w-full lg:w-1/2">
             <h2 className="text-[24px] font-bold">Şifre Sıfırlama</h2>
 
             <form className=" py-[20px]" onSubmit={handleSubmit}>
@@ -44,7 +44,7 @@ return (
                 </div>
                 <button
                 style={{ textTransform: "none" }}
-                className="h-12 w-40 mt-10 p-[10px 30px] text-14 tracking-[1px] font-bold bg-blue1 text-white items-center border-2 border-white rounded-full mr-3 hover:bg-white hover:text-blue1 hover:border-blue1"
+                className="h-10 w-40 mt-10 p-[10px 30px] text-14 tracking-[1px] font-bold bg-blue1 text-white items-center border-2 border-white rounded-full mr-3 hover:bg-white hover:text-blue1 hover:border-blue1"
                 type="submit"
                 // onClick={() => {
                 //     setShowLogin(true);
@@ -53,10 +53,24 @@ return (
                 >
                 Şifremi Sıfırla
                 </button>
+                <button
+                    style={{
+                    textTransform: "none",
+                    boxShadow: "0 0 30px -12px #5616f5",
+                    }}
+                    className="lg:hidden col-span-2 h-10 w-28  p-[10px 30px] ml-[4.5rem] text-14 tracking-[.5px] font-bold text-white bg-pink items-center border-2 border-white rounded-full mr-3 hover:bg-white hover:text-pink hover:border-pink"
+                    type="button"
+                    onClick={() => {
+                        setShowForgotPassword(false);
+                        setShowLogin(true)
+                    }}
+                >
+                    Giriş Yap
+                </button>
             </form>
             </div>
 
-            <section className="w-1/2 bg-blue1 text-white p-10">
+            <section className="w-1/2 bg-blue1 text-white p-10 xs:hidden lg:block rounded-r-lg">
             <h2 className="text-[24px] font-bold pb-5">Zaten üye misiniz?</h2>
             <p className="text-[38px] font-light py-5">
                 Hemen giriş yapın ve size

@@ -15,15 +15,14 @@ const MainPage = () => {
     const [showRegister, setShowRegister] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
     const [showForgotPassword, setShowForgotPassword] = useState(false);
-
-  
+    
     return (   
         <div className='h-full relative'>
             <NavBar setShowRegister={setShowRegister}/>      
             <div  style={{borderBottomRightRadius:'100% 100%'}} className='bg-white h-[100vh] w-[94vw] '>
             <div className='h-[110rem] w-full bg-container absolute -z-10'> </div>
-                <section  className='flex pt-24 w-[105%] items-center min-h-screen lg:px-20 bg-transparent xs:flex-col lg:flex-row mb-10'>
-                    <div className='lg:w-1/2 xs:w-5/6 xs:text-center lg:text-left  pb-10'>
+                <section  className='flex pt-24 w-[105%] items-center min-h-screen lg:px-20 bg-transparent xs:flex-col lg:flex-row lg:justify-evenly mb-10'>
+                    <div className='lg:w-1/2 xl:w-auto xs:w-5/6 xs:text-center lg:text-left  pb-10'>
                         <p className='text-blue1 text-44'>Dentrey Randevu Sistemi <br /><span className='text-mainPageGray'>çok yakında hizmetinizde</span></p>                        
                         <p className='text-18 lg:max-w-xl mt-5'>6000 den fazla hekim ve 900 den fazla diş kliniği ile dentrey kullanıcıları artık daha mutlu ve daha huzurlu. Üstelik gülerken çekimser olmak zorunda değil.</p>
                         <div className='flex xs:flex-col lg:flex-row mt-6 xs:items-center gap-5'>
@@ -31,7 +30,7 @@ const MainPage = () => {
                             <Link to='#' style={{border:'1px solid #ff5acd'}} className='h-10 w-44  text-white tracking-[.5px] bg-pink flex justify-center items-center btn rounded-full  hover:bg-white hover:text-pink'>Randevu Al</Link>
                         </div>                    
                     </div>
-                    <div className='w-1/2 h-[500px] min-w-[600px] overflow-hidden relative xs:hidden md:block select-none'>
+                    <div className='w-1/2 h-[500px] min-w-[600px] max-w-[600px] overflow-hidden relative xs:hidden md:block select-none'>
                         <img style={{}} className='absolute -left-6 top-5  min-h-[500px] min-w-[750px] pl-5' src={dashboardIntro} alt="dashboardIntro"/>
                     </div>
 

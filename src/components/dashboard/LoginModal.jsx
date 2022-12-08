@@ -26,11 +26,11 @@ const LoginModal = ({ setShowRegister, setShowLogin, setShowForgotPassword }) =>
 
     return (
         <>
-        <div className=" justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-x-[calc(50vw-30rem)] inset-y-24 min-h-max min-w-max z-50 outline-none focus:outline-none">
+        <div className=" justify-center items-center flex overflow-x-hidden overflow-y-auto fixed xs:inset-x-[calc(50vw-14rem)] lg:inset-x-[calc(50vw-30rem)] xs:inset-y-2 lg:inset-y-24 min-h-max min-w-max z-50 outline-none focus:outline-none">
             <div className="relative w-auto mx-auto max-w-full">
             {/*content*/}
-            <div className="border-0 rounded-lg shadow-lg relative flex flex-row w-[60rem]  bg-white outline-none focus:outline-none">
-                <section className="w-1/2 bg-pink text-white p-10">
+            <div className="border-0 rounded-lg shadow-lg relative flex flex-row xs:w-[28rem] lg:w-[60rem]  bg-white outline-none focus:outline-none">
+                <section className="w-1/2 bg-pink text-white p-10 xs:hidden lg:block rounded-l-lg">
                 <h2 className="text-[24px] font-bold pb-5">Dentrey'e Üye Ol!</h2>
                 <p className="text-[38px] font-light py-5">
                     Hemen bize katılın<span className="font-bold"> Ücretsiz </span>
@@ -68,7 +68,7 @@ const LoginModal = ({ setShowRegister, setShowLogin, setShowForgotPassword }) =>
                     Kaydol
                 </button>
                 </section>
-                <div className="p-10 w-1/2">
+                <div className="p-10 xs:w-full lg:w-1/2">
                 <h2 className="text-[24px] font-bold">Üye Girişi</h2>
 
                 <form action="#" className=" py-[20px]" onSubmit={handleSubmit}>
@@ -129,6 +129,20 @@ const LoginModal = ({ setShowRegister, setShowLogin, setShowForgotPassword }) =>
                     >
                     Giriş Yap
                     </button>
+                    <button
+                    style={{
+                    textTransform: "none",
+                    boxShadow: "0 0 30px -12px #5616f5",
+                    }}
+                    className="lg:hidden h-10 w-28  p-[10px 30px] ml-[7.5rem] text-14 tracking-[.5px] font-bold text-white bg-pink items-center border-2 border-white rounded-full mr-3 hover:bg-white hover:text-pink hover:border-pink"
+                    type="button"
+                    onClick={() => {
+                    setShowRegister(true);
+                    setShowLogin(false);
+                    }}
+                >
+                    Kaydol
+                </button>
                 </form>
                 </div>
             </div>
