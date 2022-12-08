@@ -2,19 +2,38 @@ import React, { useState } from 'react';
 import { AiOutlineFileAdd, AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 import { ilData } from '../../../helpers/ilData';
 
-const FirstStepAddAppointment = ({ handleSubmit }) => {
+const FirstStepAddAppointment = ({ setStepper }) => {
+    const [querytc, setQuerytc] = useState("12345678912")
     const [personalInfo, setPersonalInfo] = useState({
-        firstName: "",
-        lastName: "",
-        dadyName: "",
-        birthDay: "",
-        phone: "",
-        email: "",
-        city: "",
-        town: ""
+        firstName: "Mehmet",
+        lastName: "Şengül",
+        dadyName: "Adem",
+        birthDay: "1942-01-01",
+        phone: "+905552212233",
+        email: "mhmt@mhmt.com",
+        city: ilData[0]["text"],
+        town: ilData[0]["districts"][0]["text"]
     })
     const handleChange = (e) => {
         setPersonalInfo({ ...personalInfo, [e.target.name]: e.target.value })
+    }
+
+    const handleSubmit = () => {
+        setPersonalInfo({
+            firstName: "",
+            lastName: "",
+            dadyName: "",
+            birthDay: "",
+            phone: "",
+            email: "",
+            city: ilData[0]["text"],
+            town: ilData[0]["districts"][0]["text"]
+        })
+        setStepper(2)
+    }
+    const handleClickTc = () => {
+        // const patient = getTc(querytc)
+
     }
     console.log(personalInfo);
     return (
@@ -25,13 +44,14 @@ const FirstStepAddAppointment = ({ handleSubmit }) => {
                     <label className="label-text">HASTA TC KİMLİK NO</label>
                     <input
                         type="text"
-                        placeholder="Hasta TC Kimlik No"
-                        className="input input-bordered input-sm w-full max-w-xs"
-                        value={null}
-
+                        name='tc'
+                        value={querytc}
+                        maxLength={"11"}
+                        onChange={(e) => setQuerytc(e.target.value)}
+                        placeholder="Hasta TC Kimlik No" className="input input-bordered input-sm w-full max-w-xs"
                     />
                     <button
-                        onClick={null}
+                        onClick={handleClickTc}
                         className="btn btn-sm btn-outline btn-primary rounded-full capitalize"
                     >
                         Sorgula
