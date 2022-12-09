@@ -1,17 +1,74 @@
-import React, { useState } from 'react'
-import { AiOutlineFileAdd, AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
-import { BiMessageSquareAdd } from 'react-icons/bi'
-import FirstStepAddAppointment from './FirstStepAddAppointment'
-import SecondStepAddAppointment from './SecondStepAddAppointment'
-import ThirdStepAddAppointment from './ThirdStepAddAppointment'
+import React, { useState } from 'react';
+import { BiMessageSquareAdd } from 'react-icons/bi';
+import FirstStepAddAppointment from './FirstStepAddAppointment';
+import SecondStepAddAppointment from './SecondStepAddAppointment';
+import ThirdStepAddAppointment from './ThirdStepAddAppointment';
+import { ilData } from '../../../helpers/ilData';
 
 const AddAppointmentsModal = () => {
-    const [modalToggle, setModalToggle] = useState(false)
-    const [stepper, setStepper] = useState(1)
+    const [modalToggle, setModalToggle] = useState(false);
+    const [stepper, setStepper] = useState(1);
+    const [selectedDoctor, setSelectedDoctor] = useState("");
+    const [date, setDate] = useState("");
+    const [clock, setClock] = useState("");
+    const [personalInfo, setPersonalInfo] = useState({
+        firstName: "",
+        lastName: "",
+        dadyName: "",
+        birthDay: "",
+        phone: "",
+        email: "",
+        city: ilData[0]["text"],
+        town: ilData[0]["districts"][0]["text"]
+    });
+    const doctorAppointmentStatus = [
+        {
+            doctorId: 1,
+            doctorName: "Dt.Mehtap Uysal Bilginoğlu",
+            appointmentTime: ["09:30", "09:45", "10:00", "10:15", "10:30", "10:45", "14:15", "14:30", "14:45", "15:00", "15:15", "15:30", "15:45", "16:00", "16:15", "16:30", "16:45", "17:00"]
 
-    const handleSubmitForward = (e) => {
+        },
+        {
+            doctorId: 2,
+            doctorName: "Dt.Mehmet Kılıç",
+            appointmentTime: ["09:00", "09:15", "09:30", "09:45", "10:00", "10:15", "10:30", "10:45", "11:00", "11:15", "11:30", "11:45", "12:00", "12:15", "12:30", "19:00", "19:15", "19:30", "19:45", "20:00"]
+        },
+        {
+            doctorId: 3,
+            doctorName: "Uzm.Dt.Fırat Gök",
+            appointmentTime: ["09:00", "09:15", "09:30", "09:45", "10:00", "10:15", "10:30", "10:45", "11:00", "11:15", "11:30", "11:45", "12:00", "12:15", "12:30", "19:00", "19:15", "19:30", "19:45", "20:00"]
+        },
+        {
+            doctorId: 4,
+            doctorName: "Doç.Dr.Kenan Cantekin",
+            appointmentTime: ["18:00", "18:15", "18:30", "18:45", "19:00", "19:15", "19:30", "19:45", "20:00"]
+
+        },
+        {
+            doctorId: 5,
+            doctorName: "Dt.Pınar Burcu Sarıdağ",
+            appointmentTime: ["09:00", "09:15", "09:30", "09:45", "10:00", "10:15", "10:30", "10:45", "11:00", "11:15", "11:30", "11:45", "12:00", "12:15", "12:30", "13:30", "13:45", "14:00", "14:15", "14:30", "14:45", "15:00", "15:15", "15:30", "15:45", "16:00", "16:15", "16:30", "16:45", "17:00"]
+        }
+    ]
+
+    const handleSubmitFirst = (e) => {
         e.preventDefault();
-        setStepper(stepper <= 2 && stepper + 1)
+        // setPersonalInfo({
+        //     firstName: "",
+        //     lastName: "",
+        //     dadyName: "",
+        //     birthDay: "",
+        //     phone: "",
+        //     email: "",
+        //     city: ilData[0]["text"],
+        //     town: ilData[0]["districts"][0]["text"]
+        // })
+        setStepper(2)
+    }
+    const handleSubitSecond = (e) => {
+        e.preventDefault();
+
+        setStepper(3)
     }
     const handleSubmitBackward = (e) => {
         e.preventDefault();
@@ -91,15 +148,38 @@ const AddAppointmentsModal = () => {
                                     {
                                         stepper === 1
                                             ?
-                                            <FirstStepAddAppointment setStepper={setStepper} stepper={stepper} />
+                                            <FirstStepAddAppointment
+                                                handleSubmit={handleSubmitFirst}
+                                                setPersonalInfo={setPersonalInfo}
+                                                personalInfo={personalInfo}
+                                            />
                                             :
                                             stepper === 2
                                                 ?
-                                                <SecondStepAddAppointment handleSubmit={handleSubmitForward} handleSubmitBackward={handleSubmitBackward} />
+                                                <SecondStepAddAppointment
+                                                    handleSubmit={handleSubitSecond}
+                                                    handleSubmitBackward={handleSubmitBackward}
+                                                    setSelectedDoctor={setSelectedDoctor}
+                                                    selectedDoctor={selectedDoctor}
+                                                    doctorAppointmentStatus={doctorAppointmentStatus}
+                                                    date={date}
+                                                    setDate={setDate}
+                                                    clock={clock}
+                                                    setClock={setClock}
+                                                />
                                                 :
                                                 stepper === 3
                                                 &&
-                                                <ThirdStepAddAppointment handleSubmit={handleSubmitForward} handleSubmitBackward={handleSubmitBackward} />
+                                                <ThirdStepAddAppointment
+                                                    handleSubmit={null}
+                                                    handleSubmitBackward={handleSubmitBackward}
+                                                    personalInfo={personalInfo}
+                                                    setSelectedDoctor={setSelectedDoctor}
+                                                    selectedDoctor={selectedDoctor}
+                                                    doctorAppointmentStatus={doctorAppointmentStatus}
+                                                    date={date}
+                                                    clock={clock}
+                                                />
                                     }
                                 </div>
                             </div>
