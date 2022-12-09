@@ -44,10 +44,10 @@ const RegisterModal = ({ setShowRegister, setShowLogin }) => {
     };
     return (
         <>
-        <div className="justify-center items-center flex overflow-x-hidden overflow-y-hidden fixed xs:inset-x-[calc(50vw-14rem)] lg:inset-x-[calc(50vw-30rem)] xs:inset-y-10 lg:inset-y-16 min-h-max min-w-max z-50 outline-none focus:outline-none">
+        <div className="justify-center items-center flex overflow-x-hidden overflow-y-hidden fixed xs:inset-x-[2.5vw] sm:inset-x-[calc(50vw-14rem)] lg:inset-x-[calc(50vw-30rem)] xs:inset-y-[calc(50vh-180px)] lg:inset-y-[calc(50vh-250px)] min-h-max min-w-max z-50 outline-none focus:outline-none">
             <div className="relative w-auto  mx-auto max-w-full">
             {/*content*/}
-            <div className="border-0 rounded-lg shadow-lg relative flex flex-row xs:w-[28rem] lg:w-[60rem]  bg-white outline-none focus:outline-none">
+            <div className="border-0 rounded-lg shadow-lg relative flex flex-row xs:w-[95vw] sm:w-[28rem] lg:w-[60rem]  bg-white outline-none focus:outline-none">
 
                 <form action="#" className="px-10 xs:py-2 lg:py-10 xs:w-full lg:w-1/2 grid grid-cols-6 xs:gap-1 lg:gap-4" onSubmit={handleSubmit}>
                 <h2 className="text-[24px] font-bold col-span-6">Kaydol</h2>
@@ -67,7 +67,7 @@ const RegisterModal = ({ setShowRegister, setShowLogin }) => {
                 </div>
                 <div className="flex-row col-span-2">
                     <label htmlFor="vergiNo" className="form-label text-formGray text-14">
-                    Vergi Numarası
+                    Vergi No
                     </label>
                     <input
                     id="vergiNo"

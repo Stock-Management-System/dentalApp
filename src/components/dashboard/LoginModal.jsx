@@ -26,10 +26,10 @@ const LoginModal = ({ setShowRegister, setShowLogin, setShowForgotPassword }) =>
 
     return (
         <>
-        <div className=" justify-center items-center flex overflow-x-hidden overflow-y-auto fixed xs:inset-x-[calc(50vw-14rem)] lg:inset-x-[calc(50vw-30rem)] xs:inset-y-2 lg:inset-y-24 min-h-max min-w-max z-50 outline-none focus:outline-none">
+        <div className=" justify-center items-center flex overflow-x-hidden overflow-y-auto fixed xs:inset-x-[2.5vw] sm:inset-x-[calc(50vw-14rem)] lg:inset-x-[calc(50vw-30rem)] inset-y-[calc(50vh-216px)] min-h-max min-w-max z-50 outline-none focus:outline-none">
             <div className="relative w-auto mx-auto max-w-full">
             {/*content*/}
-            <div className="border-0 rounded-lg shadow-lg relative flex flex-row xs:w-[28rem] lg:w-[60rem]  bg-white outline-none focus:outline-none">
+            <div className="border-0 rounded-lg shadow-lg relative flex flex-row xs:w-[95vw] sm:w-[28rem] lg:w-[60rem]  bg-white outline-none focus:outline-none">
                 <section className="w-1/2 bg-pink text-white p-10 xs:hidden lg:block rounded-l-lg">
                 <h2 className="text-[24px] font-bold pb-5">Dentrey'e Üye Ol!</h2>
                 <p className="text-[38px] font-light py-5">

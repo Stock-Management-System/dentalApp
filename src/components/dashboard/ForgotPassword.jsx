@@ -20,10 +20,10 @@ const handleSubmit = (e) => {
 
 return (
     <>
-    <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed xs:inset-x-[calc(50vw-14rem)] lg:inset-x-[calc(50vw-30rem)] xs:inset-y-2 lg:inset-y-16 min-h-max min-w-max z-50 outline-none focus:outline-none">
+    <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed xs:inset-x-[2.5vw] sm:inset-x-[calc(50vw-14rem)] lg:inset-x-[calc(50vw-30rem)] xs:inset-y-[calc(50vh-160px)] lg:inset-y-[calc(50vh-245px)] min-h-max min-w-max z-50 outline-none focus:outline-none">
         <div className="relative w-auto  mx-auto max-w-full">
         {/*content*/}
-        <div className="border-0 rounded-lg shadow-lg relative flex flex-row xs:w-[28rem] lg:w-[60rem]  bg-white outline-none focus:outline-none">
+        <div className="border-0 rounded-lg shadow-lg relative flex flex-row xs:w-[95vw] sm:w-[28rem] lg:w-[60rem]  bg-white outline-none focus:outline-none">
             <div className="p-10 xs:w-full lg:w-1/2">
             <h2 className="text-[24px] font-bold">Şifre Sıfırlama</h2>
 
