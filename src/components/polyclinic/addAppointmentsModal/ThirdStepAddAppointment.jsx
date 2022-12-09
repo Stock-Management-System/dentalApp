@@ -1,7 +1,11 @@
-import React from 'react';
-import { AiOutlineFileAdd, AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
+import React, { useState } from 'react';
+import { AiOutlineLeft } from 'react-icons/ai'
 
-const ThirdStepAddAppointment = ({ handleSubmit, handleSubmitBackward }) => {
+const ThirdStepAddAppointment = ({ handleSubmit, handleSubmitBackward, personalInfo, selectedDoctor, setSelectedDoctor, doctorAppointmentStatus, date,
+    clock }) => {
+    const [datetime, setDatetime] = useState(date + 'T' + clock)
+    console.log(datetime);
+    console.log(personalInfo);
     const handleSubmitForm = (e) => {
         e.preventDefault()
     }
@@ -13,25 +17,25 @@ const ThirdStepAddAppointment = ({ handleSubmit, handleSubmitBackward }) => {
                     <label className="label">
                         <span className="label-text">ADI</span>
                     </label>
-                    <input type="text" readOnly placeholder="Hastanın Adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                    <input type="text" value={personalInfo.firstName} readOnly placeholder="Hastanın Adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                 </div>
                 <div className="col-span-1">
                     <label className="label">
                         <span className="label-text">SOYADI</span>
                     </label>
-                    <input type="text" readOnly placeholder="Hastanın Soyadı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                    <input type="text" value={personalInfo.lastName} readOnly placeholder="Hastanın Soyadı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                 </div>
                 <div className="col-span-1">
                     <label className="label">
                         <span className="label-text">BABA ADI</span>
                     </label>
-                    <input type="text" readOnly placeholder="Hastanın baba adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                    <input type="text" value={personalInfo.dadyName} readOnly placeholder="Hastanın baba adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                 </div>
                 <div className="col-span-1">
                     <label className="label">
                         <span className="label-text">DOĞUM TARİHİ</span>
                     </label>
-                    <input type="date" placeholder="Hastanın Doğum Tarihi" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                    <input type="date" value={personalInfo.birthDay} placeholder="Hastanın Doğum Tarihi" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                 </div>
             </div>
             <h3 className='mt-6'>Randevu Bilgileri</h3>
@@ -46,20 +50,22 @@ const ThirdStepAddAppointment = ({ handleSubmit, handleSubmitBackward }) => {
                     <label className="label">
                         <span className="label-text">DOKTOR</span>
                     </label>
-                    <select className="select select-bordered select-sm w-full max-w-xs focus:input-primary">
-                        <option disabled selected>Doktor Seçiniz</option>
-                        <option>Star Wars</option>
-                        <option>Harry Potter</option>
-                        <option>Lord of the Rings</option>
-                        <option>Planet of the Apes</option>
-                        <option>Star Trek</option>
+                    <select className="select select-bordered select-sm focus:input-primary w-full max-w-xs" value={selectedDoctor} onChange={(e) => setSelectedDoctor(e.target.value)}>
+                        {/* <option disabled selected>Doktor Seçiniz</option> */}
+                        {doctorAppointmentStatus.map((item, index) => (
+                            <option key={index} value={item.doctorName}>{item.doctorName}</option>
+                        ))}
                     </select>
                 </div>
                 <div className="col-span-1">
                     <label className="label">
                         <span className="label-text">TARİH & SAAT</span>
                     </label>
-                    <input type="datetime-local" placeholder="Hastanın Doğum Tarihi" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                    <input
+                        type="datetime-local"
+                        value={datetime}
+                        onChange={(e) => setDatetime(e.target.value)}
+                        className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                 </div>
             </div>
             {/*footer*/}
@@ -79,7 +85,7 @@ const ThirdStepAddAppointment = ({ handleSubmit, handleSubmitBackward }) => {
                     Randevuyu Onayla
                 </button>
             </div>
-        </form>
+        </form >
     )
 }
 

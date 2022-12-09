@@ -1,39 +1,16 @@
 import React, { useState } from 'react';
-import { AiOutlineFileAdd, AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
+import { AiOutlineRight } from 'react-icons/ai'
 import { ilData } from '../../../helpers/ilData';
 
-const FirstStepAddAppointment = ({ setStepper }) => {
+const FirstStepAddAppointment = ({ handleSubmit, personalInfo, setPersonalInfo }) => {
     const [querytc, setQuerytc] = useState("12345678912")
-    const [personalInfo, setPersonalInfo] = useState({
-        firstName: "Mehmet",
-        lastName: "Şengül",
-        dadyName: "Adem",
-        birthDay: "1942-01-01",
-        phone: "+905552212233",
-        email: "mhmt@mhmt.com",
-        city: ilData[0]["text"],
-        town: ilData[0]["districts"][0]["text"]
-    })
-    const handleChange = (e) => {
-        setPersonalInfo({ ...personalInfo, [e.target.name]: e.target.value })
-    }
 
-    const handleSubmit = () => {
-        setPersonalInfo({
-            firstName: "",
-            lastName: "",
-            dadyName: "",
-            birthDay: "",
-            phone: "",
-            email: "",
-            city: ilData[0]["text"],
-            town: ilData[0]["districts"][0]["text"]
-        })
-        setStepper(2)
-    }
     const handleClickTc = () => {
         // const patient = getTc(querytc)
 
+    }
+    const handleChange = (e) => {
+        setPersonalInfo({ ...personalInfo, [e.target.name]: e.target.value })
     }
     console.log(personalInfo);
     return (
@@ -57,8 +34,6 @@ const FirstStepAddAppointment = ({ setStepper }) => {
                         Sorgula
                     </button>
                 </div>
-
-
             </div>
             <form className='w-full p-2'>
                 <div className='grid grid-cols-4 gap-2'>
@@ -147,13 +122,6 @@ const FirstStepAddAppointment = ({ setStepper }) => {
                         >
                             {ilData.map((il) => <option value={il["text"]}>{il["text"]}</option>)}
                         </select>
-                        {/* <input
-                            type="text"
-                            name='city'
-                            value={personalInfo.city}
-                            onChange={handleChange}
-                            required
-                            placeholder="Hastanın Yaşadığı İl" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" /> */}
                     </div>
                     <div className="col-span-1">
                         <label className="label">
@@ -169,13 +137,6 @@ const FirstStepAddAppointment = ({ setStepper }) => {
                             {ilData.filter((data) => (data["text"] === personalInfo.city)).map((ilce) => (ilce["districts"].map((e) => <option value={e["text"]}>{e["text"]}</option>)))
                             }
                         </select>
-                        {/* <input
-                            type="text"
-                            name='town'
-                            value={personalInfo.town}
-                            onChange={handleChange}
-                            required
-                            placeholder="Hastanın Yaşadığı İlçe" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" /> */}
                     </div>
                 </div>
                 {/*footer*/}

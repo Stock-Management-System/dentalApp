@@ -1,29 +1,30 @@
 import React, { useState } from 'react';
-import { AiOutlineFileAdd, AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
+import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 
 
-const SecondStepAddAppointment = ({ handleSubmit, handleSubmitBackward }) => {
-    const [clock, setClock] = useState("")
-    const [isChecked, setIsChecked] = useState(false)
+const SecondStepAddAppointment = ({ handleSubmit, handleSubmitBackward, setSelectedDoctor, selectedDoctor, doctorAppointmentStatus, date, setDate, clock, setClock }) => {
+    const [isChecked, setIsChecked] = useState(true)
     const sabah = ["09:00", "09:15", "09:30", "09:45", "10:00", "10:15", "10:30", "10:45", "11:00", "11:15", "11:30", "11:45", "12:00", "12:15", "12:30"]
     const ogle = ["13:30", "13:45", "14:00", "14:15", "14:30", "14:45", "15:00", "15:15", "15:30", "15:45", "16:00", "16:15", "16:30", "16:45", "17:00"]
     const aksam = ["18:00", "18:15", "18:30", "18:45", "19:00", "19:15", "19:30", "19:45", "20:00"]
 
+    const current = doctorAppointmentStatus.filter((item) => item.doctorName === selectedDoctor)
+    console.log(date)
     console.log(clock)
+    console.log(selectedDoctor)
+    console.log(current)
     return (
         <div className='m-4'>
             <div className="flex justify-around px-4 py-2 mt-5 items-center sm:overflow-hidden sm:rounded-md mb-4">
                 <h1>Randevu Bilgileri</h1>
                 <div className="flex justify-between items-center gap-4 w-3/5">
-                    <select className="select select-bordered select-sm focus:input-primary w-full max-w-xs">
-                        <option disabled selected>Doktor Seçiniz</option>
-                        <option>Star Wars</option>
-                        <option>Harry Potter</option>
-                        <option>Lord of the Rings</option>
-                        <option>Planet of the Apes</option>
-                        <option>Star Trek</option>
+                    <select className="select select-bordered select-sm focus:input-primary w-full max-w-xs" value={selectedDoctor} onChange={(e) => setSelectedDoctor(e.target.value)}>
+                        {/* <option disabled selected>Doktor Seçiniz</option> */}
+                        {doctorAppointmentStatus.map((item, index) => (
+                            <option key={index} value={item.doctorName}>{item.doctorName}</option>
+                        ))}
                     </select>
-                    <input type="date" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                    <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                 </div>
             </div>
             <form className='w-full px-2'>
@@ -34,8 +35,11 @@ const SecondStepAddAppointment = ({ handleSubmit, handleSubmitBackward }) => {
                             {
                                 sabah.map((item, index) => (
                                     <div key={index}>
-                                        <input type="checkbox" id={item} value={item} name='' className="hidden peer" onClick={() => setIsChecked(!isChecked)} onChange={(e) => setClock(isChecked && e.target.value)} />
-                                        <label htmlFor={item} className="cursor-pointer border rounded-3xl text-14 px-5 peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white">
+                                        <input type="radio" id={item} value={item} name="randevuSaati" className="hidden peer" onChange={(e) => setClock(e.target.value)} />
+                                        <label
+                                            htmlFor={item}
+                                            // {...current.appointmentTime?.includes(item) && 'disabled'}
+                                            className="cursor-pointer border rounded-3xl text-14 px-5 peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white">
                                             {item}
                                         </label>
                                     </div>
@@ -49,7 +53,7 @@ const SecondStepAddAppointment = ({ handleSubmit, handleSubmitBackward }) => {
                             {
                                 ogle.map((item, index) => (
                                     <div key={index}>
-                                        <input type="checkbox" id={item} value={item} name='' className="hidden peer" onClick={() => setIsChecked(!isChecked)} onChange={(e) => setClock(isChecked && e.target.value)} />
+                                        <input type="radio" id={item} value={item} name="randevuSaati" className="hidden peer" onChange={(e) => setClock(e.target.value)} />
                                         <label htmlFor={item} className="cursor-pointer border rounded-3xl text-14 px-5 peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white">
                                             {item}
                                         </label>
@@ -64,8 +68,8 @@ const SecondStepAddAppointment = ({ handleSubmit, handleSubmitBackward }) => {
                             {
                                 aksam.map((item, index) => (
                                     <div key={index}>
-                                        <input type="checkbox" id={item} value={item} name='' className="hidden peer" onClick={() => setIsChecked(!isChecked)} onChange={(e) => setClock(isChecked && e.target.value)} />
-                                        <label htmlFor={item} className={`cursor-pointer border rounded-3xl text-14 px-5 peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white`}>
+                                        <input type="radio" id={item} value={item} name="randevuSaati" className="hidden peer" onChange={(e) => setClock(e.target.value)} />
+                                        <label htmlFor={item} className="cursor-pointer border rounded-3xl text-14 px-5 peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white">
                                             {item}
                                         </label>
                                     </div>
@@ -92,8 +96,8 @@ const SecondStepAddAppointment = ({ handleSubmit, handleSubmitBackward }) => {
                         <AiOutlineRight className='ml-4' />
                     </button>
                 </div>
-            </form>
-        </div>
+            </form >
+        </div >
     )
 }
 
