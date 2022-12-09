@@ -9,6 +9,9 @@ const ThirdStepAddAppointment = ({ handleSubmit, handleSubmitBackward, personalI
     const handleSubmitForm = (e) => {
         e.preventDefault()
     }
+    const hanleClick = () => {
+        alert('Lütfen değişiklik için önceki forma geçiniz !')
+    }
     return (
         <form className='w-full flex flex-col p-4'>
             <h3 className='mt-6'>Hasta Bilgileri</h3>
@@ -17,25 +20,25 @@ const ThirdStepAddAppointment = ({ handleSubmit, handleSubmitBackward, personalI
                     <label className="label">
                         <span className="label-text">ADI</span>
                     </label>
-                    <input type="text" value={personalInfo.firstName} readOnly placeholder="Hastanın Adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                    <input type="text" value={personalInfo.firstName} onClick={hanleClick} readOnly placeholder="Hastanın Adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                 </div>
                 <div className="col-span-1">
                     <label className="label">
                         <span className="label-text">SOYADI</span>
                     </label>
-                    <input type="text" value={personalInfo.lastName} readOnly placeholder="Hastanın Soyadı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                    <input type="text" value={personalInfo.lastName} onClick={hanleClick} readOnly placeholder="Hastanın Soyadı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                 </div>
                 <div className="col-span-1">
                     <label className="label">
                         <span className="label-text">BABA ADI</span>
                     </label>
-                    <input type="text" value={personalInfo.dadyName} readOnly placeholder="Hastanın baba adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                    <input type="text" value={personalInfo.dadyName} onClick={hanleClick} readOnly placeholder="Hastanın baba adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                 </div>
                 <div className="col-span-1">
                     <label className="label">
                         <span className="label-text">DOĞUM TARİHİ</span>
                     </label>
-                    <input type="date" value={personalInfo.birthDay} placeholder="Hastanın Doğum Tarihi" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                    <input type="date" value={personalInfo.birthDay} onClick={hanleClick} placeholder="Hastanın Doğum Tarihi" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                 </div>
             </div>
             <h3 className='mt-6'>Randevu Bilgileri</h3>
@@ -44,7 +47,7 @@ const ThirdStepAddAppointment = ({ handleSubmit, handleSubmitBackward, personalI
                     <label className="label">
                         <span className="label-text">POLİKLİNİK</span>
                     </label>
-                    <input type="text" readOnly placeholder="Poliklinik Adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                    <input type="text" readOnly onClick={hanleClick} placeholder="Poliklinik Adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
                 </div>
                 <div className="col-span-1">
                     <label className="label">

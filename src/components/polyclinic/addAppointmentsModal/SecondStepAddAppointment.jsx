@@ -35,10 +35,11 @@ const SecondStepAddAppointment = ({ handleSubmit, handleSubmitBackward, setSelec
                             {
                                 sabah.map((item, index) => (
                                     <div key={index}>
-                                        <input type="radio" id={item} value={item} name="randevuSaati" className="hidden peer" onChange={(e) => setClock(e.target.value)} />
+                                        <input type="radio" id={item} value={item}
+                                            // disabled={!(current[0].appointmentTime?.includes(item))} 
+                                            name="randevuSaati" className="hidden peer" onChange={(e) => setClock(e.target.value)} />
                                         <label
                                             htmlFor={item}
-                                            // {...current.appointmentTime?.includes(item) && 'disabled'}
                                             className="cursor-pointer border rounded-3xl text-14 px-5 peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white">
                                             {item}
                                         </label>
@@ -53,7 +54,9 @@ const SecondStepAddAppointment = ({ handleSubmit, handleSubmitBackward, setSelec
                             {
                                 ogle.map((item, index) => (
                                     <div key={index}>
-                                        <input type="radio" id={item} value={item} name="randevuSaati" className="hidden peer" onChange={(e) => setClock(e.target.value)} />
+                                        <input type="radio" id={item} value={item}
+                                            // disabled={!(current[0].appointmentTime.includes(item))}
+                                            name="randevuSaati" className="hidden peer" onChange={(e) => setClock(e.target.value)} />
                                         <label htmlFor={item} className="cursor-pointer border rounded-3xl text-14 px-5 peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white">
                                             {item}
                                         </label>
@@ -68,7 +71,9 @@ const SecondStepAddAppointment = ({ handleSubmit, handleSubmitBackward, setSelec
                             {
                                 aksam.map((item, index) => (
                                     <div key={index}>
-                                        <input type="radio" id={item} value={item} name="randevuSaati" className="hidden peer" onChange={(e) => setClock(e.target.value)} />
+                                        <input type="radio" id={item} value={item}
+                                            // disabled={!(current[0].appointmentTime?.includes(item))} 
+                                            name="randevuSaati" className="hidden peer" onChange={(e) => setClock(e.target.value)} />
                                         <label htmlFor={item} className="cursor-pointer border rounded-3xl text-14 px-5 peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white">
                                             {item}
                                         </label>
