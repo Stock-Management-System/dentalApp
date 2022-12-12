@@ -44,10 +44,10 @@ const RegisterModal = ({ setShowRegister, setShowLogin }) => {
     };
     return (
         <>
-        <div className="justify-center items-center flex overflow-x-hidden overflow-y-hidden fixed xs:inset-x-[calc(50vw-14rem)] lg:inset-x-[calc(50vw-30rem)] xs:inset-y-10 lg:inset-y-16 min-h-max min-w-max z-50 outline-none focus:outline-none">
+        <div className="justify-center items-center flex overflow-x-hidden overflow-y-hidden fixed xs:inset-x-[2.5vw] sm:inset-x-[calc(50vw-14rem)] lg:inset-x-[calc(50vw-30rem)] xs:inset-y-[calc(50vh-180px)] lg:inset-y-[calc(50vh-250px)] min-h-max min-w-max z-50 outline-none focus:outline-none">
             <div className="relative w-auto  mx-auto max-w-full">
             {/*content*/}
-            <div className="border-0 rounded-lg shadow-lg relative flex flex-row xs:w-[28rem] lg:w-[60rem]  bg-white outline-none focus:outline-none">
+            <div className="border-0 rounded-lg shadow-lg relative flex flex-row xs:w-[95vw] sm:w-[28rem] lg:w-[60rem]  bg-white outline-none focus:outline-none">
 
                 <form action="#" className="px-10 xs:py-2 lg:py-10 xs:w-full lg:w-1/2 grid grid-cols-6 xs:gap-1 lg:gap-4" onSubmit={handleSubmit}>
                 <h2 className="text-[24px] font-bold col-span-6">Kaydol</h2>
@@ -62,12 +62,12 @@ const RegisterModal = ({ setShowRegister, setShowLogin }) => {
                     onChange={handleChange}
                     required
                     placeholder=""
-                    className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
-                    />
+                    className=" w-full border-b-formGray border-b-[1.5px] transition-all duration-1000 shadow-sm text-base outline-none focus:border-blue1"
+                    />                                       
                 </div>
                 <div className="flex-row col-span-2">
                     <label htmlFor="vergiNo" className="form-label text-formGray text-14">
-                    Vergi Numarası
+                    Vergi No
                     </label>
                     <input
                     id="vergiNo"
@@ -77,7 +77,7 @@ const RegisterModal = ({ setShowRegister, setShowLogin }) => {
                     minLength="11"
                     value={registerInfo.vergiNo}
                     onChange={handleChange}
-                    className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                    className=" w-full border-b-formGray border-b-[1.5px] transition-all duration-1000 shadow-sm text-base outline-none focus:border-blue1"
                     />
                 </div>
                 <div className="flex-row col-span-3">
@@ -90,7 +90,7 @@ const RegisterModal = ({ setShowRegister, setShowLogin }) => {
                     required
                     value={registerInfo.email}
                     onChange={handleChange}
-                    className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                    className=" w-full border-b-formGray border-b-[1.5px] transition-all duration-1000 shadow-sm text-base outline-none focus:border-blue1"
                     />
                 </div>
                 <div className="flex-row col-span-3">
@@ -103,7 +103,7 @@ const RegisterModal = ({ setShowRegister, setShowLogin }) => {
                     required
                     value={registerInfo.phone}
                     onChange={handleChange}
-                    className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                    className=" w-full border-b-formGray border-b-[1.5px] transition-all duration-1000 shadow-sm text-base outline-none focus:border-blue1"
                     />
                 </div>
                 <div className="flex-row col-span-6">
@@ -116,7 +116,7 @@ const RegisterModal = ({ setShowRegister, setShowLogin }) => {
                     required    
                     value={registerInfo.address}
                     onChange={handleChange}       
-                    className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                    className=" w-full border-b-formGray border-b-[1.5px] transition-all duration-1000 shadow-sm text-base outline-none focus:border-blue1"
                     />
                 </div>
                 <div className="flex-row col-span-3">
@@ -126,7 +126,7 @@ const RegisterModal = ({ setShowRegister, setShowLogin }) => {
                     <select 
                         name="il" 
                         id="il" 
-                        className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                        className=" w-full border-b-formGray border-b-[1.5px] transition-all duration-1000 shadow-sm text-base outline-none focus:border-blue1"
                         value={registerInfo.il}
                         onChange={handleChange}
                         >                        
@@ -140,7 +140,7 @@ const RegisterModal = ({ setShowRegister, setShowLogin }) => {
                     <select 
                         name="ilce" 
                         id="ilce" 
-                        className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                        className=" w-full border-b-formGray border-b-[1.5px] transition-all duration-1000 shadow-sm text-base outline-none focus:border-blue1"
                         value={registerInfo.ilce}
                         onChange={handleChange}
                         >
@@ -158,7 +158,7 @@ const RegisterModal = ({ setShowRegister, setShowLogin }) => {
                     value={registerInfo.password}
                     onChange={handleChange}
                     required           
-                    className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                    className=" w-full border-b-formGray border-b-[1.5px] transition-all duration-1000 shadow-sm text-base outline-none focus:border-blue1"
                     />
                 </div>
                 <div className="flex-row col-span-3">
@@ -171,7 +171,7 @@ const RegisterModal = ({ setShowRegister, setShowLogin }) => {
                     value={registerInfo.password2}
                     onChange={handleChange} 
                     required           
-                    className=" w-full  border-b-[1px] border-b-formGray shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                    className=" w-full border-b-formGray border-b-[1.5px] transition-all duration-1000 shadow-sm text-base outline-none focus:border-blue1"
                     />
                 </div>
                 <button
