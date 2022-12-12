@@ -39,7 +39,7 @@ return (
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className=" py-2 w-full  border-b-[1px] border-b-[#a8a8a8] shadow-sm text-base form-underline  focus:outline-none focus:border-blue1"
+                    className=" py-2 w-full  border-b-[1.5px] border-b-formGray shadow-sm text-base transition-all duration-1000 outline-none focus:border-blue1"
                 />
                 </div>
                 <button
