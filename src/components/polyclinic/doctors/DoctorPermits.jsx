@@ -1,25 +1,20 @@
 import React, { useState } from "react";
-import DoctorInformation from "./DoctorInformation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import DoctorPermitsTable from "./DoctorPermitsTable";
 
-const DoctorPerformance = ({ doktorlar }) => {
+const DoctorPermits = ({ doktorlar }) => {
 	const [openTab, setOpenTab] = useState(0);
-
 	return (
 		<div>
-			{/* <-----Card Hekimler ----->👇🏻 */}
-			<div>
-				<p className="pb-5">Performans görüntülemek için bir hekim seçin.</p>
-			</div>
 			<Swiper
-				className="flex flex-row gap-5"
+				className="flex flex-row"
 				spaceBetween={25}
 				slidesPerView={5}
 				onSlideChange={() => console.log("slide change")}
 				onSwiper={(swiper) => console.log(swiper)}
 			>
-				{doktorlar.map((doktor, index) => (
+				{doktorlar.map((doktor) => (
 					<SwiperSlide
 						className={` ${
 							openTab === doktor.id
@@ -55,10 +50,16 @@ const DoctorPerformance = ({ doktorlar }) => {
 					</SwiperSlide>
 				))}
 			</Swiper>
-			{/* <-----Hekim Profil ----->👇🏻 */}
-			<DoctorInformation doktorInfo={doktorlar[openTab]} />
+			<p className="my-7 text-blue1 text-2xl font-semibold">
+				{doktorlar[openTab].name}
+				<span className="text-black font-normal">
+					{" "}
+					isimli personelin izin bilgilerini görüntülüyorsunuz
+				</span>
+			</p>
+			<DoctorPermitsTable DoctorPermits={doktorlar[openTab].izinler} />
 		</div>
 	);
 };
 
-export default DoctorPerformance;
+export default DoctorPermits;

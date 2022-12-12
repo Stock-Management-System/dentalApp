@@ -30,9 +30,7 @@ const DoctorIstatistik = ({ istatistik }) => {
 			? sinus3
 			: sinus4;
 
-	console.log(veriSayı);
 	const handleClick = () => {
-		console.log("asdasd");
 		setDropdownIsOpen(!dropdownIsOpen);
 	};
 
