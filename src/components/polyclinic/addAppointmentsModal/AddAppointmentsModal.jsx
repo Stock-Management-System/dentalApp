@@ -90,7 +90,7 @@ const AddAppointmentsModal = () => {
                     ?
                     <>
                         <div
-                            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed z-50 outline-none focus:outline-none"
+                            className="flex justify-center items-center inset-0 overflow-x-hidden overflow-y-auto fixed z-50 outline-none focus:outline-none"
                         >
                             <div className="relative my-6 mx-auto max-w-full">
                                 {/*content*/}

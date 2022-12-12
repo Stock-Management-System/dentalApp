@@ -4,7 +4,7 @@ const TodayAppointments = ({ doktorAppointment }) => {
 	return (
 		//! appointments table 👇🏻
 		<div className="overflow-x-auto ">
-			<table className="table w-full ">
+			<table className="table w-full z-0">
 				{/* <!-- head --> */}
 				<thead className="text-gray">
 					<tr>

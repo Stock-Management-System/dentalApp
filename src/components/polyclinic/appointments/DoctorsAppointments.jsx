@@ -22,11 +22,10 @@ const DoctorsAppointments = ({ doktorAppointment }) => {
 			<div className="flex flex-row gap-5 my-7">
 				{doktorAppointment.map((doktor) => (
 					<div
-						className={` ${
-							openTab === doktor.id
+						className={` ${openTab === doktor.id
 								? "card w-1/5 bg-gradient-to-r  from-blue1 to-blue2 text-white"
 								: "card w-1/5 bg-container"
-						}`}
+							}`}
 						onClick={(e) => {
 							e.preventDefault();
 							setOpenTab(doktor.id);
@@ -44,11 +43,10 @@ const DoctorsAppointments = ({ doktorAppointment }) => {
 								{doktor.doktorAdı}
 							</h2>
 							<p
-								className={` ${
-									openTab === doktor.id
+								className={` ${openTab === doktor.id
 										? "text-white text-center"
 										: "text-blue1 text-center"
-								}`}
+									}`}
 							>
 								{doktor.doktorUnvan}
 							</p>
@@ -58,7 +56,7 @@ const DoctorsAppointments = ({ doktorAppointment }) => {
 			</div>
 			{/* Hasta tablosu 👇🏻 */}
 			<div className="overflow-x-auto ">
-				<table className="table w-full ">
+				<table className="table w-full z-0">
 					<thead className="text-gray">
 						<tr>
 							<th className="pl-20">DOKTOR</th>
