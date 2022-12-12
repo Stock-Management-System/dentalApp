@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineFileAdd } from "react-icons/ai";
+import AddAppointmentsModal from "./addAppointmentsModal/AddAppointmentsModal";
 import DateRange from "./appointments/DateRange";
 import DoctorsAppointments from "./appointments/DoctorsAppointments";
 import PatientsAppointments from "./appointments/PatientsAppointments";
@@ -15,19 +16,16 @@ const Appointments = () => {
 				<p className="text-2xl font-semibold antialiased leading-loose">
 					Randevu İşlemleri
 				</p>
-				<button className="btn btn-active btn-sm bg-blue1 gap-2 rounded-full hover:bg-blue1">
-					<AiOutlineFileAdd /> Randevu Oluştur
-				</button>
+				<AddAppointmentsModal />
 			</div>
 			<div className="px-5">
 				{/* appointments headers 👇🏻 */}
 				<div className="tabs mb-6 ">
 					<p
-						className={` ${
-							openTab === 1
-								? "tab border-b-2 border-blue1 text-blue1 "
-								: "tab text-black"
-						}`}
+						className={` ${openTab === 1
+							? "tab border-b-2 border-blue1 text-blue1 "
+							: "tab text-black"
+							}`}
 						onClick={(e) => {
 							e.preventDefault();
 							setOpenTab(1);
@@ -36,11 +34,10 @@ const Appointments = () => {
 						Bugünkü Randevular
 					</p>
 					<p
-						className={` ${
-							openTab === 2
-								? "tab border-b-2 border-blue1 text-blue1 "
-								: "tab text-black"
-						}`}
+						className={` ${openTab === 2
+							? "tab border-b-2 border-blue1 text-blue1 "
+							: "tab text-black"
+							}`}
 						onClick={(e) => {
 							e.preventDefault();
 							setOpenTab(2);
@@ -49,11 +46,10 @@ const Appointments = () => {
 						Hasta Randevu Sorgulama
 					</p>
 					<p
-						className={` ${
-							openTab === 3
-								? "tab border-b-2 border-blue1 text-blue1 "
-								: "tab text-black"
-						}`}
+						className={` ${openTab === 3
+							? "tab border-b-2 border-blue1 text-blue1 "
+							: "tab text-black"
+							}`}
 						onClick={(e) => {
 							e.preventDefault();
 							setOpenTab(3);
@@ -62,11 +58,10 @@ const Appointments = () => {
 						Doktor Randevu Sorgulama
 					</p>
 					<p
-						className={`${
-							openTab === 4
-								? "tab border-b-2 border-blue1 text-blue1 "
-								: "tab text-black"
-						}`}
+						className={`${openTab === 4
+							? "tab border-b-2 border-blue1 text-blue1 "
+							: "tab text-black"
+							}`}
 						onClick={(e) => {
 							e.preventDefault();
 							setOpenTab(4);

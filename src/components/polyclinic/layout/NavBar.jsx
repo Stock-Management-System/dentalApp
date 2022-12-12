@@ -5,8 +5,10 @@ import { MdArrowBackIosNew } from 'react-icons/md';
 import { RiArrowDropDownLine, RiArrowDropUpLine } from 'react-icons/ri';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { sidebarToggle } from '../../features/sidebarSlice';
-import { linkHoverToggle } from '../../features/sidebarSlice';
+import { linkHoverToggle, sidebarToggle } from '../../../features/sidebarSlice';
+import AddAppointmentsModal from '../addAppointmentsModal/AddAppointmentsModal';
+import AddAppointmentsModalForXsNav from '../addAppointmentsModal/AddAppointmentsModalForXsNav';
+
 
 
 const NavBar = () => {
@@ -29,7 +31,7 @@ const NavBar = () => {
       </div>
       <div className="navbar-start">
         <div className='ml-6 xs:hidden xl:block'>
-          <button className='btn btn-sm btn-primary rounded-3xl mr-3'><BiMessageSquareAdd className='mr-1' />Randevu Oluştur</button>
+          <AddAppointmentsModal />
           <button className='btn btn-sm btn-outline rounded-3xl'><BsCalendar3 className='mr-1' />Randevu Sorgula</button>
         </div>
       </div>
@@ -40,7 +42,7 @@ const NavBar = () => {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
           </label>
           <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-            <li><Link><BiMessageSquareAdd className='mr-1' /> Randevu Oluştur</Link></li>
+            <li><Link><BiMessageSquareAdd className='mr-1' /><AddAppointmentsModalForXsNav /></Link></li>
             <li><Link><BsCalendar3 className='mr-1' />Randevu Sorgula</Link></li>
           </ul>
         </div>

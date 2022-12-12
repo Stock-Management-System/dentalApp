@@ -10,7 +10,7 @@ import { ImCalendar } from 'react-icons/im'
 import { BiPlusMedical } from 'react-icons/bi'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { sidebarToggle } from '../../features/sidebarSlice';
+import { sidebarToggle } from '../../../features/sidebarSlice';
 
 const Sidebar = () => {
   const open = useSelector(state => state.open.value)

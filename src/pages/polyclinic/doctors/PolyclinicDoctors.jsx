@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import ClinicHeader from "../../../components/polyclinic/ClinicHeader";
-import Layout from "../../../components/polyclinic/Layout";
+import ClinicHeader from "../../../components/polyclinic/polyclinicDashboard/ClinicHeader";
+import Layout from "../../../components/polyclinic/layout/Layout";
 import NewDoctorAddPage from "../../../components/polyclinic/doctors/NewDoctorAddPage";
 import { AiOutlineFileAdd } from "react-icons/ai";
 import DoctorPerformance from "../../../components/polyclinic/doctors/DoctorPerformance";
@@ -15,9 +15,8 @@ const PolyclinicAppointments = () => {
 			<Layout />
 
 			<div
-				className={`absolute bg-container mt-20 right-0 p-6 min-h-[calc(100vh-80px)] ${
-					open ? "w-[calc(100%-250px)]" : "w-[calc(100%-100px)]"
-				} transition-w ease-in-out duration-500`}
+				className={`absolute bg-container mt-20 right-0 p-6 min-h-[calc(100vh-80px)] ${open ? "w-[calc(100%-250px)]" : "w-[calc(100%-100px)]"
+					} transition-w ease-in-out duration-500`}
 			>
 				{/* <----- Header -----> */}
 				<div className="bg-white">
@@ -38,11 +37,10 @@ const PolyclinicAppointments = () => {
 						{/* <-----Tab Header ----->👇🏻 */}
 						<div className="tabs mb-5 ">
 							<p
-								className={` ${
-									openTab === 1
-										? "tab border-b-2 border-blue1 text-blue1 "
-										: "tab text-black"
-								}`}
+								className={` ${openTab === 1
+									? "tab border-b-2 border-blue1 text-blue1 "
+									: "tab text-black"
+									}`}
 								onClick={(e) => {
 									e.preventDefault();
 									setOpenTab(1);
@@ -51,11 +49,10 @@ const PolyclinicAppointments = () => {
 								Hekimlerimiz
 							</p>
 							<p
-								className={` ${
-									openTab === 2
-										? "tab border-b-2 border-blue1 text-blue1 "
-										: "tab text-black"
-								}`}
+								className={` ${openTab === 2
+									? "tab border-b-2 border-blue1 text-blue1 "
+									: "tab text-black"
+									}`}
 								onClick={(e) => {
 									e.preventDefault();
 									setOpenTab(2);
@@ -64,11 +61,10 @@ const PolyclinicAppointments = () => {
 								Performans
 							</p>
 							<p
-								className={` ${
-									openTab === 3
-										? "tab border-b-2 border-blue1 text-blue1 "
-										: "tab text-black"
-								}`}
+								className={` ${openTab === 3
+									? "tab border-b-2 border-blue1 text-blue1 "
+									: "tab text-black"
+									}`}
 								onClick={(e) => {
 									e.preventDefault();
 									setOpenTab(3);
@@ -77,11 +73,10 @@ const PolyclinicAppointments = () => {
 								İzinler
 							</p>
 							<p
-								className={`${
-									openTab === 4
-										? "tab border-b-2 border-blue1 text-blue1 "
-										: "tab text-black"
-								}`}
+								className={`${openTab === 4
+									? "tab border-b-2 border-blue1 text-blue1 "
+									: "tab text-black"
+									}`}
 								onClick={(e) => {
 									e.preventDefault();
 									setOpenTab(4);

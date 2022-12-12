@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import ClinicHeader from '../../../components/polyclinic/ClinicHeader'
-import Layout from '../../../components/polyclinic/Layout'
+import ClinicHeader from '../../../components/polyclinic/polyclinicDashboard/ClinicHeader'
+import Layout from '../../../components/polyclinic/layout/Layout'
 
 const Account = () => {
   const open = useSelector(state => state.open.value)
