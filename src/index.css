@@ -24,10 +24,5 @@ background-color: #3beaf5;
 transition: width .3s ease-in-out;
 }
 .footer-link:hover .footer-link-underline {
- width: 100%;
-}
-
-.form-underline{
-
-transition: width 3s ease-in-out;
+width: 100%;
 }

@@ -8,15 +8,10 @@ import reports from "../../../assets/reports.png";
 import ayarlar from "../../../assets/ayarlar.png";
 
 const MiddleLink = () => {
-	// const open = useSelector((state) => state.open.value);
 	return (
-		// <div
-		// 	className="absolute bg-container  mt-20 right-0 p-6 min-h-[calc(100vh-80px)]"
-		// 	style={{ width: open ? "calc(100% - 250px)" : "calc(100% - 100px)" }}
-		// >
 		<div className=" bg-container flex justify-between gap-3 mt-7">
 			<Link
-				to="/rontgen"
+				to="/poliklinik/rontgen"
 				className=" card w-64 rounded-none bg-gradient-to-r  from-blue1 to-blue2 text-primary-content hover:transition-all duration-300 hover:-translate-y-1"
 			>
 				<div className="card-body items-center text-center">
@@ -30,7 +25,7 @@ const MiddleLink = () => {
 				</div>
 			</Link>
 			<Link
-				to="/account"
+				to="/poliklinik/hesabım"
 				className="card w-64 rounded-none bg-gradient-to-r  from-darkTurquaz to-turquaz text-primary-content hover:transition-all duration-300 hover:-translate-y-1 "
 			>
 				<div className="card-body items-center text-center">
@@ -44,7 +39,7 @@ const MiddleLink = () => {
 				</div>
 			</Link>
 			<Link
-				to="/appointments"
+				to="/poliklinik/randevular"
 				className="card w-64 rounded-none bg-gradient-to-r  from-pink to-lightPink bg-primary text-primary-content hover:transition-all duration-300 hover:-translate-y-1 "
 			>
 				<div className="card-body items-center text-center">
@@ -58,7 +53,7 @@ const MiddleLink = () => {
 				</div>
 			</Link>
 			<Link
-				to="/polyclinicdoctors"
+				to="/poliklinik/doktorlarımız"
 				className="card w-64 rounded-none bg-white hover:transition-all duration-300 hover:-translate-y-1 "
 			>
 				<div className="card-body items-center text-center">
@@ -70,7 +65,7 @@ const MiddleLink = () => {
 				</div>
 			</Link>
 			<Link
-				to="/operations"
+				to="/poliklinik/hesabım"
 				className="card w-64 rounded-none bg-white hover:transition-all duration-300 hover:-translate-y-1 "
 			>
 				<div className="card-body items-center text-center">
@@ -82,7 +77,7 @@ const MiddleLink = () => {
 				</div>
 			</Link>
 			<Link
-				to="/settings"
+				to="/poliklinik/ayarlar"
 				className="card w-64 rounded-none bg-white hover:transition-all duration-300 hover:-translate-y-1 "
 			>
 				<div className="card-body items-center text-center">
@@ -94,7 +89,6 @@ const MiddleLink = () => {
 				</div>
 			</Link>
 		</div>
-		// </div>
 	);
 };
 

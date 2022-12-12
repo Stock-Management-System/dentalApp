@@ -5,6 +5,7 @@ import DateRange from "./appointments/DateRange";
 import DoctorsAppointments from "./appointments/DoctorsAppointments";
 import PatientsAppointments from "./appointments/PatientsAppointments";
 import TodayAppointments from "./appointments/TodayAppointments";
+import { randevular, doktoraGoreRandevu } from "../../helpers/data";
 
 const Appointments = () => {
 	const [openTab, setOpenTab] = useState(1);
@@ -71,16 +72,16 @@ const Appointments = () => {
 				</div>
 				{/* appointments body 👇🏻 */}
 				<div className={openTab === 1 ? "block" : "hidden"}>
-					<TodayAppointments />
+					<TodayAppointments doktorAppointment={randevular} />
 				</div>
 				<div className={openTab === 2 ? "block" : "hidden"}>
-					<PatientsAppointments />
+					<PatientsAppointments doktorAppointment={randevular} />
 				</div>
 				<div className={openTab === 3 ? "block" : "hidden"}>
-					<DoctorsAppointments />
+					<DoctorsAppointments doktorAppointment={doktoraGoreRandevu} />
 				</div>
 				<div className={openTab === 4 ? "block" : "hidden"}>
-					<DateRange />
+					<DateRange doktorAppointment={randevular} />
 				</div>
 			</div>
 		</div>

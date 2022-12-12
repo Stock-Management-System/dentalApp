@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BiPlusMedical } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
-const NavBar = ({setShowModal}) => {
+const NavBar = ({setShowRegister}) => {
+
+    const [bgColor, setBgColor] = useState(false);
+
+        const changeBgColor = () => {
+            console.log(bgColor);
+            console.log(window.scrollY);
+            if (window.scrollY > 0) {
+            setBgColor(true)
+            } else {
+            setBgColor(false)
+            }
+        }
+
+    useEffect(() => {
+        changeBgColor()
+        // adding the event when scroll change
+        window.addEventListener("scroll", changeBgColor)
+    })
+
+
     return (
-        <div className="navbar bg-white w-screen top-0 left-0 xs:px-16 lg:px-32 fixed z-10 hover:bg-container">
+        <div style={bgColor ? {backgroundColor:"white"} : {backgroundColor:"transparent"}} className="navbar w-screen top-0 left-0 xs:px-5 md:px-16 lg:px-32 fixed z-10 hover:bg-container">
         <div className="flex-1 ">       <Link to='/doktorlar'>
-            <div className="flex  items-center ">
-         
+            <div className="flex  items-center ">         
             <BiPlusMedical className="text-primary" />
             <h1 className=" text-28 text-black font-light">
                 Dent
@@ -20,15 +39,16 @@ const NavBar = ({setShowModal}) => {
             <Link className="mx-10 hover:text-blue1">Randevu Al</Link>
             <Link to='/poliklinik' className="mr-10 hover:text-blue1">Poliklinikler</Link>
             <button
+            htmlFor="my-modal-4"
             style={{ textTransform: "none", boxShadow: "0 0 30px -12px #5616f5" }}
             className="h-8 w-28 text-blue1 items-center btn-white rounded-full mr-3 hover:bg-blue1 hover:text-white"
             type="button"
-            onClick={() => setShowModal(true)}
+            onClick={() => setShowRegister(true)}
             >
             Giriş Yap
             </button>
         </div>
-        <div className="dropdown dropdown-end lg:hidden ">
+        <div className="dropdown dropdown-end lg:hidden">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +66,7 @@ const NavBar = ({setShowModal}) => {
             </label>
             <div
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-96 text-center"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box  h-screen xs:w-[calc(100vw-2rem)] md:w-[calc(100vw-8rem)] text-center"
             >
             <Link className="hover:text-blue1  my-2">Randevu Sorgula</Link>{" "}
             <hr style={{ color: "rgb(229 231 235)" }} />
@@ -61,7 +81,7 @@ const NavBar = ({setShowModal}) => {
                 }}
                 className="h-8 w-4/5 mt-3 text-blue1 items-center btn-white rounded-full mx-auto hover:bg-blue1 hover:text-white"
                 type="button"
-                onClick={() => setShowModal(true)}
+                onClick={() => setShowRegister(true)}
             >
                 Giriş Yap
             </button>
