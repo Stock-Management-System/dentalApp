@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import ClinicHeader from '../../../components/polyclinic/polyclinicDashboard/ClinicHeader'
 import Layout from '../../../components/polyclinic/layout/Layout'
+import AddFinancialAccount from '../../../components/polyclinic/accountFinancial/AddFinancialAccount'
+import PatientInformation from '../../../components/polyclinic/accountFinancial/PatientInformation'
 
 const Account = () => {
   const open = useSelector(state => state.open.value)
+
   return (
     <>
       <Layout />
@@ -16,7 +19,7 @@ const Account = () => {
         <div className="bg-white">
           <div className='divide-y p-1'>
             <ClinicHeader />
-
+            <AddFinancialAccount />
 
           </div>
         </div>
