@@ -5,7 +5,9 @@ import { MdArrowBackIosNew } from 'react-icons/md';
 import { RiArrowDropDownLine, RiArrowDropUpLine } from 'react-icons/ri';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { modalToggle } from '../../../features/modalSlice';
 import { linkHoverToggle, sidebarToggle } from '../../../features/sidebarSlice';
+import AddAppointmentPopUp from '../addAppointmentsModal/AddAppointmentPopUp';
 import AddAppointmentsModal from '../addAppointmentsModal/AddAppointmentsModal';
 import AddAppointmentsModalForXsNav from '../addAppointmentsModal/AddAppointmentsModalForXsNav';
 
@@ -31,7 +33,8 @@ const NavBar = () => {
       </div>
       <div className="navbar-start">
         <div className='ml-6 xs:hidden xl:block'>
-          <AddAppointmentsModal />
+          {/* <AddAppointmentsModal /> */}
+          <button className='btn-primary mr-3 btn btn-active btn-sm bg-blue1 gap-2 rounded-full hover:bg-blue1' onClick={() => dispatch(modalToggle())}><BiMessageSquareAdd className='mr-1' /> Randevu Oluştur</button>
           <button className='btn btn-sm btn-outline rounded-3xl'><BsCalendar3 className='mr-1' />Randevu Sorgula</button>
         </div>
       </div>
@@ -89,6 +92,7 @@ const NavBar = () => {
           </div>
         </div>
       </div>
+      <AddAppointmentPopUp />
     </div>
   )
 }

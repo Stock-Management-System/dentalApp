@@ -89,12 +89,10 @@ const AddAppointmentsModal = () => {
                 modalToggle
                     ?
                     <>
-                        <div
-                            className="flex justify-center items-center inset-0 overflow-x-hidden overflow-y-auto fixed z-50 outline-none focus:outline-none"
-                        >
-                            <div className="relative my-6 mx-auto max-w-full">
+                        <div className="flex justify-center items-center inset-0 overflow-x-hidden overflow-y-auto fixed z-50 outline-none focus:outline-none">
+                            <div className="relative my-6 mx-auto">
                                 {/*content*/}
-                                <div className="border-0 rounded-lg shadow-lg relative flex flex-col bg-white outline-none focus:outline-none w-[60rem]">
+                                <div className="border-0 rounded-lg shadow-lg relative flex flex-col bg-white outline-none focus:outline-none w-3/4 md:w-[60rem]">
                                     {/*header*/}
                                     <div className="flex items-center justify-between bg-blue1 rounded-t py-2">
                                         <h3 className="ml-4 text-white font-semibold">
