@@ -2,12 +2,19 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import ClinicHeader from '../../../components/polyclinic/polyclinicDashboard/ClinicHeader'
 import Layout from '../../../components/polyclinic/layout/Layout'
-import AddFinancialAccount from '../../../components/polyclinic/accountFinancial/AddFinancialAccount'
-import PatientInformation from '../../../components/polyclinic/accountFinancial/PatientInformation'
+import AddFinancialAccount from '../../../components/polyclinic/accountFinancial/addAccount/AddFinancialAccount'
+import PatientInformation from '../../../components/polyclinic/accountFinancial/addAccount/PatientInformation'
+import Collection from '../../../components/polyclinic/accountFinancial/collection/Collection'
+import CollectionInfo from '../../../components/polyclinic/accountFinancial/collection/CollectionInfo'
 
 const Account = () => {
   const open = useSelector(state => state.open.value)
-  const [showInfo, setShowInfo] = useState(false)
+  const [showInfo, setShowInfo] = useState(0)
+  const [hesap, setHesap] = useState(1)
+  const handleClick = (a) => {
+    setHesap(a)
+    setShowInfo(0)
+  }
 
   return (
     <>
@@ -19,13 +26,33 @@ const Account = () => {
         <div className="bg-white">
           <div className='divide-y p-1'>
             <ClinicHeader />
-            <AddFinancialAccount setShowInfo={setShowInfo} />
+            <div>
+              <div className='flex'>
+                <h1 className={`text-xl ${hesap === 1 && 'font-semibold'} p-6 cursor-pointer`} onClick={() => handleClick(1)}>Hesap Oluştur</h1>
+                <h1 className={`text-xl ${hesap === 2 && 'font-semibold'} p-6 cursor-pointer`} onClick={() => handleClick(2)} > Tahsilat</h1>
+              </div>
+              {
+                hesap === 1
+                &&
+                <AddFinancialAccount setShowInfo={setShowInfo} />
+              }
+              {
+                hesap === 2
+                &&
+                <Collection setShowInfo={setShowInfo} />
+              }
+            </div>
           </div>
         </div>
         {
-          showInfo
+          showInfo === 1
           &&
           <PatientInformation />
+        }
+        {
+          showInfo === 2
+          &&
+          <CollectionInfo />
         }
 
       </div>
