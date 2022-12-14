@@ -2,7 +2,7 @@ import React from 'react'
 
 const AddFinancialPatientInfo = () => {
     return (
-        <div className='bg-white h-96 p-4'>
+        <div className='row-span-2 bg-white p-4'>
             <table className='table-auto table-compact'>
                 <thead>
                     <tr>

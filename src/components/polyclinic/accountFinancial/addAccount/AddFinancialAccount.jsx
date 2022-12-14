@@ -7,7 +7,7 @@ const AddFinancialAccount = ({ setShowInfo }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setShowInfo(true)
+        setShowInfo(1)
     }
 
     return (
