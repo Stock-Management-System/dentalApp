@@ -7,11 +7,11 @@ import PatientInformation from '../../../components/polyclinic/accountFinancial/
 
 const Account = () => {
   const open = useSelector(state => state.open.value)
+  const [showInfo, setShowInfo] = useState(false)
 
   return (
     <>
       <Layout />
-
 
       <div
         className={`absolute bg-container  mt-20 right-0 p-6 min-h-[calc(100vh-80px)] ${open ? 'w-[calc(100%-250px)]' : 'w-[calc(100%-100px)]'} transition-w ease-in-out duration-500`}
@@ -19,10 +19,14 @@ const Account = () => {
         <div className="bg-white">
           <div className='divide-y p-1'>
             <ClinicHeader />
-            <AddFinancialAccount />
-
+            <AddFinancialAccount setShowInfo={setShowInfo} />
           </div>
         </div>
+        {
+          showInfo
+          &&
+          <PatientInformation />
+        }
 
       </div>
 
