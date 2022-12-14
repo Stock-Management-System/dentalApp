@@ -1,66 +1,41 @@
 import React from 'react'
+import { FiChevronRight } from 'react-icons/fi'
+import AddFinancialForm from './AddFinancialForm'
+import AddFinancialPatientInfo from './AddFinancialPatientInfo'
 
 const PatientInformation = () => {
+    const devamEdenIslemler = ["Dolgu", "Diş Çekimi", "İmplant", "Diş Teli", "Köprü Tedavisi", " Diş Beyazlatma"]
     return (
-        <div className='grid grid-cols-3 gap-4 p-2'>
-            <div className=''>
-                <table className='table-auto table-compact'>
-                    <thead>
-                        <tr>
-                            <th>Hasta Bilgileri</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Adı</td>
-                            <td>:</td>
-                            <td className='font-semibold'>Barış</td>
-                        </tr>
-                        <tr>
-                            <td>Soyadı</td>
-                            <td>:</td>
-                            <td className='font-semibold'>Barış</td>
-                        </tr>
-                        <tr>
-                            <td>Baba Adı</td>
-                            <td>:</td>
-                            <td className='font-semibold'>Mehmet</td>
-                        </tr>
-                        <tr>
-                            <td>Doğum Tarihi</td>
-                            <td>:</td>
-                            <td className='font-semibold'>01.01.1985</td>
-                        </tr>
-                        <tr>
-                            <td>Telefon</td>
-                            <td>:</td>
-                            <td className='font-semibold'>0555 666 44 33</td>
-                        </tr>
-                        <tr>
-                            <td>Email</td>
-                            <td>:</td>
-                            <td className='font-semibold'>baris@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>İl</td>
-                            <td>:</td>
-                            <td className='font-semibold'>Konya</td>
-                        </tr>
-                        <tr>
-                            <td>İlçe</td>
-                            <td>:</td>
-                            <td className='font-semibold'>Ereğli</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <div className='grid grid-cols-3 gap-4 p-2 mt-3'>
+            <AddFinancialPatientInfo />
+
+
+            <div className='grid grid-rows-2 gap-4 h-96'>
+                <div className='bg-white p-3'>
+                    <h3 className='font-semibold'>Devam Eden İşlemler</h3>
+                    <div className="gird grid-rows-6 grid-flow-col text-14">
+                        {
+                            devamEdenIslemler.map((item, index) => (
+                                <div className='flex items-center gap-1' key={index} ><FiChevronRight className='text-blue1' />{item}</div>
+                            ))
+                        }
+                    </div>
+                </div>
+                <div className='bg-white p-3'>
+                    <h3 className='font-semibold'>Biten İşlemler</h3>
+                    <div className="gird grid-cols-2 text-14">
+                        {
+                            devamEdenIslemler.map((item, index) => (
+                                <p className='flex items-center gap-1' key={index} ><FiChevronRight className='text-blue1' />{item}</p>
+                            ))
+                        }
+                    </div>
+                </div>
             </div>
-            <div className='grid grid-rows-2 gap-4'>
-                <div>b</div>
-                <div>c </div>
-            </div>
-            <div className=''>
-                d
-            </div>
+
+
+
+            <AddFinancialForm />
 
         </div>
     )
