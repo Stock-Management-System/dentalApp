@@ -28,8 +28,8 @@ const Account = () => {
             <ClinicHeader />
             <div>
               <div className='flex'>
-                <h1 className={`text-xl ${hesap === 1 && 'font-semibold'} p-6 cursor-pointer`} onClick={() => handleClick(1)}>Hesap Oluştur</h1>
-                <h1 className={`text-xl ${hesap === 2 && 'font-semibold'} p-6 cursor-pointer`} onClick={() => handleClick(2)} > Tahsilat</h1>
+                <h1 className={`text-xl ${hesap === 1 && 'font-semibold bg-blue2 text-white'} p-2 my-4 ml-4 w-48 text-center cursor-pointer`} onClick={() => handleClick(1)}>Hesap Oluştur</h1>
+                <h1 className={`text-xl ${hesap === 2 && 'font-semibold bg-blue2 text-white'} p-2 my-4 mr-4 w-48 text-center cursor-pointer`} onClick={() => handleClick(2)} > Tahsilat</h1>
               </div>
               {
                 hesap === 1
