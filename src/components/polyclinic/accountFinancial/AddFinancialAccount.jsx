@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import PatientInformation from './PatientInformation'
 
-const AddFinancialAccount = () => {
+const AddFinancialAccount = ({ setShowInfo }) => {
     const [tapOpen, setTapOpen] = useState(1)
-    const [showInfo, setShowInfo] = useState(false)
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -89,6 +90,7 @@ const AddFinancialAccount = () => {
                     </form>
                 </div>
             }
+
         </div>
     )
 }
