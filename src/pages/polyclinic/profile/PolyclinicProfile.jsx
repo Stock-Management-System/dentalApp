@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import ClinicHeader from '../../../components/polyclinic/ClinicHeader'
 import "./polyclinicProfile.scss"
 import ClinicStatisticComponent from "../../../components/polyclinic/ClinicStatisticComponent";
-
+import DoctorsTitle from "../../../components/polyclinic/DoctorsTitle";
 
 const sampleData1 = {
   day: 'BUGÜN',
@@ -50,6 +50,7 @@ const PolyclinicProfile = () => {
           </div>
         </div>
         <MiddleLink />
+        <DoctorsTitle/>
       </div>
 
     </>
