@@ -67,7 +67,6 @@ const Account = () => {
           &&
           <ReportInfo />
         }
-
       </div>
 
     </>
