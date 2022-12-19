@@ -6,7 +6,6 @@ import ClinicHeader from '../../../components/polyclinic//polyclinicDashboard/Cl
 import ClinicStatisticComponent from "../../../components/polyclinic/ClinicStatisticComponent";
 import DoctorsTitle from "../../../components/polyclinic/polyclinicDashboard/DoctorsTitle";
 
-
 const sampleData1 = {
   day: 'BUGÜN',
   date: '16 Kasım 2022',
