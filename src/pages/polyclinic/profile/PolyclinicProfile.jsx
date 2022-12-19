@@ -4,7 +4,7 @@ import MiddleLink from "../../../components/polyclinic/polyclinicDashboard/Middl
 import { useSelector } from 'react-redux'
 import ClinicHeader from '../../../components/polyclinic//polyclinicDashboard/ClinicHeader'
 import ClinicStatisticComponent from "../../../components/polyclinic/ClinicStatisticComponent";
-import DoctorsTitle from "../../../components/polyclinic/DoctorsTitle";
+import DoctorsTitle from "../../../components/polyclinic/polyclinicDashboard/DoctorsTitle";
 
 const sampleData1 = {
   day: 'BUGÜN',
