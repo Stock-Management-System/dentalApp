@@ -64,11 +64,11 @@ const DoctorsOur = ({ doktorlar }) => {
 										</tr>
 									</tbody>
 								</table>
-								<div className="flex justify-between font-semibold">
+								<div className="2xl:flex 2xl:justify-between xl:flex-wrap xl:justify-center">
 									<button className="btn btn-ghost bg-blue1 bg-opacity-10 text-blue1 capitalize hover:bg-blue1 hover:text-white">
 										<AiOutlineCheck className="mr-2" /> Performans
 									</button>
-									<button className="btn btn-ghost bg-red bg-opacity-10 text-red capitalize hover:bg-red hover:text-white px-8">
+									<button className="btn btn-ghost bg-red bg-opacity-10 text-red capitalize hover:bg-red hover:text-white px-8 2xl:mt-0 xl:mt-2">
 										<span className="mr-2">X</span>İzinler
 									</button>
 								</div>
