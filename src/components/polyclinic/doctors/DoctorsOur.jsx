@@ -17,7 +17,7 @@ const DoctorsOur = ({ doktorlar }) => {
 				{doktorlar.map((doktor, index) => (
 					<SwiperSlide>
 						<div className="card bg-container mb-4">
-							<div className="relative flex flex-col justify-center items-center mt-4">
+							<div className="relative flex flex-col justify-center items-center mt-4 md:">
 								<img
 									src={doktor.img}
 									alt="profile"
@@ -64,7 +64,7 @@ const DoctorsOur = ({ doktorlar }) => {
 										</tr>
 									</tbody>
 								</table>
-								<div className="2xl:flex 2xl:justify-between xl:flex-wrap xl:justify-center">
+								<div className="flex flex-wrap justify-between  ">
 									<button className="btn btn-ghost bg-blue1 bg-opacity-10 text-blue1 capitalize hover:bg-blue1 hover:text-white">
 										<AiOutlineCheck className="mr-2" /> Performans
 									</button>
