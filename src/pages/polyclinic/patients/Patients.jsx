@@ -15,7 +15,7 @@ const Patients = () => {
         <div className="bg-white">Polyclinic patients</div>
       </div>
     </div>
-  )
+  ) 
 }
 
 export default Patients
