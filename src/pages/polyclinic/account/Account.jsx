@@ -6,7 +6,8 @@ import AddFinancialAccount from '../../../components/polyclinic/accountFinancial
 import PatientInformation from '../../../components/polyclinic/accountFinancial/addAccount/PatientInformation'
 import Collection from '../../../components/polyclinic/accountFinancial/collection/Collection'
 import CollectionInfo from '../../../components/polyclinic/accountFinancial/collection/CollectionInfo'
-
+import Report from '../../../components/polyclinic/accountFinancial/report/Report'
+import ReportInfo from '../../../components/polyclinic/accountFinancial/report/ReportInfo'
 
 const Account = () => {
   const open = useSelector(state => state.open.value)
@@ -31,6 +32,7 @@ const Account = () => {
               <div className='flex'>
                 <h1 className={`text-xl ${hesap === 1 && 'font-semibold bg-blue2 text-white'} p-2 my-4 ml-4 w-48 text-center cursor-pointer`} onClick={() => handleClick(1)}>Hesap Oluştur</h1>
                 <h1 className={`text-xl ${hesap === 2 && 'font-semibold bg-blue2 text-white'} p-2 my-4 mr-4 w-48 text-center cursor-pointer`} onClick={() => handleClick(2)} > Tahsilat</h1>
+                <h1 className={`text-xl ${hesap === 3 && 'font-semibold bg-blue2 text-white'} p-2 my-4 mr-4 w-48 text-center cursor-pointer`} onClick={() => handleClick(3)} > Rapor</h1>
               </div>
               {
                 hesap === 1
@@ -41,6 +43,11 @@ const Account = () => {
                 hesap === 2
                 &&
                 <Collection setShowInfo={setShowInfo} />
+              }
+              {
+                hesap === 3
+                &&
+                <Report setShowInfo={setShowInfo} />
               }
             </div>
           </div>
@@ -55,13 +62,11 @@ const Account = () => {
           &&
           <CollectionInfo />
         }
-
-        {/* {
+        {
           showInfo === 3
           &&
           <ReportInfo />
-        } */}
-
+        }
       </div>
 
     </>
