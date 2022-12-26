@@ -56,6 +56,11 @@ const Account = () => {
           <CollectionInfo />
         }
 
+        {
+          showInfo === 3
+          &&
+          <ReportInfo />
+        }
 
       </div>
 
