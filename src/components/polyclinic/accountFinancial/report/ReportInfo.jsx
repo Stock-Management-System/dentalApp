@@ -84,6 +84,7 @@ const ReportInfo = () => {
                 </h3>
                 <table className="table w-full mx-auto">
                     {/* <!-- head --> */}
+
                     <thead>
                         <tr>
                             <th>AD SOYAD</th>
