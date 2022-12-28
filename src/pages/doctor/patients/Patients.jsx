@@ -54,7 +54,10 @@ const Patients = () => {
             </select>
             <button className='btn btn-primary btn-sm rounded-full' onClick={() => setShowModal(true)}><BsPersonPlus className='mr-2 text-18' />Yeni Hasta Ekle</button>
           </div>
+
         </div>
+        {/* Buraya tbale component igelecek 👇🏻 */}
+        {/* <div className='bg-white'>burası</div> */}
 
       </div>
       {
