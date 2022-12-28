@@ -74,14 +74,14 @@ const NavBar = () => {
                         <ul tabIndex={0} className="divide-y menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
                             <div className="">
                                 {/* Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700"  */}
-                                <p className="text-gray-300 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Kullanıcı Menüsü</p>
+                                <p className="text-gray-300 block px-4 py-2 text-sm" role="menuitem" tabIndex="-1" id="menu-item-0">Kullanıcı Menüsü</p>
                             </div>
                             <div>
                                 <li><Link to="#">Profilim</Link></li>
                                 <li><Link to="#">Faaliyet</Link></li>
                                 <li><Link to="#">Hesap Değiştir</Link></li>
                                 <li><Link to="#">Yardım</Link></li>
-                                <li class="logout"><Link to="#" className="btn btn-outline btn-error btn-circle w-20">Çıkış</Link></li>
+                                <li className="logout"><Link to="#" className="btn btn-outline btn-error btn-circle w-20">Çıkış</Link></li>
                             </div>
                         </ul>
                     </div>
