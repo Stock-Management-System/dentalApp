@@ -10,7 +10,12 @@ import AddPatientModal from '../../../components/doctor/patient/AddPatientModal'
 
 const Patients = () => {
   const [showModal, setShowModal] = useState(false)
+  const [searchPatient, setSearchPatient] = useState("")
+  const [filterPatient, setFilterPatient] = useState("")
   const open = useSelector(state => state.open.value)
+  console.log(searchPatient)
+  console.log(filterPatient)
+
   return (
     <>
       <Layout />
@@ -31,14 +36,21 @@ const Patients = () => {
           <div className='flex xs:flex-col md:flex-row items-center justify-between gap-4'>
             <input
               type="text"
+              name='search'
+              value={searchPatient}
+              onChange={(e) => setSearchPatient(e.target.value)}
               placeholder="Hasta Ara ..."
               className="input input-sm input-bordered w-40 max-w-xs rounded-3xl"
             />
-            <select className="select select-bordered select-sm rounded-3xl max-w-xs">
-              <option disabled selected>Filtre Seçenekleri</option>
-              <option>Small Apple</option>
-              <option>Small Orange</option>
-              <option>Small Tomato</option>
+            <select
+              name='filterPatient'
+              value={filterPatient}
+              onChange={(e) => setFilterPatient(e.target.value)}
+              className="select select-bordered select-sm rounded-3xl max-w-xs">
+              <option disabled value={""}>Filtre Seçenekleri</option>
+              <option value={"Small Apple"}>Small Apple</option>
+              <option value={"Small Orange"}>Small Orange</option>
+              <option value={"Small Tomato"}>Small Tomato</option>
             </select>
             <button className='btn btn-primary btn-sm rounded-full' onClick={() => setShowModal(true)}><BsPersonPlus className='mr-2 text-18' />Yeni Hasta Ekle</button>
           </div>
