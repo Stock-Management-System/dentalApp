@@ -84,7 +84,7 @@ const AddAppointmentPopUp = () => {
             >
                 <div className="relative mx-auto my-auto max-w-full">
                     {/*content*/}
-                    <div className="border-0 rounded-lg shadow-lg relative flex flex-col bg-white outline-none focus:outline-none xs:w-[80vw] md:w-[65vw]">
+                    <div className="border-0 rounded-lg shadow-lg relative flex flex-col bg-white outline-none focus:outline-none xs:w-[80vw] md:w-[55rem]">
                         {/*header*/}
                         <div className="flex items-center justify-between bg-blue1 rounded-t py-2">
                             <h3 className="ml-4 text-white font-semibold">
@@ -112,7 +112,7 @@ const AddAppointmentPopUp = () => {
                                                     className={`cursor-pointer rounded-full transition duration-500 ease-in-out h-12 w-12 border-2 border-blue1 flex items-center justify-center text-xl ${stepper === 1 && 'bg-blue1 text-white'}`}>
                                                     1
                                                 </div>
-                                                <div className="xs:hidden md:block absolute top-0 -ml-8 text-center mt-12 whitespace-nowrap uppercase">Hasta Bilgileri</div>
+                                                <div className="xs:hidden md:block absolute top-0 -ml-6 text-center mt-14 whitespace-nowrap">Hasta Bilgileri</div>
                                             </div>
                                             <div className="flex-auto md:border-t-2 border-blue1 transition duration-500 ease-in-out mx-1"></div>
                                             <div className="flex items-center relative">
@@ -121,7 +121,7 @@ const AddAppointmentPopUp = () => {
                                                     className={`cursor-pointer rounded-full transition duration-500 ease-in-out h-12 w-12 border-2 border-blue1 flex items-center justify-center text-xl  ${stepper === 2 && 'bg-blue1 text-white'}`}>
                                                     2
                                                 </div>
-                                                <div className="xs:hidden md:block absolute top-0 -ml-11 text-center mt-12 whitespace-nowrap uppercase">Randevu Bilgileri</div>
+                                                <div className="xs:hidden md:block absolute top-0 -ml-8 text-center mt-14 whitespace-nowrap">Randevu Bilgileri</div>
                                             </div>
                                             <div className="flex-auto md:border-t-2 border-blue1 transition duration-500 ease-in-out mx-1"></div>
                                             <div className="flex items-center relative">
@@ -130,7 +130,7 @@ const AddAppointmentPopUp = () => {
                                                     className={`cursor-pointer rounded-full transition duration-500 ease-in-out h-12 w-12 border-2 border-blue1 flex items-center justify-center text-xl ${stepper === 3 && 'bg-blue1 text-white'}`}>
                                                     3
                                                 </div>
-                                                <div className="xs:hidden md:block absolute top-0 -ml-12 text-center mt-12 whitespace-nowrap uppercase">Önizleme ve Onay</div>
+                                                <div className="xs:hidden md:block absolute top-0 -ml-8 text-center mt-14 whitespace-nowrap">Önizleme ve Onay</div>
                                             </div>
                                         </div>
                                     </div>

@@ -15,8 +15,8 @@ const SecondStepAddAppointment = ({ handleSubmit, handleSubmitBackward, setSelec
     console.log(current)
     return (
         <div className='m-4'>
-            <div className="flex justify-around px-4 py-2 mt-5 items-center sm:overflow-hidden sm:rounded-md mb-4">
-                <h1>Randevu Bilgileri</h1>
+            <div className="flex xs:justify-around md:justify-end px-4 py-2 mt-5 items-center sm:overflow-hidden sm:rounded-md mb-4">
+                <h1 className='md:hidden'>Randevu Bilgileri</h1>
                 <div className="flex xs:flex-col md:flex-row justify-between items-center gap-4 w-3/5">
                     <select className="select select-bordered select-sm focus:input-primary w-full max-w-xs" value={selectedDoctor} onChange={(e) => setSelectedDoctor(e.target.value)}>
                         {/* <option disabled selected>Doktor Seçiniz</option> */}
@@ -48,7 +48,7 @@ const SecondStepAddAppointment = ({ handleSubmit, handleSubmitBackward, setSelec
                             }
                         </div>
                     </div>
-                    <div className='flex justify-between items-center gap-1 my-3'>
+                    <div className='flex justify-between items-center gap-1 my-2'>
                         <h4 className='w-40'>Öğleden Sonra</h4>
                         <div className=' flex flex-wrap gap-x-1 w-full'>
                             {
