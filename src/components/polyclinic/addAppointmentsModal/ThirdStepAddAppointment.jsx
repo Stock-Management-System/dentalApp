@@ -18,8 +18,9 @@ const ThirdStepAddAppointment = ({ handleSubmit, handleSubmitBackward, personalI
     }
     return (
         <form className='w-full flex flex-col p-4'>
+            <h2>Önizleme ve Onay</h2>
             <h3 className='mt-6'>Hasta Bilgileri</h3>
-            <div className='grid grid-cols-4 gap-2'>
+            <div className='grid md:grid-cols-4 gap-2'>
                 <div className="col-span-1">
                     <label className="label">
                         <span className="label-text">ADI</span>
@@ -46,7 +47,7 @@ const ThirdStepAddAppointment = ({ handleSubmit, handleSubmitBackward, personalI
                 </div>
             </div>
             <h3 className='mt-6'>Randevu Bilgileri</h3>
-            <div className='grid grid-cols-3 gap-12'>
+            <div className='grid md:grid-cols-3 md:gap-12'>
                 <div className="col-span-1">
                     <label className="label">
                         <span className="label-text">POLİKLİNİK</span>

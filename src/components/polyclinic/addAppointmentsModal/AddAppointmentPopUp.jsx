@@ -80,11 +80,11 @@ const AddAppointmentPopUp = () => {
     return (
         <>
             <div
-                className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+                className="flex justify-start items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
             >
-                <div className="relative my-6 mx-auto max-w-full">
+                <div className="relative mx-auto my-auto max-w-full">
                     {/*content*/}
-                    <div className="border-0 rounded-lg shadow-lg relative flex flex-col bg-white outline-none focus:outline-none w-[60rem]">
+                    <div className="border-0 rounded-lg shadow-lg relative flex flex-col bg-white outline-none focus:outline-none xs:w-[80vw] md:w-[65vw]">
                         {/*header*/}
                         <div className="flex items-center justify-between bg-blue1 rounded-t py-2">
                             <h3 className="ml-4 text-white font-semibold">
@@ -99,78 +99,80 @@ const AddAppointmentPopUp = () => {
                                 </span>
                             </button>
                         </div>
-                        <div className="relative p-3 flex-auto">
-                            <div className="px-4 sm:px-0">
-                                {/* <!-- component --> */}
-                                <div className="flex flex-col justify-center items-center">
+                        <div className='block'>
+                            <div className="relative p-3 flex-auto xs:1/6">
+                                <div className="px-4 sm:px-0">
+                                    {/* <!-- component --> */}
+                                    <div className="flex flex-col justify-center items-center">
 
-                                    <div className="flex items-center w-3/4 mt-6">
-                                        <div className="flex items-center relative">
-                                            <div
-                                                onClick={() => setStepper(1)}
-                                                className={`cursor-pointer rounded-full transition duration-500 ease-in-out h-12 w-12 border-2 border-blue1 flex items-center justify-center text-xl ${stepper === 1 && 'bg-blue1 text-white'}`}>
-                                                1
+                                        <div className="flex flex-row md:items-center w-3/4 mt-6 md:gap-10">
+                                            <div className="flex items-center relative">
+                                                <div
+                                                    onClick={() => setStepper(1)}
+                                                    className={`cursor-pointer rounded-full transition duration-500 ease-in-out h-12 w-12 border-2 border-blue1 flex items-center justify-center text-xl ${stepper === 1 && 'bg-blue1 text-white'}`}>
+                                                    1
+                                                </div>
+                                                <div className="xs:hidden md:block absolute top-0 -ml-8 text-center mt-12 whitespace-nowrap uppercase">Hasta Bilgileri</div>
                                             </div>
-                                            <div className="absolute top-0 -ml-8 text-center mt-12 whitespace-nowrap uppercase">Hasta Bilgileri</div>
-                                        </div>
-                                        <div className="flex-auto border-t-2 border-blue1 transition duration-500 ease-in-out mx-1"></div>
-                                        <div className="flex items-center relative">
-                                            <div
-                                                onClick={() => setStepper(2)}
-                                                className={`cursor-pointer rounded-full transition duration-500 ease-in-out h-12 w-12 border-2 border-blue1 flex items-center justify-center text-xl  ${stepper === 2 && 'bg-blue1 text-white'}`}>
-                                                2
+                                            <div className="flex-auto md:border-t-2 border-blue1 transition duration-500 ease-in-out mx-1"></div>
+                                            <div className="flex items-center relative">
+                                                <div
+                                                    onClick={() => setStepper(2)}
+                                                    className={`cursor-pointer rounded-full transition duration-500 ease-in-out h-12 w-12 border-2 border-blue1 flex items-center justify-center text-xl  ${stepper === 2 && 'bg-blue1 text-white'}`}>
+                                                    2
+                                                </div>
+                                                <div className="xs:hidden md:block absolute top-0 -ml-11 text-center mt-12 whitespace-nowrap uppercase">Randevu Bilgileri</div>
                                             </div>
-                                            <div className="absolute top-0 -ml-11 text-center mt-12 whitespace-nowrap uppercase">Randevu Bilgileri</div>
-                                        </div>
-                                        <div className="flex-auto border-t-2 border-blue1 transition duration-500 ease-in-out mx-1"></div>
-                                        <div className="flex items-center text-gray-500 relative">
-                                            <div
-                                                onClick={() => setStepper(3)}
-                                                className={`cursor-pointer rounded-full transition duration-500 ease-in-out h-12 w-12 border-2 border-blue1 flex items-center justify-center text-xl ${stepper === 3 && 'bg-blue1 text-white'}`}>
-                                                3
+                                            <div className="flex-auto md:border-t-2 border-blue1 transition duration-500 ease-in-out mx-1"></div>
+                                            <div className="flex items-center relative">
+                                                <div
+                                                    onClick={() => setStepper(3)}
+                                                    className={`cursor-pointer rounded-full transition duration-500 ease-in-out h-12 w-12 border-2 border-blue1 flex items-center justify-center text-xl ${stepper === 3 && 'bg-blue1 text-white'}`}>
+                                                    3
+                                                </div>
+                                                <div className="xs:hidden md:block absolute top-0 -ml-12 text-center mt-12 whitespace-nowrap uppercase">Önizleme ve Onay</div>
                                             </div>
-                                            <div className="absolute top-0 -ml-12 text-center mt-12 whitespace-nowrap uppercase">Önizleme ve Onay</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        {
-                            stepper === 1
-                                ?
-                                <FirstStepAddAppointment
-                                    handleSubmit={handleSubmitFirst}
-                                    setPersonalInfo={setPersonalInfo}
-                                    personalInfo={personalInfo}
-                                />
-                                :
-                                stepper === 2
+                            {
+                                stepper === 1
                                     ?
-                                    <SecondStepAddAppointment
-                                        handleSubmit={handleSubitSecond}
-                                        handleSubmitBackward={handleSubmitBackward}
-                                        setSelectedDoctor={setSelectedDoctor}
-                                        selectedDoctor={selectedDoctor}
-                                        doctorAppointmentStatus={doctorAppointmentStatus}
-                                        date={date}
-                                        setDate={setDate}
-                                        clock={clock}
-                                        setClock={setClock}
+                                    <FirstStepAddAppointment
+                                        handleSubmit={handleSubmitFirst}
+                                        setPersonalInfo={setPersonalInfo}
+                                        personalInfo={personalInfo}
                                     />
                                     :
-                                    stepper === 3
-                                    &&
-                                    <ThirdStepAddAppointment
-                                        handleSubmit={null}
-                                        handleSubmitBackward={handleSubmitBackward}
-                                        personalInfo={personalInfo}
-                                        setSelectedDoctor={setSelectedDoctor}
-                                        selectedDoctor={selectedDoctor}
-                                        doctorAppointmentStatus={doctorAppointmentStatus}
-                                        date={date}
-                                        clock={clock}
-                                    />
-                        }
+                                    stepper === 2
+                                        ?
+                                        <SecondStepAddAppointment
+                                            handleSubmit={handleSubitSecond}
+                                            handleSubmitBackward={handleSubmitBackward}
+                                            setSelectedDoctor={setSelectedDoctor}
+                                            selectedDoctor={selectedDoctor}
+                                            doctorAppointmentStatus={doctorAppointmentStatus}
+                                            date={date}
+                                            setDate={setDate}
+                                            clock={clock}
+                                            setClock={setClock}
+                                        />
+                                        :
+                                        stepper === 3
+                                        &&
+                                        <ThirdStepAddAppointment
+                                            handleSubmit={null}
+                                            handleSubmitBackward={handleSubmitBackward}
+                                            personalInfo={personalInfo}
+                                            setSelectedDoctor={setSelectedDoctor}
+                                            selectedDoctor={selectedDoctor}
+                                            doctorAppointmentStatus={doctorAppointmentStatus}
+                                            date={date}
+                                            clock={clock}
+                                        />
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

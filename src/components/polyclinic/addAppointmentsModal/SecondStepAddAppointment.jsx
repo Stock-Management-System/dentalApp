@@ -17,7 +17,7 @@ const SecondStepAddAppointment = ({ handleSubmit, handleSubmitBackward, setSelec
         <div className='m-4'>
             <div className="flex justify-around px-4 py-2 mt-5 items-center sm:overflow-hidden sm:rounded-md mb-4">
                 <h1>Randevu Bilgileri</h1>
-                <div className="flex justify-between items-center gap-4 w-3/5">
+                <div className="flex xs:flex-col md:flex-row justify-between items-center gap-4 w-3/5">
                     <select className="select select-bordered select-sm focus:input-primary w-full max-w-xs" value={selectedDoctor} onChange={(e) => setSelectedDoctor(e.target.value)}>
                         {/* <option disabled selected>Doktor Seçiniz</option> */}
                         {doctorAppointmentStatus.map((item, index) => (

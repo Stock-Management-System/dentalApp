@@ -3,7 +3,7 @@ import { AiOutlineRight } from 'react-icons/ai'
 import { ilData } from '../../../helpers/ilData';
 
 const FirstStepAddAppointment = ({ handleSubmit, personalInfo, setPersonalInfo }) => {
-    const [querytc, setQuerytc] = useState("12345678912")
+    const [querytc, setQuerytc] = useState("")
 
     const handleClickTc = () => {
         // const patient = getTc(querytc)
@@ -15,9 +15,9 @@ const FirstStepAddAppointment = ({ handleSubmit, personalInfo, setPersonalInfo }
     console.log(personalInfo);
     return (
         <div className='p-1'>
-            <div className="flex justify-between px-4 py-2 mt-12 mx-5 items-center sm:overflow-hidden sm:rounded-md">
+            <div className="flex xs:flex-col md:flex-row xs:justify-start xs:items-start xs:gap-2 justify-between px-4 py-2 mt-12 mx-5 items-center sm:overflow-hidden sm:rounded-md">
                 <h1>Hasta Bilgiler</h1>
-                <div className="flex justify-center items-center gap-4 w-2/3">
+                <div className="flex xs:flex-col md:flex-row xs:justify-start xs:items-start xs:gap-2 justify-center items-center gap-4 w-2/3">
                     <label className="label-text">HASTA TC KİMLİK NO</label>
                     <input
                         type="text"
@@ -25,18 +25,18 @@ const FirstStepAddAppointment = ({ handleSubmit, personalInfo, setPersonalInfo }
                         value={querytc}
                         maxLength={"11"}
                         onChange={(e) => setQuerytc(e.target.value)}
-                        placeholder="Hasta TC Kimlik No" className="input input-bordered input-sm w-full max-w-xs"
+                        placeholder="Hasta TC Kimlik No" className="input input-bordered input-sm md:w-full max-w-xs"
                     />
                     <button
                         onClick={handleClickTc}
-                        className="btn btn-sm btn-outline btn-primary rounded-full capitalize"
+                        className="xs:block md:inline btn btn-sm btn-outline btn-primary rounded-full capitalize"
                     >
                         Sorgula
                     </button>
                 </div>
             </div>
             <form className='w-full p-2'>
-                <div className='grid grid-cols-4 gap-2'>
+                <div className='grid xs:grid-cols-2 md:grid-cols-4 gap-2'>
                     <div className="col-span-1">
                         <label className="label">
                             <span className="label-text">ADI</span>
