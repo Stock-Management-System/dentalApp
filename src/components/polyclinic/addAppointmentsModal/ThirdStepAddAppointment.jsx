@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { AiOutlineLeft } from 'react-icons/ai'
+import { useDispatch } from 'react-redux';
+import { modalToggle } from '../../../features/modalSlice';
 
 const ThirdStepAddAppointment = ({ handleSubmit, handleSubmitBackward, personalInfo, selectedDoctor, setSelectedDoctor, doctorAppointmentStatus, date,
     clock }) => {
     const [datetime, setDatetime] = useState(date + 'T' + clock)
+    const dispatch = useDispatch()
     console.log(datetime);
     console.log(personalInfo);
     const handleSubmitForm = (e) => {
         e.preventDefault()
+        dispatch(modalToggle())
     }
     const hanleClick = () => {
         alert('Lütfen değişiklik için önceki forma geçiniz !')
