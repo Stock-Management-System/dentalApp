@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import DoctorHeader from '../../../components/doctor/doctorDashboard/DoctorHeader'
 import Layout from '../../../components/doctor/Layout'
 import AddPatientModal from '../../../components/doctor/patient/AddPatientModal'
+import PatientProfile from '../../../components/doctor/patient/PatientProfile'
 
 
 
@@ -58,6 +59,9 @@ const Patients = () => {
         </div>
         {/* Buraya tbale component igelecek 👇🏻 */}
         {/* <div className='bg-white'>burası</div> */}
+        <div>
+          <PatientProfile/>
+        </div>
 
       </div>
       {
