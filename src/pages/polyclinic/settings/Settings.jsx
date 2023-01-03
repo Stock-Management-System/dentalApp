@@ -3,6 +3,18 @@ import { useSelector } from "react-redux";
 import Layout from "../../../components/polyclinic/layout/Layout";
 import poliklinikpp from "../../../assets/Poliklinikpp.png";
 import { TfiPencil } from "react-icons/tfi";
+const PolyclinicProfil = {
+	adi: "İnci Diş Polikliniği",
+	adres1: "Cumhuriyet Mah. Atatürk Cad.",
+	adres2: "123. Sokak No:45",
+	sehir: "Konya",
+	ilce: "Ereğli",
+	tel1: "0552 475 89 76",
+	tel2: "0554 879 85 37",
+	tel3: "0551 245 79 68",
+	email: "incidis@inci.com",
+	vergi: "1212848495",
+};
 
 const Settings = () => {
 	const open = useSelector((state) => state.open.value);
@@ -39,8 +51,9 @@ const Settings = () => {
 								<label className="label-text mb-3">POLİKLİNİK ADI</label>
 								<input
 									type="text"
-									placeholder="İnci Diş Polikliniği"
+									placeholder="Type here"
 									className="input input-bordered w-full mb-5"
+									value={PolyclinicProfil.adi}
 								/>
 							</div>
 							<div className="flex flex-row gap-5">
@@ -49,25 +62,27 @@ const Settings = () => {
 										<label className="label-text mb-3">ADRES</label>
 										<input
 											type="text"
-											placeholder="Cumhuriyet Mah. Atatürk Cad."
+											placeholder="Type here"
 											className="input input-bordered w-full mb-2"
+											value={PolyclinicProfil.adres1}
 										/>
 										<input
 											type="text"
-											placeholder="123.Sokak No:45"
+											placeholder="Type here"
 											className="input input-bordered w-full mb-2"
+											value={PolyclinicProfil.adres2}
 										/>
 										<div className="grid grid-cols-2 gap-3 w-full">
 											<select className="select select-bordered  ">
 												<option disabled selected>
-													Konya
+													{PolyclinicProfil.sehir}
 												</option>
 												<option>Han Solo</option>
 												<option>Greedo</option>
 											</select>
 											<select className="select select-bordered">
 												<option disabled selected>
-													Ereğli
+													{PolyclinicProfil.ilce}
 												</option>
 												<option>Han Solo</option>
 												<option>Greedo</option>
@@ -80,6 +95,7 @@ const Settings = () => {
 											type="email"
 											placeholder="****@*****.com"
 											className="input input-bordered w-full "
+											value={PolyclinicProfil.email}
 										/>
 									</div>
 								</div>
@@ -90,16 +106,19 @@ const Settings = () => {
 											type="text"
 											className="input input-bordered w-full mb-2"
 											placeholder="Type here"
+											value={PolyclinicProfil.tel1}
 										/>
 										<input
 											type="text"
 											className="input input-bordered w-full mb-2"
 											placeholder="Type here"
+											value={PolyclinicProfil.tel2}
 										/>
 										<input
 											type="text"
 											className="input input-bordered w-full"
 											placeholder="Type here"
+											value={PolyclinicProfil.tel3}
 										/>
 									</div>
 									<div className="form-control w-full">
@@ -108,6 +127,7 @@ const Settings = () => {
 											type="text"
 											className="input input-bordered w-full"
 											placeholder="Type here"
+											value={PolyclinicProfil.vergi}
 										/>
 									</div>
 								</div>
