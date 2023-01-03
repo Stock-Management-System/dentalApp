@@ -1,23 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import Layout from "../../../components/polyclinic/layout/Layout";
 import poliklinikpp from "../../../assets/Poliklinikpp.png";
 import { TfiPencil } from "react-icons/tfi";
+import { ilData } from "../../../helpers/ilData";
+
 const PolyclinicProfil = {
-	adi: "İnci Diş Polikliniği",
+	klinikAdi: "İnci Diş Polikliniği",
 	adres1: "Cumhuriyet Mah. Atatürk Cad.",
 	adres2: "123. Sokak No:45",
-	sehir: "Konya",
-	ilce: "Ereğli",
+	il: "KONYA",
+	ilce: "EREĞLİ",
 	tel1: "0552 475 89 76",
 	tel2: "0554 879 85 37",
 	tel3: "0551 245 79 68",
 	email: "incidis@inci.com",
-	vergi: "1212848495",
+	vergiNo: "1212848495",
 };
 
 const Settings = () => {
 	const open = useSelector((state) => state.open.value);
+
+	const [registerInfo, setRegisterInfo] = useState({
+		il: ilData[0]["text"],
+		ilce: ilData[0]["districts"][0]["text"],
+	});
+
+	const handleChange = (e) => {
+		setRegisterInfo({ ...registerInfo, [e.target.id]: e.target.value });
+	};
 
 	return (
 		<>
@@ -53,7 +64,7 @@ const Settings = () => {
 									type="text"
 									placeholder="Type here"
 									className="input input-bordered w-full mb-5"
-									value={PolyclinicProfil.adi}
+									value={PolyclinicProfil.klinikAdi}
 								/>
 							</div>
 							<div className="flex flex-row gap-5">
@@ -73,19 +84,29 @@ const Settings = () => {
 											value={PolyclinicProfil.adres2}
 										/>
 										<div className="grid grid-cols-2 gap-3 w-full">
-											<select className="select select-bordered  ">
-												<option disabled selected>
-													{PolyclinicProfil.sehir}
-												</option>
-												<option>Han Solo</option>
-												<option>Greedo</option>
+											<select
+												name="il"
+												id="il"
+												className="select select-bordered"
+												onChange={handleChange}
+											>
+												{ilData.map((il) => (
+													<option value={il["text"]}>{il["text"]}</option>
+												))}
 											</select>
-											<select className="select select-bordered">
-												<option disabled selected>
-													{PolyclinicProfil.ilce}
-												</option>
-												<option>Han Solo</option>
-												<option>Greedo</option>
+											<select
+												name="ilce"
+												id="ilce"
+												className="select select-bordered"
+												onChange={handleChange}
+											>
+												{ilData
+													.filter((data) => data["text"] === registerInfo.il)
+													.map((ilce) =>
+														ilce["districts"].map((e) => (
+															<option value={e["text"]}>{e["text"]}</option>
+														))
+													)}
 											</select>
 										</div>
 									</div>
@@ -127,7 +148,7 @@ const Settings = () => {
 											type="text"
 											className="input input-bordered w-full"
 											placeholder="Type here"
-											value={PolyclinicProfil.vergi}
+											value={PolyclinicProfil.vergiNo}
 										/>
 									</div>
 								</div>
