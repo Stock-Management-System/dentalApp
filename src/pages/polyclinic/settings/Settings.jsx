@@ -9,15 +9,15 @@ const PolyclinicProfil = {
 	klinikAdi: "İnci Diş Polikliniği",
 	adres1: "Cumhuriyet Mah. Atatürk Cad.",
 	adres2: "123. Sokak No:45",
-	il: "KONYA",
-	ilce: "EREĞLİ",
+	il: ilData[52]["text"],
+	ilce: ilData[52]["districts"][13]["text"],
 	tel1: "0552 475 89 76",
 	tel2: "0554 879 85 37",
 	tel3: "0551 245 79 68",
 	email: "incidis@inci.com",
 	vergiNo: "1212848495",
 };
-
+console.log(PolyclinicProfil.il);
 const Settings = () => {
 	const open = useSelector((state) => state.open.value);
 
@@ -90,6 +90,7 @@ const Settings = () => {
 												className="select select-bordered"
 												onChange={handleChange}
 											>
+												<option>{PolyclinicProfil.il}</option>
 												{ilData.map((il) => (
 													<option value={il["text"]}>{il["text"]}</option>
 												))}
@@ -100,6 +101,7 @@ const Settings = () => {
 												className="select select-bordered"
 												onChange={handleChange}
 											>
+												<option>{PolyclinicProfil.ilce}</option>
 												{ilData
 													.filter((data) => data["text"] === registerInfo.il)
 													.map((ilce) =>
