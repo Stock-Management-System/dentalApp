@@ -175,7 +175,7 @@ const Polyclinics = () => {
 													<div className="flex justify-start gap-6 mt-7">
 														<IoLocationOutline className="text-5xl opacity-50 mt-1" />
 														<div>
-															<p className="text-14">ADRES</p>
+															<p className="text-14">ADRES </p>
 															<p className="text-[14px]">{polyclinic.adres}</p>
 														</div>
 													</div>
