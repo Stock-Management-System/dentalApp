@@ -151,7 +151,7 @@ const Polyclinics = () => {
 								{polyclinics.map((polyclinic) => (
 									<div className="card bg-white p-4 ">
 										<div className="divide-y-2 divide-gray">
-											<figure className="h-1/3">
+											<figure className="h-40">
 												<img
 													src={polyclinic.img}
 													alt="profile"
