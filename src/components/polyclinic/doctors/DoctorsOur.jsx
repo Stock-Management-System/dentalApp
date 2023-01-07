@@ -2,21 +2,33 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { SlCalender, SlClock } from "react-icons/sl";
-import { AiOutlineCheck } from "react-icons/ai";
+import { AiOutlineCheck, AiOutlineClose } from "react-icons/ai";
 
 const DoctorsOur = ({ doktorlar }) => {
+	const widthScreen = window.innerWidth;
+
 	return (
 		<div>
 			<Swiper
-				className="flex flex-row gap-5"
+				className="grid grid-cols-5 gap-5"
 				spaceBetween={25}
-				slidesPerView={5}
+				slidesPerView={
+					widthScreen < 768
+						? 1
+						: widthScreen < 1050
+						? 2
+						: widthScreen < 1400
+						? 3
+						: widthScreen < 1800
+						? 4
+						: 5
+				}
 				onSlideChange={() => console.log("slide change")}
 				onSwiper={(swiper) => console.log(swiper)}
 			>
 				{doktorlar.map((doktor, index) => (
 					<SwiperSlide>
-						<div className="card bg-container mb-4">
+						<div className="card bg-container mb-4 ">
 							<div className="relative flex flex-col justify-center items-center mt-4 md:">
 								<img
 									src={doktor.img}
@@ -64,12 +76,12 @@ const DoctorsOur = ({ doktorlar }) => {
 										</tr>
 									</tbody>
 								</table>
-								<div className="flex flex-wrap justify-between  ">
+								<div className="grid grid-cols-2 gap-3">
 									<button className="btn btn-ghost bg-blue1 bg-opacity-10 text-blue1 capitalize hover:bg-blue1 hover:text-white">
 										<AiOutlineCheck className="mr-2" /> Performans
 									</button>
-									<button className="btn btn-ghost bg-red bg-opacity-10 text-red capitalize hover:bg-red hover:text-white px-8 2xl:mt-0 xl:mt-2">
-										<span className="mr-2">X</span>İzinler
+									<button className="btn btn-ghost bg-red bg-opacity-10 text-red capitalize hover:bg-red hover:text-white ">
+										<AiOutlineClose className="mr-2" /> İzinler
 									</button>
 								</div>
 							</div>
