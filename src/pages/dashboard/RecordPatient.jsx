@@ -27,7 +27,7 @@ const RecordPatient = () => {
     return (
         <div className='h-full'>
             <NavBar setShowRegister={setShowRegister} />
-            <section className='flex flex-col pt-24 min-h-screen bg-transparent  mb-10'>
+            <section className='pt-28'>
                 <article className='flex justify-between mx-32' >
                     <h1 className='text-3xl text-blue1'>Randevu Al</h1>
                     <form className="form-control" onSubmit={handleSubmit}>
@@ -41,7 +41,7 @@ const RecordPatient = () => {
                 </article>
                 <InfoOfPatient />
             </section>
-            <section className='flex flex-col justify-center items-center min-h-screen bg-transparent'>
+            <section className=''>
                 <PolyclinicForRecord setPlace={setPlace} place={place} />
                 <DoctorsForRecord />
             </section>
