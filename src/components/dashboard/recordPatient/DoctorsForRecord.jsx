@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useRef } from 'react';
-import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 import { Navigation, Pagination, Scrollbar, A11y, Controller, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { doktorlar } from "../../../helpers/data";
@@ -8,7 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-// import 'swiper/css/effect-fade';
+import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi';
 
 const DoctorsForRecord = () => {
     const [openTab, setOpenTab] = useState(0);
@@ -27,17 +26,14 @@ const DoctorsForRecord = () => {
 
     return (
         <section className=''>
-            <article className='flex justify-between px-20'>
+            <article className='flex justify-between px-16 w-11/12 mx-auto h-8'>
                 <h1>Doktorlarımız</h1>
                 <article className='flex gap-3'>
-                    <button ref={prevRef}><AiOutlineLeft className='text-28 bg-white rounded-full' /></button>
-                    <button ref={nextRef}><AiOutlineRight className='text-28 bg-white rounded-full' /></button>
+                    <button className="bg-white w-8 flex items-center justify-center rounded-full" ref={prevRef}><HiOutlineArrowLeft className='' /></button>
+                    <button className="bg-white w-8 flex items-center justify-center rounded-full" ref={nextRef}><HiOutlineArrowRight className='' /></button>
                 </article>
             </article>
-            <div className="p-1 my-10">
-                {/* <Slider ref={slider} {...settings}> */}
-
-
+            <div className="p-1 my-10 w-[87%] mx-auto">
                 <Swiper
                     className="flex flex-row gap-5"
                     spaceBetween={25}
@@ -51,7 +47,7 @@ const DoctorsForRecord = () => {
                         nextEl: nextRef?.current,
                     }}
                     autoplay={{
-                        delay: 1500,
+                        delay: 3000,
                         disableOnInteraction: false
                     }}
                     loop={true}
