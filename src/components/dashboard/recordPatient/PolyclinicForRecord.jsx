@@ -1,53 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ilData } from "../../../helpers/ilData";
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from 'react-slick';
+import { Navigation, Pagination, Scrollbar, A11y, Controller, Autoplay } from "swiper";
+
 import { useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 
 const PolyclinicForRecord = ({ place, setPlace }) => {
+    const [openTab, setOpenTab] = useState(0);
+    const [swiper, setSwiper] = useState();
+    const prevRef = useRef();
+    const nextRef = useRef();
     const oylesine = [1, 2, 3, 4, 5, 6, 7, 8];
+    useEffect(() => {
+        if (swiper) {
+            console.log("Swiper instance:", swiper);
+            swiper.params.navigation.prevEl = prevRef.current;
+            swiper.params.navigation.nextEl = nextRef.current;
+            swiper.navigation.init();
+            swiper.navigation.update();
+        }
+    }, [swiper]);
     const handleChange = (e) => {
         setPlace({ ...place, [e.target.name]: e.target.value })
     };
-    const settings = {
-        infinite: true,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        initialSlide: 0,
-        centerMode: true,
-        centerPadding: '60px',
-        // draggable: true,
-        // focusOnSelect: true,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    };
+
     const slider = useRef(null)
     return (
         <section>
@@ -75,26 +53,56 @@ const PolyclinicForRecord = ({ place, setPlace }) => {
                         {ilData.filter((data) => (data["text"] === place.city)).map((ilce) => (ilce["districts"].map((e) => <option value={e["text"]}>{e["text"]}</option>)))
                         }
                     </select>
-                    <button onClick={() => slider?.current?.slickPrev()}><AiOutlineLeft className='text-28 bg-white rounded-full' /></button>
-                    <button onClick={() => slider?.current?.slickNext()}><AiOutlineRight className='text-28 bg-white rounded-full' /></button>
+                    <button ref={prevRef}><AiOutlineLeft className='text-28 bg-white rounded-full' /></button>
+                    <button ref={nextRef}><AiOutlineRight className='text-28 bg-white rounded-full' /></button>
                 </article>
             </article>
             <div className="p-1 my-10">
-                <Slider ref={slider} {...settings}>
+                <Swiper
+                    className="flex flex-row gap-5"
+                    spaceBetween={25}
+                    // slidesPerView="auto"
+                    slidesPerView={5}
+                    onSlideChange={() => console.log("slide change")}
+                    onSwiper={setSwiper}
+                    modules={[Navigation, Pagination, Scrollbar, A11y, Controller, Autoplay]}
+                    navigation={{
+                        prevEl: prevRef?.current,
+                        nextEl: nextRef?.current,
+                    }}
+                    autoplay={{
+                        delay: 4000,
+                        disableOnInteraction: false
+                    }}
+                    loop={true}
+                    updateOnWindowResize
+                    observer
+                    observeParents
+                >
                     {
                         oylesine.map((item, index) => (
-                            <div key={index}>
-                                <div className="card card-compact w-96 bg-base-100 p-1" >
+                            <SwiperSlide
+                                className={` ${openTab === item
+                                    ? "card w-1/5 border-2 border-blue1 py-2"
+                                    : "card w-1/5 bg-transparent"
+                                    }`}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setOpenTab(item);
+                                }}
+                                key={index}
+                            >
+                                <div className="card card-compact bg-base-100 mx-3" >
                                     <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
                                     <div className='border-b opacity-80 w-[96%] my-1 mx-auto'></div>
                                     <div className="card-body">
                                         <h2 className="card-title text-blue1 font-normal">İNCİ DİŞ POLİKLİNİĞİ</h2>
                                     </div>
                                 </div>
-                            </div>
+                            </SwiperSlide>
                         ))
                     }
-                </Slider>
+                </Swiper>
             </div>
         </section>
     )
