@@ -3,9 +3,8 @@ import { useRef } from 'react';
 import { ilData } from "../../../helpers/ilData";
 import { Navigation, Pagination, Scrollbar, A11y, Controller, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi';
-
+import InciDıs from '../../../assets/InciDis.png';
 
 
 const PolyclinicForRecord = ({ place, setPlace }) => {
@@ -27,10 +26,9 @@ const PolyclinicForRecord = ({ place, setPlace }) => {
         setPlace({ ...place, [e.target.name]: e.target.value })
     };
 
-    const slider = useRef(null)
     return (
         <section className=''>
-            <article className='flex justify-between px-16'>
+            <article className='flex justify-between px-16 w-11/12 mx-auto'>
                 <h1>Poliklinik</h1>
                 <article className='flex gap-3'>
                     <select
@@ -58,7 +56,7 @@ const PolyclinicForRecord = ({ place, setPlace }) => {
                     <button className="bg-white w-8 flex items-center justify-center rounded-full" ref={nextRef}><HiOutlineArrowRight className='' /></button>
                 </article>
             </article>
-            <div className="p-1 my-10">
+            <div className="p-1 my-10 w-[87%] mx-auto">
                 <Swiper
                     className=""
                     spaceBetween={25}
@@ -72,7 +70,7 @@ const PolyclinicForRecord = ({ place, setPlace }) => {
                         nextEl: nextRef?.current,
                     }}
                     autoplay={{
-                        delay: 4000,
+                        delay: 6000,
                         disableOnInteraction: false
                     }}
                     loop={true}
@@ -94,7 +92,7 @@ const PolyclinicForRecord = ({ place, setPlace }) => {
                                 key={index}
                             >
                                 <div className="card card-compact bg-base-100 mx-3" >
-                                    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+                                    <figure><img src={InciDıs} alt="InciDıs" /></figure>
                                     <div className='border-b opacity-80 w-[96%] my-1 mx-auto'></div>
                                     <div className="card-body">
                                         <h2 className="card-title text-blue1 font-normal">İNCİ DİŞ POLİKLİNİĞİ</h2>
