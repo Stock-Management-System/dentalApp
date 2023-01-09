@@ -1,23 +1,56 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import DoctorInformation from "./DoctorInformation";
+import { Navigation, Pagination, Scrollbar, A11y, Controller } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 const DoctorPerformance = ({ doktorlar }) => {
 	const [openTab, setOpenTab] = useState(0);
-
+	const [swiper, setSwiper] = useState();
+	const prevRef = useRef();
+	const nextRef = useRef();
+	useEffect(() => {
+		if (swiper) {
+			console.log("Swiper instance:", swiper);
+			swiper.params.navigation.prevEl = prevRef.current;
+			swiper.params.navigation.nextEl = nextRef.current;
+			swiper.navigation.init();
+			swiper.navigation.update();
+		}
+	}, [swiper]);
+	
 	return (
 		<div>
 			{/* <-----Card Hekimler ----->👇🏻 */}
-			<div>
-				<p className="pb-5">Performans görüntülemek için bir hekim seçin.</p>
+			<div className="flex flex-row justify-between mb-4 px-2">
+				<p className="">Performans görüntülemek için bir hekim seçin.</p>
+				<article className="flex gap-3">
+					<button ref={prevRef}>
+						<AiOutlineLeft className="text-28 bg-white rounded-full" />
+					</button>
+					<button ref={nextRef}>
+						<AiOutlineRight className="text-28 bg-white rounded-full" />
+					</button>
+				</article>
 			</div>
 			<Swiper
 				className="flex flex-row gap-5"
 				spaceBetween={25}
 				slidesPerView={5}
 				onSlideChange={() => console.log("slide change")}
-				onSwiper={(swiper) => console.log(swiper)}
+				onSwiper={setSwiper}
+				modules={[Navigation, Pagination, Scrollbar, A11y, Controller]}
+				navigation={{
+					prevEl: prevRef?.current,
+					nextEl: nextRef?.current,
+				}}
+				updateOnWindowResize
+				observer
+				observeParents
 			>
 				{doktorlar.map((doktor, index) => (
 					<SwiperSlide
