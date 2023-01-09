@@ -17,10 +17,9 @@ const RecordPatient = () => {
     const [showForgotPassword, setShowForgotPassword] = useState(false);
     const [queryTC, setQueryTC] = useState("")
     const [patientInfo, setPatientInfo] = useState(true)
-    const [place, setPlace] = useState({
-        city: "",
-        town: ""
-    })
+    const [clock, setClock] = useState("");
+    const [date, setDate] = useState("")
+    const [place, setPlace] = useState({ city: "", town: "" })
     const handleSubmit = (e) => {
         e.preventDefault()
         setQueryTC("")
@@ -51,25 +50,43 @@ const RecordPatient = () => {
                 }
             </section>
             <section className=''>
-                <h2 className='w-10/12 mx-auto px-1 py-5 text-22 my-8'>Randevu Bilgileri</h2>
+                <h2 className='w-10/12 mx-auto px-1 my-8 text-22'>Randevu Bilgileri</h2>
                 <PolyclinicForRecord setPlace={setPlace} place={place} />
                 <DoctorsForRecord />
             </section>
-            <section className='w-10/12 mx-auto px-1 py-5 my-8'>
-                <AppointmentDate />
-                <div className="flex items-center justify-start my-8">
-                    <div>
+            <section className='w-11/12 mx-auto px-1 py-5 my-8'>
+                <AppointmentDate setClock={setClock} setDate={setDate} date={date} />
+                {
+                    clock
+                    &&
+                    <article className="w-11/12 mx-auto my-8">
+                        <article className=''>
+                            <h5>Sayın <strong>...</strong> . Randevunuz aşağıdaki şekilde oluşturulacaktır.</h5>
+                            <div className='my-5'>
+                                <h4 className='opacity-80'>POLİKLİNİK</h4>
+                                <h6 className='font-semibold'>İnci Diş Polikliniği</h6>
+                            </div>
+                            <div className='my-5'>
+                                <h4 className='opacity-80'>DOKTOR</h4>
+                                <h6 className='font-semibold'>İnci Diş Polikliniği</h6>
+                            </div>
+                            <div className='my-5'>
+                                <h4 className='opacity-80'>TARİH / SAAT</h4>
+                                <h6 className='font-semibold'>{date.slice(8,)}.{date.slice(5, 7)}.{date.slice(0, 4)} / {clock}</h6>
+                            </div>
 
-                    </div>
-                    <button
-                        className="bg-blue1 text-white capitalize btn btn-sm rounded-3xl hover:bg-blue1"
-                        type="submit"
-                    // onClick={handleSubmit}
-                    >
-                        Randevuyu Onayla
+                        </article>
+                        <button
+                            className="bg-blue1 text-white capitalize btn btn-sm rounded-3xl hover:bg-blue1"
+                            type="submit"
+                        // onClick={handleSubmit}
+                        >
+                            Randevuyu Onayla
 
-                    </button>
-                </div>
+                        </button>
+                    </article>
+                }
+
             </section>
 
 
