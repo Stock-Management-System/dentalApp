@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { ilData } from "../../../helpers/ilData";
-import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
-import { Navigation, Pagination, Scrollbar, A11y, Controller, Autoplay } from "swiper";
-
 import { useRef } from 'react';
+import { ilData } from "../../../helpers/ilData";
+import { Navigation, Pagination, Scrollbar, A11y, Controller, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
+import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi';
+
 
 
 const PolyclinicForRecord = ({ place, setPlace }) => {
@@ -28,8 +29,8 @@ const PolyclinicForRecord = ({ place, setPlace }) => {
 
     const slider = useRef(null)
     return (
-        <section>
-            <article className='flex justify-between px-20'>
+        <section className=''>
+            <article className='flex justify-between px-16'>
                 <h1>Poliklinik</h1>
                 <article className='flex gap-3'>
                     <select
@@ -53,16 +54,16 @@ const PolyclinicForRecord = ({ place, setPlace }) => {
                         {ilData.filter((data) => (data["text"] === place.city)).map((ilce) => (ilce["districts"].map((e) => <option value={e["text"]}>{e["text"]}</option>)))
                         }
                     </select>
-                    <button ref={prevRef}><AiOutlineLeft className='text-28 bg-white rounded-full' /></button>
-                    <button ref={nextRef}><AiOutlineRight className='text-28 bg-white rounded-full' /></button>
+                    <button className="bg-white w-8 flex items-center justify-center rounded-full" ref={prevRef}><HiOutlineArrowLeft className='' /></button>
+                    <button className="bg-white w-8 flex items-center justify-center rounded-full" ref={nextRef}><HiOutlineArrowRight className='' /></button>
                 </article>
             </article>
             <div className="p-1 my-10">
                 <Swiper
-                    className="flex flex-row gap-5"
+                    className=""
                     spaceBetween={25}
                     // slidesPerView="auto"
-                    slidesPerView={5}
+                    slidesPerView={4}
                     onSlideChange={() => console.log("slide change")}
                     onSwiper={setSwiper}
                     modules={[Navigation, Pagination, Scrollbar, A11y, Controller, Autoplay]}
@@ -75,16 +76,16 @@ const PolyclinicForRecord = ({ place, setPlace }) => {
                         disableOnInteraction: false
                     }}
                     loop={true}
-                    updateOnWindowResize
-                    observer
-                    observeParents
+                // updateOnWindowResize
+                // observer
+                // observeParents
                 >
                     {
                         oylesine.map((item, index) => (
                             <SwiperSlide
                                 className={` ${openTab === item
-                                    ? "card w-1/5 border-2 border-blue1 py-2"
-                                    : "card w-1/5 bg-transparent"
+                                    ? "border-2 rounded-2xl border-blue1 py-2"
+                                    : "bg-transparent"
                                     }`}
                                 onClick={(e) => {
                                     e.preventDefault();

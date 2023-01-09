@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
 import Footer from '../../components/dashboard/Footer';
 import ForgotPassword from '../../components/dashboard/ForgotPassword';
 import LoginModal from '../../components/dashboard/LoginModal';
 import NavBar from '../../components/dashboard/NavBar';
+import AppointmentDate from '../../components/dashboard/recordPatient/AppointmentDate';
 import DoctorsForRecord from '../../components/dashboard/recordPatient/DoctorsForRecord';
 import InfoOfPatient from '../../components/dashboard/recordPatient/InfoOfPatient';
+import InfoPatientForm from '../../components/dashboard/recordPatient/InfoPatientForm';
 import PolyclinicForRecord from '../../components/dashboard/recordPatient/PolyclinicForRecord';
 import RegisterModal from '../../components/dashboard/RegisterModal';
 import { ilData } from "../../helpers/ilData";
@@ -15,6 +16,7 @@ const RecordPatient = () => {
     const [showLogin, setShowLogin] = useState(false);
     const [showForgotPassword, setShowForgotPassword] = useState(false);
     const [queryTC, setQueryTC] = useState("")
+    const [patientInfo, setPatientInfo] = useState(true)
     const [place, setPlace] = useState({
         city: "",
         town: ""
@@ -22,6 +24,7 @@ const RecordPatient = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         setQueryTC("")
+        setPatientInfo(!patientInfo)
     }
 
     return (
@@ -39,12 +42,38 @@ const RecordPatient = () => {
                         </div>
                     </form>
                 </article>
-                <InfoOfPatient />
+                {
+                    patientInfo
+                        ?
+                        <InfoOfPatient />
+                        :
+                        <InfoPatientForm />
+                }
             </section>
             <section className=''>
+                <h2 className='w-10/12 mx-auto px-1 py-5 text-22 my-8'>Randevu Bilgileri</h2>
                 <PolyclinicForRecord setPlace={setPlace} place={place} />
                 <DoctorsForRecord />
             </section>
+            <section className='w-10/12 mx-auto px-1 py-5 my-8'>
+                <AppointmentDate />
+                <div className="flex items-center justify-start my-8">
+                    <div>
+
+                    </div>
+                    <button
+                        className="bg-blue1 text-white capitalize btn btn-sm rounded-3xl hover:bg-blue1"
+                        type="submit"
+                    // onClick={handleSubmit}
+                    >
+                        Randevuyu Onayla
+
+                    </button>
+                </div>
+            </section>
+
+
+
             <Footer />
             {showRegister ? (
                 <RegisterModal setShowLogin={setShowLogin} setShowRegister={setShowRegister} />
