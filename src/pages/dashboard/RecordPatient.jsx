@@ -11,26 +11,70 @@ import PolyclinicForRecord from '../../components/dashboard/recordPatient/Polycl
 import RegisterModal from '../../components/dashboard/RegisterModal';
 import { ilData } from "../../helpers/ilData";
 
+const patient = [
+    {
+        TC: "33018089910",
+        firstName: "Cabbar",
+        lastName: "Murteza",
+        dadyName: "Abbas",
+        birthDay: "01.01.1980",
+        phone: "05662223311",
+        email: "cbbr@gmail.com",
+        city: "Ağrı",
+        town: "Doğubeyazıt"
+    },
+    {
+        TC: "54788552210",
+        firstName: "Maksut",
+        lastName: "Ali",
+        dadyName: "Caner",
+        birthDay: "01.01.1990",
+        phone: "05662224411",
+        email: "mksut@gmail.com",
+        city: "Bolu",
+        town: "Mengen"
+    },
+]
+
+
 const RecordPatient = () => {
     const [showRegister, setShowRegister] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
     const [showForgotPassword, setShowForgotPassword] = useState(false);
     const [queryTC, setQueryTC] = useState("")
-    const [patientInfo, setPatientInfo] = useState(true)
+    const [patientInfo, setPatientInfo] = useState("")
     const [clock, setClock] = useState("");
     const [date, setDate] = useState("")
     const [place, setPlace] = useState({ city: "", town: "" })
+    const [personalInfo, setPersonalInfo] = useState({
+        TC: queryTC,
+        firstName: "",
+        lastName: "",
+        dadyName: "",
+        birthDay: "",
+        phone: "",
+        email: "",
+        city: ilData[0]["text"],
+        town: ilData[0]["districts"][0]["text"]
+    });
+
+
+    const filteredPatient = patient.filter((item) => item.TC === queryTC)
+    console.log("bu nerede", filteredPatient[0]?.TC)
+
     const handleSubmit = (e) => {
         e.preventDefault()
-        setQueryTC("")
-        setPatientInfo(!patientInfo)
+        if (filteredPatient[0]?.TC !== "") {
+            setPatientInfo(filteredPatient[0])
+
+        }
     }
 
     return (
         <div className='h-full'>
             <NavBar setShowRegister={setShowRegister} />
             <section className='pt-28'>
-                <article className='flex justify-between mx-32' >
+                <article className='flex xs:flex-col md:flex-row xs:gap-2 md:gap-0 justify-between w-10/12 mx-auto' >
                     <h1 className='text-3xl text-blue1'>Randevu Al</h1>
                     <form className="form-control" onSubmit={handleSubmit}>
                         <div className="input-group">
@@ -42,11 +86,11 @@ const RecordPatient = () => {
                     </form>
                 </article>
                 {
-                    patientInfo
+                    patientInfo?.TC !== undefined && patientInfo?.TC !== ""
                         ?
-                        <InfoOfPatient />
+                        <InfoOfPatient patientInfo={patientInfo} />
                         :
-                        <InfoPatientForm />
+                        <InfoPatientForm queryTC={queryTC} />
                 }
             </section>
             <section className=''>
@@ -88,9 +132,6 @@ const RecordPatient = () => {
                 }
 
             </section>
-
-
-
             <Footer />
             {showRegister ? (
                 <RegisterModal setShowLogin={setShowLogin} setShowRegister={setShowRegister} />
