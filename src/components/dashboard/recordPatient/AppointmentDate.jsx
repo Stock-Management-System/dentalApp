@@ -10,19 +10,33 @@ const AppointmentDate = ({ setClock, setDate, date }) => {
         }
     ]
     console.log(date.slice(8,), date.slice(5, 7), date.slice(0, 4));
+    const date1 = new Date()
+    const thisDay = date1.toLocaleDateString()
+    const tomorrow = new Date(date1)
+    tomorrow.setDate(tomorrow.getDate() + 1)
+    const tomorrowDay = tomorrow.toLocaleDateString()
+    console.log(date1)
+    console.log(tomorrow.toLocaleDateString());
+
     return (
         <section className='w-11/12 mx-auto'>
             <article className='flex justify-between mb-8 mx-2'>
                 <h2 className='text-22'>Tarih</h2>
-                <article>
-                    <label htmlFor="appointmentDate">Tarih Seçiniz</label>
-                    <input className='input input-sm ml-2'
-                        type="date"
-                        name="appointmentDate"
-                        id='appointmentDate'
-                        value={date}
-                        onChange={(e) => setDate(e.target.value)}
-                    />
+                <article className='flex items-center'>
+                    <button value={thisDay} onClick={(e) => setDate(e.target.value)} className='btn btn-sm btn-link'>Bugün</button>
+                    <button value={tomorrowDay} onClick={(e) => setDate(e.target.value)} className='btn btn-sm btn-link'>Yarın</button>
+                    <div className="form-control">
+                        <label className="input-group input-group-vertical" htmlFor='appointmentDate'>
+                            <span>Tarih Seçiniz</span>
+                            <input className='input input-sm'
+                                type="date"
+                                name="appointmentDate"
+                                id='appointmentDate'
+                                value={date}
+                                onChange={(e) => setDate(e.target.value)}
+                            />
+                        </label>
+                    </div>
                 </article>
             </article>
             {

@@ -69,7 +69,8 @@ const RecordPatient = () => {
 
         }
     }
-
+    console.log(queryTC)
+    console.log(personalInfo)
     return (
         <div className='h-full'>
             <NavBar setShowRegister={setShowRegister} />
@@ -86,11 +87,12 @@ const RecordPatient = () => {
                     </form>
                 </article>
                 {
+
                     patientInfo?.TC !== undefined && patientInfo?.TC !== ""
                         ?
                         <InfoOfPatient patientInfo={patientInfo} />
                         :
-                        <InfoPatientForm queryTC={queryTC} />
+                        <InfoPatientForm queryTC={queryTC} setPersonalInfo={setPersonalInfo} personalInfo={personalInfo} />
                 }
             </section>
             <section className=''>

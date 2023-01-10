@@ -1,33 +1,15 @@
 import React, { useState } from 'react';
 import { ilData } from '../../../helpers/ilData';
 
-const InfoPatientForm = ({ queryTC }) => {
-    const [personalInfo, setPersonalInfo] = useState({
-        TC: queryTC,
-        firstName: "",
-        lastName: "",
-        dadyName: "",
-        birthDay: "",
-        phone: "",
-        email: "",
-        city: ilData[0]["text"],
-        town: ilData[0]["districts"][0]["text"]
-    });
+const InfoPatientForm = ({ queryTC, setPersonalInfo, personalInfo }) => {
+
     const handleChange = (e) => {
         setPersonalInfo({ ...personalInfo, [e.target.name]: e.target.value })
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        // setPersonalInfo({
-        //     firstName: "",
-        //     lastName: "",
-        //     dadyName: "",
-        //     birthDay: "",
-        //     phone: "",
-        //     email: "",
-        //     city: ilData[0]["text"],
-        //     town: ilData[0]["districts"][0]["text"]
-        // })
+        setPersonalInfo({ ...personalInfo, TC: queryTC })
+
     }
     return (
         <section className='w-10/12 mx-auto px-1 py-5 mt-8'>
@@ -35,7 +17,7 @@ const InfoPatientForm = ({ queryTC }) => {
                 <h3>Girilen TC kimlik numarasına ait bir kayıt bulunamadı. Lütfen Randevu almak için aşağıdaki formu doldurun.</h3>
                 <h1 className='text-22 mt-8 mb-4'>Hasta Bilgileri</h1>
             </article>
-            <form >
+            <form onSubmit={handleSubmit}>
                 <div className='grid xs:grid-cols-2 md:grid-cols-4 xs:gap-5 md:gap-10'>
                     <div className="col-span-1">
                         <label className="label">
@@ -144,7 +126,7 @@ const InfoPatientForm = ({ queryTC }) => {
                     <button
                         className="bg-blue1 text-white capitalize btn btn-sm rounded-3xl hover:bg-blue1"
                         type="submit"
-                        onClick={handleSubmit}
+                    // onClick={handleSubmit}
                     >
                         Bilgileri Kaydet
                     </button>
