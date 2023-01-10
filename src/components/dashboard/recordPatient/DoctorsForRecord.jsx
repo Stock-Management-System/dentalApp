@@ -16,7 +16,7 @@ const DoctorsForRecord = () => {
     const nextRef = useRef();
     useEffect(() => {
         if (swiper) {
-            console.log("Swiper instance:", swiper);
+            // console.log("Swiper instance:", swiper);
             swiper.params.navigation.prevEl = prevRef.current;
             swiper.params.navigation.nextEl = nextRef.current;
             swiper.navigation.init();
@@ -39,7 +39,7 @@ const DoctorsForRecord = () => {
                     spaceBetween={25}
                     // slidesPerView="auto"
                     slidesPerView={5}
-                    onSlideChange={() => console.log("slide change")}
+                    // onSlideChange={() => console.log("slide change")}
                     onSwiper={setSwiper}
                     modules={[Navigation, Pagination, Scrollbar, A11y, Controller, Autoplay]}
                     navigation={{
@@ -65,6 +65,7 @@ const DoctorsForRecord = () => {
                                 e.preventDefault();
                                 setOpenTab(doktor.id);
                             }}
+                            key={index}
                         >
                             <figure className="pt-5">
                                 <img

@@ -15,7 +15,7 @@ const PolyclinicForRecord = ({ place, setPlace }) => {
     const oylesine = [1, 2, 3, 4, 5, 6, 7, 8];
     useEffect(() => {
         if (swiper) {
-            console.log("Swiper instance:", swiper);
+            // console.log("Swiper instance:", swiper);
             swiper.params.navigation.prevEl = prevRef.current;
             swiper.params.navigation.nextEl = nextRef.current;
             swiper.navigation.init();
@@ -39,7 +39,7 @@ const PolyclinicForRecord = ({ place, setPlace }) => {
                         onChange={handleChange}
                     >
                         <option value="">İl Seçiniz</option>
-                        {ilData.map((il) => <option value={il["text"]}>{il["text"]}</option>)}
+                        {ilData.map((il, i) => <option value={il["text"]} key={i}>{il["text"]}</option>)}
                     </select>
                     <select
                         name="town"
@@ -49,11 +49,11 @@ const PolyclinicForRecord = ({ place, setPlace }) => {
                         onChange={handleChange}
                     >
                         <option value="">İlçe Seçiniz</option>
-                        {ilData.filter((data) => (data["text"] === place.city)).map((ilce) => (ilce["districts"].map((e) => <option value={e["text"]}>{e["text"]}</option>)))
+                        {ilData.filter((data) => (data["text"] === place.city)).map((ilce) => (ilce["districts"].map((e, i) => <option value={e["text"]} key={i}>{e["text"]}</option>)))
                         }
                     </select>
-                    <button className="bg-white w-8 flex items-center justify-center rounded-full" ref={prevRef}><HiOutlineArrowLeft className='' /></button>
-                    <button className="bg-white w-8 flex items-center justify-center rounded-full" ref={nextRef}><HiOutlineArrowRight className='' /></button>
+                    <button className="bg-white w-8 flex items-center justify-center rounded-full" ref={prevRef}><HiOutlineArrowLeft /></button>
+                    <button className="bg-white w-8 flex items-center justify-center rounded-full" ref={nextRef}><HiOutlineArrowRight /></button>
                 </article>
             </article>
             <div className="p-1 my-10 w-[87%] mx-auto">
@@ -62,7 +62,7 @@ const PolyclinicForRecord = ({ place, setPlace }) => {
                     spaceBetween={25}
                     // slidesPerView="auto"
                     slidesPerView={4}
-                    onSlideChange={() => console.log("slide change")}
+                    // onSlideChange={() => console.log("slide change")}
                     onSwiper={setSwiper}
                     modules={[Navigation, Pagination, Scrollbar, A11y, Controller, Autoplay]}
                     navigation={{
@@ -81,6 +81,7 @@ const PolyclinicForRecord = ({ place, setPlace }) => {
                     {
                         oylesine.map((item, index) => (
                             <SwiperSlide
+                                key={index}
                                 className={` ${openTab === item
                                     ? "border-2 rounded-2xl border-blue1 py-2"
                                     : "bg-transparent"
@@ -89,7 +90,6 @@ const PolyclinicForRecord = ({ place, setPlace }) => {
                                     e.preventDefault();
                                     setOpenTab(item);
                                 }}
-                                key={index}
                             >
                                 <div className="card card-compact bg-base-100 mx-3" >
                                     <figure><img src={InciDıs} alt="InciDıs" /></figure>
