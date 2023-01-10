@@ -17,6 +17,8 @@ module.exports = {
       'footerLinkHover':'#3beaf5',
       'mainPageGray':'#233d63',
       'mainPageP':'#7a7d86',
+      'yellowTeeth':'#f3d344',
+      'nullTeeth':'#b20c6d',
       'slate': {
         500: '#64748b',
       },
