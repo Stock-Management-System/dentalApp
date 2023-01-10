@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { ilData } from '../../../helpers/ilData';
 
-const InfoPatientForm = () => {
+const InfoPatientForm = ({ queryTC }) => {
     const [personalInfo, setPersonalInfo] = useState({
+        TC: queryTC,
         firstName: "",
         lastName: "",
         dadyName: "",
@@ -35,7 +36,7 @@ const InfoPatientForm = () => {
                 <h1 className='text-22 mt-8 mb-4'>Hasta Bilgileri</h1>
             </article>
             <form >
-                <div className='grid xs:grid-cols-2 md:grid-cols-4 gap-10'>
+                <div className='grid xs:grid-cols-2 md:grid-cols-4 xs:gap-5 md:gap-10'>
                     <div className="col-span-1">
                         <label className="label">
                             <span className="label-text">ADI<sup>*</sup></span>
@@ -46,7 +47,7 @@ const InfoPatientForm = () => {
                             value={personalInfo.firstName}
                             onChange={handleChange}
                             required
-                            placeholder="Hastanın Adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                            placeholder="Hastanın Adı" className="input input-bordered focus:input-primary w-full max-w-xs" />
                     </div>
                     <div className="col-span-1">
                         <label className="label">
@@ -58,7 +59,7 @@ const InfoPatientForm = () => {
                             value={personalInfo.lastName}
                             onChange={handleChange}
                             required
-                            placeholder="Hastanın Soyadı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                            placeholder="Hastanın Soyadı" className="input input-bordered focus:input-primary w-full max-w-xs" />
                     </div>
                     <div className="col-span-1">
                         <label className="label">
@@ -70,7 +71,7 @@ const InfoPatientForm = () => {
                             value={personalInfo.dadyName}
                             onChange={handleChange}
                             required
-                            placeholder="Hastanın baba adı" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                            placeholder="Hastanın baba adı" className="input input-bordered focus:input-primary w-full max-w-xs" />
                     </div>
                     <div className="col-span-1">
                         <label className="label">
@@ -82,7 +83,7 @@ const InfoPatientForm = () => {
                             value={personalInfo.birthDay}
                             onChange={handleChange}
                             required
-                            placeholder="Hastanın Doğum Tarihi" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                            placeholder="Hastanın Doğum Tarihi" className="input input-bordered focus:input-primary w-full max-w-xs" />
                     </div>
                     <div className="col-span-1">
                         <label className="label">
@@ -94,7 +95,7 @@ const InfoPatientForm = () => {
                             value={personalInfo.phone}
                             onChange={handleChange}
                             required
-                            placeholder="Hastanın Telefon No" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                            placeholder="Hastanın Telefon No" className="input input-bordered focus:input-primary w-full max-w-xs" />
                     </div>
                     <div className="col-span-1">
                         <label className="label">
@@ -106,7 +107,7 @@ const InfoPatientForm = () => {
                             value={personalInfo.email}
                             onChange={handleChange}
                             required
-                            placeholder="abcd@abcd.com" className="input input-bordered input-sm focus:input-primary w-full max-w-xs" />
+                            placeholder="abcd@abcd.com" className="input input-bordered focus:input-primary w-full max-w-xs" />
                     </div>
                     <div className="col-span-1">
                         <label className="label">
@@ -117,9 +118,9 @@ const InfoPatientForm = () => {
                             value={personalInfo.city}
                             onChange={handleChange}
                             required
-                            className="select select-bordered select-sm text-14 font-normal focus:border-blue1 w-full max-w-xs"
+                            className="select select-bordered text-14 font-normal focus:border-blue1 w-full max-w-xs"
                         >
-                            {ilData.map((il) => <option value={il["text"]}>{il["text"]}</option>)}
+                            {ilData.map((il, i) => <option value={il["text"]} key={i}>{il["text"]}</option>)}
                         </select>
                     </div>
                     <div className="col-span-1">
@@ -131,9 +132,9 @@ const InfoPatientForm = () => {
                             value={personalInfo.town}
                             onChange={handleChange}
                             required
-                            className=" select select-bordered select-sm text-14 font-normal focus:border-blue1 w-full max-w-xs"
+                            className=" select select-bordered text-14 font-normal focus:border-blue1 w-full max-w-xs"
                         >
-                            {ilData.filter((data) => (data["text"] === personalInfo.city)).map((ilce) => (ilce["districts"].map((e) => <option value={e["text"]}>{e["text"]}</option>)))
+                            {ilData.filter((data) => (data["text"] === personalInfo.city)).map((ilce) => (ilce["districts"].map((e, i) => <option value={e["text"]} key={i}>{e["text"]}</option>)))
                             }
                         </select>
                     </div>
