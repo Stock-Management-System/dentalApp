@@ -15,7 +15,7 @@ const AppointmentDate = ({ setClock, setDate, date }) => {
             <article className='flex justify-between mb-8 mx-2'>
                 <h2 className='text-22'>Tarih</h2>
                 <article>
-                    <label for="appointmentDate">Tarih Seçiniz</label>
+                    <label htmlFor="appointmentDate">Tarih Seçiniz</label>
                     <input className='input input-sm ml-2'
                         type="date"
                         name="appointmentDate"
