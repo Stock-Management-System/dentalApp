@@ -67,7 +67,7 @@ const RecordPatient = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         setPatientInfo((filteredPatient[0]?.TC !== "") && filteredPatient[0])
-        setShowInfos(false)
+
 
     }
     console.log(queryTC)
@@ -76,11 +76,11 @@ const RecordPatient = () => {
         <div className='h-full'>
             <NavBar setShowRegister={setShowRegister} />
             <section className='pt-28'>
-                <article className={`flex xs:flex-col md:flex-row xs:gap-2 md:gap-0 md:justify-between w-10/12 mx-auto ${showInfos && 'h-screen md:pt-40'}`} >
+                <article className={`flex xs:flex-col md:flex-row xs:gap-2 md:gap-0 md:justify-between w-10/12 mx-auto`} >
                     <h1 className='text-3xl text-blue1'>Randevu Al</h1>
                     {showInfos
                         &&
-                        <div className='md:-mt-20'>
+                        <div className='md:mt-20'>
                             <p>Lütfen Kimlik Numaranız ile Bilgilerinizi Kontrol Ediniz</p>
                         </div>
                     }
@@ -94,62 +94,48 @@ const RecordPatient = () => {
                     </form>
                 </article>
                 {
-                    showInfos
+                    patientInfo?.TC === queryTC
                         ?
-                        null
+                        <InfoOfPatient patientInfo={patientInfo} />
                         :
-                        patientInfo?.TC === queryTC
-                            ?
-                            <InfoOfPatient patientInfo={patientInfo} />
-                            :
-                            <InfoPatientForm queryTC={queryTC} setPersonalInfo={setPersonalInfo} personalInfo={personalInfo} setShowOthers={setShowOthers} />
+                        <InfoPatientForm queryTC={queryTC} setPersonalInfo={setPersonalInfo} personalInfo={personalInfo} setShowOthers={setShowOthers} />
                 }
             </section>
-            {
-                ((queryTC === patientInfo?.TC) || showOthers)
-                &&
-                <>
-                    <section className=''>
-                        <h2 className='w-10/12 mx-auto px-1 my-8 text-22'>Randevu Bilgileri</h2>
-                        <PolyclinicForRecord setPlace={setPlace} place={place} />
-                        <DoctorsForRecord />
-                    </section>
-                    <section className='w-11/12 mx-auto px-1 py-5 my-8'>
-                        <AppointmentDate setClock={setClock} setDate={setDate} date={date} />
-                        {
-                            clock
-                            &&
-                            <article className="w-11/12 mx-auto my-8">
-                                <article className=''>
-                                    <h5>Sayın <strong>...</strong> . Randevunuz aşağıdaki şekilde oluşturulacaktır.</h5>
-                                    <div className='my-5'>
-                                        <h4 className='opacity-80'>POLİKLİNİK</h4>
-                                        <h6 className='font-semibold'>İnci Diş Polikliniği</h6>
-                                    </div>
-                                    <div className='my-5'>
-                                        <h4 className='opacity-80'>DOKTOR</h4>
-                                        <h6 className='font-semibold'>İnci Diş Polikliniği</h6>
-                                    </div>
-                                    <div className='my-5'>
-                                        <h4 className='opacity-80'>TARİH / SAAT</h4>
-                                        <h6 className='font-semibold'>{date.slice(8, 10)}.{date.slice(5, 7)}.{date.slice(0, 4)} / {clock}</h6>
-                                    </div>
-
-                                </article>
-                                <button
-                                    className="bg-blue1 text-white capitalize btn btn-sm rounded-3xl hover:bg-blue1"
-                                    type="submit"
-                                >
-                                    Randevuyu Onayla
-
-                                </button>
-                            </article>
-                        }
-
-                    </section>
-                </>
-            }
-
+            <section className=''>
+                <h2 className='w-10/12 mx-auto px-1 my-8 text-22'>Randevu Bilgileri</h2>
+                <PolyclinicForRecord setPlace={setPlace} place={place} />
+                <DoctorsForRecord />
+            </section>
+            <section className='w-11/12 mx-auto px-1 py-5 my-8'>
+                <AppointmentDate setClock={setClock} setDate={setDate} date={date} />
+                {
+                    clock
+                    &&
+                    <article className="w-11/12 mx-auto my-8">
+                        <article className=''>
+                            <h5>Sayın <strong>...</strong> . Randevunuz aşağıdaki şekilde oluşturulacaktır.</h5>
+                            <div className='my-5'>
+                                <h4 className='opacity-80'>POLİKLİNİK</h4>
+                                <h6 className='font-semibold'>İnci Diş Polikliniği</h6>
+                            </div>
+                            <div className='my-5'>
+                                <h4 className='opacity-80'>DOKTOR</h4>
+                                <h6 className='font-semibold'>İnci Diş Polikliniği</h6>
+                            </div>
+                            <div className='my-5'>
+                                <h4 className='opacity-80'>TARİH / SAAT</h4>
+                                <h6 className='font-semibold'>{date.slice(8, 10)}.{date.slice(5, 7)}.{date.slice(0, 4)} / {clock}</h6>
+                            </div>
+                        </article>
+                        <button
+                            className="bg-blue1 text-white capitalize btn btn-sm rounded-3xl hover:bg-blue1"
+                            type="submit"
+                        >
+                            Randevuyu Onayla
+                        </button>
+                    </article>
+                }
+            </section>
             <Footer />
             {showRegister ? (
                 <RegisterModal setShowLogin={setShowLogin} setShowRegister={setShowRegister} />
