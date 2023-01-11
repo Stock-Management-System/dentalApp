@@ -1,14 +1,45 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y, Controller } from "swiper";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { SlCalender, SlClock } from "react-icons/sl";
-import { AiOutlineCheck, AiOutlineClose } from "react-icons/ai";
+import {
+	AiOutlineCheck,
+	AiOutlineClose,
+	AiOutlineLeft,
+	AiOutlineRight,
+} from "react-icons/ai";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 const DoctorsOur = ({ doktorlar }) => {
 	const widthScreen = window.innerWidth;
-
+	const [swiper, setSwiper] = useState();
+	const prevRef = useRef();
+	const nextRef = useRef();
+	useEffect(() => {
+		if (swiper) {
+			console.log("Swiper instance:", swiper);
+			swiper.params.navigation.prevEl = prevRef.current;
+			swiper.params.navigation.nextEl = nextRef.current;
+			swiper.navigation.init();
+			swiper.navigation.update();
+		}
+	}, [swiper]);
 	return (
 		<div>
+			<div className="flex justify-end mb-4 px-2">
+				<article className="flex gap-3">
+					<button ref={prevRef}>
+						<AiOutlineLeft className="text-28 bg-white rounded-full" />
+					</button>
+					<button ref={nextRef}>
+						<AiOutlineRight className="text-28 bg-white rounded-full" />
+					</button>
+				</article>
+			</div>
 			<Swiper
 				className="grid grid-cols-5 gap-5"
 				spaceBetween={25}
@@ -24,7 +55,15 @@ const DoctorsOur = ({ doktorlar }) => {
 						: 5
 				}
 				onSlideChange={() => console.log("slide change")}
-				onSwiper={(swiper) => console.log(swiper)}
+				onSwiper={setSwiper}
+				modules={[Navigation, Pagination, Scrollbar, A11y, Controller]}
+				navigation={{
+					prevEl: prevRef?.current,
+					nextEl: nextRef?.current,
+				}}
+				updateOnWindowResize
+				observer
+				observeParents
 			>
 				{doktorlar.map((doktor, index) => (
 					<SwiperSlide>
