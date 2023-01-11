@@ -17,6 +17,7 @@ const AppointmentDate = ({ setClock, setDate, date }) => {
     const tomorrowDay = tomorrow.toISOString()
     console.log("new Date obj:", date1)
     console.log(tomorrow.toISOString());
+    console.log(thisDay.slice(0, 10));
 
     return (
         <section className='w-11/12 mx-auto'>
@@ -33,6 +34,7 @@ const AppointmentDate = ({ setClock, setDate, date }) => {
                                 name="appointmentDate"
                                 id='appointmentDate'
                                 value={date}
+                                min={thisDay.slice(0, 10)}
                                 onChange={(e) => setDate(e.target.value)}
                             />
                         </label>
