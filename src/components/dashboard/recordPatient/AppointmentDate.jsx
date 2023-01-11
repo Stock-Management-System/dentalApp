@@ -9,14 +9,14 @@ const AppointmentDate = ({ setClock, setDate, date }) => {
 
         }
     ]
-    console.log(date.slice(8,), date.slice(5, 7), date.slice(0, 4));
+    console.log("date", date)
     const date1 = new Date()
-    const thisDay = date1.toLocaleDateString()
+    const thisDay = date1.toISOString()
     const tomorrow = new Date(date1)
     tomorrow.setDate(tomorrow.getDate() + 1)
-    const tomorrowDay = tomorrow.toLocaleDateString()
-    console.log(date1)
-    console.log(tomorrow.toLocaleDateString());
+    const tomorrowDay = tomorrow.toISOString()
+    console.log("new Date obj:", date1)
+    console.log(tomorrow.toISOString());
 
     return (
         <section className='w-11/12 mx-auto'>

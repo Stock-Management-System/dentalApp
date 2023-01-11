@@ -118,7 +118,7 @@ const RecordPatient = () => {
                             </div>
                             <div className='my-5'>
                                 <h4 className='opacity-80'>TARİH / SAAT</h4>
-                                <h6 className='font-semibold'>{date.slice(8,)}.{date.slice(5, 7)}.{date.slice(0, 4)} / {clock}</h6>
+                                <h6 className='font-semibold'>{date.slice(8, 10)}.{date.slice(5, 7)}.{date.slice(0, 4)} / {clock}</h6>
                             </div>
 
                         </article>
