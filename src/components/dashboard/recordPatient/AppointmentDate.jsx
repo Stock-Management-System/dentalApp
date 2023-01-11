@@ -15,9 +15,14 @@ const AppointmentDate = ({ setClock, setDate, date }) => {
     const tomorrow = new Date(date1)
     tomorrow.setDate(tomorrow.getDate() + 1)
     const tomorrowDay = tomorrow.toISOString()
+    const twoWeek = new Date(date1)
+    twoWeek.setDate(twoWeek.getDate() + 14)
+    const nextTwoWeek = twoWeek.toISOString().slice(0, 10)
+    const beforeThisDay = thisDay.slice(0, 10)
     console.log("new Date obj:", date1)
     console.log(tomorrow.toISOString());
-    console.log(thisDay.slice(0, 10));
+    console.log(beforeThisDay);
+    console.log(nextTwoWeek);
 
     return (
         <section className='w-11/12 mx-auto'>
@@ -35,6 +40,7 @@ const AppointmentDate = ({ setClock, setDate, date }) => {
                                 id='appointmentDate'
                                 value={date}
                                 min={thisDay.slice(0, 10)}
+                                max={nextTwoWeek}
                                 onChange={(e) => setDate(e.target.value)}
                             />
                         </label>

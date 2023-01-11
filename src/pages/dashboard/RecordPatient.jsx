@@ -41,6 +41,8 @@ const RecordPatient = () => {
     const [showRegister, setShowRegister] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
     const [showForgotPassword, setShowForgotPassword] = useState(false);
+    const [showOthers, setShowOthers] = useState(false)
+    const [showInfos, setShowInfos] = useState(true)
     const [queryTC, setQueryTC] = useState("")
     const [patientInfo, setPatientInfo] = useState("")
     const [clock, setClock] = useState("");
@@ -64,10 +66,9 @@ const RecordPatient = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (filteredPatient[0]?.TC !== "") {
-            setPatientInfo(filteredPatient[0])
+        setPatientInfo((filteredPatient[0]?.TC !== "") && filteredPatient[0])
+        setShowInfos(false)
 
-        }
     }
     console.log(queryTC)
     console.log(personalInfo)
@@ -75,8 +76,14 @@ const RecordPatient = () => {
         <div className='h-full'>
             <NavBar setShowRegister={setShowRegister} />
             <section className='pt-28'>
-                <article className='flex xs:flex-col md:flex-row xs:gap-2 md:gap-0 justify-between w-10/12 mx-auto' >
+                <article className={`flex xs:flex-col md:flex-row xs:gap-2 md:gap-0 md:justify-between w-10/12 mx-auto ${showInfos && 'h-screen md:pt-40'}`} >
                     <h1 className='text-3xl text-blue1'>Randevu Al</h1>
+                    {showInfos
+                        &&
+                        <div className='md:-mt-20'>
+                            <p>Lütfen Kimlik Numaranız ile Bilgilerinizi Kontrol Ediniz</p>
+                        </div>
+                    }
                     <form className="form-control" onSubmit={handleSubmit}>
                         <div className="input-group">
                             <input type="text" placeholder="TC Kimlik Numaranız" className="input w-96" value={queryTC} onChange={(e) => setQueryTC(e.target.value)} />
@@ -87,53 +94,62 @@ const RecordPatient = () => {
                     </form>
                 </article>
                 {
-
-                    patientInfo?.TC !== undefined && patientInfo?.TC !== ""
+                    showInfos
                         ?
-                        <InfoOfPatient patientInfo={patientInfo} />
+                        null
                         :
-                        <InfoPatientForm queryTC={queryTC} setPersonalInfo={setPersonalInfo} personalInfo={personalInfo} />
+                        patientInfo?.TC === queryTC
+                            ?
+                            <InfoOfPatient patientInfo={patientInfo} />
+                            :
+                            <InfoPatientForm queryTC={queryTC} setPersonalInfo={setPersonalInfo} personalInfo={personalInfo} setShowOthers={setShowOthers} />
                 }
             </section>
-            <section className=''>
-                <h2 className='w-10/12 mx-auto px-1 my-8 text-22'>Randevu Bilgileri</h2>
-                <PolyclinicForRecord setPlace={setPlace} place={place} />
-                <DoctorsForRecord />
-            </section>
-            <section className='w-11/12 mx-auto px-1 py-5 my-8'>
-                <AppointmentDate setClock={setClock} setDate={setDate} date={date} />
-                {
-                    clock
-                    &&
-                    <article className="w-11/12 mx-auto my-8">
-                        <article className=''>
-                            <h5>Sayın <strong>...</strong> . Randevunuz aşağıdaki şekilde oluşturulacaktır.</h5>
-                            <div className='my-5'>
-                                <h4 className='opacity-80'>POLİKLİNİK</h4>
-                                <h6 className='font-semibold'>İnci Diş Polikliniği</h6>
-                            </div>
-                            <div className='my-5'>
-                                <h4 className='opacity-80'>DOKTOR</h4>
-                                <h6 className='font-semibold'>İnci Diş Polikliniği</h6>
-                            </div>
-                            <div className='my-5'>
-                                <h4 className='opacity-80'>TARİH / SAAT</h4>
-                                <h6 className='font-semibold'>{date.slice(8, 10)}.{date.slice(5, 7)}.{date.slice(0, 4)} / {clock}</h6>
-                            </div>
+            {
+                ((queryTC === patientInfo?.TC) || showOthers)
+                &&
+                <>
+                    <section className=''>
+                        <h2 className='w-10/12 mx-auto px-1 my-8 text-22'>Randevu Bilgileri</h2>
+                        <PolyclinicForRecord setPlace={setPlace} place={place} />
+                        <DoctorsForRecord />
+                    </section>
+                    <section className='w-11/12 mx-auto px-1 py-5 my-8'>
+                        <AppointmentDate setClock={setClock} setDate={setDate} date={date} />
+                        {
+                            clock
+                            &&
+                            <article className="w-11/12 mx-auto my-8">
+                                <article className=''>
+                                    <h5>Sayın <strong>...</strong> . Randevunuz aşağıdaki şekilde oluşturulacaktır.</h5>
+                                    <div className='my-5'>
+                                        <h4 className='opacity-80'>POLİKLİNİK</h4>
+                                        <h6 className='font-semibold'>İnci Diş Polikliniği</h6>
+                                    </div>
+                                    <div className='my-5'>
+                                        <h4 className='opacity-80'>DOKTOR</h4>
+                                        <h6 className='font-semibold'>İnci Diş Polikliniği</h6>
+                                    </div>
+                                    <div className='my-5'>
+                                        <h4 className='opacity-80'>TARİH / SAAT</h4>
+                                        <h6 className='font-semibold'>{date.slice(8, 10)}.{date.slice(5, 7)}.{date.slice(0, 4)} / {clock}</h6>
+                                    </div>
 
-                        </article>
-                        <button
-                            className="bg-blue1 text-white capitalize btn btn-sm rounded-3xl hover:bg-blue1"
-                            type="submit"
-                        // onClick={handleSubmit}
-                        >
-                            Randevuyu Onayla
+                                </article>
+                                <button
+                                    className="bg-blue1 text-white capitalize btn btn-sm rounded-3xl hover:bg-blue1"
+                                    type="submit"
+                                >
+                                    Randevuyu Onayla
 
-                        </button>
-                    </article>
-                }
+                                </button>
+                            </article>
+                        }
 
-            </section>
+                    </section>
+                </>
+            }
+
             <Footer />
             {showRegister ? (
                 <RegisterModal setShowLogin={setShowLogin} setShowRegister={setShowRegister} />

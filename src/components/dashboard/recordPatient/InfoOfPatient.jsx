@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ilData } from '../../../helpers/ilData';
+
 
 const InfoOfPatient = ({ patientInfo }) => {
 
