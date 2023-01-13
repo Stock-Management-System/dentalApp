@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ilData } from '../../../helpers/ilData';
 
-const InfoPatientForm = ({ queryTC, setPersonalInfo, personalInfo, setShowOthers }) => {
+const InfoPatientForm = ({ queryTC, setPersonalInfo, personalInfo }) => {
 
     const handleChange = (e) => {
         setPersonalInfo({ ...personalInfo, [e.target.name]: e.target.value })
@@ -9,7 +9,6 @@ const InfoPatientForm = ({ queryTC, setPersonalInfo, personalInfo, setShowOthers
     const handleSubmit = (e) => {
         e.preventDefault();
         setPersonalInfo({ ...personalInfo, TC: queryTC })
-        setShowOthers(true)
 
     }
     return (
