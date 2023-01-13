@@ -41,8 +41,8 @@ const RecordPatient = () => {
     const [showRegister, setShowRegister] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
     const [showForgotPassword, setShowForgotPassword] = useState(false);
-    const [showOthers, setShowOthers] = useState(false)
-    const [showInfos, setShowInfos] = useState(true)
+    // const [showOthers, setShowOthers] = useState(false)
+    const [showInfos, setShowInfos] = useState(false)
     const [queryTC, setQueryTC] = useState("")
     const [patientInfo, setPatientInfo] = useState("")
     const [clock, setClock] = useState("");
@@ -60,27 +60,33 @@ const RecordPatient = () => {
         town: ilData[0]["districts"][0]["text"]
     });
 
-
     const filteredPatient = patient.filter((item) => item.TC === queryTC)
-    console.log("bu nerede", filteredPatient[0]?.TC)
 
     const handleSubmit = (e) => {
         e.preventDefault()
         setPatientInfo((filteredPatient[0]?.TC !== "") && filteredPatient[0])
-
-
+        setShowInfos(true)
     }
-    console.log(queryTC)
-    console.log(personalInfo)
+    // console.log(queryTC)
+    console.log("Filter lanmış veri :", filteredPatient[0]?.TC)
+    console.log("Patient Info :", patientInfo)
+    console.log("Patient Info nun TC si :", patientInfo?.TC)
     return (
         <div className='h-full'>
             <NavBar setShowRegister={setShowRegister} />
             <section className='pt-28'>
+                {
+                    !showInfos
+                    &&
+                    <div className='flex items-center justify-center p-10 text-2xl mb-10'>
+                        <h1>Lütfen Randevu Almak için TC Kimlik numaranız ile kaydınızı kontrol ediniz.</h1>
+                    </div>
+                }
                 <article className={`flex xs:flex-col md:flex-row xs:gap-2 md:gap-0 md:justify-between w-10/12 mx-auto`} >
                     <h1 className='text-3xl text-blue1'>Randevu Al</h1>
                     <form className="form-control" onSubmit={handleSubmit}>
                         <div className="input-group">
-                            <input type="text" placeholder="TC Kimlik Numaranız" className="input w-96" value={queryTC} onChange={(e) => setQueryTC(e.target.value)} />
+                            <input type="text" placeholder="TC Kimlik Numaranız" required className="input w-96" value={queryTC} onChange={(e) => setQueryTC(e.target.value)} />
                             <button className="btn btn-ghost bg-white rounded-full" type='submit'>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                             </button>
@@ -88,11 +94,15 @@ const RecordPatient = () => {
                     </form>
                 </article>
                 {
-                    patientInfo?.TC === queryTC
+                    !showInfos
                         ?
-                        <InfoOfPatient patientInfo={patientInfo} />
+                        null
                         :
-                        <InfoPatientForm queryTC={queryTC} setPersonalInfo={setPersonalInfo} personalInfo={personalInfo} setShowOthers={setShowOthers} />
+                        patientInfo?.TC !== undefined
+                            ?
+                            <InfoOfPatient patientInfo={patientInfo} />
+                            :
+                            <InfoPatientForm queryTC={queryTC} setPersonalInfo={setPersonalInfo} personalInfo={personalInfo} />
                 }
             </section>
             <section className=''>
