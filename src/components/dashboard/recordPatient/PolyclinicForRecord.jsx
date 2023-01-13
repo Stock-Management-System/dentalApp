@@ -8,745 +8,113 @@ import InciDıs from '../../../assets/InciDis.png';
 
 const polyclinic = [
     {
+        polyclinicId: 1,
         polyclinicName: 'İnci Diş Polikliniği',
         polyclinicPhoto: InciDıs,
-        polyclinicCity: "",
-        polyclinicTown: "",
-        polyclinicDocotrs: [
-            {
-                doctorTitr: "",
-                doctorFirstName: "",
-                doctorLastName: "",
-                workingDays: [
-                    {
-                        pazartesi: {
-                            hours: [
-                                { '09:00': false }, { '09:15': false }, { "09:30": false }, { "09:45": false }, { "10:00": false }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        sali: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        carsamba: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        persembe: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cuma: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cumartesi: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": false }, { "18:15": false }, { "18:30": false }, { "18:45": false }, { "19:00": false }, { "19:15": false }, { "19:30": false }, { "19:45": false }, { "20:00": false }
-                            ]
-                        }
-                    },
-                ]
-            }
-        ]
+        polyclinicCity: "İstanbul",
+        polyclinicTown: "Ataşehir",
     },
     {
+        polyclinicId: 2,
         polyclinicName: 'İnci Diş Polikliniği',
         polyclinicPhoto: InciDıs,
-        polyclinicDocotrs: [
-            {
-                doctorTitr: "",
-                doctorFirstName: "",
-                doctorLastName: "",
-                workingDays: [
-                    {
-                        pazartesi: {
-                            hours: [
-                                { '09:00': false }, { '09:15': false }, { "09:30": false }, { "09:45": false }, { "10:00": false }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        sali: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        carsamba: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        persembe: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cuma: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cumartesi: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": false }, { "18:15": false }, { "18:30": false }, { "18:45": false }, { "19:00": false }, { "19:15": false }, { "19:30": false }, { "19:45": false }, { "20:00": false }
-                            ]
-                        }
-                    },
-                ]
-            }
-        ]
+        polyclinicCity: "İstanbul",
+        polyclinicTown: "Beşiktaş",
     },
     {
+        polyclinicId: 3,
         polyclinicName: 'İnci Diş Polikliniği',
         polyclinicPhoto: InciDıs,
-        polyclinicDocotrs: [
-            {
-                doctorTitr: "",
-                doctorFirstName: "",
-                doctorLastName: "",
-                workingDays: [
-                    {
-                        pazartesi: {
-                            hours: [
-                                { '09:00': false }, { '09:15': false }, { "09:30": false }, { "09:45": false }, { "10:00": false }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        sali: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        carsamba: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        persembe: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cuma: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cumartesi: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": false }, { "18:15": false }, { "18:30": false }, { "18:45": false }, { "19:00": false }, { "19:15": false }, { "19:30": false }, { "19:45": false }, { "20:00": false }
-                            ]
-                        }
-                    },
-                ]
-            }
-        ]
+        polyclinicCity: "İstanbul",
+        polyclinicTown: "Avcılar",
     },
     {
+        polyclinicId: 4,
         polyclinicName: 'İnci Diş Polikliniği',
         polyclinicPhoto: InciDıs,
-        polyclinicDocotrs: [
-            {
-                doctorTitr: "",
-                doctorFirstName: "",
-                doctorLastName: "",
-                workingDays: [
-                    {
-                        pazartesi: {
-                            hours: [
-                                { '09:00': false }, { '09:15': false }, { "09:30": false }, { "09:45": false }, { "10:00": false }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        sali: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        carsamba: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        persembe: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cuma: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cumartesi: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": false }, { "18:15": false }, { "18:30": false }, { "18:45": false }, { "19:00": false }, { "19:15": false }, { "19:30": false }, { "19:45": false }, { "20:00": false }
-                            ]
-                        }
-                    },
-                ]
-            }
-        ]
+        polyclinicCity: "İstanbul",
+        polyclinicTown: "Kartal",
     },
     {
+        polyclinicId: 5,
         polyclinicName: 'İnci Diş Polikliniği',
         polyclinicPhoto: InciDıs,
-        polyclinicDocotrs: [
-            {
-                doctorTitr: "",
-                doctorFirstName: "",
-                doctorLastName: "",
-                workingDays: [
-                    {
-                        pazartesi: {
-                            hours: [
-                                { '09:00': false }, { '09:15': false }, { "09:30": false }, { "09:45": false }, { "10:00": false }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        sali: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        carsamba: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        persembe: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cuma: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cumartesi: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": false }, { "18:15": false }, { "18:30": false }, { "18:45": false }, { "19:00": false }, { "19:15": false }, { "19:30": false }, { "19:45": false }, { "20:00": false }
-                            ]
-                        }
-                    },
-                ]
-            }
-        ]
+        polyclinicCity: "İstanbul",
+        polyclinicTown: "Pendik",
     },
     {
+        polyclinicId: 6,
         polyclinicName: 'İnci Diş Polikliniği',
         polyclinicPhoto: InciDıs,
-        polyclinicDocotrs: [
-            {
-                doctorTitr: "",
-                doctorFirstName: "",
-                doctorLastName: "",
-                workingDays: [
-                    {
-                        pazartesi: {
-                            hours: [
-                                { '09:00': false }, { '09:15': false }, { "09:30": false }, { "09:45": false }, { "10:00": false }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        sali: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        carsamba: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        persembe: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cuma: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cumartesi: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": false }, { "18:15": false }, { "18:30": false }, { "18:45": false }, { "19:00": false }, { "19:15": false }, { "19:30": false }, { "19:45": false }, { "20:00": false }
-                            ]
-                        }
-                    },
-                ]
-            }
-        ]
+        polyclinicCity: "İstanbul",
+        polyclinicTown: "Sarıyer",
     },
     {
+        polyclinicId: 7,
         polyclinicName: 'İnci Diş Polikliniği',
         polyclinicPhoto: InciDıs,
-        polyclinicDocotrs: [
-            {
-                doctorTitr: "",
-                doctorFirstName: "",
-                doctorLastName: "",
-                workingDays: [
-                    {
-                        pazartesi: {
-                            hours: [
-                                { '09:00': false }, { '09:15': false }, { "09:30": false }, { "09:45": false }, { "10:00": false }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        sali: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        carsamba: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        persembe: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cuma: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cumartesi: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": false }, { "18:15": false }, { "18:30": false }, { "18:45": false }, { "19:00": false }, { "19:15": false }, { "19:30": false }, { "19:45": false }, { "20:00": false }
-                            ]
-                        }
-                    },
-                ]
-            }
-        ]
+        polyclinicCity: "İstanbul",
+        polyclinicTown: "Kağıthane",
     },
     {
+        polyclinicId: 8,
         polyclinicName: 'İnci Diş Polikliniği',
         polyclinicPhoto: InciDıs,
-        polyclinicDocotrs: [
-            {
-                doctorTitr: "",
-                doctorFirstName: "",
-                doctorLastName: "",
-                workingDays: [
-                    {
-                        pazartesi: {
-                            hours: [
-                                { '09:00': false }, { '09:15': false }, { "09:30": false }, { "09:45": false }, { "10:00": false }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        sali: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        carsamba: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        persembe: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cuma: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cumartesi: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": false }, { "18:15": false }, { "18:30": false }, { "18:45": false }, { "19:00": false }, { "19:15": false }, { "19:30": false }, { "19:45": false }, { "20:00": false }
-                            ]
-                        }
-                    },
-                ]
-            }
-        ]
+        polyclinicCity: "İstanbul",
+        polyclinicTown: "Şişli",
     },
     {
+        polyclinicId: 8,
         polyclinicName: 'İnci Diş Polikliniği',
         polyclinicPhoto: InciDıs,
-        polyclinicDocotrs: [
-            {
-                doctorTitr: "",
-                doctorFirstName: "",
-                doctorLastName: "",
-                workingDays: [
-                    {
-                        pazartesi: {
-                            hours: [
-                                { '09:00': false }, { '09:15': false }, { "09:30": false }, { "09:45": false }, { "10:00": false }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        sali: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        carsamba: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        persembe: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cuma: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cumartesi: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": false }, { "18:15": false }, { "18:30": false }, { "18:45": false }, { "19:00": false }, { "19:15": false }, { "19:30": false }, { "19:45": false }, { "20:00": false }
-                            ]
-                        }
-                    },
-                ]
-            }
-        ]
+        polyclinicCity: "Ankara",
+        polyclinicTown: "Keçiören",
     },
     {
+        polyclinicId: 8,
         polyclinicName: 'İnci Diş Polikliniği',
         polyclinicPhoto: InciDıs,
-        polyclinicDocotrs: [
-            {
-                doctorTitr: "",
-                doctorFirstName: "",
-                doctorLastName: "",
-                workingDays: [
-                    {
-                        pazartesi: {
-                            hours: [
-                                { '09:00': false }, { '09:15': false }, { "09:30": false }, { "09:45": false }, { "10:00": false }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        sali: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        carsamba: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        persembe: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cuma: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cumartesi: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": false }, { "18:15": false }, { "18:30": false }, { "18:45": false }, { "19:00": false }, { "19:15": false }, { "19:30": false }, { "19:45": false }, { "20:00": false }
-                            ]
-                        }
-                    },
-                ]
-            }
-        ]
+        polyclinicCity: "Ankara",
+        polyclinicTown: "Çankaya",
     },
     {
+        polyclinicId: 8,
         polyclinicName: 'İnci Diş Polikliniği',
         polyclinicPhoto: InciDıs,
-        polyclinicDocotrs: [
-            {
-                doctorTitr: "",
-                doctorFirstName: "",
-                doctorLastName: "",
-                workingDays: [
-                    {
-                        pazartesi: {
-                            hours: [
-                                { '09:00': false }, { '09:15': false }, { "09:30": false }, { "09:45": false }, { "10:00": false }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        sali: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        carsamba: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        persembe: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cuma: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                            ]
-                        }
-                    },
-                    {
-                        cumartesi: {
-                            hours: [
-                                { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true },
-                                { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true },
-                                { "18:00": false }, { "18:15": false }, { "18:30": false }, { "18:45": false }, { "19:00": false }, { "19:15": false }, { "19:30": false }, { "19:45": false }, { "20:00": false }
-                            ]
-                        }
-                    },
-                ]
-            }
-        ]
+        polyclinicCity: "Ankara",
+        polyclinicTown: "Sincan",
+    },
+    {
+        polyclinicId: 8,
+        polyclinicName: 'Dental Klinik',
+        polyclinicPhoto: "https://st4.depositphotos.com/17134304/25574/v/950/depositphotos_255748988-stock-illustration-dental-clinic-color-vector-web.jpg",
+        polyclinicCity: "Ankara",
+        polyclinicTown: "Yenimahalle",
+    },
+    {
+        polyclinicId: 8,
+        polyclinicName: 'Dentist Diş Polikliniği',
+        polyclinicPhoto: "https://st4.depositphotos.com/6464944/24998/v/600/depositphotos_249985444-stock-illustration-dentist-character-clean-big-white.jpg",
+        polyclinicCity: "Ankara",
+        polyclinicTown: "Bala",
+    },
+    {
+        polyclinicId: 8,
+        polyclinicName: 'İnci Diş Polikliniği',
+        polyclinicPhoto: InciDıs,
+        polyclinicCity: "Ankara",
+        polyclinicTown: "Etimeskut",
+    },
+    {
+        polyclinicId: 8,
+        polyclinicName: 'İnci Diş Polikliniği',
+        polyclinicPhoto: InciDıs,
+        polyclinicCity: "Ankara",
+        polyclinicTown: "Mamak",
     },
 ]
+
+
 
 // useEffect(() => {
 // polyclinicQuery()
