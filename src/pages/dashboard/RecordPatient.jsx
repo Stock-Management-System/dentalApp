@@ -78,16 +78,10 @@ const RecordPatient = () => {
             <section className='pt-28'>
                 <article className={`flex xs:flex-col md:flex-row xs:gap-2 md:gap-0 md:justify-between w-10/12 mx-auto`} >
                     <h1 className='text-3xl text-blue1'>Randevu Al</h1>
-                    {showInfos
-                        &&
-                        <div className='md:mt-20'>
-                            <p>Lütfen Kimlik Numaranız ile Bilgilerinizi Kontrol Ediniz</p>
-                        </div>
-                    }
                     <form className="form-control" onSubmit={handleSubmit}>
                         <div className="input-group">
                             <input type="text" placeholder="TC Kimlik Numaranız" className="input w-96" value={queryTC} onChange={(e) => setQueryTC(e.target.value)} />
-                            <button className="btn btn-ghost bg-white rounded-full">
+                            <button className="btn btn-ghost bg-white rounded-full" type='submit'>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                             </button>
                         </div>
@@ -108,33 +102,31 @@ const RecordPatient = () => {
             </section>
             <section className='w-11/12 mx-auto px-1 py-5 my-8'>
                 <AppointmentDate setClock={setClock} setDate={setDate} date={date} />
-                {
-                    clock
-                    &&
-                    <article className="w-11/12 mx-auto my-8">
-                        <article className=''>
-                            <h5>Sayın <strong>...</strong> . Randevunuz aşağıdaki şekilde oluşturulacaktır.</h5>
-                            <div className='my-5'>
-                                <h4 className='opacity-80'>POLİKLİNİK</h4>
-                                <h6 className='font-semibold'>İnci Diş Polikliniği</h6>
-                            </div>
-                            <div className='my-5'>
-                                <h4 className='opacity-80'>DOKTOR</h4>
-                                <h6 className='font-semibold'>İnci Diş Polikliniği</h6>
-                            </div>
-                            <div className='my-5'>
-                                <h4 className='opacity-80'>TARİH / SAAT</h4>
-                                <h6 className='font-semibold'>{date.slice(8, 10)}.{date.slice(5, 7)}.{date.slice(0, 4)} / {clock}</h6>
-                            </div>
-                        </article>
-                        <button
-                            className="bg-blue1 text-white capitalize btn btn-sm rounded-3xl hover:bg-blue1"
-                            type="submit"
-                        >
-                            Randevuyu Onayla
-                        </button>
+
+                <article className="w-11/12 mx-auto my-8">
+                    <article className=''>
+                        <h5>Sayın <strong>...</strong> . Randevunuz aşağıdaki şekilde oluşturulacaktır.</h5>
+                        <div className='my-5'>
+                            <h4 className='opacity-80'>POLİKLİNİK</h4>
+                            <h6 className='font-semibold'>İnci Diş Polikliniği</h6>
+                        </div>
+                        <div className='my-5'>
+                            <h4 className='opacity-80'>DOKTOR</h4>
+                            <h6 className='font-semibold'>İnci Diş Polikliniği</h6>
+                        </div>
+                        <div className='my-5'>
+                            <h4 className='opacity-80'>TARİH / SAAT</h4>
+                            <h6 className='font-semibold'>{date.slice(8, 10)}.{date.slice(5, 7)}.{date.slice(0, 4)} / {clock}</h6>
+                        </div>
                     </article>
-                }
+                    <button
+                        className="bg-blue1 text-white capitalize btn btn-sm rounded-3xl hover:bg-blue1"
+                        type="submit"
+                    >
+                        Randevuyu Onayla
+                    </button>
+                </article>
+
             </section>
             <Footer />
             {showRegister ? (
