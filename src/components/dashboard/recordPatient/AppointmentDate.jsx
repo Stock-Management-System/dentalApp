@@ -156,7 +156,7 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
                                     }
                                     return (
                                         <div key={index}>
-                                            <input type="radio" id={hourKey} value={hourKey} disabled={hourVal}
+                                            <input type="radio" id={hourKey} value={hourKey} disabled={!hourVal}
                                                 name="randevuSaati" className="hidden peer" onChange={(e) => setClock(e.target.value)} />
                                             <label
                                                 htmlFor={hourKey}
@@ -171,35 +171,55 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
                     </div>
                     <div className='flex justify-between items-center gap-1 my-2'>
                         <h4 className='w-40'>Öğleden Sonra</h4>
-                        {/* <div className=' flex flex-wrap gap-x-1 w-full'>
+                        <div className=' flex flex-wrap gap-x-1 w-full'>
                             {
-                                dateForArray?.hours.ogle.map((item, index) => (
-                                    <div key={index}>
-                                        <input type="radio" id={item} value={Object.key(item)} disabled={Object.values(!item)}
-                                            name="randevuSaati" className="hidden peer" onChange={(e) => setClock(e.target.value)} />
-                                        <label htmlFor={item} className="cursor-pointer border rounded-3xl text-14 px-4 peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white">
-                                            {Object.key(item)}
-                                        </label>
-                                    </div>
-                                ))
+                                workingDay?.filter((workday) => workday.doctorId === doctor.doctorId)?.map((day) => day.dates)[0].map((i) => i['14.01.2023'])[0].ogle.map((item, index) => {
+                                    let hourKey;
+                                    let hourVal;
+                                    for (const [key, val] of Object.entries(item)) {
+                                        hourKey = key;
+                                        hourVal = val
+                                    }
+                                    return (
+                                        <div key={index}>
+                                            <input type="radio" id={hourKey} value={hourKey} disabled={!hourVal}
+                                                name="randevuSaati" className="hidden peer" onChange={(e) => setClock(e.target.value)} />
+                                            <label
+                                                htmlFor={hourKey}
+                                                className="cursor-pointer border rounded-3xl text-14 px-4 peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white">
+                                                {hourKey}
+                                            </label>
+                                        </div>
+                                    )
+                                })
                             }
-                        </div> */}
+                        </div>
                     </div>
                     <div className='flex justify-between items-center gap-1'>
                         <h4 className='w-40'>Akşam</h4>
-                        {/* <div className='flex flex-wrap gap-x-1 w-full'>
+                        <div className='flex flex-wrap gap-x-1 w-full'>
                             {
-                                dateForArray?.hours.aksam.map((item, index) => (
-                                    <div key={index}>
-                                        <input type="radio" id={item} value={Object.key(item)} disabled={Object.values(!item)}
-                                            name="randevuSaati" className="hidden peer" onChange={(e) => setClock(e.target.value)} />
-                                        <label htmlFor={item} className="cursor-pointer border rounded-3xl text-14 px-4 peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white">
-                                            {Object.key(item)}
-                                        </label>
-                                    </div>
-                                ))
+                                workingDay?.filter((workday) => workday.doctorId === doctor.doctorId)?.map((day) => day.dates)[0].map((i) => i['14.01.2023'])[0].aksam.map((item, index) => {
+                                    let hourKey;
+                                    let hourVal;
+                                    for (const [key, val] of Object.entries(item)) {
+                                        hourKey = key;
+                                        hourVal = val
+                                    }
+                                    return (
+                                        <div key={index}>
+                                            <input type="radio" id={hourKey} value={hourKey} disabled={!hourVal}
+                                                name="randevuSaati" className="hidden peer" onChange={(e) => setClock(e.target.value)} />
+                                            <label
+                                                htmlFor={hourKey}
+                                                className="cursor-pointer border rounded-3xl text-14 px-4 peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white">
+                                                {hourKey}
+                                            </label>
+                                        </div>
+                                    )
+                                })
                             }
-                        </div> */}
+                        </div>
                     </div>
                 </div>
             </form >
