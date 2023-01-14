@@ -10,7 +10,7 @@ import InfoPatientForm from '../../components/dashboard/recordPatient/InfoPatien
 import PolyclinicForRecord from '../../components/dashboard/recordPatient/PolyclinicForRecord';
 import RegisterModal from '../../components/dashboard/RegisterModal';
 import { ilData } from "../../helpers/ilData";
-
+import InciDıs from '../../assets/InciDis.png';
 const patient = [
     {
         TC: "33018089910",
@@ -41,14 +41,28 @@ const RecordPatient = () => {
     const [showRegister, setShowRegister] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
     const [showForgotPassword, setShowForgotPassword] = useState(false);
-    // const [showOthers, setShowOthers] = useState(false)
     const [showInfos, setShowInfos] = useState(false)
     const [queryTC, setQueryTC] = useState("")
     const [patientInfo, setPatientInfo] = useState("")
+    const [polyclinic, setPolyclinic] = useState({
+        polyclinicId: 1,
+        polyclinicName: 'Has İnci Diş Polikliniği',
+        polyclinicPhoto: InciDıs,
+        polyclinicCity: "İstanbul",
+        polyclinicTown: "Ataşehir",
+    })
+    const [doctor, setDoctor] = useState({
+        polyclinicId: 1,
+        doctorId: 1,
+        doctorTitr: "Diş Hekimi",
+        doctorFirstName: "Mehmet",
+        doctorLastName: "Kara",
+        doctorPhoto: "https://www.seekpng.com/png/full/855-8557328_headshot-of-dr-male-dentist-png.png"
+    })
     const [clock, setClock] = useState("");
     const [date, setDate] = useState("")
-    const [place, setPlace] = useState({ city: "", town: "" })
-    const [personalInfo, setPersonalInfo] = useState({
+    const [place, setPlace] = useState({ city: "İstanbul", town: "Avcılar" })
+    const [personalInfo, setPersonalInfo] = useState({  //* bu state ler kayıtlı olmayan hastaların bilgilerinin kayıt edilmesi için tutulan state ler
         TC: queryTC,
         firstName: "",
         lastName: "",
@@ -68,9 +82,9 @@ const RecordPatient = () => {
         setShowInfos(true)
     }
     // console.log(queryTC)
-    console.log("Filter lanmış veri :", filteredPatient[0]?.TC)
-    console.log("Patient Info :", patientInfo)
-    console.log("Patient Info nun TC si :", patientInfo?.TC)
+    // console.log("Filter lanmış veri :", filteredPatient[0]?.TC)
+    // console.log("Patient Info :", patientInfo)
+    // console.log("Patient Info nun TC si :", patientInfo?.TC)
     return (
         <div className='h-full'>
             <NavBar setShowRegister={setShowRegister} />
@@ -107,22 +121,22 @@ const RecordPatient = () => {
             </section>
             <section className=''>
                 <h2 className='w-10/12 mx-auto px-1 my-8 text-22'>Randevu Bilgileri</h2>
-                <PolyclinicForRecord setPlace={setPlace} place={place} />
-                <DoctorsForRecord />
+                <PolyclinicForRecord setPlace={setPlace} place={place} setPolyclinic={setPolyclinic} />
+                <DoctorsForRecord setDoctor={setDoctor} polyclinic={polyclinic} />
             </section>
             <section className='w-11/12 mx-auto px-1 py-5 my-8'>
-                <AppointmentDate setClock={setClock} setDate={setDate} date={date} />
+                <AppointmentDate setClock={setClock} setDate={setDate} date={date} doctor={doctor} />
 
                 <article className="w-11/12 mx-auto my-8">
                     <article className=''>
-                        <h5>Sayın <strong>...</strong> . Randevunuz aşağıdaki şekilde oluşturulacaktır.</h5>
+                        <h5>Sayın <strong>{patientInfo.firstName} {patientInfo.lastName}</strong> . Randevunuz aşağıdaki şekilde oluşturulacaktır.</h5>
                         <div className='my-5'>
                             <h4 className='opacity-80'>POLİKLİNİK</h4>
-                            <h6 className='font-semibold'>İnci Diş Polikliniği</h6>
+                            <h6 className='font-semibold'>{polyclinic.polyclinicName}</h6>
                         </div>
                         <div className='my-5'>
                             <h4 className='opacity-80'>DOKTOR</h4>
-                            <h6 className='font-semibold'>İnci Diş Polikliniği</h6>
+                            <h6 className='font-semibold'>{doctor.doctorTitr} {doctor.doctorFirstName} {doctor.doctorLastName}</h6>
                         </div>
                         <div className='my-5'>
                             <h4 className='opacity-80'>TARİH / SAAT</h4>
