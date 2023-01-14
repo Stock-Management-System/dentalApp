@@ -11,7 +11,7 @@ import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi';
 
 const polyclinicDocotrs = [
     {
-        polyclinicId: "1",
+        polyclinicId: 1,
         doctorId: 1,
         doctorTitr: "Diş Hekimi",
         doctorFirstName: "Mehmet",
@@ -19,7 +19,7 @@ const polyclinicDocotrs = [
         doctorPhoto: "https://www.seekpng.com/png/full/855-8557328_headshot-of-dr-male-dentist-png.png",
     },
     {
-        polyclinicId: "1",
+        polyclinicId: 1,
         doctorId: 2,
         doctorTitr: "Diş Hekimi",
         doctorFirstName: "Zeynep",
@@ -27,7 +27,7 @@ const polyclinicDocotrs = [
         doctorPhoto: "https://www.pngall.com/wp-content/uploads/8/Female-Dentist-PNG.png",
     },
     {
-        polyclinicId: "1",
+        polyclinicId: 1,
         doctorId: 3,
         doctorTitr: "Diş Hekimi",
         doctorFirstName: "Ali",
@@ -35,7 +35,7 @@ const polyclinicDocotrs = [
         doctorPhoto: "https://www.pngall.com/wp-content/uploads/8/Male-Dentist-PNG.png",
     },
     {
-        polyclinicId: "1",
+        polyclinicId: 1,
         doctorId: 4,
         doctorTitr: "Diş Hekimi",
         doctorFirstName: "Mehmet",
@@ -43,7 +43,7 @@ const polyclinicDocotrs = [
         doctorPhoto: "https://www.statpearls.com/dist/images/DentistCe.png",
     },
     {
-        polyclinicId: "1",
+        polyclinicId: 1,
         doctorId: 5,
         doctorTitr: "Diş Hekimi",
         doctorFirstName: "Cemşit",
@@ -51,7 +51,7 @@ const polyclinicDocotrs = [
         doctorPhoto: "https://thumbs.dreamstime.com/b/portrait-male-dentist-portrait-male-dentist-white-background-139676463.jpg",
     },
     {
-        polyclinicId: "1",
+        polyclinicId: 1,
         doctorId: 6,
         doctorTitr: "Diş Hekimi",
         doctorFirstName: "Ayşe",
@@ -59,7 +59,7 @@ const polyclinicDocotrs = [
         doctorPhoto: "https://img.lovepik.com/free-png/20220125/lovepik-female-dentist-holding-dentures-explaining-dental-png-image_401694338_wh860.png",
     },
     {
-        polyclinicId: "1",
+        polyclinicId: 1,
         doctorId: 7,
         doctorTitr: "Diş Hekimi",
         doctorFirstName: "Zeynep",
@@ -67,7 +67,7 @@ const polyclinicDocotrs = [
         doctorPhoto: "https://w7.pngwing.com/pngs/488/261/png-transparent-female-doctor-3d-illustration-physician-nursing-health-care-hospital-the-doctor-miscellaneous-image-file-formats-service-thumbnail.png",
     },
     {
-        polyclinicId: "1",
+        polyclinicId: 1,
         doctorId: 8,
         doctorTitr: "Diş Hekimi",
         doctorFirstName: "Zeynep",
@@ -76,7 +76,7 @@ const polyclinicDocotrs = [
     },
 ]
 
-const DoctorsForRecord = () => {
+const DoctorsForRecord = ({ setDoctor, polyclinic }) => {
     const [openTab, setOpenTab] = useState(0);
     const [swiper, setSwiper] = useState();
     const prevRef = useRef();
@@ -118,11 +118,11 @@ const DoctorsForRecord = () => {
                         disableOnInteraction: false
                     }}
                     loop={true}
-                    updateOnWindowResize
-                    observer
-                    observeParents
+                // updateOnWindowResize
+                // observer
+                // observeParents
                 >
-                    {polyclinicDocotrs.map((doktor, index) => (
+                    {polyclinicDocotrs.filter((poli) => poli.polyclinicId === polyclinic.polyclinicId).map((doktor, index) => (
                         <SwiperSlide
                             className={` ${openTab === doktor.doctorId
                                 ? "card w-1/5 bg-gradient-to-r  from-blue1 to-blue2 text-white"
@@ -131,6 +131,7 @@ const DoctorsForRecord = () => {
                             onClick={(e) => {
                                 e.preventDefault();
                                 setOpenTab(doktor.doctorId);
+                                setDoctor(doktor)
                             }}
                             key={index}
                         >

@@ -6,10 +6,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi';
 import InciDıs from '../../../assets/InciDis.png';
 
-const polyclinic = [
+const polyclinics = [
     {
         polyclinicId: 1,
-        polyclinicName: 'İnci Diş Polikliniği',
+        polyclinicName: 'Has İnci Diş Polikliniği',
         polyclinicPhoto: InciDıs,
         polyclinicCity: "İstanbul",
         polyclinicTown: "Ataşehir",
@@ -17,7 +17,7 @@ const polyclinic = [
     {
         polyclinicId: 2,
         polyclinicName: 'İnci Diş Polikliniği',
-        polyclinicPhoto: InciDıs,
+        polyclinicPhoto: "https://st.depositphotos.com/1967477/1958/v/600/depositphotos_19586257-stock-illustration-tooth-cartoon-with-thumb-up.jpg",
         polyclinicCity: "İstanbul",
         polyclinicTown: "Beşiktaş",
     },
@@ -31,42 +31,42 @@ const polyclinic = [
     {
         polyclinicId: 4,
         polyclinicName: 'İnci Diş Polikliniği',
-        polyclinicPhoto: InciDıs,
+        polyclinicPhoto: "https://www.pngarts.com/files/5/Dental-Health-PNG-Image-Background.png",
         polyclinicCity: "İstanbul",
         polyclinicTown: "Kartal",
     },
     {
         polyclinicId: 5,
         polyclinicName: 'İnci Diş Polikliniği',
-        polyclinicPhoto: InciDıs,
+        polyclinicPhoto: "http://www.emredental.com/wp-content/uploads/2018/05/a2.png",
         polyclinicCity: "İstanbul",
         polyclinicTown: "Pendik",
     },
     {
         polyclinicId: 6,
         polyclinicName: 'İnci Diş Polikliniği',
-        polyclinicPhoto: InciDıs,
+        polyclinicPhoto: "https://www.beylikduzudismerkezi.com/resimler/dis.png",
         polyclinicCity: "İstanbul",
         polyclinicTown: "Sarıyer",
     },
     {
         polyclinicId: 7,
-        polyclinicName: 'İnci Diş Polikliniği',
-        polyclinicPhoto: InciDıs,
+        polyclinicName: 'Kardelen Diş Polikliniği',
+        polyclinicPhoto: "https://ozeldent42.com/tema/genel/uploads/hizmetler/icon/dis-beyazlatma.png",
         polyclinicCity: "İstanbul",
         polyclinicTown: "Kağıthane",
     },
     {
         polyclinicId: 8,
         polyclinicName: 'İnci Diş Polikliniği',
-        polyclinicPhoto: InciDıs,
+        polyclinicPhoto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgaJdqL6zEt5ZTlvu4FZaPCCPj5Eg6nHethAX5t9V6qEUNROWSSyf3tDsUr1l00047cng&usqp=CAU",
         polyclinicCity: "İstanbul",
         polyclinicTown: "Şişli",
     },
     {
         polyclinicId: 8,
         polyclinicName: 'İnci Diş Polikliniği',
-        polyclinicPhoto: InciDıs,
+        polyclinicPhoto: "https://www.dtmelekkazanc.com/wp-content/uploads/2018/11/Bas%CC%A7l%C4%B1ks%C4%B1z-2-01.png",
         polyclinicCity: "Ankara",
         polyclinicTown: "Keçiören",
     },
@@ -103,11 +103,11 @@ const polyclinic = [
         polyclinicName: 'İnci Diş Polikliniği',
         polyclinicPhoto: InciDıs,
         polyclinicCity: "Ankara",
-        polyclinicTown: "Etimeskut",
+        polyclinicTown: "Etimesgut",
     },
     {
         polyclinicId: 8,
-        polyclinicName: 'İnci Diş Polikliniği',
+        polyclinicName: 'İnci Diş',
         polyclinicPhoto: InciDıs,
         polyclinicCity: "Ankara",
         polyclinicTown: "Mamak",
@@ -123,7 +123,7 @@ const polyclinic = [
 // doctorsHours()
 // }, [])
 
-const PolyclinicForRecord = ({ place, setPlace }) => {
+const PolyclinicForRecord = ({ place, setPlace, setPolyclinic }) => {
     const [openTab, setOpenTab] = useState(0);
     const [swiper, setSwiper] = useState();
     const prevRef = useRef();
@@ -195,7 +195,7 @@ const PolyclinicForRecord = ({ place, setPlace }) => {
                 // observeParents
                 >
                     {
-                        polyclinic.map((item, index) => (
+                        polyclinics.filter((polyclinic) => (polyclinic.polyclinicTown).toLocaleLowerCase() === (place.town).toLocaleLowerCase() || (polyclinic.polyclinicCity).toLocaleLowerCase() === (place.city).toLocaleLowerCase()).map((item, index) => (
                             <SwiperSlide
                                 key={index}
                                 className={` ${openTab === index
@@ -205,6 +205,7 @@ const PolyclinicForRecord = ({ place, setPlace }) => {
                                 onClick={(e) => {
                                     e.preventDefault();
                                     setOpenTab(index);
+                                    setPolyclinic(item)
                                 }}
                             >
                                 <div className="card card-compact bg-base-100 mx-3" >
