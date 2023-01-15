@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useRef } from 'react';
 import { Navigation, Pagination, Scrollbar, A11y, Controller, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { doktorlar } from "../../../helpers/data";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
