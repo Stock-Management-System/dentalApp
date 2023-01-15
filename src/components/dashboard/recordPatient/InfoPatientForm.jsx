@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ilData } from '../../../helpers/ilData';
 
 const InfoPatientForm = ({ queryTC, setPersonalInfo, personalInfo }) => {
@@ -26,7 +26,7 @@ const InfoPatientForm = ({ queryTC, setPersonalInfo, personalInfo }) => {
                         <input
                             type="text"
                             name='firstName'
-                            value={personalInfo.firstName}
+                            value={personalInfo?.firstName}
                             onChange={handleChange}
                             required
                             placeholder="Hastanın Adı" className="input input-bordered focus:input-primary w-full max-w-xs" />
@@ -38,7 +38,7 @@ const InfoPatientForm = ({ queryTC, setPersonalInfo, personalInfo }) => {
                         <input
                             type="text"
                             name='lastName'
-                            value={personalInfo.lastName}
+                            value={personalInfo?.lastName}
                             onChange={handleChange}
                             required
                             placeholder="Hastanın Soyadı" className="input input-bordered focus:input-primary w-full max-w-xs" />
@@ -50,7 +50,7 @@ const InfoPatientForm = ({ queryTC, setPersonalInfo, personalInfo }) => {
                         <input
                             type="text"
                             name='dadyName'
-                            value={personalInfo.dadyName}
+                            value={personalInfo?.dadyName}
                             onChange={handleChange}
                             required
                             placeholder="Hastanın baba adı" className="input input-bordered focus:input-primary w-full max-w-xs" />
@@ -62,7 +62,7 @@ const InfoPatientForm = ({ queryTC, setPersonalInfo, personalInfo }) => {
                         <input
                             type="date"
                             name='birthDay'
-                            value={personalInfo.birthDay}
+                            value={personalInfo?.birthDay}
                             onChange={handleChange}
                             required
                             placeholder="Hastanın Doğum Tarihi" className="input input-bordered focus:input-primary w-full max-w-xs" />
@@ -74,7 +74,7 @@ const InfoPatientForm = ({ queryTC, setPersonalInfo, personalInfo }) => {
                         <input
                             type="text"
                             name='phone'
-                            value={personalInfo.phone}
+                            value={personalInfo?.phone}
                             onChange={handleChange}
                             required
                             placeholder="Hastanın Telefon No" className="input input-bordered focus:input-primary w-full max-w-xs" />
@@ -86,7 +86,7 @@ const InfoPatientForm = ({ queryTC, setPersonalInfo, personalInfo }) => {
                         <input
                             type="email"
                             name='email'
-                            value={personalInfo.email}
+                            value={personalInfo?.email}
                             onChange={handleChange}
                             required
                             placeholder="abcd@abcd.com" className="input input-bordered focus:input-primary w-full max-w-xs" />
@@ -97,7 +97,7 @@ const InfoPatientForm = ({ queryTC, setPersonalInfo, personalInfo }) => {
                         </label>
                         <select
                             name='city'
-                            value={personalInfo.city}
+                            value={personalInfo?.city}
                             onChange={handleChange}
                             required
                             className="select select-bordered text-14 font-normal focus:border-blue1 w-full max-w-xs"
@@ -111,12 +111,12 @@ const InfoPatientForm = ({ queryTC, setPersonalInfo, personalInfo }) => {
                         </label>
                         <select
                             name='town'
-                            value={personalInfo.town}
+                            value={personalInfo?.town}
                             onChange={handleChange}
                             required
                             className=" select select-bordered text-14 font-normal focus:border-blue1 w-full max-w-xs"
                         >
-                            {ilData.filter((data) => (data["text"] === personalInfo.city)).map((ilce) => (ilce["districts"].map((e, i) => <option value={e["text"]} key={i}>{e["text"]}</option>)))
+                            {ilData.filter((data) => (data["text"] === personalInfo?.city)).map((ilce) => (ilce["districts"].map((e, i) => <option value={e["text"]} key={i}>{e["text"]}</option>)))
                             }
                         </select>
                     </div>
