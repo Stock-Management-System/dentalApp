@@ -22,13 +22,13 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
                 {
                     "16.01.2023": {
                         sabah: [
-                            { '09:00': false }, { '09:15': false }, { "09:30": false }, { "09:45": false }, { "10:00": false }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false }
+                            { '09:00': true }, { '09:15': false }, { "09:30": true }, { "09:45": false }, { "10:00": true }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false }
                         ],
                         ogle: [
-                            { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true }
+                            { "13:30": false }, { "13:45": false }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": false }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true }
                         ],
                         aksam: [
-                            { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
+                            { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": false }
                         ]
                     }
                 },
@@ -160,7 +160,7 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
                                                 name="randevuSaati" className="hidden peer" onChange={(e) => setClock(e.target.value)} />
                                             <label
                                                 htmlFor={hourKey}
-                                                className="cursor-pointer border rounded-3xl text-14 px-4 peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white">
+                                                className={`border rounded-3xl text-14 px-4 ${!hourVal ? "bg-gray" : "cursor-pointer peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white"} peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white`}>
                                                 {hourKey}
                                             </label>
                                         </div>
@@ -186,7 +186,7 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
                                                 name="randevuSaati" className="hidden peer" onChange={(e) => setClock(e.target.value)} />
                                             <label
                                                 htmlFor={hourKey}
-                                                className="cursor-pointer border rounded-3xl text-14 px-4 peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white">
+                                                className={`border rounded-3xl text-14 px-4 ${!hourVal ? "bg-gray" : "cursor-pointer peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white"} peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white`}>
                                                 {hourKey}
                                             </label>
                                         </div>
@@ -212,7 +212,7 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
                                                 name="randevuSaati" className="hidden peer" onChange={(e) => setClock(e.target.value)} />
                                             <label
                                                 htmlFor={hourKey}
-                                                className="cursor-pointer border rounded-3xl text-14 px-4 peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white">
+                                                className={`border rounded-3xl text-14 px-4 ${!hourVal ? "bg-gray" : "cursor-pointer peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white"} peer-checked:bg-blue1 peer-checked:text-white peer-checked:border-white`}>
                                                 {hourKey}
                                             </label>
                                         </div>
