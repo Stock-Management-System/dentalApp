@@ -1,17 +1,13 @@
-import React, { useEffect } from 'react'
+import React from 'react';
 
 const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
-    const sabah = ["09:00", "09:15", "09:30", "09:45", "10:00", "10:15", "10:30", "10:45", "11:00", "11:15", "11:30", "11:45", "12:00", "12:15", "12:30"]
-    const ogle = ["13:30", "13:45", "14:00", "14:15", "14:30", "14:45", "15:00", "15:15", "15:30", "15:45", "16:00", "16:15", "16:30", "16:45", "17:00"]
-    const aksam = ["18:00", "18:15", "18:30", "18:45", "19:00", "19:15", "19:30", "19:45", "20:00"]
-
     const workingDay = [
         {
             doctorId: 1,
             polyclinicId: 1,
             dates: [
                 {
-                    "14.01.2023": {
+                    "15.01.2023": {
                         sabah: [
                             { '09:00': false }, { '09:15': false }, { "09:30": false }, { "09:45": false }, { "10:00": false }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false }
                         ],
@@ -24,16 +20,9 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
                     }
                 },
                 {
-                    "15.01.2023": {
-                        sabah: [{ '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true }],
-                        ogle: [{ "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true }],
-                        aksam: [{ "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }]
-                    }
-                },
-                {
                     "16.01.2023": {
                         sabah: [
-                            { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true }
+                            { '09:00': false }, { '09:15': false }, { "09:30": false }, { "09:45": false }, { "10:00": false }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false }
                         ],
                         ogle: [
                             { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true }
@@ -46,7 +35,7 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
                 {
                     "17.01.2023": {
                         sabah: [
-                            { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true }
+                            { '09:00': false }, { '09:15': false }, { "09:30": false }, { "09:45": false }, { "10:00": false }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false }
                         ],
                         ogle: [
                             { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true }
@@ -78,6 +67,32 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
                             { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true }
                         ],
                         aksam: [
+                            { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
+                        ]
+                    }
+                },
+                {
+                    "20.01.2023": {
+                        sabah: [
+                            { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true }
+                        ],
+                        ogle: [
+                            { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true }
+                        ],
+                        aksam: [
+                            { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
+                        ]
+                    }
+                },
+                {
+                    "21.01.2023": {
+                        sabah: [
+                            { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true }
+                        ],
+                        ogle: [
+                            { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true }
+                        ],
+                        aksam: [
                             { "18:00": false }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": false }, { "20:00": false }
                         ]
                     }
@@ -85,38 +100,23 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
             ]
         }
     ]
-    // console.log("date", date)
+    console.log("date", date)
     const date1 = new Date()
-    const thisDay = date1.toISOString()
+    const thisDay = (date1.toISOString()).slice(8, 10) + "." + (date1.toISOString()).slice(5, 7) + "." + (date1.toISOString()).slice(0, 4)
     const tomorrow = new Date(date1)
     tomorrow.setDate(tomorrow.getDate() + 1)
-    const tomorrowDay = tomorrow.toISOString()
+    const tomorrowDay = (tomorrow.toISOString()).slice(8, 10) + "." + (tomorrow.toISOString()).slice(5, 7) + "." + (tomorrow.toISOString()).slice(0, 4)
     const twoWeek = new Date(date1)
     twoWeek.setDate(twoWeek.getDate() + 14)
     const nextTwoWeek = twoWeek.toISOString().slice(0, 10)
-    const beforeThisDay = thisDay.slice(0, 10)
+    const beforeThisDay = (date1.toISOString()).slice(0, 10)
 
-    const dateForArray = `${date.slice(8, 10)}.${date.slice(5, 7)}.${date.slice(0, 4)}`
+    const dateForArray = date
     console.log("dateForArray:", dateForArray)
-    // console.log("new Date obj:", date1)
-    // console.log(tomorrow.toISOString());
-    // console.log(beforeThisDay);
-    // console.log(nextTwoWeek);
 
-    useEffect(() => {
-        setDate(thisDay)
 
-    }, [])
-    const bunedir = workingDay?.filter((workday) => workday.doctorId === doctor.doctorId)?.map((day) => day.dates)[0].map((i) => i['14.01.2023'])[0].sabah.map((item, index) => {
-        let hourKey;
-        let hourVal;
-        for (const [key, val] of Object.entries(item)) {
-            hourKey = key;
-            hourVal = val
-        }
-
-    })
-    console.log(bunedir)
+    // const bunedir = workingDay?.filter((workday) => workday.doctorId === doctor.doctorId)?.map((day) => day.dates)[0].map((i) => i[dateForArray]).filter((k) => k !== undefined && k)[0].sabah
+    // console.log("bunedir   : ", bunedir)
     return (
         <section className='w-11/12 mx-auto'>
             <article className='flex justify-between mb-8 mx-2'>
@@ -132,9 +132,9 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
                                 name="appointmentDate"
                                 id='appointmentDate'
                                 value={date}
-                                min={thisDay.slice(0, 10)}
+                                min={beforeThisDay}
                                 max={nextTwoWeek}
-                                onChange={(e) => setDate(e.target.value)}
+                                onChange={(e) => setDate(((e.target.value).slice(8, 10) + "." + (e.target.value).slice(5, 7) + "." + (e.target.value).slice(0, 4)))}
                             />
                         </label>
                     </div>
@@ -147,7 +147,7 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
                         <h4 className='w-40'>Öğleden Önce</h4>
                         <div className='flex flex-wrap gap-x-1 w-full'>
                             {
-                                workingDay?.filter((workday) => workday.doctorId === doctor.doctorId)?.map((day) => day.dates)[0].map((i) => i['14.01.2023'])[0].sabah.map((item, index) => {
+                                workingDay?.filter((workday) => workday.doctorId === doctor.doctorId)?.map((day) => day.dates)[0].map((i) => i[dateForArray]).filter((k) => k !== undefined && k)[0].sabah.map((item, index) => {
                                     let hourKey;
                                     let hourVal;
                                     for (const [key, val] of Object.entries(item)) {
@@ -173,7 +173,7 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
                         <h4 className='w-40'>Öğleden Sonra</h4>
                         <div className=' flex flex-wrap gap-x-1 w-full'>
                             {
-                                workingDay?.filter((workday) => workday.doctorId === doctor.doctorId)?.map((day) => day.dates)[0].map((i) => i['14.01.2023'])[0].ogle.map((item, index) => {
+                                workingDay?.filter((workday) => workday.doctorId === doctor.doctorId)?.map((day) => day.dates)[0].map((i) => i[dateForArray]).filter((k) => k !== undefined && k)[0].ogle.map((item, index) => {
                                     let hourKey;
                                     let hourVal;
                                     for (const [key, val] of Object.entries(item)) {
@@ -199,7 +199,7 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
                         <h4 className='w-40'>Akşam</h4>
                         <div className='flex flex-wrap gap-x-1 w-full'>
                             {
-                                workingDay?.filter((workday) => workday.doctorId === doctor.doctorId)?.map((day) => day.dates)[0].map((i) => i['14.01.2023'])[0].aksam.map((item, index) => {
+                                workingDay?.filter((workday) => workday.doctorId === doctor.doctorId)?.map((day) => day.dates)[0].map((i) => i[dateForArray]).filter((k) => k !== undefined && k)[0].aksam.map((item, index) => {
                                     let hourKey;
                                     let hourVal;
                                     for (const [key, val] of Object.entries(item)) {
