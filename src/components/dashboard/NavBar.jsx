@@ -70,7 +70,7 @@ const NavBar = ({ setShowRegister }) => {
                 >
                     <Link className="hover:text-blue1  my-2">Randevu Sorgula</Link>{" "}
                     <hr style={{ color: "rgb(229 231 235)" }} />
-                    <Link className="hover:text-blue1  my-2">Randevu Al</Link>{" "}
+                    <Link to='/randevu-al' className="hover:text-blue1  my-2">Randevu Al</Link>{" "}
                     <hr style={{ color: "rgb(229 231 235)" }} />
                     <Link className="hover:text-blue1  my-2">Poliklinikler</Link>{" "}
                     <hr style={{ color: "rgb(229 231 235)" }} />
