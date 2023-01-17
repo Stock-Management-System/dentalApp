@@ -1748,7 +1748,6 @@ export const randevular = [
 		id: 7,
 		hastaAdı: "Tuğba Kılıç",
 		gender: "Kadın",
-		doktorAdı: "Çelebi Doğan",
 		doktorAdı: "Zeynep Kara",
 		doktorİmg:
 			"https://gcdentalworld.com/wp-content/uploads/2015/11/doktorka.png",
@@ -1950,7 +1949,6 @@ export const doktoraGoreRandevu = [
 				id: 1,
 				hastaAdı: "Tuğba Kılıç",
 				gender: "Kadın",
-				doktorAdı: "Çelebi Doğan",
 				doktorAdı: "Zeynep Kara",
 				doktorİmg:
 					"https://gcdentalworld.com/wp-content/uploads/2015/11/doktorka.png",

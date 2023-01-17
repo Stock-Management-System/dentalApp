@@ -7,6 +7,7 @@ import { AiOutlineFileAdd } from "react-icons/ai";
 import DoctorPerformance from "../../../components/polyclinic/doctors/DoctorPerformance";
 import DoctorPermits from "../../../components/polyclinic/doctors/DoctorPermits";
 import { doktorlar } from "../../../helpers/data";
+import DoctorsOur from "../../../components/polyclinic/doctors/DoctorsOur";
 const PolyclinicAppointments = () => {
 	const open = useSelector((state) => state.open.value);
 	const [openTab, setOpenTab] = useState(1);
@@ -15,8 +16,9 @@ const PolyclinicAppointments = () => {
 			<Layout />
 
 			<div
-				className={`absolute bg-container mt-20 right-0 p-6 min-h-[calc(100vh-80px)] ${open ? "w-[calc(100%-250px)]" : "w-[calc(100%-100px)]"
-					} transition-w ease-in-out duration-500`}
+				className={`absolute bg-container mt-20 right-0 p-6 min-h-[calc(100vh-80px)] ${
+					open ? "w-[calc(100%-250px)]" : "w-[calc(100%-100px)]"
+				} transition-w ease-in-out duration-500`}
 			>
 				{/* <----- Header -----> */}
 				<div className="bg-white">
@@ -29,7 +31,7 @@ const PolyclinicAppointments = () => {
 						<p className="text-2xl font-semibold antialiased leading-loose">
 							Personel İşlemleri
 						</p>
-						<button className="btn btn-active btn-sm bg-blue1 gap-2 rounded-full hover:bg-blue1 capitalize">
+						<button className="btn btn-sm btn-active bg-blue1 gap-2 rounded-full hover:bg-blue1 capitalize px-6">
 							<AiOutlineFileAdd /> Doktor Ekle
 						</button>
 					</div>
@@ -37,10 +39,11 @@ const PolyclinicAppointments = () => {
 						{/* <-----Tab Header ----->👇🏻 */}
 						<div className="tabs mb-5 ">
 							<p
-								className={` ${openTab === 1
-									? "tab border-b-2 border-blue1 text-blue1 "
-									: "tab text-black"
-									}`}
+								className={` ${
+									openTab === 1
+										? "tab border-b-2 border-blue1 text-blue1 "
+										: "tab text-black"
+								}`}
 								onClick={(e) => {
 									e.preventDefault();
 									setOpenTab(1);
@@ -49,10 +52,11 @@ const PolyclinicAppointments = () => {
 								Hekimlerimiz
 							</p>
 							<p
-								className={` ${openTab === 2
-									? "tab border-b-2 border-blue1 text-blue1 "
-									: "tab text-black"
-									}`}
+								className={` ${
+									openTab === 2
+										? "tab border-b-2 border-blue1 text-blue1 "
+										: "tab text-black"
+								}`}
 								onClick={(e) => {
 									e.preventDefault();
 									setOpenTab(2);
@@ -61,10 +65,11 @@ const PolyclinicAppointments = () => {
 								Performans
 							</p>
 							<p
-								className={` ${openTab === 3
-									? "tab border-b-2 border-blue1 text-blue1 "
-									: "tab text-black"
-									}`}
+								className={` ${
+									openTab === 3
+										? "tab border-b-2 border-blue1 text-blue1 "
+										: "tab text-black"
+								}`}
 								onClick={(e) => {
 									e.preventDefault();
 									setOpenTab(3);
@@ -73,10 +78,11 @@ const PolyclinicAppointments = () => {
 								İzinler
 							</p>
 							<p
-								className={`${openTab === 4
-									? "tab border-b-2 border-blue1 text-blue1 "
-									: "tab text-black"
-									}`}
+								className={`${
+									openTab === 4
+										? "tab border-b-2 border-blue1 text-blue1 "
+										: "tab text-black"
+								}`}
 								onClick={(e) => {
 									e.preventDefault();
 									setOpenTab(4);
@@ -87,7 +93,7 @@ const PolyclinicAppointments = () => {
 						</div>
 						{/* <-----Tab Body ----->👇🏻 */}
 						<div className={openTab === 1 ? "block" : "hidden"}>
-							Hekimlerimiz Component gelecek
+							<DoctorsOur doktorlar={doktorlar} />
 						</div>
 						<div className={openTab === 2 ? "block" : "hidden"}>
 							<DoctorPerformance doktorlar={doktorlar} />
