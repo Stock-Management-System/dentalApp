@@ -76,7 +76,7 @@ const PatientProfile = () => {
                     <div className='grid grid-cols-2 gap-4 border-dashed border-b-2 border-b-gray pb-4'>
                         <div className='grid grid-cols-8 gap-4 border-dashed border-r-2 border-r-gray  pr-4'>
                             <div className='flex flex-col-reverse'>
-                            <div className='text-center mt-4'>1</div>
+                            <div className={disDetay == 1 ? 'text-center font-extrabold text-blue1 mt-4':'text-center mt-4' }>1</div>
                                     <svg id='1' className="cursor-pointer hover:w-[110%]" onClick={(e) => handleClick(e)} data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.96 86.02">  
                                         <g id="Layer_3" data-name="Layer 3">                       
                                             <path className={teethColor(1)} d="m37.71,49.54c-.65,1.29-.88,2.59-.68,4.15.1.86.33,1.79.68,2.85,1,3,3,15,1,21s-4,10-11,7c-12,4-15-3-15-3-3,0-9-1-10-4s-5-12.36,0-20.68c0,0-2-27.32,2-38.32S9.92,3.43,11.71,2.54c2-1,3,0,3,3v21.14c0,2,.3,3.99,1,5.86.04.12.09.24.14.35l1.77-27.01c.08-1.14.47-2.25,1.2-3.14.35-.42.73-.72,1.05-.58.84.38,1.84.38,1.84,4.38s1,9,2,13,2.83,11.58,2.83,11.58c.11-.5.17-1.03.17-1.58,0-4-1-20-3-25s2-6,5-1c0,0,11,17,11,26s-1,18-2,20Z"/>
@@ -478,7 +478,7 @@ const PatientProfile = () => {
                         
                             <tbody className='text-mainPageP font-thin text-center'>
                                 {/* <!-- row 1 --> */}
-                                {hasta.disİslem[disDetay].map((info,index)=>(
+                                {hasta.disİslem[disDetay]?.map((info,index)=>(
                                     <tr>                                                                 
                                     <td>{info.kategori}</td>
                                     <td>{info.tedavi}</td>
@@ -563,7 +563,7 @@ const PatientProfile = () => {
                                         </thead>
                                     
                                         <tbody className='text-center'>
-                                            {Object.entries(hasta.disİslem).filter((data)=>data[0] < 9).map((info)=>(                                                                                                                                         
+                                            {Object.entries(hasta.disİslem)?.filter((data)=>data[0] < 9)?.map((info)=>(                                                                                                                                         
                                                 <tr>                                                                 
                                                     <td>{info[0]} nolu diş</td>
                                                     <td>{info[1].length ? info[1][0].tedavi : 'Bilinmiyor'}</td>
@@ -588,12 +588,12 @@ const PatientProfile = () => {
                                         </thead>
                                     
                                         <tbody className='text-center'>
-                                            {Object.entries(hasta.disİslem).filter((data)=> data[0] > 8 && data[0] < 17 ).map((info)=>(                                                                                                                                         
+                                            {Object.entries(hasta.disİslem)?.filter((data)=> data[0] > 8 && data[0] < 17 )?.map((info)=>(                                                                                                                                         
                                                 <tr>                                                                 
                                                     <td>{info[0]} nolu diş</td>
-                                                    <td>{info[1][0].tedavi}</td>
-                                                    <td>{info[1][0].islemTarih}</td>
-                                                    <td>{info[1][0].islemNotu}</td>
+                                                    <td>{info[1][0]?.tedavi}</td>
+                                                    <td>{info[1][0]?.islemTarih}</td>
+                                                    <td>{info[1][0]?.islemNotu}</td>
                                                 </tr>
                                             ))}
                                         </tbody>
@@ -613,7 +613,7 @@ const PatientProfile = () => {
                                         </thead>
                                     
                                         <tbody className='text-center'>
-                                            {Object.entries(hasta.disİslem).filter((data)=> data[0] > 24 && data[0] < 33 ).map((info)=>(                                                                                                                                         
+                                            {Object.entries(hasta.disİslem)?.filter((data)=> data[0] > 24 && data[0] < 33 )?.map((info)=>(                                                                                                                                         
                                                 <tr>                                                                 
                                                     <td>{info[0]} nolu diş</td>
                                                     <td>{info[1][0].tedavi}</td>
@@ -638,7 +638,7 @@ const PatientProfile = () => {
                                         </thead>
                                     
                                         <tbody className='text-center'> 
-                                            {Object.entries(hasta.disİslem).filter((data)=> data[0] > 17 && data[0] < 25 ).map((info)=>(                                                                                                                                         
+                                            {Object.entries(hasta.disİslem)?.filter((data)=> data[0] > 16 && data[0] < 25 )?.map((info)=>(                                                                                                                                         
                                                 <tr>                                                                 
                                                     <td>{info[0]} nolu diş</td>
                                                     <td>{info[1][0].tedavi}</td>
