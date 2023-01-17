@@ -1,5 +1,7 @@
 import React from 'react';
 
+
+export let dateForArray;
 const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
     const workingDay = [
         {
@@ -7,61 +9,9 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
             polyclinicId: 1,
             dates: [
                 {
-                    "15.01.2023": {
-                        sabah: [
-                            { '09:00': false }, { '09:15': false }, { "09:30": false }, { "09:45": false }, { "10:00": false }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false }
-                        ],
-                        ogle: [
-                            { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true }
-                        ],
-                        aksam: [
-                            { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                        ]
-                    }
-                },
-                {
-                    "16.01.2023": {
-                        sabah: [
-                            { '09:00': true }, { '09:15': false }, { "09:30": true }, { "09:45": false }, { "10:00": true }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false }
-                        ],
-                        ogle: [
-                            { "13:30": false }, { "13:45": false }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": false }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true }
-                        ],
-                        aksam: [
-                            { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": false }
-                        ]
-                    }
-                },
-                {
-                    "17.01.2023": {
-                        sabah: [
-                            { '09:00': false }, { '09:15': false }, { "09:30": false }, { "09:45": false }, { "10:00": false }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false }
-                        ],
-                        ogle: [
-                            { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true }
-                        ],
-                        aksam: [
-                            { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                        ]
-                    }
-                },
-                {
-                    "18.01.2023": {
-                        sabah: [
-                            { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true }
-                        ],
-                        ogle: [
-                            { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true }
-                        ],
-                        aksam: [
-                            { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
-                        ]
-                    }
-                },
-                {
                     "19.01.2023": {
                         sabah: [
-                            { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true }
+                            { '09:00': false }, { '09:15': false }, { "09:30": false }, { "09:45": false }, { "10:00": false }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false }
                         ],
                         ogle: [
                             { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true }
@@ -74,6 +24,45 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
                 {
                     "20.01.2023": {
                         sabah: [
+                            { '09:00': true }, { '09:15': false }, { "09:30": true }, { "09:45": false }, { "10:00": true }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false }
+                        ],
+                        ogle: [
+                            { "13:30": false }, { "13:45": false }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": false }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true }
+                        ],
+                        aksam: [
+                            { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": false }
+                        ]
+                    }
+                },
+                {
+                    "21.01.2023": {
+                        sabah: [
+                            { '09:00': false }, { '09:15': false }, { "09:30": false }, { "09:45": false }, { "10:00": false }, { "10:15": false }, { "10:30": false }, { "10:45": false }, { "11:00": false }, { "11:15": false }, { "11:30": false }, { "11:45": false }, { "12:00": false }, { "12:15": false }, { "12:30": false }
+                        ],
+                        ogle: [
+                            { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true }
+                        ],
+                        aksam: [
+                            { "18:00": true }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": true }, { "20:00": true }
+                        ]
+                    }
+                },
+                {
+                    "22.01.2023": {
+                        sabah: [
+                            { '09:00': false }, { '09:15': true }, { "09:30": true }, { "09:45": false }, { "10:00": true }, { "10:15": false }, { "10:30": true }, { "10:45": true }, { "11:00": false }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true }
+                        ],
+                        ogle: [
+                            { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": false }, { "16:00": true }, { "16:15": false }, { "16:30": true }, { "16:45": false }, { "17:00": true }
+                        ],
+                        aksam: [
+                            { "18:00": false }, { "18:15": true }, { "18:30": false }, { "18:45": false }, { "19:00": true }, { "19:15": false }, { "19:30": true }, { "19:45": false }, { "20:00": false }
+                        ]
+                    }
+                },
+                {
+                    "23.01.2023": {
+                        sabah: [
                             { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true }
                         ],
                         ogle: [
@@ -85,7 +74,20 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
                     }
                 },
                 {
-                    "21.01.2023": {
+                    "24.01.2023": {
+                        sabah: [
+                            { '09:00': false }, { '09:15': true }, { "09:30": true }, { "09:45": false }, { "10:00": true }, { "10:15": false }, { "10:30": true }, { "10:45": true }, { "11:00": false }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true }
+                        ],
+                        ogle: [
+                            { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": false }, { "16:00": true }, { "16:15": false }, { "16:30": true }, { "16:45": false }, { "17:00": true }
+                        ],
+                        aksam: [
+                            { "18:00": false }, { "18:15": true }, { "18:30": false }, { "18:45": false }, { "19:00": true }, { "19:15": false }, { "19:30": true }, { "19:45": false }, { "20:00": false }
+                        ]
+                    }
+                },
+                {
+                    "25.01.2023": {
                         sabah: [
                             { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true }
                         ],
@@ -94,6 +96,84 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
                         ],
                         aksam: [
                             { "18:00": false }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": false }, { "20:00": false }
+                        ]
+                    }
+                },
+                {
+                    "26.01.2023": {
+                        sabah: [
+                            { '09:00': false }, { '09:15': true }, { "09:30": true }, { "09:45": false }, { "10:00": true }, { "10:15": false }, { "10:30": true }, { "10:45": true }, { "11:00": false }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true }
+                        ],
+                        ogle: [
+                            { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": false }, { "16:00": true }, { "16:15": false }, { "16:30": true }, { "16:45": false }, { "17:00": true }
+                        ],
+                        aksam: [
+                            { "18:00": false }, { "18:15": true }, { "18:30": false }, { "18:45": false }, { "19:00": true }, { "19:15": false }, { "19:30": true }, { "19:45": false }, { "20:00": false }
+                        ]
+                    }
+                },
+                {
+                    "27.01.2023": {
+                        sabah: [
+                            { '09:00': false }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": false }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true }
+                        ],
+                        ogle: [
+                            { "13:30": true }, { "13:45": false }, { "14:00": true }, { "14:15": false }, { "14:30": false }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true }
+                        ],
+                        aksam: [
+                            { "18:00": false }, { "18:15": true }, { "18:30": true }, { "18:45": false }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": false }, { "20:00": false }
+                        ]
+                    }
+                },
+                {
+                    "28.01.2023": {
+                        sabah: [
+                            { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true }
+                        ],
+                        ogle: [
+                            { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true }
+                        ],
+                        aksam: [
+                            { "18:00": false }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": false }, { "20:00": false }
+                        ]
+                    }
+                },
+                {
+                    "29.01.2023": {
+                        sabah: [
+                            { '09:00': false }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": false }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true }
+                        ],
+                        ogle: [
+                            { "13:30": true }, { "13:45": false }, { "14:00": true }, { "14:15": false }, { "14:30": false }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true }
+                        ],
+                        aksam: [
+                            { "18:00": false }, { "18:15": true }, { "18:30": true }, { "18:45": false }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": false }, { "20:00": false }
+                        ]
+                    }
+                },
+                {
+                    "30.01.2023": {
+                        sabah: [
+                            { '09:00': true }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": true }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true }
+                        ],
+                        ogle: [
+                            { "13:30": true }, { "13:45": true }, { "14:00": true }, { "14:15": true }, { "14:30": true }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true }
+                        ],
+                        aksam: [
+                            { "18:00": false }, { "18:15": true }, { "18:30": true }, { "18:45": true }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": false }, { "20:00": false }
+                        ]
+                    }
+                },
+                {
+                    "31.01.2023": {
+                        sabah: [
+                            { '09:00': false }, { '09:15': true }, { "09:30": true }, { "09:45": true }, { "10:00": true }, { "10:15": false }, { "10:30": true }, { "10:45": true }, { "11:00": true }, { "11:15": true }, { "11:30": true }, { "11:45": true }, { "12:00": true }, { "12:15": true }, { "12:30": true }
+                        ],
+                        ogle: [
+                            { "13:30": true }, { "13:45": false }, { "14:00": true }, { "14:15": false }, { "14:30": false }, { "14:45": true }, { "15:00": true }, { "15:15": true }, { "15:30": true }, { "15:45": true }, { "16:00": true }, { "16:15": true }, { "16:30": true }, { "16:45": true }, { "17:00": true }
+                        ],
+                        aksam: [
+                            { "18:00": false }, { "18:15": true }, { "18:30": true }, { "18:45": false }, { "19:00": true }, { "19:15": true }, { "19:30": true }, { "19:45": false }, { "20:00": false }
                         ]
                     }
                 },
@@ -111,7 +191,7 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
     const nextTwoWeek = twoWeek.toISOString().slice(0, 10)
     const beforeThisDay = (date1.toISOString()).slice(0, 10)
 
-    const dateForArray = date.slice(8, 10) + "." + date.slice(5, 7) + "." + date.slice(0, 4)
+    dateForArray = date.slice(8, 10) + "." + date.slice(5, 7) + "." + date.slice(0, 4)
     console.log("dateForArray:", dateForArray)
 
 

@@ -10,6 +10,7 @@ import InfoPatientForm from '../../components/dashboard/recordPatient/InfoPatien
 import PolyclinicForRecord from '../../components/dashboard/recordPatient/PolyclinicForRecord';
 import RegisterModal from '../../components/dashboard/RegisterModal';
 import InciDıs from '../../assets/InciDis.png';
+import { dateForArray } from '../../components/dashboard/recordPatient/AppointmentDate';
 const patient = [
     {
         TC: "33018089910",
@@ -139,7 +140,7 @@ const RecordPatient = () => {
                         </div>
                         <div className='my-5'>
                             <h4 className='opacity-80'>TARİH / SAAT</h4>
-                            <h6 className='font-semibold'>{date} / {clock}</h6>
+                            <h6 className='font-semibold'>{date.slice(8, 10)}.{date.slice(5, 7)}.{date.slice(0, 4)} / {clock}</h6>
                         </div>
                     </article>
                     <button
