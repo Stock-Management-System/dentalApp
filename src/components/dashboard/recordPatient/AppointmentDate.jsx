@@ -102,16 +102,16 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
     ]
     console.log("date", date)
     const date1 = new Date()
-    const thisDay = (date1.toISOString()).slice(8, 10) + "." + (date1.toISOString()).slice(5, 7) + "." + (date1.toISOString()).slice(0, 4)
+    const thisDay = date1.toISOString()
     const tomorrow = new Date(date1)
     tomorrow.setDate(tomorrow.getDate() + 1)
-    const tomorrowDay = (tomorrow.toISOString()).slice(8, 10) + "." + (tomorrow.toISOString()).slice(5, 7) + "." + (tomorrow.toISOString()).slice(0, 4)
+    const tomorrowDay = tomorrow.toISOString()
     const twoWeek = new Date(date1)
     twoWeek.setDate(twoWeek.getDate() + 14)
     const nextTwoWeek = twoWeek.toISOString().slice(0, 10)
     const beforeThisDay = (date1.toISOString()).slice(0, 10)
 
-    const dateForArray = date
+    const dateForArray = date.slice(8, 10) + "." + date.slice(5, 7) + "." + date.slice(0, 4)
     console.log("dateForArray:", dateForArray)
 
 
@@ -134,7 +134,7 @@ const AppointmentDate = ({ setClock, setDate, date, doctor }) => {
                                 value={date}
                                 min={beforeThisDay}
                                 max={nextTwoWeek}
-                                onChange={(e) => setDate(((e.target.value).slice(8, 10) + "." + (e.target.value).slice(5, 7) + "." + (e.target.value).slice(0, 4)))}
+                                onChange={(e) => setDate(e.target.value)}
                             />
                         </label>
                     </div>

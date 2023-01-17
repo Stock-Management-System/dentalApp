@@ -70,7 +70,7 @@ const RecordPatient = () => {
         doctorPhoto: "https://www.seekpng.com/png/full/855-8557328_headshot-of-dr-male-dentist-png.png"
     })
     const [clock, setClock] = useState("");
-    const [date, setDate] = useState(thisDay.slice(8, 10) + "." + thisDay.slice(5, 7) + "." + thisDay.slice(0, 4))
+    const [date, setDate] = useState(thisDay)
     const [place, setPlace] = useState({ city: "İstanbul", town: "Avcılar" })
 
 
