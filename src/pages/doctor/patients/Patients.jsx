@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { BsPersonPlus } from 'react-icons/bs'
 import { FaUserPlus } from 'react-icons/fa'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import DoctorHeader from '../../../components/doctor/doctorDashboard/DoctorHeader'
 import Layout from '../../../components/doctor/Layout'
 import AddPatientModal from '../../../components/doctor/patient/AddPatientModal'
@@ -184,7 +185,7 @@ const Patients = () => {
             <table className="table w-full">
               {/* <!-- head --> */}
               <thead>
-                <tr >
+                <tr>
                   <th>İSİM</th>
                   <th>BABA ADI</th>
                   <th>DOĞUM TARİHİ</th>
@@ -200,9 +201,11 @@ const Patients = () => {
               <tbody className="font-light  ">
                 {/* <!-- row 1 --> */}
                 {patientsInfos?.map((item, index, arr) => {
-          
                   return (
-                    <tr key={index} className="leading-10 cursor-pointer hover  rounded-xl hover:rounded-lg">
+                    <tr
+                      key={index}
+                      className="leading-10 hover  rounded-xl hover:rounded-lg"
+                    >
                       <td>
                         {item.hasta_adi} {item.hasta_soyadi}
                       </td>
@@ -214,18 +217,19 @@ const Patients = () => {
                       <td></td>
                       <td></td>
                       <td>
-                        <button className='btn btn-primary btn-sm rounded-full capitalize'>+ Randevu</button>
-                      </td>
-                      <td>
-                        <button className='btn btn-sm btn-outline btn-primary rounded-full capitalize px-6'>
-                          Detay
+                        <button className="btn btn-primary btn-sm rounded-full capitalize">
+                          + Randevu
                         </button>
                       </td>
-                      {/* <td><ModalExamineRontgen rontgenInfo={arr} oneRontgen={item} /></td> */}
-                      {/* <td>{item.rontgen.map((i, key, arr) => (
-                                   <ImageModal key={key} />
-                               ))}
-                             </td> */}
+                      <td>
+                        <Link to={'/doktorlar/hastalarım/'+item.id}>
+                 
+                          <button className="btn btn-sm btn-outline btn-primary rounded-full capitalize px-6">
+                            Detay
+                          </button>
+                        </Link>
+                      </td>
+                  
                     </tr>
                   )
                 })}

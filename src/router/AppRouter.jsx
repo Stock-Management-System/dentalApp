@@ -30,6 +30,7 @@ const AppRouter = () => {
 				<Route path="/doktorlar" element={<DoctorProfile />} />
 				<Route path="/doktorlar/randevular" element={<Appointments />} />
 				<Route path="/doktorlar/hastalarım" element={<DoctorPatient />} />
+				<Route path="/doktorlar/hastalarım/:id" element={<DoctorPatient />} />
 				<Route path="/doktorlar/ayarlar" element={<DoctorSettings />} />
 				
 				{/* Dashboard */}
