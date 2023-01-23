@@ -1,6 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
-const ClinicHeader = ({policlinicProfile}) => {
+const ClinicHeader = () => {
+	const policlinicProfile = useSelector((state) => state.polData.value)
+
 	return (
 		<div className="flex flex-row mt-16 gap-20 py-5">
 			{/* clinic header infos */}

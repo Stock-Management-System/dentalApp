@@ -1,10 +1,10 @@
 import React from 'react'
 import { FaGreaterThan, FaLessThan } from 'react-icons/fa'
 import DoctorsCard from './DoctorsCard'
-import {doktorlar} from "../../../helpers/data.js"
-// import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
-const DoctorsTitle = ( {policlinicProfile}) => {
+const DoctorsTitle = () => {
+    const policlinicProfile = useSelector((state) => state.polData.value)
  /*    console.log(window.document.body.clientWidth);
     const open = useSelector(state => state.open.value)
     const width = open ? window.document.body.clientWidth - 298 :  window.document.body.clientWidth - 148
