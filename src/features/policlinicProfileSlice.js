@@ -8,12 +8,7 @@ const initialState = {
 export const policlinicProfileSlice = createSlice({
   name: 'policlinicProfileData',
   initialState,
-  reducers: {
-    policlinicProfileD: state => {
-      state.value = state.value
-    },
-   
-  },
+ 
 })
 
 // Action creators are generated for each case reducer function
