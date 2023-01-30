@@ -21,6 +21,7 @@ const patient = [
         email: "cbbr@gmail.com",
         city: "Ağrı",
         town: "Doğubeyazıt"
+        
     },
     {
         TC: "54788552210",
