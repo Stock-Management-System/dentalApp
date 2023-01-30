@@ -198,13 +198,14 @@ const Patients = () => {
                   <th></th>
                 </tr>
               </thead>
-              <tbody className="font-light  ">
+              {/* <tbody className="font-light  "> */}
+              <tbody >
                 {/* <!-- row 1 --> */}
                 {patientsInfos?.map((item, index, arr) => {
                   return (
                     <tr
                       key={index}
-                      className="leading-10 hover  rounded-xl hover:rounded-lg"
+                      className="leading-10  rounded-xl "
                     >
                       <td>
                         {item.hasta_adi} {item.hasta_soyadi}
