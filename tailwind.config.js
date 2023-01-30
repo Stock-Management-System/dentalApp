@@ -18,6 +18,7 @@ module.exports = {
       'mainPageGray':'#233d63',
       'mainPageP':'#7a7d86',
       'yellowTeeth':'#f3d344',
+      'red': "#E54B61",
       'nullTeeth':'#b20c6d',
       'slate': {
         500: '#64748b',
@@ -55,30 +56,30 @@ module.exports = {
       '6xl': '3,54rem',
     },
 
-    screens: {
-      'xs': '320px',
-      // => @media (min-width: 640px) { ... }
-      'sm': '640px',
-      // => @media (min-width: 640px) { ... }
+		screens: {
+			xs: "320px",
+			// => @media (min-width: 640px) { ... }
+			sm: "640px",
+			// => @media (min-width: 640px) { ... }
 
-      'md': '768px',
-      // => @media (min-width: 768px) { ... }
+			md: "768px",
+			// => @media (min-width: 768px) { ... }
 
-      'lg': '1024px',
-      // => @media (min-width: 1024px) { ... }
+			lg: "1024px",
+			// => @media (min-width: 1024px) { ... }
 
-      'xl': '1280px',
-      // => @media (min-width: 1280px) { ... }
+			xl: "1280px",
+			// => @media (min-width: 1280px) { ... }
 
-      '2xl': '1536px',
-      // => @media (min-width: 1536px) { ... }
-    }
-  },
-  plugins: [
-    require("daisyui"),
-    // require('@tailwindcss/forms'),
-  ],
-  daisyui: {
-    themes: false
-  },
-}
+			"2xl": "1536px",
+			// => @media (min-width: 1536px) { ... }
+		},
+	},
+	plugins: [
+		require("daisyui"),
+		// require('@tailwindcss/forms'),
+	],
+	daisyui: {
+		themes: false,
+	},
+};

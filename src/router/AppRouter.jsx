@@ -14,6 +14,9 @@ import PolyclinicProfile from "../pages/polyclinic/profile/PolyclinicProfile";
 import Rontgen from "../pages/polyclinic/rontgen/Rontgen";
 import Settings from "../pages/polyclinic/settings/Settings";
 import MainPage from "../pages/dashboard/MainPage";
+import RecordPatient from "../pages/dashboard/RecordPatient";
+import Polyclinics from "../pages/dashboard/Polyclinics";
+
 
 const AppRouter = () => {
 	return (
@@ -21,11 +24,17 @@ const AppRouter = () => {
 			<Routes>
 
 				<Route path="/" element={<MainPage />} />
+				<Route path="/randevu-al" element={<RecordPatient />} />
+
+
 				<Route path="/doktorlar" element={<DoctorProfile />} />
 				<Route path="/doktorlar/randevular" element={<Appointments />} />
 				<Route path="/doktorlar/hastalarım" element={<DoctorPatient />} />
+				<Route path="/doktorlar/hastalarım/:id" element={<DoctorPatient />} />
 				<Route path="/doktorlar/ayarlar" element={<DoctorSettings />} />
-
+				
+				{/* Dashboard */}
+				<Route path="/poliklinikler" element={<Polyclinics />} />
 
 				<Route path="/poliklinik" element={<PolyclinicProfile />} />
 				<Route path="/poliklinik/randevular" element={<PolyclinicAppointments />} />

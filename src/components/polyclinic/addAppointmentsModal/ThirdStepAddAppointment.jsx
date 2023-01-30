@@ -1,21 +1,26 @@
 import React, { useState } from 'react';
 import { AiOutlineLeft } from 'react-icons/ai'
+import { useDispatch } from 'react-redux';
+import { modalToggle } from '../../../features/modalSlice';
 
 const ThirdStepAddAppointment = ({ handleSubmit, handleSubmitBackward, personalInfo, selectedDoctor, setSelectedDoctor, doctorAppointmentStatus, date,
     clock }) => {
     const [datetime, setDatetime] = useState(date + 'T' + clock)
+    const dispatch = useDispatch()
     console.log(datetime);
     console.log(personalInfo);
     const handleSubmitForm = (e) => {
         e.preventDefault()
+        dispatch(modalToggle())
     }
     const hanleClick = () => {
         alert('Lütfen değişiklik için önceki forma geçiniz !')
     }
     return (
         <form className='w-full flex flex-col p-4'>
+            <h2 className='md:hidden'>Önizleme ve Onay</h2>
             <h3 className='mt-6'>Hasta Bilgileri</h3>
-            <div className='grid grid-cols-4 gap-2'>
+            <div className='grid xs:grid-cols-2 md:grid-cols-4 gap-2'>
                 <div className="col-span-1">
                     <label className="label">
                         <span className="label-text">ADI</span>
@@ -42,7 +47,7 @@ const ThirdStepAddAppointment = ({ handleSubmit, handleSubmitBackward, personalI
                 </div>
             </div>
             <h3 className='mt-6'>Randevu Bilgileri</h3>
-            <div className='grid grid-cols-3 gap-12'>
+            <div className='grid xs:grid-cols-2 xs:gap-2 md:grid-cols-3 md:gap-12'>
                 <div className="col-span-1">
                     <label className="label">
                         <span className="label-text">POLİKLİNİK</span>

@@ -1,14 +1,20 @@
 import React, { useState } from "react";
-import { AiOutlineFileAdd } from "react-icons/ai";
-import AddAppointmentsModal from "./addAppointmentsModal/AddAppointmentsModal";
 import DateRange from "./appointments/DateRange";
 import DoctorsAppointments from "./appointments/DoctorsAppointments";
 import PatientsAppointments from "./appointments/PatientsAppointments";
 import TodayAppointments from "./appointments/TodayAppointments";
 import { randevular, doktoraGoreRandevu } from "../../helpers/data";
+import { useDispatch } from "react-redux";
+import { BiMessageSquareAdd } from "react-icons/bi";
+import { modalToggle } from "../../features/modalSlice";
+// import AddAppointmentsModal from "./addAppointmentsModal/AddAppointmentsModal";
+// import { AiOutlineFileAdd } from "react-icons/ai";
+// import AddAppointmentPopUp from "./addAppointmentsModal/AddAppointmentPopUp";
 
 const Appointments = () => {
 	const [openTab, setOpenTab] = useState(1);
+	// const toggleModal = useSelector((state) => state.toggleM.toggleModal)
+	const dispatch = useDispatch()
 	return (
 		<div>
 			{/* clinic appointments title 👇🏻 */}
@@ -16,7 +22,13 @@ const Appointments = () => {
 				<p className="text-2xl font-semibold antialiased leading-loose">
 					Randevu İşlemleri
 				</p>
-				<AddAppointmentsModal />
+				<button
+					onClick={() => dispatch(modalToggle())}
+					htmlFor="add-appointment"
+					className="btn-primary mr-3 btn btn-active btn-sm bg-blue1 gap-2 rounded-full hover:bg-blue1">
+					<BiMessageSquareAdd className='mr-1' /> Randevu Oluştur
+				</button>
+				{/* <AddAppointmentsModal /> */}
 			</div>
 			<div className="px-5">
 				{/* appointments headers 👇🏻 */}
@@ -84,6 +96,11 @@ const Appointments = () => {
 					<DateRange doktorAppointment={randevular} />
 				</div>
 			</div>
+			{/* {
+				toggleModal
+				&&
+				<AddAppointmentPopUp />
+			} */}
 		</div>
 	);
 };
