@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import DoctorHeader from '../../../components/doctor/doctorDashboard/DoctorHeader'
 import Layout from '../../../components/doctor/Layout'
 import AddPatientModal from '../../../components/doctor/patient/AddPatientModal'
+import PatientProfile from '../../../components/doctor/patient/PatientProfile'
 
 const patientsInfos = [
   {
@@ -180,6 +181,7 @@ const Patients = () => {
         </div>
         {/* Buraya tbale component igelecek 👇🏻 */}
 
+
         <div className="bg-white py-4 mt-8">
           <div className="overflow-x-auto m-4 px-4">
             <table className="table w-full">
@@ -237,6 +239,10 @@ const Patients = () => {
               </tbody>
             </table>
           </div>
+        </div>
+        
+          <div>
+          <PatientProfile/>
         </div>
       </div>
       {showModal && <AddPatientModal setShowModal={setShowModal} />}

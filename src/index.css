@@ -26,3 +26,27 @@ transition: width .3s ease-in-out;
 .footer-link:hover .footer-link-underline {
 width: 100%;
 }
+
+.cls-1 {
+  fill: #fff;
+}
+
+.cls-2 {
+  fill: none;
+  stroke: #000;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  stroke-width: .5px;
+}
+
+.cls-3 {
+  fill: #f3d344;
+}
+
+.cls-4 {
+  fill: #b20c6d;
+}
+
+.cls-5 {
+  fill: #5616f5;
+}
