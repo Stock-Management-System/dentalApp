@@ -13,7 +13,8 @@ const LoginModal = ({ setShowRegister, setShowLogin, setShowForgotPassword }) =>
     const close = () => {
         setShowLogin(false);        
     };
-
+console.log("email", email);
+console.log(password);
     const handleSubmit = (e) => {
         e.preventDefault();        
         // send login info        
@@ -21,7 +22,13 @@ const LoginModal = ({ setShowRegister, setShowLogin, setShowForgotPassword }) =>
         setPassword('');
         setIsRemember(false);  
         setShowLogin(false);   
-        navigate("/poliklinik")  
+        if (email === 'doktor@gmail.com' && password === '123456') {
+            
+            navigate("/doktorlar")  
+        }
+        else if (email === 'poliklinik@gmail.com' && password === '123456'){
+            navigate("/poliklinik")
+        }
     };
 
     return (
