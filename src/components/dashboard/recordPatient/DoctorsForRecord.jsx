@@ -124,8 +124,8 @@ const DoctorsForRecord = ({ setDoctor, polyclinic }) => {
                     {polyclinicDocotrs.filter((poli) => poli.polyclinicId === polyclinic.polyclinicId).map((doktor, index) => (
                         <SwiperSlide
                             className={` ${openTab === doktor.doctorId
-                                ? "card w-1/5 bg-gradient-to-r  from-blue1 to-blue2 text-white"
-                                : "card w-1/5 bg-white"
+                                ? "card w-1/5 bg-gradient-to-r  from-blue1 to-blue2 text-white cursor-pointer"
+                                : "card w-1/5 bg-white cursor-pointer"
                                 }`}
                             onClick={(e) => {
                                 e.preventDefault();

@@ -208,8 +208,8 @@ const PolyclinicForRecord = ({ place, setPlace, setPolyclinic }) => {
                                     setPolyclinic(item)
                                 }}
                             >
-                                <div className="card card-compact bg-base-100 mx-3" >
-                                    <figure><img src={item.polyclinicPhoto} alt="InciDıs" /></figure>
+                                <div className="card card-compact bg-base-100 mx-3 cursor-pointer" >
+                                    <figure><img src={item.polyclinicPhoto} className="h-48" alt="InciDıs" /></figure>
                                     <div className='border-b opacity-80 w-[96%] my-1 mx-auto'></div>
                                     <div className="card-body">
                                         <h2 className="card-title text-blue1 font-normal">{item.polyclinicName}</h2>

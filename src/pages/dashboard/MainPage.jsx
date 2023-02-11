@@ -27,7 +27,7 @@ const MainPage = () => {
                         <p className='text-18 lg:max-w-xl mt-5'>6000 den fazla hekim ve 900 den fazla diş kliniği ile dentrey kullanıcıları artık daha mutlu ve daha huzurlu. Üstelik gülerken çekimser olmak zorunda değil.</p>
                         <div className='flex xs:flex-col lg:flex-row mt-6 xs:items-center gap-5'>
                             <Link to='#' style={{border:'1px solid #3beaf5'}} className='h-10 w-44  text-white tracking-[.5px] bg-turquaz flex justify-center items-center btn rounded-full  hover:bg-white hover:text-turquaz'>Randevu Sorgula</Link>        
-                            <Link to='#' style={{border:'1px solid #ff5acd'}} className='h-10 w-44  text-white tracking-[.5px] bg-pink flex justify-center items-center btn rounded-full  hover:bg-white hover:text-pink'>Randevu Al</Link>
+                            <Link to='/randevu-al' style={{border:'1px solid #ff5acd'}} className='h-10 w-44  text-white tracking-[.5px] bg-pink flex justify-center items-center btn rounded-full  hover:bg-white hover:text-pink'>Randevu Al</Link>
                         </div>                    
                     </div>
                     <div className='w-1/2 h-[500px] min-w-[600px] max-w-[600px] overflow-hidden relative xs:hidden md:block select-none'>
