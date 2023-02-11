@@ -79,7 +79,7 @@ const Polyclinics = () => {
 			<NavBar setShowRegister={setShowRegister} />
 			<div>
 				<div className="bg-container h-full">
-					<section className="flex justify-center pt-24 pb-40  w-full min-h-screen ">
+					<section className="flex justify-center pt-24 pb-40   w-full min-h-screen ">
 						<div className="w-4/5">
 							<div className="flex justify-between w-full">
 								<h1 className="text-5xl text-blue1 font-semibold">
@@ -147,7 +147,7 @@ const Polyclinics = () => {
 									</select>
 								</div>
 							</div>
-							<div className="grid grid-cols-4 gap-6 ">
+							<div className="grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xxl:grid-cols-4 gap-6">
 								{polyclinics.map((polyclinic) => (
 									<div className="card bg-white p-4 ">
 										<div className="divide-y-2 divide-gray">

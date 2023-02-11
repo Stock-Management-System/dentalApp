@@ -2,13 +2,12 @@ import React from 'react'
 import NavBar from './NavBar'
 import Sidebar from './Sidebar'
 
-
 const Layout = () => {
   return (
-    <div>
-      <NavBar  />
+    <>
+      <NavBar />
       <Sidebar />
-    </div>
+    </>
   )
 }
 

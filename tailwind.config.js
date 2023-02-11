@@ -23,6 +23,8 @@ module.exports = {
       'slate': {
         500: '#64748b',
       },
+      "lightGray":"#c7ccd8",
+      "darkGray":"#3a3e48",
       "gray": "#9699A1",
       "formGray": "#A8A8A8",
       "black": "#000000",
@@ -47,6 +49,8 @@ module.exports = {
       '18': '18px',
       '20': '20px',
       '14': '14px',
+      '13': '13px',
+      '12': '12px',
       'base': '1rem',
       'xl': '1.25rem',
       '2xl': '1.563rem',
