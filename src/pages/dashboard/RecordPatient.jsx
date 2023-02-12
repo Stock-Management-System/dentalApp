@@ -98,7 +98,7 @@ const RecordPatient = () => {
                         null
                 }
                 <article className={`flex xs:flex-col md:flex-row xs:gap-2 md:gap-0 md:justify-between w-10/12 mx-auto`} >
-                    <h1 className='text-3xl text-blue1'>Randevu Al</h1>
+                    <h1 className='text-5xl text-blue1'>Randevu Al</h1>
                     <form className="form-control" onSubmit={handleSubmit}>
                         <div className="input-group">
                             <input type="text" placeholder="TC Kimlik Numaranız" required className="input w-96" value={queryTC} onChange={(e) => setQueryTC(e.target.value)} />

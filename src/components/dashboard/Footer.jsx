@@ -6,7 +6,7 @@ import { RiTwitterFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
-    <footer style={{minHeight:'400px'}} className="footer p-10 bg-base-200 place-content-evenly text-white w-[105%] bg-gradient-to-r from-blue1 to-fuchsia">
+    <footer style={{minHeight:'400px'}} className="footer p-10 bg-base-200 place-content-evenly text-white w-[100%] bg-gradient-to-r from-blue1 to-fuchsia">
       <div className="mx-12 w-44">
         <span className="mb-2 font-bold text-18 tracking-wider">Dentrey</span>
         <p className="text-14">
