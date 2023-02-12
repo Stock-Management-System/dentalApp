@@ -21,9 +21,9 @@ const MainPage = () => {
       <div
         className="bg-white h-[100vh] w-full "
       >
-        <div className="h-[110rem] w-full bg-container absolute -z-10"> </div>
-        <section className="flex pt-24 w-[100%] items-center min-h-screen lg:px-20 bg-transparent xs:flex-col lg:flex-row lg:justify-evenly mb-10">
-          <div className="lg:w-1/2 xl:w-auto xs:w-5/6 xs:text-center lg:text-left  pb-10">
+        <div className="h-[110rem] w-full bg-container absolute -z-10 "> </div>
+        <section className="flex pt-24 w-[100%] items-center min-h-screen z-20 lg:px-20 bg-transparent xs:flex-col lg:flex-row lg:justify-evenly mb-10 ">
+          <div className="lg:w-1/2 xl:w-auto xs:w-5/6 xs:text-center lg:text-left  pb-10 z-20">
             <p className="text-blue1 text-44">
               Dentrey Randevu Sistemi <br />
               <span className="text-mainPageGray">
@@ -37,7 +37,7 @@ const MainPage = () => {
             </p>
             <div className="flex xs:flex-col lg:flex-row mt-6 xs:items-center gap-5">
               <Link
-                to="#"
+                to="/randevu-sorgula"
                 style={{ border: '1px solid #3beaf5' }}
                 className="h-10 w-44  text-white tracking-[.5px] bg-turquaz flex justify-center items-center btn rounded-full  hover:bg-white hover:text-turquaz"
               >
@@ -52,7 +52,7 @@ const MainPage = () => {
               </Link>
             </div>
           </div>
-          <div className="w-1/2 h-[500px] min-w-[600px] max-w-[600px] overflow-hidden relative xs:hidden md:block select-none">
+          <div className="w-1/2 h-[500px] min-w-[600px] max-w-[600px] overflow-hidden relative xs:hidden md:block select-none z-20">
             <img
               style={{}}
               className="absolute -left-6 top-5  min-h-[500px] min-w-[750px] pl-5"
@@ -61,7 +61,7 @@ const MainPage = () => {
             />
           </div>
         </section>
-        <section className="w-[100%]  px-[100px] bg-container sm:mt-14 lg:mt-28 pb-12">
+        <section className="w-[100%]  px-[100px] bg-container z-20 sm:mt-14 lg:mt-28 pb-12">
           <div className="text-center mb-24">
             <h2 className="text-mainPageGray text-[40px] font-bold leading-normal pb-10 tracking-[-.5px]">
               Dentrey Nasıl Çalışır?

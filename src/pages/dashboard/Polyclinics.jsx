@@ -191,6 +191,7 @@ const Polyclinics = () => {
 						</div>
 					</section>
 				</div>
+				
 				<Footer />
 			</div>
 			{showRegister ? (

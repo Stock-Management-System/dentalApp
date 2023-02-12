@@ -16,6 +16,7 @@ import Settings from "../pages/polyclinic/settings/Settings";
 import MainPage from "../pages/dashboard/MainPage";
 import RecordPatient from "../pages/dashboard/RecordPatient";
 import Polyclinics from "../pages/dashboard/Polyclinics";
+import QueryAppointment from "../pages/dashboard/QueryAppointment";
 
 
 const AppRouter = () => {
@@ -25,6 +26,7 @@ const AppRouter = () => {
 
 				<Route path="/" element={<MainPage />} />
 				<Route path="/randevu-al" element={<RecordPatient />} />
+				<Route path="/randevu-sorgula" element={<QueryAppointment />} />
 
 
 				<Route path="/doktorlar" element={<DoctorProfile />} />
