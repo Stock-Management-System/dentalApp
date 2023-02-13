@@ -24,9 +24,11 @@ const MainPage = () => {
         <div className="h-[110rem] w-full bg-container absolute -z-10 "> </div>
         <section className="flex pt-24 w-[100%] items-center min-h-screen z-20 lg:px-20 bg-transparent xs:flex-col lg:flex-row lg:justify-evenly mb-10 ">
           <div className="lg:w-1/2 xl:w-auto xs:w-5/6 xs:text-center lg:text-left  pb-10 z-20">
-            <p className="text-blue1 text-44">
-              Dentrey Randevu Sistemi <br />
-              <span className="text-mainPageGray">
+            <p className=" text-44 text-mainPageGray leading-[52px]">
+             <span className='font-bold text-blue1 block '> 
+               Dentrey Randevu Sistemi 
+              </span>
+              <span className="">
                 çok yakında hizmetinizde
               </span>
             </p>
@@ -39,7 +41,7 @@ const MainPage = () => {
               <Link
                 to="/randevu-sorgula"
                 style={{ border: '1px solid #3beaf5' }}
-                className="h-10 w-44  text-white tracking-[.5px] bg-turquaz flex justify-center items-center btn rounded-full  hover:bg-white hover:text-turquaz"
+                className="h-10 w-44  text-white tracking-[.5px] bg-turquaz flex justify-center items-center btn rounded-full  hover:bg-white hover:text-turquaz duration-300 "
               >
                 Randevu Sorgula
               </Link>
@@ -103,8 +105,8 @@ const MainPage = () => {
             </div>
           </div>
         </section>
-        <svg class="svg-intro-bottom absolute bottom-0 left-0 w-full h-full z-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-				<path d="M95,0 Q90,90 0,100 L100,100 100,0 Z" fill="#f1f6fb" fill-opacity="1"></path>
+        <svg className="svg-intro-bottom absolute bottom-0 left-0 w-full h-full z-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+				<path d="M95,0 Q90,90 0,100 L100,100 100,0 Z" fill="#f1f6fb" fillOpacity="1"></path>
 			</svg>
         <Footer />
       </div>
