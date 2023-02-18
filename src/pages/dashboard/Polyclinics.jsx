@@ -120,12 +120,13 @@ const Polyclinics = () => {
 										id="il"
 										className="select select-sm text-gray"
 										onChange={handleChange}
+							
 									>
-										<option disabled selected>
+										<option disabled selected 	>
 											İl Seçiniz
 										</option>
-										{ilData.map((il) => (
-											<option value={il["text"]}>{il["text"]}</option>
+										{ilData.map((il,index) => (
+											<option value={il["text"]}  key={index}>{il["text"]}</option>
 										))}
 									</select>
 									<select
@@ -140,16 +141,16 @@ const Polyclinics = () => {
 										{ilData
 											.filter((data) => data["text"] === registerInfo.il)
 											.map((ilce) =>
-												ilce["districts"].map((e) => (
-													<option value={e["text"]}>{e["text"]}</option>
+												ilce["districts"].map((e,index) => (
+													<option value={e["text"]} key={index}>{e["text"]}</option>
 												))
 											)}
 									</select>
 								</div>
 							</div>
 							<div className="grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xxl:grid-cols-4 gap-6">
-								{polyclinics.map((polyclinic) => (
-									<div className="card bg-white p-4 ">
+								{polyclinics.map((polyclinic,index) => (
+									<div className="card bg-white p-4 " key={index}>
 										<div className="divide-y-2 divide-gray">
 											<figure className="h-40">
 												<img
