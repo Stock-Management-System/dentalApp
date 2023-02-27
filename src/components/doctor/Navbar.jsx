@@ -7,12 +7,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { sidebarToggle } from '../../features/sidebarSlice';
 import { linkHoverToggle } from '../../features/sidebarSlice';
+import AddAppointmentPopUp from '../polyclinic/addAppointmentsModal/AddAppointmentPopUp';
+
 
 
 const NavBar = () => {
     const open = useSelector(state => state.open.value)
     const dispatch = useDispatch()
     const [dropOpen, setDropOpen] = useState(false);
+    const toggleModal = useSelector((state) => state.toggleM.toggleModal)
 
     const handleOpenClick = () => {
         dispatch(sidebarToggle())
@@ -20,12 +23,13 @@ const NavBar = () => {
 
     }
     return (
+        <>
         <div className={`navbar bg-white h-20  right-0 z-10 fixed ${open ? 'w-[calc(100%-250px)]' : 'w-[calc(100%-100px)]'} transition-w ease-in-out duration-500`} >
             <div className={open ? "absolute top-5 left-[-4px] bg-blue1 text-white w-5 h-10 rounded-r-full" : "absolute top-5 left-0 w-5 h-10   rotate-180 btn-primary rounded-l-full"} onClick={handleOpenClick}>
 
                 <MdArrowBackIosNew className='text-xl '
 
-                />
+/>
             </div>
             <div className="navbar-start">
                 <div className='ml-6 xs:hidden xl:block'>
@@ -47,12 +51,12 @@ const NavBar = () => {
                 {/* <div tabIndex={0} className="collapse group md:hidden">
           <div className="collapse-title bg-primary text-primary-content group-focus:bg-secondary group-focus:text-secondary-content btn btn-ghost btn-circle">
             <button className="">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
             </button>
-          </div>
-          <div className="collapse-content bg-primary text-primary-content group-focus:bg-secondary group-focus:text-secondary-content">
+            </div>
+            <div className="collapse-content bg-primary text-primary-content group-focus:bg-secondary group-focus:text-secondary-content">
             <p>tabIndex={0} attribute is necessary to make the div focusable</p>
-          </div>
+            </div>
         </div> */}
                 <div className="form-control relative xs:hidden md:block">
                     <input type="text" placeholder="Search Patient" className="input input-bordered rounded-3xl" />
@@ -88,6 +92,12 @@ const NavBar = () => {
                 </div>
             </div>
         </div>
+    {
+      toggleModal
+      &&
+      <AddAppointmentPopUp />
+    }
+    </>
     )
 }
 

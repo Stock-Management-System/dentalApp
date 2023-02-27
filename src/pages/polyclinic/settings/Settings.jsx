@@ -16,6 +16,7 @@ const PolyclinicProfil = {
 	tel3: "0551 245 79 68",
 	email: "incidis@inci.com",
 	vergiNo: "1212848495",
+	poliklinikpp:poliklinikpp
 };
 console.log(PolyclinicProfil.il);
 const Settings = () => {
