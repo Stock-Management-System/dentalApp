@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { BiPlusMedical } from 'react-icons/bi'
+import { FiMenu } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 
 const NavBar = ({ setShowRegister }) => {
   const [activePage, setActivePage] = useState('')
   let location = useLocation()
+  const [menuOpen, setMenuOpen] = useState(true);
 
   const [bgColor, setBgColor] = useState(false)
 
@@ -22,6 +24,7 @@ const NavBar = ({ setShowRegister }) => {
     setActivePage(location.pathname)
     // adding the event when scroll change
     window.addEventListener('scroll', changeBgColor)
+    console.log(menuOpen);
   })
 
   return (
@@ -34,9 +37,9 @@ const NavBar = ({ setShowRegister }) => {
             }
           : { backgroundColor: 'transparent' }
       }
-      className="navbar w-full top-0 left-0 flex justify-center h-[50px] md:h-[70px] fixed z-50 transition-all duration-300  hover:bg-container"
+      className="navbar w-full top-0 left-0 flex justify-center h-[50px] md:h-[70px] fixed z-50 transition-all duration-300  hover:bg-container "
     >
-      <div className="container">
+      <div className="container ">
         <div className="flex-1 ">
           <Link to="/">
             <div className="flex  items-center ">
@@ -93,48 +96,54 @@ const NavBar = ({ setShowRegister }) => {
             Giriş Yap
           </button>
         </div>
-        <div className=" lg:hidden">
-          <label tabIndex={0} className="btn btn-ghost btn-circle">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              className="inline-block w-8 h-8 stroke-current"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
-          </label>
-          <div
+       
+
+       
+      <div className={`lg:hidden w-full absolute left-0 right-0 transition-all ease-in-out duration-500 top-[50px] md:top-[70px] overflow-hidden ${menuOpen?'h-64':'h-0'}`}>
+        
+          <ul
             tabIndex={0}
-            className="border  bg-base-100 mt-[140px]"
+            className="  bg-base-100  p-2"
           >
-            <Link to="/randevu-sorgula" className="hover:text-blue1  my-2">Randevu Sorgula</Link>{' '}
+            <li className='m-4'>
+
+            <Link to="/randevu-sorgula" className="hover:text-blue1 h-4 ">Randevu Sorgula</Link>
+            </li>
             <hr style={{ color: 'rgb(229 231 235)' }} />
+            <li className='m-4'>
+
             <Link to="/randevu-al" className="hover:text-blue1  my-2">
               Randevu Al
-            </Link>{' '}
+            </Link>
+            </li>
             <hr style={{ color: 'rgb(229 231 235)' }} />
-            <Link to="/poliklinikler" className="hover:text-blue1  my-2">Poliklinikler</Link>{' '}
+            <li className='m-4'>
+            <Link to="/poliklinikler" className="hover:text-blue1  my-2">Poliklinikler</Link>
+            </li>
             <hr style={{ color: 'rgb(229 231 235)' }} />
+
+          <div className='text-center'>
             <button
+
               style={{
                 textTransform: 'none',
                 boxShadow: '0 0 30px -12px #5616f5',
               }}
-              className="h-8 w-4/5 mt-3 text-blue1 items-center bg-white rounded-full mx-auto hover:bg-blue1 hover:text-white"
+              className="h-8 w-40 m-4 text-blue1 items-center bg-white rounded-full mx-auto hover:bg-blue1 hover:text-white"
               type="button"
               onClick={() => setShowRegister(true)}
-            >
+              >
               Giriş Yap
             </button>
-          </div>
+              </div>
+          </ul>
         </div>
-      </div>
+        <FiMenu className='lg:hidden text-3xl cursor-pointer' onClick={()=>{
+          
+          setMenuOpen(!menuOpen)
+        } 
+        } />
+      </div> 
     </div>
   )
 }
